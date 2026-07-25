@@ -1,0 +1,23 @@
+{
+  "id": "propulsion_balanced",
+  "displayName": "Vector Drive",
+  "description": "Balanced thrust and braking response.",
+  "tier": 0,
+  "purchaseCost": 0,
+  "resaleRate": 0.75,
+  "mass": 4,
+  "passivePowerDraw": 1,
+  "compatibilityTags": [],
+  "roleTags": [
+    "balanced"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [],
+  "category": "propulsion",
+  "sizeClass": "medium",
+  "maxSpeed": 320,
+  "focusRatio": 0.5,
+  "thrust": 2400,
+  "drag": 2000
+}

@@ -1,0 +1,39 @@
+{
+  "id": "weapon_pulse",
+  "displayName": "Pulse Cannon",
+  "description": "Efficient and precise continuous-fire weapon.",
+  "tier": 0,
+  "purchaseCost": 0,
+  "resaleRate": 0.75,
+  "mass": 2,
+  "passivePowerDraw": 1,
+  "compatibilityTags": [],
+  "roleTags": [
+    "balanced"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 700,
+      "description": "Improved emitter focus",
+      "modifiers": {
+        "weaponDamageMultiplier": 1.12
+      }
+    },
+    {
+      "cost": 1100,
+      "description": "Rapid cycling chamber",
+      "modifiers": {
+        "weaponFireIntervalMultiplier": 0.88
+      }
+    }
+  ],
+  "category": "primaryWeapon",
+  "weaponDefId": "pulse_cannon",
+  "hardpointClass": "light",
+  "energyPerVolley": 3.2,
+  "damageMultiplier": 1,
+  "fireIntervalMultiplier": 1,
+  "targetDomain": "both"
+}

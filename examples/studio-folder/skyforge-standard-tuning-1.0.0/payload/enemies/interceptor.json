@@ -1,0 +1,22 @@
+{
+  "id": "interceptor",
+  "displayName": "Interceptor",
+  "sprite": "tex_enemy_interceptor",
+  "health": 15,
+  "collisionDamage": 1,
+  "scoreValue": 150,
+  "creditValue": 28,
+  "movementPattern": "enter_attack_exit_left",
+  "weaponPattern": "single_aimed_shot",
+  "speed": 260,
+  "hitbox": {
+    "type": "circle",
+    "radius": 12
+  },
+  "drops": [
+    {
+      "pickup": "credits_small",
+      "chance": 0.15
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "spread_cannon",
+  "displayName": "Spread",
+  "projectileTexture": "tex_bullet_player",
+  "collisionCategory": "player",
+  "levels": [
+    {
+      "damage": 6,
+      "fireInterval": 0.14,
+      "projectileSpeed": 780,
+      "projectileCount": 3,
+      "spreadAngles": [-12, 0, 12],
+      "muzzles": [[0, -16]]
+    },
+    {
+      "damage": 6,
+      "fireInterval": 0.14,
+      "projectileSpeed": 780,
+      "projectileCount": 5,
+      "spreadAngles": [-24, -12, 0, 12, 24],
+      "muzzles": [[0, -16]]
+    },
+    {
+      "damage": 7,
+      "fireInterval": 0.11,
+      "projectileSpeed": 780,
+      "projectileCount": 5,
+      "spreadAngles": [-24, -12, 0, 12, 24],
+      "muzzles": [[0, -16]]
+    }
+  ]
+}

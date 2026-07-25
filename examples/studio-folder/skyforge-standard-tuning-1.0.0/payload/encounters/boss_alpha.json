@@ -1,0 +1,20 @@
+{
+  "id": "boss_alpha",
+  "estimatedDuration": 120,
+  "difficulty": 5,
+  "skillsTested": [
+    "boss_pattern_reading",
+    "target_priority",
+    "endurance"
+  ],
+  "events": [
+    {
+      "at": 2,
+      "type": "startBoss",
+      "boss": "boss_alpha"
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "release": "SkyForge Epoch 18.1",
+  "rubricVersion": "1.0",
+  "scoreType": "structured internal art-direction audit supported by objective gates",
+  "scores": {
+    "Blob-47 topology and transitions": 9.3,
+    "Water continuity and naturalism": 8.7,
+    "Sandstone continuity and variation": 8.5,
+    "Shoreline silhouette and depth": 8.6,
+    "Macro landform composition": 8.7,
+    "Landmark and set-dressing density": 8.6,
+    "Benchmark-inspired visual hierarchy": 8.6,
+    "Tile and metatile concealment": 8.9,
+    "Gameplay readability and palette": 9.2,
+    "Altitude and player shadow": 8.5
+  },
+  "average": 8.76,
+  "requiredAverage": 8.5,
+  "passed": true,
+  "metrics": {
+    "blob47": {
+      "canonicalMasks": 47,
+      "boundaryVariantsPerMask": 4,
+      "shorelineVariantsPerMask": 4
+    },
+    "water": {
+      "explicitCells": 0,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 3,
+      "animationFps": 0.65,
+      "frames": [
+        {
+          "edgeDifference": [
+            0,
+            0
+          ],
+          "gradientRatio": 1.0485,
+          "contrast": 3.7618,
+          "shift32X": 2.3158,
+          "shift32Y": 1.9921
+        },
+        {
+          "edgeDifference": [
+            0,
+            0
+          ],
+          "gradientRatio": 1.0452,
+          "contrast": 3.7632,
+          "shift32X": 2.3121,
+          "shift32Y": 1.9896
+        },
+        {
+          "edgeDifference": [
+            0,
+            0
+          ],
+          "gradientRatio": 1.0471,
+          "contrast": 3.7654,
+          "shift32X": 2.3132,
+          "shift32Y": 1.9895
+        }
+      ]
+    },
+    "sandstone": {
+      "size": [
+        512,
+        512
+      ],
+      "edgeDifference": [
+        0,
+        0
+      ],
+      "contrast": 7.1512,
+      "shift32X": 4.1733,
+      "shift128X": 7.3443,
+      "shift128Y": 6.3915
+    },
+    "composition": {
+      "islandCount": 4,
+      "islandSizes": [
+        91,
+        95,
+        134,
+        160
+      ],
+      "centerRange": 4.0,
+      "waterWidthRange": [
+        6,
+        13
+      ],
+      "landmarkCells": 195,
+      "landmarkMaxRowGap": 80,
+      "decorationCells": {
+        "sediment": 145,
+        "rock_clusters": 201,
+        "cracks": 177,
+        "scrub": 86,
+        "landmarks": 195
+      }
+    },
+    "readability": {
+      "waterLuminance": 57.48,
+      "sandstoneLuminance": 101.88
+    },
+    "playerShadow": {
+      "shadowOffsetX": 10.0,
+      "shadowOffsetY": 14.0,
+      "shadowScaleX": 0.96,
+      "shadowScaleY": 0.64,
+      "shadowOpacity": 0.34,
+      "dedicatedTexture": true,
+      "layeredSilhouette": true
+    }
+  }
+}

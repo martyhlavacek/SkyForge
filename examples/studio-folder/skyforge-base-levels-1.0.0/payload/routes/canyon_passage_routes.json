@@ -1,0 +1,514 @@
+{
+  "formatVersion": "2.0",
+  "id": "canyon_passage_routes",
+  "mapId": "canyon_passage",
+  "routes": [
+    {
+      "id": "visual_centerline",
+      "name": "Visual Canyon Centerline",
+      "minimumRadius": 18,
+      "samples": [
+        {
+          "worldY": -960,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": -704,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": -448,
+          "centerX": 368,
+          "clearance": 128
+        },
+        {
+          "worldY": -192,
+          "centerX": 368,
+          "clearance": 128
+        },
+        {
+          "worldY": 64,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 320,
+          "centerX": 272,
+          "clearance": 160
+        },
+        {
+          "worldY": 576,
+          "centerX": 224,
+          "clearance": 112
+        },
+        {
+          "worldY": 832,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 1088,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 1344,
+          "centerX": 304,
+          "clearance": 192
+        },
+        {
+          "worldY": 1600,
+          "centerX": 352,
+          "clearance": 144
+        },
+        {
+          "worldY": 1856,
+          "centerX": 304,
+          "clearance": 192
+        },
+        {
+          "worldY": 2112,
+          "centerX": 304,
+          "clearance": 192
+        },
+        {
+          "worldY": 2368,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 2624,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 2880,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 3136,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 3392,
+          "centerX": 272,
+          "clearance": 192
+        },
+        {
+          "worldY": 3648,
+          "centerX": 272,
+          "clearance": 192
+        },
+        {
+          "worldY": 3904,
+          "centerX": 256,
+          "clearance": 176
+        },
+        {
+          "worldY": 4160,
+          "centerX": 272,
+          "clearance": 160
+        },
+        {
+          "worldY": 4416,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 4672,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 4928,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 5184,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 5440,
+          "centerX": 256,
+          "clearance": 112
+        },
+        {
+          "worldY": 5696,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 5952,
+          "centerX": 304,
+          "clearance": 96
+        },
+        {
+          "worldY": 6208,
+          "centerX": 320,
+          "clearance": 112
+        },
+        {
+          "worldY": 6464,
+          "centerX": 320,
+          "clearance": 112
+        },
+        {
+          "worldY": 6720,
+          "centerX": 320,
+          "clearance": 112
+        },
+        {
+          "worldY": 6976,
+          "centerX": 320,
+          "clearance": 112
+        },
+        {
+          "worldY": 7232,
+          "centerX": 288,
+          "clearance": 80
+        },
+        {
+          "worldY": 7488,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 7744,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 8000,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 8256,
+          "centerX": 352,
+          "clearance": 144
+        },
+        {
+          "worldY": 8512,
+          "centerX": 368,
+          "clearance": 128
+        },
+        {
+          "worldY": 8768,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 9024,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 9280,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 9536,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 9792,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 10048,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 10304,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 10560,
+          "centerX": 272,
+          "clearance": 160
+        },
+        {
+          "worldY": 10816,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 11072,
+          "centerX": 240,
+          "clearance": 160
+        },
+        {
+          "worldY": 11328,
+          "centerX": 224,
+          "clearance": 144
+        },
+        {
+          "worldY": 11584,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 11840,
+          "centerX": 256,
+          "clearance": 112
+        },
+        {
+          "worldY": 12096,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 12352,
+          "centerX": 272,
+          "clearance": 128
+        },
+        {
+          "worldY": 12608,
+          "centerX": 288,
+          "clearance": 144
+        },
+        {
+          "worldY": 12864,
+          "centerX": 320,
+          "clearance": 144
+        },
+        {
+          "worldY": 13120,
+          "centerX": 320,
+          "clearance": 144
+        },
+        {
+          "worldY": 13376,
+          "centerX": 320,
+          "clearance": 144
+        },
+        {
+          "worldY": 13632,
+          "centerX": 320,
+          "clearance": 144
+        },
+        {
+          "worldY": 13888,
+          "centerX": 304,
+          "clearance": 128
+        },
+        {
+          "worldY": 14144,
+          "centerX": 272,
+          "clearance": 128
+        },
+        {
+          "worldY": 14400,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 14656,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 14912,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 15168,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 15424,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 15680,
+          "centerX": 272,
+          "clearance": 160
+        },
+        {
+          "worldY": 15936,
+          "centerX": 272,
+          "clearance": 160
+        },
+        {
+          "worldY": 16192,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 16448,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 16704,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 16960,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 17216,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 17472,
+          "centerX": 272,
+          "clearance": 128
+        },
+        {
+          "worldY": 17728,
+          "centerX": 288,
+          "clearance": 144
+        },
+        {
+          "worldY": 17984,
+          "centerX": 304,
+          "clearance": 128
+        },
+        {
+          "worldY": 18240,
+          "centerX": 320,
+          "clearance": 144
+        },
+        {
+          "worldY": 18496,
+          "centerX": 336,
+          "clearance": 128
+        },
+        {
+          "worldY": 18752,
+          "centerX": 352,
+          "clearance": 144
+        },
+        {
+          "worldY": 19008,
+          "centerX": 336,
+          "clearance": 128
+        },
+        {
+          "worldY": 19264,
+          "centerX": 336,
+          "clearance": 128
+        },
+        {
+          "worldY": 19520,
+          "centerX": 336,
+          "clearance": 128
+        },
+        {
+          "worldY": 19776,
+          "centerX": 336,
+          "clearance": 96
+        },
+        {
+          "worldY": 20032,
+          "centerX": 320,
+          "clearance": 112
+        },
+        {
+          "worldY": 20288,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 20544,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 20800,
+          "centerX": 288,
+          "clearance": 112
+        },
+        {
+          "worldY": 21056,
+          "centerX": 272,
+          "clearance": 128
+        },
+        {
+          "worldY": 21312,
+          "centerX": 272,
+          "clearance": 128
+        },
+        {
+          "worldY": 21568,
+          "centerX": 256,
+          "clearance": 144
+        },
+        {
+          "worldY": 21824,
+          "centerX": 240,
+          "clearance": 128
+        },
+        {
+          "worldY": 22080,
+          "centerX": 224,
+          "clearance": 144
+        },
+        {
+          "worldY": 22336,
+          "centerX": 224,
+          "clearance": 144
+        },
+        {
+          "worldY": 22592,
+          "centerX": 224,
+          "clearance": 144
+        },
+        {
+          "worldY": 22848,
+          "centerX": 240,
+          "clearance": 160
+        },
+        {
+          "worldY": 23104,
+          "centerX": 240,
+          "clearance": 160
+        },
+        {
+          "worldY": 23360,
+          "centerX": 240,
+          "clearance": 160
+        },
+        {
+          "worldY": 23616,
+          "centerX": 272,
+          "clearance": 160
+        },
+        {
+          "worldY": 23872,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 24128,
+          "centerX": 288,
+          "clearance": 176
+        },
+        {
+          "worldY": 24384,
+          "centerX": 288,
+          "clearance": 176
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5084 @@
+{
+  "format": "skyforge-asset-pack",
+  "schemaVersion": 2,
+  "manifest": {
+    "id": "skyforge-placeholder-assets",
+    "name": "Skyforge Placeholder Assets",
+    "version": "1.0.0",
+    "description": "Production Asset Studio package with semantic placeholders, import, animation, shadow, atlas, and tileset demonstrations.",
+    "authors": [
+      "Marty Hlavacek"
+    ],
+    "license": "Skyforge project content",
+    "engineRange": ">=0.3.0",
+    "dependencies": [],
+    "tags": [
+      "built-in",
+      "epoch-18"
+    ],
+    "createdAt": "2026-07-14T01:00:00.000Z",
+    "updatedAt": "2026-07-14T01:00:00.000Z",
+    "contentRevision": 2
+  },
+  "resources": [
+    {
+      "id": "demo-fighter-sheet-resource",
+      "uri": "assets/studio/demo_fighter_sheet.png",
+      "mediaType": "image/png",
+      "sha256": "0bdb30642d43c8dab25c800ad35726a3aabb853f67f0ce54dd130312ee994ae9",
+      "bytes": 881,
+      "filename": "demo_fighter_sheet.png",
+      "width": 192,
+      "height": 48,
+      "license": "Skyforge project demonstration asset",
+      "attribution": "Skyforge Epoch 14 procedural demo",
+      "provenance": {
+        "source": "built-in-demo",
+        "author": "Skyforge project",
+        "createdWith": "Pillow",
+        "importedAt": "2026-07-14T01:00:00.000Z",
+        "notes": "Four-frame fighter sheet for Asset Studio testing"
+      }
+    },
+    {
+      "id": "demo-fighter-shadow-resource",
+      "uri": "assets/studio/demo_fighter_shadow.png",
+      "mediaType": "image/png",
+      "sha256": "2a37b6f3e9aee052746935ba6d3fc5b6526232fe21f2d4fc82089613d10ac99c",
+      "bytes": 240,
+      "filename": "demo_fighter_shadow.png",
+      "width": 48,
+      "height": 48,
+      "license": "Skyforge project demonstration asset",
+      "attribution": "Skyforge Epoch 14 procedural demo",
+      "provenance": {
+        "source": "built-in-demo",
+        "author": "Skyforge project",
+        "createdWith": "Pillow",
+        "importedAt": "2026-07-14T01:00:00.000Z",
+        "notes": "Aircraft shadow test asset"
+      }
+    },
+    {
+      "id": "skyforge-canyon-default-resource",
+      "uri": "assets/terrain/skyforge_canyon_terrain.png",
+      "mediaType": "image/png",
+      "sha256": "9d7d2af586ac37ff642e825b06cb4605f62ead563352333aaaa4762d3fd19b43",
+      "bytes": 361412,
+      "filename": "skyforge_canyon_terrain.png",
+      "width": 512,
+      "height": 960,
+      "license": "Skyforge project demonstration asset",
+      "attribution": "Generated for Skyforge in ChatGPT and normalized by the deterministic canyon tileset pipeline",
+      "provenance": {
+        "source": "chatgpt-generated-master",
+        "author": "Skyforge project",
+        "createdWith": "External image generation and Pillow normalization",
+        "importedAt": "2026-07-14T01:00:00.000Z",
+        "notes": "480-frame terrain atlas with visibly curved inner corners, true 45-degree diagonal banks, connected exposed-edge shoreline overlays, four visual variants per Blob-47 state, and expanded environmental decoration frames"
+      }
+    },
+    {
+      "id": "skyforge-canyon-water-resource",
+      "uri": "assets/terrain/skyforge_canyon_water.png",
+      "mediaType": "image/png",
+      "sha256": "011bd83323516f6e69b2bb84cadef95265eac1ff5b167bc4609da50f55d21479",
+      "bytes": 315647,
+      "filename": "skyforge_canyon_water.png",
+      "width": 1536,
+      "height": 512,
+      "license": "Skyforge project demonstration asset",
+      "attribution": "Procedurally generated for SkyForge Epoch 18",
+      "provenance": {
+        "source": "built-in-demo",
+        "author": "Skyforge project",
+        "createdWith": "Pillow periodic texture generator",
+        "importedAt": "2026-07-14T01:00:00.000Z",
+        "notes": "Three quiet 512x512 seamless water frames used by the continuous runtime TileSprite plane"
+      }
+    },
+    {
+      "id": "skyforge-canyon-sandstone-resource",
+      "uri": "assets/terrain/skyforge_canyon_sandstone.png",
+      "mediaType": "image/png",
+      "sha256": "cd454ad3eef7e27373c7cd49f7179e8c73122472bb6b699383fb09d5b6201dec",
+      "bytes": 315109,
+      "filename": "skyforge_canyon_sandstone.png",
+      "width": 512,
+      "height": 512,
+      "license": "Skyforge project demonstration asset",
+      "attribution": "Procedurally generated for SkyForge Epoch 18",
+      "provenance": {
+        "source": "built-in-demo",
+        "author": "Skyforge project",
+        "createdWith": "Pillow periodic texture generator",
+        "importedAt": "2026-07-14T01:00:00.000Z",
+        "notes": "Continuous 512x512 sandstone source composited through Blob-47 masks at runtime"
+      }
+    },
+    {
+      "id": "skyforge-canyon-props-resource",
+      "uri": "assets/terrain/skyforge_canyon_props.png",
+      "mediaType": "image/png",
+      "sha256": "72a6dd2364d3e584cd045ee5a00c8e6a6d2f3d56ecc7386b2adb5cf5f2b8a2b8",
+      "bytes": 131877,
+      "filename": "skyforge_canyon_props.png",
+      "width": 512,
+      "height": 128,
+      "license": "Skyforge project demonstration asset",
+      "attribution": "Generated for Skyforge in ChatGPT and normalized by the deterministic canyon tileset pipeline",
+      "provenance": {
+        "source": "chatgpt-generated-master",
+        "author": "Skyforge project",
+        "createdWith": "External image generation and Pillow normalization",
+        "importedAt": "2026-07-14T01:00:00.000Z",
+        "notes": "Canyon rocks, vegetation, structures, gates, and river-channel prop frames"
+      }
+    }
+  ],
+  "reviewComments": [],
+  "payload": {
+    "assets": [
+      {
+        "id": "demo_fighter_epoch14",
+        "displayName": "Epoch 14 Demo Fighter",
+        "kind": "enemyAircraft",
+        "status": "approved",
+        "roles": [
+          "enemy-visual",
+          "asset-studio-demo"
+        ],
+        "tags": [
+          "demo",
+          "animated",
+          "aircraft"
+        ],
+        "resourceId": "demo-fighter-sheet-resource",
+        "width": 48,
+        "height": 48,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.48
+        },
+        "frames": [
+          {
+            "id": "demo_fighter_epoch14-frame-0",
+            "x": 0,
+            "y": 0,
+            "width": 48,
+            "height": 48,
+            "durationMs": 100
+          },
+          {
+            "id": "demo_fighter_epoch14-frame-1",
+            "x": 48,
+            "y": 0,
+            "width": 48,
+            "height": 48,
+            "durationMs": 100
+          },
+          {
+            "id": "demo_fighter_epoch14-frame-2",
+            "x": 96,
+            "y": 0,
+            "width": 48,
+            "height": 48,
+            "durationMs": 100
+          },
+          {
+            "id": "demo_fighter_epoch14-frame-3",
+            "x": 144,
+            "y": 0,
+            "width": 48,
+            "height": 48,
+            "durationMs": 100
+          }
+        ],
+        "collision": {
+          "type": "circle",
+          "radius": 13,
+          "offsetX": 0,
+          "offsetY": 2
+        },
+        "hardpoints": [
+          {
+            "id": "primary-left",
+            "kind": "primary",
+            "x": 16,
+            "y": 29,
+            "rotation": 0,
+            "mirrored": true
+          },
+          {
+            "id": "primary-right",
+            "kind": "primary",
+            "x": 32,
+            "y": 29,
+            "rotation": 0,
+            "mirrored": true
+          },
+          {
+            "id": "engine",
+            "kind": "engine",
+            "x": 24,
+            "y": 43,
+            "rotation": 180,
+            "mirrored": false
+          }
+        ],
+        "presentation": {
+          "altitude": 36,
+          "shadowAssetId": "demo_fighter_shadow_epoch14",
+          "shadowOffsetX": 10,
+          "shadowOffsetY": 14,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.38
+        },
+        "animations": {
+          "idle": {
+            "frames": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "fps": 8,
+            "loop": true
+          }
+        },
+        "atlasFrameIds": []
+      },
+      {
+        "id": "demo_fighter_shadow_epoch14",
+        "displayName": "Epoch 14 Demo Fighter Shadow",
+        "kind": "shadow",
+        "status": "approved",
+        "roles": [
+          "aircraft-shadow"
+        ],
+        "tags": [
+          "demo",
+          "shadow"
+        ],
+        "resourceId": "demo-fighter-shadow-resource",
+        "width": 48,
+        "height": 48,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [
+          {
+            "id": "demo_fighter_shadow_epoch14-frame-0",
+            "x": 0,
+            "y": 0,
+            "width": 48,
+            "height": 48,
+            "durationMs": 100
+          }
+        ],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 1,
+          "shadowOpacity": 1
+        },
+        "animations": {
+          "idle": {
+            "frames": [
+              0
+            ],
+            "fps": 1,
+            "loop": true
+          }
+        },
+        "atlasFrameIds": []
+      },
+      {
+        "id": "skyforge_canyon_water_plane",
+        "displayName": "Skyforge Canyon Continuous Water Plane",
+        "kind": "terrainTile",
+        "status": "approved",
+        "roles": [
+          "terrain-material",
+          "water-plane"
+        ],
+        "tags": [
+          "canyon",
+          "water",
+          "seamless",
+          "animated"
+        ],
+        "resourceId": "skyforge-canyon-water-resource",
+        "width": 512,
+        "height": 512,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [
+          {
+            "id": "skyforge-canyon-water-frame-0",
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 512,
+            "durationMs": 1538
+          },
+          {
+            "id": "skyforge-canyon-water-frame-1",
+            "x": 512,
+            "y": 0,
+            "width": 512,
+            "height": 512,
+            "durationMs": 1538
+          },
+          {
+            "id": "skyforge-canyon-water-frame-2",
+            "x": 1024,
+            "y": 0,
+            "width": 512,
+            "height": 512,
+            "durationMs": 1538
+          }
+        ],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 1,
+          "shadowOpacity": 0
+        },
+        "animations": {
+          "idle": {
+            "frames": [
+              0,
+              1,
+              2
+            ],
+            "fps": 0.65,
+            "loop": true
+          }
+        },
+        "atlasFrameIds": []
+      },
+      {
+        "id": "skyforge_canyon_sandstone_plane",
+        "displayName": "Skyforge Canyon Continuous Sandstone",
+        "kind": "terrainTile",
+        "status": "approved",
+        "roles": [
+          "terrain-material",
+          "sandstone-plane"
+        ],
+        "tags": [
+          "canyon",
+          "sandstone",
+          "seamless",
+          "composited"
+        ],
+        "resourceId": "skyforge-canyon-sandstone-resource",
+        "width": 512,
+        "height": 512,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [
+          {
+            "id": "skyforge-canyon-sandstone-frame-0",
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 512,
+            "durationMs": 100
+          }
+        ],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 1,
+          "shadowOpacity": 0
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "skyforge_canyon_props",
+        "displayName": "Skyforge Canyon Props Atlas",
+        "kind": "terrainTile",
+        "status": "approved",
+        "roles": [
+          "terrain-decoration",
+          "canyon-props"
+        ],
+        "tags": [
+          "canyon",
+          "props",
+          "structures",
+          "vegetation"
+        ],
+        "resourceId": "skyforge-canyon-props-resource",
+        "width": 512,
+        "height": 128,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [
+          {
+            "id": "skyforge-canyon-prop-0",
+            "x": 0,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-1",
+            "x": 32,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-2",
+            "x": 64,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-3",
+            "x": 96,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-4",
+            "x": 128,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-5",
+            "x": 160,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-6",
+            "x": 192,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-7",
+            "x": 224,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-8",
+            "x": 256,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-9",
+            "x": 288,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-10",
+            "x": 320,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-11",
+            "x": 352,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-12",
+            "x": 384,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-13",
+            "x": 416,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-14",
+            "x": 448,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-15",
+            "x": 480,
+            "y": 0,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-16",
+            "x": 0,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-17",
+            "x": 32,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-18",
+            "x": 64,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-19",
+            "x": 96,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-20",
+            "x": 128,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-21",
+            "x": 160,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-22",
+            "x": 192,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-23",
+            "x": 224,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-24",
+            "x": 256,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-25",
+            "x": 288,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-26",
+            "x": 320,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-27",
+            "x": 352,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-28",
+            "x": 384,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-29",
+            "x": 416,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-30",
+            "x": 448,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-31",
+            "x": 480,
+            "y": 32,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-32",
+            "x": 0,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-33",
+            "x": 32,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-34",
+            "x": 64,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-35",
+            "x": 96,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-36",
+            "x": 128,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-37",
+            "x": 160,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-38",
+            "x": 192,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-39",
+            "x": 224,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-40",
+            "x": 256,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-41",
+            "x": 288,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-42",
+            "x": 320,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-43",
+            "x": 352,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-44",
+            "x": 384,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-45",
+            "x": 416,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-46",
+            "x": 448,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-47",
+            "x": 480,
+            "y": 64,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-48",
+            "x": 0,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-49",
+            "x": 32,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-50",
+            "x": 64,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-51",
+            "x": 96,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-52",
+            "x": 128,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-53",
+            "x": 160,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-54",
+            "x": 192,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-55",
+            "x": 224,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-56",
+            "x": 256,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-57",
+            "x": 288,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-58",
+            "x": 320,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-59",
+            "x": 352,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-60",
+            "x": 384,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-61",
+            "x": 416,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-62",
+            "x": 448,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          },
+          {
+            "id": "skyforge-canyon-prop-63",
+            "x": 480,
+            "y": 96,
+            "width": 32,
+            "height": 32,
+            "durationMs": 100
+          }
+        ],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 1,
+          "shadowOpacity": 0
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "tex_enemy_bomber",
+        "displayName": "Bomber Placeholder",
+        "kind": "enemyAircraft",
+        "status": "candidate",
+        "roles": [
+          "enemy-visual",
+          "bomber"
+        ],
+        "tags": [],
+        "sourceKey": "tex_enemy_bomber",
+        "width": 60,
+        "height": 60,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "collision": {
+          "type": "circle",
+          "radius": 24,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 32,
+          "shadowOffsetX": 10,
+          "shadowOffsetY": 14,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "tex_enemy_heavy",
+        "displayName": "Heavy Fighter Placeholder",
+        "kind": "enemyAircraft",
+        "status": "candidate",
+        "roles": [
+          "enemy-visual",
+          "heavy_fighter"
+        ],
+        "tags": [],
+        "sourceKey": "tex_enemy_heavy",
+        "width": 50,
+        "height": 50,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "collision": {
+          "type": "circle",
+          "radius": 20,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 32,
+          "shadowOffsetX": 10,
+          "shadowOffsetY": 14,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "tex_enemy_interceptor",
+        "displayName": "Interceptor Placeholder",
+        "kind": "enemyAircraft",
+        "status": "candidate",
+        "roles": [
+          "enemy-visual",
+          "interceptor"
+        ],
+        "tags": [],
+        "sourceKey": "tex_enemy_interceptor",
+        "width": 30,
+        "height": 30,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "collision": {
+          "type": "circle",
+          "radius": 12,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 32,
+          "shadowOffsetX": 10,
+          "shadowOffsetY": 14,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "tex_enemy_light",
+        "displayName": "Light Fighter Placeholder",
+        "kind": "enemyAircraft",
+        "status": "candidate",
+        "roles": [
+          "enemy-visual",
+          "light_fighter"
+        ],
+        "tags": [],
+        "sourceKey": "tex_enemy_light",
+        "width": 35,
+        "height": 35,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "collision": {
+          "type": "circle",
+          "radius": 14,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 32,
+          "shadowOffsetX": 10,
+          "shadowOffsetY": 14,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "tex_mine",
+        "displayName": "Mine Placeholder",
+        "kind": "effect",
+        "status": "candidate",
+        "roles": [
+          "enemy-visual",
+          "mine"
+        ],
+        "tags": [],
+        "sourceKey": "tex_mine",
+        "width": 25,
+        "height": 25,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "collision": {
+          "type": "circle",
+          "radius": 10,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 4,
+          "shadowOffsetX": 2,
+          "shadowOffsetY": 3,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "equipment_placeholder",
+        "displayName": "Ablative Heavy Armor Icon",
+        "kind": "ui",
+        "status": "candidate",
+        "roles": [
+          "equipment-icon",
+          "armor"
+        ],
+        "tags": [],
+        "sourceKey": "equipment_placeholder",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "player_ship",
+        "displayName": "Player Ship Placeholder",
+        "kind": "playerShip",
+        "status": "candidate",
+        "roles": [
+          "player-visual"
+        ],
+        "tags": [],
+        "sourceKey": "player_ship",
+        "width": 48,
+        "height": 48,
+        "scale": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "frames": [],
+        "collision": {
+          "type": "circle",
+          "radius": 14,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 38,
+          "shadowOffsetX": 14,
+          "shadowOffsetY": 18,
+          "shadowScaleX": 0.92,
+          "shadowScaleY": 0.48,
+          "shadowOpacity": 0.42
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-empty",
+        "displayName": "Canyon / River \u2014 Authored Environment: Empty",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:0",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-river",
+        "displayName": "Canyon / River \u2014 Authored Environment: Quiet Continuous River",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:1",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {
+          "idle": {
+            "frames": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "fps": 8,
+            "loop": true
+          }
+        },
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-sandstone",
+        "displayName": "Canyon / River \u2014 Authored Environment: Sandstone Interior",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:3",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-shoreline",
+        "displayName": "Canyon / River \u2014 Authored Environment: Shoreline Lip / Undercut",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:4",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-dust",
+        "displayName": "Canyon / River \u2014 Authored Environment: Dust",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:5",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {
+          "idle": {
+            "frames": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "fps": 8,
+            "loop": true
+          }
+        },
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-metal_platform",
+        "displayName": "Canyon / River \u2014 Authored Environment: Metal Platform",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:6",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-sandstone_boundary",
+        "displayName": "Canyon / River \u2014 Authored Environment: Blob 47 Sandstone Boundary",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:7",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-rock_cluster",
+        "displayName": "Canyon / River \u2014 Authored Environment: Rock Cluster",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:8",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-crack",
+        "displayName": "Canyon / River \u2014 Authored Environment: Erosion Crack",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:9",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-scrub",
+        "displayName": "Canyon / River \u2014 Authored Environment: Dry Scrub",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:10",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-sediment",
+        "displayName": "Canyon / River \u2014 Authored Environment: Sediment Patch",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:11",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      },
+      {
+        "id": "terrain-canyon-ruin",
+        "displayName": "Canyon / River \u2014 Authored Environment: Ruin Fragment",
+        "kind": "terrainTile",
+        "status": "candidate",
+        "roles": [
+          "terrain-material",
+          "none"
+        ],
+        "tags": [],
+        "sourceKey": "canyon:12",
+        "width": 32,
+        "height": 32,
+        "scale": 1,
+        "pivot": {
+          "x": 0,
+          "y": 0
+        },
+        "frames": [],
+        "hardpoints": [],
+        "presentation": {
+          "altitude": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "shadowScaleX": 1,
+          "shadowScaleY": 0.65,
+          "shadowOpacity": 0.35
+        },
+        "animations": {},
+        "atlasFrameIds": []
+      }
+    ],
+    "tilesets": [
+      {
+        "id": "skyforge-canyon-default",
+        "displayName": "Skyforge Canyon Default",
+        "resourceId": "skyforge-canyon-default-resource",
+        "tileSize": 32,
+        "columns": 16,
+        "rows": 30,
+        "margin": 0,
+        "spacing": 0,
+        "materialIds": [
+          "sandstone-boundary",
+          "shoreline",
+          "rock-cluster",
+          "crack",
+          "scrub",
+          "sediment",
+          "ruin",
+          "metal-platform"
+        ],
+        "autotileRule": "blob47",
+        "autotileMappings": {
+          "0": 1,
+          "1": 5,
+          "2": 9,
+          "3": 13,
+          "4": 17,
+          "5": 21,
+          "6": 25,
+          "7": 29,
+          "8": 33,
+          "9": 37,
+          "10": 41,
+          "11": 45,
+          "12": 49,
+          "13": 53,
+          "14": 57,
+          "15": 61,
+          "19": 65,
+          "23": 69,
+          "27": 73,
+          "31": 77,
+          "38": 81,
+          "39": 85,
+          "46": 89,
+          "47": 93,
+          "55": 97,
+          "63": 101,
+          "76": 105,
+          "77": 109,
+          "78": 113,
+          "79": 117,
+          "95": 121,
+          "110": 125,
+          "111": 129,
+          "127": 133,
+          "137": 137,
+          "139": 141,
+          "141": 145,
+          "143": 149,
+          "155": 153,
+          "159": 157,
+          "175": 161,
+          "191": 165,
+          "205": 169,
+          "207": 173,
+          "223": 177,
+          "239": 181,
+          "255": 185
+        },
+        "tiles": [
+          {
+            "index": 1,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 2,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 3,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 4,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 5,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 6,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 7,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 8,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 9,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 10,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 11,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 12,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 13,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 14,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 15,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 16,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 17,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 18,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 19,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 20,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 21,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 22,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 23,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 24,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 25,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 26,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 27,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 28,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 29,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 30,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 31,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 32,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 33,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 34,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 35,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 36,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 37,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 38,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 39,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 40,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 41,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 42,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 43,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 44,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 45,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 46,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 47,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 48,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 49,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 50,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 51,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 52,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 53,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 54,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 55,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 56,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 57,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 58,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 59,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 60,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 61,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 62,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 63,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 64,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 65,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 66,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 67,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 68,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 69,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 70,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 71,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 72,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 73,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 74,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 75,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 76,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 77,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 78,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 79,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 80,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 81,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 82,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 83,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 84,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 85,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 86,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 87,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 88,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 89,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 90,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 91,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 92,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 93,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 94,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 95,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 96,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 97,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 98,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 99,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 100,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 101,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 102,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 103,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 104,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 105,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 106,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 107,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 108,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 109,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 110,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 111,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 112,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 113,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 114,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 115,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 116,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 117,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 118,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 119,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 120,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 121,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 122,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 123,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 124,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 125,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 126,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 127,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 128,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 129,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 130,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 131,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 132,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 133,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 134,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 135,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 136,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 137,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 138,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 139,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 140,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 141,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 142,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 143,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 144,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 145,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 146,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 147,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 148,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 149,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 150,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 151,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 152,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 153,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 154,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 155,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 156,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 157,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 158,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 159,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 160,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 161,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 162,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 163,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 164,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 165,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 166,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 167,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 168,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 169,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 170,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 171,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 172,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 173,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 174,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 175,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 176,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 177,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 178,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 179,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 180,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 181,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 182,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 183,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 184,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 185,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 186,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 187,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 188,
+            "materialId": "sandstone-boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 189,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 190,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 191,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 192,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 193,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 194,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 195,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 196,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 197,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 198,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 199,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 200,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 201,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 202,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 203,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 204,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 205,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 206,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 207,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 208,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 209,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 210,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 211,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 212,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 213,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 214,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 215,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 216,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 217,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 218,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 219,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 220,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 221,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 222,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 223,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 224,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 225,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 226,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 227,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 228,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 229,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 230,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 231,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 232,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 233,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 234,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 235,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 236,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 237,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 238,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 239,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 240,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 241,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 242,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 243,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 244,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 245,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 246,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 247,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 248,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 249,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 250,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 251,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 252,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 253,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 254,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 255,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 256,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 257,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 258,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 259,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 260,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 261,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 262,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 263,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 264,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 265,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 266,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 267,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 268,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 269,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 270,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 271,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 272,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 273,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 274,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 275,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 276,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 277,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 278,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 279,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 280,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 281,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 282,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 283,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 284,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 285,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 286,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 287,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 288,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 289,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 290,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 291,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 292,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 293,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 294,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 295,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 296,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 297,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 298,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 299,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 300,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 301,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 302,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 303,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 304,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 305,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 306,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 307,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 308,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 309,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 310,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 311,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 312,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 313,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 314,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 315,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 316,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 317,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 318,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 319,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 320,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 321,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 322,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 323,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 324,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 325,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 326,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 327,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 328,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 329,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 330,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 331,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 332,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 333,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 334,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 335,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 336,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 337,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 338,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 339,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 340,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 341,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 342,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 343,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 344,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 345,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 346,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 347,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 348,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 349,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 350,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 351,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 352,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 353,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 354,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 355,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 356,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 357,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 358,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 359,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 360,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 361,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 362,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 363,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 364,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 365,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 366,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 367,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 368,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 369,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 370,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 371,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 372,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 373,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 374,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 375,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 376,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 377,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 378,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 379,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 380,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 381,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 382,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 383,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 384,
+            "materialId": "rock-cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 385,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 386,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 387,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 388,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 389,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 390,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 391,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 392,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 393,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 394,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 395,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 396,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 397,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 398,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 399,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 400,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 401,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 402,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 403,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 404,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 405,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 406,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 407,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 408,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 409,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 410,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 411,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 412,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 413,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 414,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 415,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 416,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 417,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 418,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 419,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 420,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 421,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 422,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 423,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 424,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 425,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 426,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 427,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 428,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 429,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 430,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 431,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 432,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 433,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 434,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 435,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 436,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 437,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 438,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 439,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 440,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 441,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 442,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 443,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 444,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 445,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 446,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 447,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 448,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 449,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 450,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 451,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 452,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 453,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 454,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 455,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 456,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 457,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 458,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 459,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 460,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 461,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 462,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 463,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 464,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 465,
+            "materialId": "metal-platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          }
+        ]
+      },
+      {
+        "id": "canyon-procedural-tileset",
+        "displayName": "Canyon / River \u2014 Authored Environment Procedural Tiles",
+        "tileSize": 32,
+        "columns": 17,
+        "rows": 1,
+        "margin": 0,
+        "spacing": 0,
+        "materialIds": [
+          "empty",
+          "river",
+          "sandstone",
+          "shoreline",
+          "dust",
+          "metal_platform",
+          "sandstone_boundary",
+          "rock_cluster",
+          "crack",
+          "scrub",
+          "sediment",
+          "ruin"
+        ],
+        "autotileRule": "cardinal",
+        "autotileMappings": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10,
+          "11": 11,
+          "12": 12,
+          "13": 13,
+          "14": 14,
+          "15": 15
+        },
+        "tiles": [
+          {
+            "index": 0,
+            "materialId": "empty",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 1,
+            "materialId": "river",
+            "collisionRole": "none",
+            "animationFrames": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "animationFps": 8
+          },
+          {
+            "index": 2,
+            "materialId": "sandstone",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 3,
+            "materialId": "shoreline",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 4,
+            "materialId": "dust",
+            "collisionRole": "none",
+            "animationFrames": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "animationFps": 8
+          },
+          {
+            "index": 5,
+            "materialId": "metal_platform",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 6,
+            "materialId": "sandstone_boundary",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 7,
+            "materialId": "rock_cluster",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 8,
+            "materialId": "crack",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 9,
+            "materialId": "scrub",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 10,
+            "materialId": "sediment",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          },
+          {
+            "index": 11,
+            "materialId": "ruin",
+            "collisionRole": "none",
+            "animationFrames": [],
+            "animationFps": 8
+          }
+        ]
+      }
+    ],
+    "atlases": []
+  }
+}

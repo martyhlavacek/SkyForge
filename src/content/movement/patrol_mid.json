@@ -1,0 +1,9 @@
+{
+  "id": "patrol_mid",
+  "type": "patrol",
+  "y": 200,
+  "horizontalSpeed": 120,
+  "leftX": 80,
+  "rightX": 460,
+  "entrySpeed": 160
+}

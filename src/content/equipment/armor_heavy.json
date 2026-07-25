@@ -1,0 +1,33 @@
+{
+  "id": "armor_heavy",
+  "displayName": "Ablative Heavy Armor",
+  "description": "Large armor gain at a substantial mass cost.",
+  "category": "armor",
+  "tier": 1,
+  "purchaseCost": 1800,
+  "resaleRate": 0.75,
+  "mass": 7,
+  "passivePowerDraw": 0,
+  "compatibilityTags": [],
+  "roleTags": [
+    "defense",
+    "heavy"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 800,
+      "description": "Layered composite upgrade",
+      "modifiers": {
+        "armorBonus": 12
+      }
+    }
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "sizeClass": "large",
+  "armorBonus": 70
+}

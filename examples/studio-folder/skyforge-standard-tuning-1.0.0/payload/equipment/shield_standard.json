@@ -1,0 +1,23 @@
+{
+  "id": "shield_standard",
+  "displayName": "Aegis Shield",
+  "description": "Balanced capacity and recharge profile.",
+  "tier": 0,
+  "purchaseCost": 0,
+  "resaleRate": 0.75,
+  "mass": 3,
+  "passivePowerDraw": 2,
+  "compatibilityTags": [],
+  "roleTags": [
+    "balanced"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [],
+  "category": "shield",
+  "sizeClass": "medium",
+  "capacity": 60,
+  "rechargeDelay": 3,
+  "rechargeRate": 9,
+  "energyPerPoint": 0.55
+}

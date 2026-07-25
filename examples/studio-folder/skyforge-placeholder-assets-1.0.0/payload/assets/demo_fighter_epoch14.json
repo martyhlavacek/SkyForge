@@ -1,0 +1,111 @@
+{
+  "id": "demo_fighter_epoch14",
+  "displayName": "Epoch 14 Demo Fighter",
+  "kind": "enemyAircraft",
+  "status": "approved",
+  "roles": [
+    "enemy-visual",
+    "asset-studio-demo"
+  ],
+  "tags": [
+    "demo",
+    "animated",
+    "aircraft"
+  ],
+  "resourceId": "demo-fighter-sheet-resource",
+  "width": 48,
+  "height": 48,
+  "scale": 1,
+  "pivot": {
+    "x": 0.5,
+    "y": 0.48
+  },
+  "frames": [
+    {
+      "id": "demo_fighter_epoch14-frame-0",
+      "x": 0,
+      "y": 0,
+      "width": 48,
+      "height": 48,
+      "durationMs": 100
+    },
+    {
+      "id": "demo_fighter_epoch14-frame-1",
+      "x": 48,
+      "y": 0,
+      "width": 48,
+      "height": 48,
+      "durationMs": 100
+    },
+    {
+      "id": "demo_fighter_epoch14-frame-2",
+      "x": 96,
+      "y": 0,
+      "width": 48,
+      "height": 48,
+      "durationMs": 100
+    },
+    {
+      "id": "demo_fighter_epoch14-frame-3",
+      "x": 144,
+      "y": 0,
+      "width": 48,
+      "height": 48,
+      "durationMs": 100
+    }
+  ],
+  "collision": {
+    "type": "circle",
+    "radius": 13,
+    "offsetX": 0,
+    "offsetY": 2
+  },
+  "hardpoints": [
+    {
+      "id": "primary-left",
+      "kind": "primary",
+      "x": 16,
+      "y": 29,
+      "rotation": 0,
+      "mirrored": true
+    },
+    {
+      "id": "primary-right",
+      "kind": "primary",
+      "x": 32,
+      "y": 29,
+      "rotation": 0,
+      "mirrored": true
+    },
+    {
+      "id": "engine",
+      "kind": "engine",
+      "x": 24,
+      "y": 43,
+      "rotation": 180,
+      "mirrored": false
+    }
+  ],
+  "presentation": {
+    "altitude": 36,
+    "shadowAssetId": "demo_fighter_shadow_epoch14",
+    "shadowOffsetX": 10,
+    "shadowOffsetY": 14,
+    "shadowScaleX": 1,
+    "shadowScaleY": 0.65,
+    "shadowOpacity": 0.38
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 8,
+      "loop": true
+    }
+  },
+  "atlasFrameIds": []
+}

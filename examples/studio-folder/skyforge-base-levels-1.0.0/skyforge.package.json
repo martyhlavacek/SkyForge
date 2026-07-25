@@ -1,0 +1,43 @@
+{
+  "format": "skyforge-level-pack",
+  "schemaVersion": 2,
+  "manifest": {
+    "id": "skyforge-base-levels",
+    "name": "Skyforge Base Levels",
+    "version": "1.0.0",
+    "description": "Built-in campaign levels and Level Package v2 terrain documents.",
+    "authors": [
+      "Marty Hlavacek"
+    ],
+    "license": "Skyforge project content",
+    "engineRange": ">=0.3.0",
+    "dependencies": [
+      {
+        "type": "tuning",
+        "id": "skyforge-standard-tuning",
+        "versionRange": "^1.0.0",
+        "optional": false
+      },
+      {
+        "type": "music",
+        "id": "skyforge-base-music",
+        "versionRange": "^1.0.0",
+        "optional": false
+      },
+      {
+        "type": "asset",
+        "id": "skyforge-placeholder-assets",
+        "versionRange": "^1.0.0",
+        "optional": false
+      }
+    ],
+    "tags": [
+      "built-in",
+      "epoch-18"
+    ],
+    "createdAt": "2026-07-14T01:00:00.000Z",
+    "updatedAt": "2026-07-14T01:00:00.000Z",
+    "contentRevision": 2
+  },
+  "reviewComments": []
+}

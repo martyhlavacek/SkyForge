@@ -1,0 +1,11 @@
+{
+  "id": "three_way_aimed",
+  "projectileTexture": "tex_bullet_enemy",
+  "count": 3,
+  "angles": [-15, 0, 15],
+  "aimed": true,
+  "speed": 200,
+  "cooldown": 1.6,
+  "firstShotDelay": 0.8,
+  "damage": 1
+}

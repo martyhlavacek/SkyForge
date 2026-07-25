@@ -1,0 +1,29 @@
+{
+  "id": "bomber_escort",
+  "movement": "stop_and_fire_bomber",
+  "members": [
+    {
+      "enemy": "bomber",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "interceptor",
+      "offsetX": -140,
+      "offsetY": 40,
+      "delay": 0.6,
+      "movementOverride": "enter_attack_exit_left",
+      "fireDelay": 0
+    },
+    {
+      "enemy": "interceptor",
+      "offsetX": 760,
+      "offsetY": 40,
+      "delay": 0.6,
+      "movementOverride": "enter_attack_exit_right",
+      "fireDelay": 0
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "turret_introduction",
+  "estimatedDuration": 12,
+  "difficulty": 2,
+  "skillsTested": [
+    "ground_target_priority"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "spawnFormation",
+      "formation": "horizontal_row",
+      "x": 270,
+      "y": -40
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "light_fighter",
+  "displayName": "Light Fighter",
+  "sprite": "tex_enemy_light",
+  "health": 20,
+  "collisionDamage": 1,
+  "scoreValue": 100,
+  "movementPattern": "sine_descent",
+  "weaponPattern": "single_aimed_shot",
+  "speed": 130,
+  "hitbox": {
+    "type": "circle",
+    "radius": 14
+  },
+  "drops": [
+    {
+      "pickup": "credits_small",
+      "chance": 0.15
+    }
+  ],
+  "creditValue": 18
+}

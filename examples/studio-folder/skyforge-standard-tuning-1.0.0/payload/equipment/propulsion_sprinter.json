@@ -1,0 +1,36 @@
+{
+  "id": "propulsion_sprinter",
+  "displayName": "Razor Drive",
+  "description": "High speed and acceleration with weaker braking.",
+  "tier": 1,
+  "purchaseCost": 1700,
+  "resaleRate": 0.75,
+  "mass": 2.5,
+  "passivePowerDraw": 1.2,
+  "compatibilityTags": [],
+  "roleTags": [
+    "mobility"
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 800,
+      "description": "Calibrated vector nozzles",
+      "modifiers": {
+        "maxSpeed": 15,
+        "thrust": 140
+      }
+    }
+  ],
+  "category": "propulsion",
+  "sizeClass": "small",
+  "maxSpeed": 370,
+  "focusRatio": 0.46,
+  "thrust": 2800,
+  "drag": 1650
+}

@@ -1,0 +1,37 @@
+{
+  "id": "weapon_rail",
+  "displayName": "Mag-Rail Lance",
+  "description": "Slow heavy penetrator with exceptional single-target damage.",
+  "tier": 1,
+  "purchaseCost": 2600,
+  "resaleRate": 0.75,
+  "mass": 5.5,
+  "passivePowerDraw": 2,
+  "compatibilityTags": [],
+  "roleTags": [
+    "precision",
+    "heavy"
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 1200,
+      "description": "Overcharged accelerator",
+      "modifiers": {
+        "weaponDamageMultiplier": 1.18
+      }
+    }
+  ],
+  "category": "primaryWeapon",
+  "weaponDefId": "rail_lance",
+  "hardpointClass": "heavy",
+  "energyPerVolley": 14,
+  "damageMultiplier": 1,
+  "fireIntervalMultiplier": 1,
+  "targetDomain": "both"
+}

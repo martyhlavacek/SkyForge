@@ -1,0 +1,33 @@
+{
+  "assets": [
+    "demo_fighter_epoch14",
+    "demo_fighter_shadow_epoch14",
+    "skyforge_canyon_water_plane",
+    "skyforge_canyon_sandstone_plane",
+    "skyforge_canyon_props",
+    "tex_enemy_bomber",
+    "tex_enemy_heavy",
+    "tex_enemy_interceptor",
+    "tex_enemy_light",
+    "tex_mine",
+    "equipment_placeholder",
+    "player_ship",
+    "terrain-canyon-empty",
+    "terrain-canyon-river",
+    "terrain-canyon-sandstone",
+    "terrain-canyon-shoreline",
+    "terrain-canyon-dust",
+    "terrain-canyon-metal_platform",
+    "terrain-canyon-sandstone_boundary",
+    "terrain-canyon-rock_cluster",
+    "terrain-canyon-crack",
+    "terrain-canyon-scrub",
+    "terrain-canyon-sediment",
+    "terrain-canyon-ruin"
+  ],
+  "tilesets": [
+    "skyforge-canyon-default",
+    "canyon-procedural-tileset"
+  ],
+  "atlases": []
+}

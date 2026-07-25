@@ -1,0 +1,34 @@
+{
+  "id": "left_sweep",
+  "movement": "sweep_left",
+  "members": [
+    {
+      "enemy": "light_fighter",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0.25,
+      "fireDelay": 0.3
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0.5,
+      "fireDelay": 0.6
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0.75,
+      "fireDelay": 0.9
+    }
+  ]
+}

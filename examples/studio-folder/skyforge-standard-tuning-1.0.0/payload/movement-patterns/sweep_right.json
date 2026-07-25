@@ -1,0 +1,7 @@
+{
+  "id": "sweep_right",
+  "type": "sweep",
+  "fromSide": "right",
+  "angleDeg": 160,
+  "speed": 220
+}

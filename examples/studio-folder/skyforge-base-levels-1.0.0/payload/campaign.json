@@ -1,0 +1,9 @@
+{
+  "id": "skyforge-campaign-alpha",
+  "displayName": "Skyforge Campaign Alpha",
+  "levelOrder": [
+    "level_01",
+    "level_boss_test",
+    "level_dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ring_burst",
+  "projectileTexture": "tex_bullet_enemy",
+  "count": 12,
+  "angles": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330
+  ],
+  "aimed": false,
+  "speed": 120,
+  "cooldown": 2.5,
+  "firstShotDelay": 1,
+  "damage": 1,
+  "lifetime": 6
+}

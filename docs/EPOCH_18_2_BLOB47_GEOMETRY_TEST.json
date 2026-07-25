@@ -1,0 +1,112 @@
+{
+  "release": "SkyForge Epoch 18.2",
+  "passed": true,
+  "diagonalBitPairsTested": 52,
+  "minimumPairChangedPixels": 64,
+  "minimumPairMeanDifference": 14.484,
+  "diagonals": {
+    "19": {
+      "slope": 1.0,
+      "rSquared": 1.0,
+      "opaquePixels": 528
+    },
+    "38": {
+      "slope": -1.0,
+      "rSquared": 1.0,
+      "opaquePixels": 528
+    },
+    "76": {
+      "slope": 1.0,
+      "rSquared": 1.0,
+      "opaquePixels": 528
+    },
+    "137": {
+      "slope": -1.0,
+      "rSquared": 1.0,
+      "opaquePixels": 528
+    }
+  },
+  "innerCurves": {
+    "127": {
+      "changedPixels": 64,
+      "radiusX": 8,
+      "radiusY": 8,
+      "lineRSquared": 0.8004
+    },
+    "191": {
+      "changedPixels": 64,
+      "radiusX": 8,
+      "radiusY": 8,
+      "lineRSquared": 0.8004
+    },
+    "223": {
+      "changedPixels": 64,
+      "radiusX": 8,
+      "radiusY": 8,
+      "lineRSquared": 0.8004
+    },
+    "239": {
+      "changedPixels": 64,
+      "radiusX": 8,
+      "radiusY": 8,
+      "lineRSquared": 0.8004
+    }
+  },
+  "map": {
+    "leftDiagonalRuns": [
+      [
+        12,
+        16,
+        1
+      ],
+      [
+        25,
+        29,
+        -1
+      ],
+      [
+        72,
+        75,
+        1
+      ],
+      [
+        85,
+        88,
+        -1
+      ]
+    ],
+    "rightDiagonalRuns": [
+      [
+        39,
+        43,
+        -1
+      ],
+      [
+        52,
+        56,
+        1
+      ],
+      [
+        97,
+        101,
+        -1
+      ],
+      [
+        111,
+        115,
+        1
+      ]
+    ],
+    "earlyMaskCounts": {
+      "19": 11,
+      "38": 14,
+      "76": 11,
+      "137": 10,
+      "127": 13,
+      "191": 11,
+      "223": 10,
+      "239": 10
+    }
+  },
+  "evidenceImage": "docs/EPOCH_18_2_BLOB47_GEOMETRY_EVIDENCE.png"
+}

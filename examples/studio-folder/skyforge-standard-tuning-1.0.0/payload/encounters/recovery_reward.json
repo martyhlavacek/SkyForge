@@ -1,0 +1,49 @@
+{
+  "id": "recovery_reward",
+  "estimatedDuration": 8,
+  "difficulty": 1,
+  "skillsTested": [],
+  "events": [
+    {
+      "at": 0,
+      "type": "setScrollSpeed",
+      "multiplier": 0.7
+    },
+    {
+      "at": 1,
+      "type": "spawnPickup",
+      "pickup": "shield",
+      "x": 180,
+      "y": -40
+    },
+    {
+      "at": 2,
+      "type": "spawnPickup",
+      "pickup": "pickup_spread",
+      "x": 360,
+      "y": -40
+    },
+    {
+      "at": 3,
+      "type": "spawnPickup",
+      "pickup": "credits_large",
+      "x": 270,
+      "y": -40
+    },
+    {
+      "at": 4,
+      "type": "spawnPickup",
+      "pickup": "weapon_upgrade",
+      "x": 270,
+      "y": -40
+    },
+    {
+      "at": 7.5,
+      "type": "setScrollSpeed",
+      "multiplier": 1
+    }
+  ],
+  "completion": {
+    "type": "duration"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "utility_credit_magnet",
+  "displayName": "Credit Tractor",
+  "description": "Increases attraction range for credit pickups.",
+  "category": "utility",
+  "tier": 1,
+  "purchaseCost": 1250,
+  "resaleRate": 0.75,
+  "mass": 1,
+  "passivePowerDraw": 1,
+  "compatibilityTags": [],
+  "roleTags": [
+    "economy"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 600,
+      "description": "Extended tractor field",
+      "modifiers": {
+        "pickupMagnetRadius": 35
+      }
+    }
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "modifiers": {
+    "pickupMagnetRadius": 85
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "hull_bulwark",
+  "displayName": "Bulwark Gunship",
+  "description": "Heavy frame with deep armor and large equipment capacity.",
+  "category": "hull",
+  "tier": 1,
+  "purchaseCost": 3200,
+  "resaleRate": 0.75,
+  "mass": 7,
+  "passivePowerDraw": 1,
+  "compatibilityTags": [],
+  "roleTags": [
+    "defense",
+    "heavy"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 1100,
+      "description": "Reinforced internal lattice",
+      "modifiers": {
+        "armorBonus": 18
+      }
+    }
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "baseArmor": 145,
+  "nominalMass": 24,
+  "maxSupportedMass": 36,
+  "speedFactor": 0.88,
+  "thrustFactor": 0.9,
+  "shieldFactor": 1.12,
+  "utilitySlots": 2,
+  "allowedPrimaryClasses": [
+    "medium",
+    "heavy"
+  ],
+  "allowedSecondaryClasses": [
+    "missile",
+    "rocket",
+    "bomb",
+    "universal"
+  ],
+  "allowedPropulsionSizes": [
+    "medium",
+    "large"
+  ],
+  "allowedGeneratorSizes": [
+    "medium",
+    "large"
+  ],
+  "allowedShieldSizes": [
+    "medium",
+    "large"
+  ],
+  "allowedArmorSizes": [
+    "small",
+    "medium",
+    "large"
+  ],
+  "navigationEnvelope": {
+    "collisionRadius": 6,
+    "minimumCorridorWidth": 66
+  }
+}

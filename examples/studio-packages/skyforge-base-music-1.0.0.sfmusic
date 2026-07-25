@@ -1,0 +1,132 @@
+{
+  "format": "skyforge-music-pack",
+  "schemaVersion": 2,
+  "manifest": {
+    "id": "skyforge-base-music",
+    "name": "Skyforge Base Music",
+    "version": "1.0.0",
+    "description": "Runtime-ready adaptive cue definitions and verified audio resources. Music is authored externally.",
+    "authors": [
+      "Marty Hlavacek"
+    ],
+    "license": "Skyforge project content",
+    "engineRange": ">=0.3.0",
+    "dependencies": [],
+    "tags": [
+      "built-in",
+      "epoch-18"
+    ],
+    "createdAt": "2026-07-14T01:00:00.000Z",
+    "updatedAt": "2026-07-14T01:00:00.000Z",
+    "contentRevision": 2
+  },
+  "resources": [
+    {
+      "id": "audio-1",
+      "uri": "audio/music/mission_01/mission_01_full.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content"
+    },
+    {
+      "id": "audio-2",
+      "uri": "audio/music/mission_01/mission_01_drums.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content"
+    },
+    {
+      "id": "audio-3",
+      "uri": "audio/music/mission_01/mission_01_bass.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content"
+    },
+    {
+      "id": "audio-4",
+      "uri": "audio/music/mission_01/mission_01_harmony.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content"
+    },
+    {
+      "id": "audio-5",
+      "uri": "audio/music/mission_01/mission_01_lead.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content"
+    }
+  ],
+  "reviewComments": [],
+  "payload": {
+    "cues": [
+      {
+        "id": "coastal_assault",
+        "displayName": "Coastal Assault — Retro FM Demo",
+        "bpm": 128,
+        "beatsPerBar": 4,
+        "loopStartSeconds": 0,
+        "loopEndSeconds": 60,
+        "stems": [
+          {
+            "id": "drums",
+            "asset": "audio/music/mission_01/mission_01_drums.ogg",
+            "defaultGain": 0.9,
+            "gains": {
+              "recovery": 0.2,
+              "normal": 0.62,
+              "combat": 0.85,
+              "critical": 1,
+              "boss": 1.08
+            }
+          },
+          {
+            "id": "bass",
+            "asset": "audio/music/mission_01/mission_01_bass.ogg",
+            "defaultGain": 0.9,
+            "gains": {
+              "recovery": 0.5,
+              "normal": 0.75,
+              "combat": 0.9,
+              "critical": 1,
+              "boss": 1.08
+            }
+          },
+          {
+            "id": "harmony",
+            "asset": "audio/music/mission_01/mission_01_harmony.ogg",
+            "defaultGain": 0.78,
+            "gains": {
+              "recovery": 0.72,
+              "normal": 0.78,
+              "combat": 0.86,
+              "critical": 0.94,
+              "boss": 1
+            }
+          },
+          {
+            "id": "lead",
+            "asset": "audio/music/mission_01/mission_01_lead.ogg",
+            "defaultGain": 0.72,
+            "gains": {
+              "recovery": 0.22,
+              "normal": 0.52,
+              "combat": 0.75,
+              "critical": 0.94,
+              "boss": 1.08
+            }
+          }
+        ],
+        "fullMix": "audio/music/mission_01/mission_01_full.ogg",
+        "transitions": {}
+      },
+      {
+        "id": "none",
+        "displayName": "Silence",
+        "bpm": 120,
+        "beatsPerBar": 4,
+        "loopStartSeconds": 0,
+        "loopEndSeconds": 0,
+        "stems": [],
+        "transitions": {}
+      }
+    ],
+    "instruments": [],
+    "compositions": []
+  }
+}

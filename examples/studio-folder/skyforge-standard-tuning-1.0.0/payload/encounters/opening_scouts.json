@@ -1,0 +1,34 @@
+{
+  "id": "opening_scouts",
+  "estimatedDuration": 16,
+  "difficulty": 1,
+  "skillsTested": [
+    "basic_aim"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "spawnFormation",
+      "formation": "v_scouts",
+      "x": 270,
+      "y": -40
+    },
+    {
+      "at": 4,
+      "type": "spawnFormation",
+      "formation": "horizontal_row",
+      "x": 270,
+      "y": -40
+    },
+    {
+      "at": 8,
+      "type": "spawnFormation",
+      "formation": "v_scouts",
+      "x": 180,
+      "y": -40
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

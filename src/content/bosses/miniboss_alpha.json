@@ -1,0 +1,35 @@
+{
+  "id": "miniboss_alpha",
+  "displayName": "Sentinel",
+  "sprite": "tex_boss_mini",
+  "totalHealth": 600,
+  "hitboxRadius": 40,
+  "defeatDuration": 2.5,
+  "enrage": {
+    "afterSeconds": 45,
+    "cooldownMultiplier": 0.6
+  },
+  "phases": [
+    {
+      "name": "Opening Salvo",
+      "healthThreshold": 0.5,
+      "movement": "boss_patrol_slow",
+      "weaponPatterns": [
+        "three_way_aimed",
+        "ring_burst"
+      ],
+      "telegraphDuration": 1.0
+    },
+    {
+      "name": "Frenzy",
+      "healthThreshold": 0.0,
+      "movement": "boss_patrol_fast",
+      "weaponPatterns": [
+        "five_way_spread",
+        "boss_aimed_volley"
+      ],
+      "telegraphDuration": 1.2
+    }
+  ],
+  "creditValue": 250
+}

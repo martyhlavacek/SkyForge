@@ -1,0 +1,36 @@
+{
+  "id": "pinch_attack",
+  "movement": "enter_attack_exit_left",
+  "members": [
+    {
+      "enemy": "interceptor",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "interceptor",
+      "offsetX": 0,
+      "offsetY": 60,
+      "delay": 0.2,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "interceptor",
+      "offsetX": 620,
+      "offsetY": 0,
+      "delay": 0,
+      "movementOverride": "enter_attack_exit_right",
+      "fireDelay": 0
+    },
+    {
+      "enemy": "interceptor",
+      "offsetX": 620,
+      "offsetY": 60,
+      "delay": 0.2,
+      "movementOverride": "enter_attack_exit_right",
+      "fireDelay": 0
+    }
+  ]
+}

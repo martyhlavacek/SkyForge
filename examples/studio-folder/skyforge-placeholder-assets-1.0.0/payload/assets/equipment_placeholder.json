@@ -1,0 +1,31 @@
+{
+  "id": "equipment_placeholder",
+  "displayName": "Ablative Heavy Armor Icon",
+  "kind": "ui",
+  "status": "candidate",
+  "roles": [
+    "equipment-icon",
+    "armor"
+  ],
+  "tags": [],
+  "sourceKey": "equipment_placeholder",
+  "width": 32,
+  "height": 32,
+  "scale": 1,
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "frames": [],
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 0,
+    "shadowOffsetX": 0,
+    "shadowOffsetY": 0,
+    "shadowScaleX": 1,
+    "shadowScaleY": 0.65,
+    "shadowOpacity": 0.35
+  },
+  "animations": {},
+  "atlasFrameIds": []
+}

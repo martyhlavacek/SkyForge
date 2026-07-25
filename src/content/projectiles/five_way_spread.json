@@ -1,0 +1,11 @@
+{
+  "id": "five_way_spread",
+  "projectileTexture": "tex_bullet_enemy",
+  "count": 5,
+  "angles": [-30, -15, 0, 15, 30],
+  "aimed": false,
+  "speed": 180,
+  "cooldown": 1.2,
+  "firstShotDelay": 0.8,
+  "damage": 1
+}

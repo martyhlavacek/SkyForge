@@ -1,0 +1,65 @@
+{
+  "id": "boss_alpha",
+  "displayName": "Dreadnought Alpha",
+  "sprite": "tex_boss_alpha",
+  "totalHealth": 1800,
+  "hitboxRadius": 48,
+  "defeatDuration": 2.5,
+  "enrage": {
+    "afterSeconds": 75,
+    "cooldownMultiplier": 0.65
+  },
+  "phases": [
+    {
+      "name": "Approach",
+      "healthThreshold": 0.66,
+      "movement": "boss_patrol_slow",
+      "weaponPatterns": [
+        "boss_aimed_volley"
+      ],
+      "telegraphDuration": 1.0
+    },
+    {
+      "name": "Turret Deployment",
+      "healthThreshold": 0.33,
+      "movement": "boss_patrol_slow",
+      "weaponPatterns": [
+        "sweep_fan"
+      ],
+      "telegraphDuration": 1.4,
+      "parts": [
+        {
+          "id": "turret_left",
+          "offsetX": -70,
+          "offsetY": 10,
+          "health": 150,
+          "radius": 18,
+          "weaponPattern": "turret_part_shot",
+          "scoreValue": 300,
+          "creditValue": 75
+        },
+        {
+          "id": "turret_right",
+          "offsetX": 70,
+          "offsetY": 10,
+          "health": 150,
+          "radius": 18,
+          "weaponPattern": "turret_part_shot",
+          "scoreValue": 300,
+          "creditValue": 75
+        }
+      ]
+    },
+    {
+      "name": "Last Stand",
+      "healthThreshold": 0.0,
+      "movement": "boss_patrol_fast",
+      "weaponPatterns": [
+        "boss_aimed_volley",
+        "ring_burst"
+      ],
+      "telegraphDuration": 1.6
+    }
+  ],
+  "creditValue": 800
+}

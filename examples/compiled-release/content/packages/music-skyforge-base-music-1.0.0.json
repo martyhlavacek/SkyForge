@@ -1,0 +1,142 @@
+{
+  "format": "skyforge-music-pack",
+  "schemaVersion": 2,
+  "manifest": {
+    "id": "skyforge-base-music",
+    "name": "Skyforge Base Music",
+    "version": "1.0.0",
+    "description": "Runtime-ready adaptive cue definitions and verified audio resources. Music is authored externally.",
+    "authors": [
+      "Marty Hlavacek"
+    ],
+    "license": "Skyforge project content",
+    "engineRange": ">=0.3.0",
+    "dependencies": [],
+    "tags": [
+      "built-in",
+      "epoch-18"
+    ],
+    "createdAt": "2026-07-14T01:00:00.000Z",
+    "updatedAt": "2026-07-14T01:00:00.000Z",
+    "contentRevision": 2
+  },
+  "resources": [
+    {
+      "id": "audio-1",
+      "uri": "resources/music/cbd0c9aff9f11075-mission_01_full.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content",
+      "sha256": "cbd0c9aff9f11075d555b50bf95f8b63a9aad92f71770c1657b3a31feddf88cf",
+      "bytes": 539359
+    },
+    {
+      "id": "audio-2",
+      "uri": "resources/music/4426c19a7f3b8417-mission_01_drums.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content",
+      "sha256": "4426c19a7f3b84176b8faeb3a692eab74b65629eb6dae19c6686020c0c3d13ea",
+      "bytes": 346630
+    },
+    {
+      "id": "audio-3",
+      "uri": "resources/music/f61a1259e56eacf4-mission_01_bass.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content",
+      "sha256": "f61a1259e56eacf47c4ada6cb656b8e085114808e3de81da89753159d2493092",
+      "bytes": 166204
+    },
+    {
+      "id": "audio-4",
+      "uri": "resources/music/ee11f7492417b8b6-mission_01_harmony.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content",
+      "sha256": "ee11f7492417b8b6e691b4be43bc1d77ffafdaa730d58006b30e7efed5aa8d31",
+      "bytes": 538328
+    },
+    {
+      "id": "audio-5",
+      "uri": "resources/music/b354fb1387df1d6d-mission_01_lead.ogg",
+      "mediaType": "audio/ogg",
+      "license": "Skyforge project content",
+      "sha256": "b354fb1387df1d6d9f13160e1fa39f72416f5350b541f17e528d9336ebeded88",
+      "bytes": 349898
+    }
+  ],
+  "reviewComments": [],
+  "payload": {
+    "cues": [
+      {
+        "id": "coastal_assault",
+        "displayName": "Coastal Assault — Retro FM Demo",
+        "bpm": 128,
+        "beatsPerBar": 4,
+        "loopStartSeconds": 0,
+        "loopEndSeconds": 60,
+        "stems": [
+          {
+            "id": "drums",
+            "asset": "audio/music/mission_01/mission_01_drums.ogg",
+            "defaultGain": 0.9,
+            "gains": {
+              "recovery": 0.2,
+              "normal": 0.62,
+              "combat": 0.85,
+              "critical": 1,
+              "boss": 1.08
+            }
+          },
+          {
+            "id": "bass",
+            "asset": "audio/music/mission_01/mission_01_bass.ogg",
+            "defaultGain": 0.9,
+            "gains": {
+              "recovery": 0.5,
+              "normal": 0.75,
+              "combat": 0.9,
+              "critical": 1,
+              "boss": 1.08
+            }
+          },
+          {
+            "id": "harmony",
+            "asset": "audio/music/mission_01/mission_01_harmony.ogg",
+            "defaultGain": 0.78,
+            "gains": {
+              "recovery": 0.72,
+              "normal": 0.78,
+              "combat": 0.86,
+              "critical": 0.94,
+              "boss": 1
+            }
+          },
+          {
+            "id": "lead",
+            "asset": "audio/music/mission_01/mission_01_lead.ogg",
+            "defaultGain": 0.72,
+            "gains": {
+              "recovery": 0.22,
+              "normal": 0.52,
+              "combat": 0.75,
+              "critical": 0.94,
+              "boss": 1.08
+            }
+          }
+        ],
+        "fullMix": "audio/music/mission_01/mission_01_full.ogg",
+        "transitions": {}
+      },
+      {
+        "id": "none",
+        "displayName": "Silence",
+        "bpm": 120,
+        "beatsPerBar": 4,
+        "loopStartSeconds": 0,
+        "loopEndSeconds": 0,
+        "stems": [],
+        "transitions": {}
+      }
+    ],
+    "instruments": [],
+    "compositions": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "heavy_escort_push",
+  "estimatedDuration": 18,
+  "difficulty": 3,
+  "skillsTested": ["target_priority", "sustained_dps"],
+  "events": [
+    { "at": 0, "type": "spawnFormation", "formation": "escort_heavy", "x": 270, "y": -60 },
+    { "at": 8, "type": "spawnPickup", "pickup": "weapon_upgrade", "x": 270, "y": -40, "condition": "heavy_fighter_destroyed" },
+    { "at": 9, "type": "spawnFormation", "formation": "horizontal_row", "x": 270, "y": -40 }
+  ],
+  "completion": { "type": "allClear" }
+}

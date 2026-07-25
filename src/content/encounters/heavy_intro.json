@@ -1,0 +1,11 @@
+{
+  "id": "heavy_intro",
+  "estimatedDuration": 14,
+  "difficulty": 2,
+  "skillsTested": ["target_priority"],
+  "events": [
+    { "at": 0, "type": "spawnEnemy", "enemy": "heavy_fighter", "x": 270, "y": -60 },
+    { "at": 6, "type": "spawnPickup", "pickup": "weapon_upgrade", "x": 270, "y": -40, "condition": "heavy_fighter_destroyed" }
+  ],
+  "completion": { "type": "allClear" }
+}

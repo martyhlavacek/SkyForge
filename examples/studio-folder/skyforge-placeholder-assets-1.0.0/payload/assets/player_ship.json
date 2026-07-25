@@ -1,0 +1,36 @@
+{
+  "id": "player_ship",
+  "displayName": "Player Ship Placeholder",
+  "kind": "playerShip",
+  "status": "candidate",
+  "roles": [
+    "player-visual"
+  ],
+  "tags": [],
+  "sourceKey": "player_ship",
+  "width": 48,
+  "height": 48,
+  "scale": 1,
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "frames": [],
+  "collision": {
+    "type": "circle",
+    "radius": 14,
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 38,
+    "shadowOffsetX": 14,
+    "shadowOffsetY": 18,
+    "shadowScaleX": 0.92,
+    "shadowScaleY": 0.48,
+    "shadowOpacity": 0.42
+  },
+  "animations": {},
+  "atlasFrameIds": []
+}

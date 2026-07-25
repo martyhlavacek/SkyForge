@@ -1,0 +1,10 @@
+{
+  "formatVersion": "2.0",
+  "id": "level_01_canyon",
+  "levelId": "level_01",
+  "mapId": "canyon_passage",
+  "collisionId": "canyon_passage_collision",
+  "routeSetId": "canyon_passage_routes",
+  "objectSetId": "canyon_passage_objects",
+  "biomeId": "canyon"
+}

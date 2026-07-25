@@ -1,0 +1,92 @@
+{
+  "format": "skyforge-lock",
+  "schemaVersion": 1,
+  "workspace": {
+    "id": "skyforge-main-workspace",
+    "version": "1.0.0",
+    "fingerprint": "fnv1a-a6ad22ab"
+  },
+  "packages": [
+    {
+      "type": "level",
+      "id": "skyforge-base-levels",
+      "version": "1.0.0",
+      "contentRevision": 2,
+      "fingerprint": "fnv1a-9cf1de28",
+      "resources": []
+    },
+    {
+      "type": "tuning",
+      "id": "skyforge-standard-tuning",
+      "version": "1.0.0",
+      "contentRevision": 2,
+      "fingerprint": "fnv1a-458ca3f6",
+      "resources": []
+    },
+    {
+      "type": "music",
+      "id": "skyforge-base-music",
+      "version": "1.0.0",
+      "contentRevision": 2,
+      "fingerprint": "fnv1a-3da3bdcc",
+      "resources": [
+        {
+          "id": "audio-1"
+        },
+        {
+          "id": "audio-2"
+        },
+        {
+          "id": "audio-3"
+        },
+        {
+          "id": "audio-4"
+        },
+        {
+          "id": "audio-5"
+        }
+      ]
+    },
+    {
+      "type": "asset",
+      "id": "skyforge-placeholder-assets",
+      "version": "1.0.0",
+      "contentRevision": 2,
+      "fingerprint": "fnv1a-e35c27d7",
+      "resources": [
+        {
+          "id": "demo-fighter-shadow-resource",
+          "sha256": "2a37b6f3e9aee052746935ba6d3fc5b6526232fe21f2d4fc82089613d10ac99c",
+          "bytes": 240
+        },
+        {
+          "id": "demo-fighter-sheet-resource",
+          "sha256": "0bdb30642d43c8dab25c800ad35726a3aabb853f67f0ce54dd130312ee994ae9",
+          "bytes": 881
+        },
+        {
+          "id": "skyforge-canyon-default-resource",
+          "sha256": "9d7d2af586ac37ff642e825b06cb4605f62ead563352333aaaa4762d3fd19b43",
+          "bytes": 361412
+        },
+        {
+          "id": "skyforge-canyon-props-resource",
+          "sha256": "72a6dd2364d3e584cd045ee5a00c8e6a6d2f3d56ecc7386b2adb5cf5f2b8a2b8",
+          "bytes": 131877
+        },
+        {
+          "id": "skyforge-canyon-sandstone-resource",
+          "sha256": "cd454ad3eef7e27373c7cd49f7179e8c73122472bb6b699383fb09d5b6201dec",
+          "bytes": 315109
+        },
+        {
+          "id": "skyforge-canyon-water-resource",
+          "sha256": "011bd83323516f6e69b2bb84cadef95265eac1ff5b167bc4609da50f55d21479",
+          "bytes": 315647
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-07-14T14:52:08.512Z",
+  "fingerprint": "fnv1a-2fd29462"
+}

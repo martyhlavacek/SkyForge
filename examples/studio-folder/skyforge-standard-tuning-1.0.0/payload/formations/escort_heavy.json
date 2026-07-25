@@ -1,0 +1,45 @@
+{
+  "id": "escort_heavy",
+  "movement": "stop_and_fire_mid",
+  "members": [
+    {
+      "enemy": "heavy_fighter",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": -70,
+      "offsetY": -40,
+      "delay": 0.2,
+      "movementOverride": "sine_descent",
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 70,
+      "offsetY": -40,
+      "delay": 0.2,
+      "movementOverride": "sine_descent",
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": -110,
+      "offsetY": -90,
+      "delay": 0.4,
+      "movementOverride": "sine_descent",
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 110,
+      "offsetY": -90,
+      "delay": 0.4,
+      "movementOverride": "sine_descent",
+      "fireDelay": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "final_escalation",
+  "estimatedDuration": 20,
+  "difficulty": 5,
+  "skillsTested": ["crossfire_dodging", "target_priority", "area_denial", "endurance"],
+  "events": [
+    { "at": 0, "type": "spawnFormation", "formation": "pinch_attack", "x": -40, "y": 100 },
+    { "at": 2, "type": "spawnEnemy", "enemy": "bomber", "x": 270, "y": -60 },
+    { "at": 5, "type": "spawnFormation", "formation": "staggered_column", "x": 270, "y": -40 },
+    { "at": 9, "type": "spawnFormation", "formation": "left_sweep", "x": -40, "y": 160 },
+    { "at": 10, "type": "spawnFormation", "formation": "right_sweep", "x": 580, "y": 220 },
+    { "at": 14, "type": "spawnFormation", "formation": "escort_heavy", "x": 270, "y": -60 }
+  ],
+  "completion": { "type": "allClear" }
+}

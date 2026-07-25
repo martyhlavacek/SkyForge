@@ -1,0 +1,65 @@
+{
+  "format": "skyforge-compiled-content",
+  "schemaVersion": 1,
+  "workspaceId": "skyforge-main-workspace",
+  "workspaceVersion": "1.0.0",
+  "fingerprint": "fnv1a-38dd01f0",
+  "packageOrder": [
+    "tuning:skyforge-standard-tuning@1.0.0",
+    "music:skyforge-base-music@1.0.0",
+    "asset:skyforge-placeholder-assets@1.0.0",
+    "level:skyforge-base-levels@1.0.0"
+  ],
+  "activeLevelId": "level_01",
+  "content": {
+    "levelIds": [
+      "level_01",
+      "level_boss_test",
+      "level_dev"
+    ],
+    "tuningProfileId": "standard-balance-v1",
+    "musicCueIds": [
+      "coastal_assault",
+      "none"
+    ],
+    "assetIds": [
+      "demo_fighter_epoch14",
+      "demo_fighter_shadow_epoch14",
+      "skyforge_canyon_water_plane",
+      "skyforge_canyon_sandstone_plane",
+      "skyforge_canyon_props",
+      "tex_enemy_bomber",
+      "tex_enemy_heavy",
+      "tex_enemy_interceptor",
+      "tex_enemy_light",
+      "tex_mine",
+      "equipment_placeholder",
+      "player_ship",
+      "terrain-canyon-empty",
+      "terrain-canyon-river",
+      "terrain-canyon-sandstone",
+      "terrain-canyon-shoreline",
+      "terrain-canyon-dust",
+      "terrain-canyon-metal_platform",
+      "terrain-canyon-sandstone_boundary",
+      "terrain-canyon-rock_cluster",
+      "terrain-canyon-crack",
+      "terrain-canyon-scrub",
+      "terrain-canyon-sediment",
+      "terrain-canyon-ruin"
+    ],
+    "tilesetIds": [
+      "skyforge-canyon-default",
+      "canyon-procedural-tileset"
+    ],
+    "atlasIds": [],
+    "assetResourceIds": [
+      "demo-fighter-sheet-resource",
+      "demo-fighter-shadow-resource",
+      "skyforge-canyon-default-resource",
+      "skyforge-canyon-water-resource",
+      "skyforge-canyon-sandstone-resource",
+      "skyforge-canyon-props-resource"
+    ]
+  }
+}

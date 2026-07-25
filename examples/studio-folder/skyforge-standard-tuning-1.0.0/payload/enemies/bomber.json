@@ -1,0 +1,29 @@
+{
+  "id": "bomber",
+  "displayName": "Bomber",
+  "sprite": "tex_enemy_bomber",
+  "health": 120,
+  "collisionDamage": 1,
+  "scoreValue": 500,
+  "creditValue": 90,
+  "movementPattern": "stop_and_fire_bomber",
+  "weaponPattern": [
+    "ring_burst",
+    "mine_layer"
+  ],
+  "speed": 45,
+  "hitbox": {
+    "type": "circle",
+    "radius": 24
+  },
+  "drops": [
+    {
+      "pickup": "weapon_upgrade",
+      "chance": 0.4
+    },
+    {
+      "pickup": "credits_large",
+      "chance": 0.45
+    }
+  ]
+}

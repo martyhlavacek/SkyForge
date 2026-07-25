@@ -1,0 +1,10 @@
+{
+  "id": "rocket_pod",
+  "displayName": "Rocket Pod",
+  "projectileTexture": "tex_missile",
+  "collisionCategory": "player",
+  "levels": [
+    { "damage": 24, "fireInterval": 0.55, "projectileSpeed": 620, "projectileCount": 2, "spreadAngles": [-4, 4], "muzzles": [[-10, -10], [10, -10]] },
+    { "damage": 28, "fireInterval": 0.5, "projectileSpeed": 650, "projectileCount": 2, "spreadAngles": [-4, 4], "muzzles": [[-10, -10], [10, -10]] }
+  ]
+}

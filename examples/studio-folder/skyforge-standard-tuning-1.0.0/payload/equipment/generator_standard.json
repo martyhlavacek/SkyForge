@@ -1,0 +1,23 @@
+{
+  "id": "generator_standard",
+  "displayName": "Standard Reactor",
+  "description": "Balanced reserve, recharge, and continuous output.",
+  "tier": 0,
+  "purchaseCost": 0,
+  "resaleRate": 0.75,
+  "mass": 4,
+  "passivePowerDraw": 0,
+  "compatibilityTags": [],
+  "roleTags": [
+    "balanced"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [],
+  "category": "generator",
+  "sizeClass": "medium",
+  "energyCapacity": 100,
+  "energyRegenPerSecond": 20,
+  "maxContinuousDraw": 18,
+  "shieldEfficiency": 1
+}

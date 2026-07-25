@@ -1,0 +1,9 @@
+{
+  "id": "shield",
+  "texture": "tex_pickup_shield",
+  "effect": "shield",
+  "magnitude": 1,
+  "magnetizable": false,
+  "fallSpeed": 55,
+  "lifetime": 10
+}

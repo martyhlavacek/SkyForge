@@ -1,0 +1,8 @@
+{
+  "id": "dive_retreat_fast",
+  "type": "dive_retreat",
+  "diveTargetYOffset": 620,
+  "diveSpeed": 300,
+  "pauseDuration": 0.6,
+  "retreatSpeed": 240
+}

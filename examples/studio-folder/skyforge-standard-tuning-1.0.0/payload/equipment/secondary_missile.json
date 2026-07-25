@@ -1,0 +1,32 @@
+{
+  "id": "secondary_missile",
+  "displayName": "Wasp Missile Rack",
+  "description": "Reliable homing secondary system.",
+  "tier": 0,
+  "purchaseCost": 0,
+  "resaleRate": 0.75,
+  "mass": 2.5,
+  "passivePowerDraw": 0.5,
+  "compatibilityTags": [],
+  "roleTags": [
+    "guided"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 650,
+      "description": "Improved warhead",
+      "modifiers": {
+        "weaponDamageMultiplier": 1.15
+      }
+    }
+  ],
+  "category": "secondaryWeapon",
+  "weaponDefId": "missile_system",
+  "hardpointClass": "missile",
+  "energyPerVolley": 12,
+  "damageMultiplier": 1,
+  "fireIntervalMultiplier": 1,
+  "targetDomain": "both"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "mine",
+  "displayName": "Mine",
+  "sprite": "tex_mine",
+  "health": 1,
+  "collisionDamage": 1,
+  "scoreValue": 10,
+  "movementPattern": "static_hold",
+  "weaponPattern": null,
+  "speed": 0,
+  "hitbox": {
+    "type": "circle",
+    "radius": 10
+  },
+  "drops": [],
+  "creditValue": 3
+}

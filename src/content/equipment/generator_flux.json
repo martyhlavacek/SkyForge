@@ -1,0 +1,36 @@
+{
+  "id": "generator_flux",
+  "displayName": "Flux Reactor",
+  "description": "Rapid energy recovery with a smaller reserve.",
+  "category": "generator",
+  "tier": 1,
+  "purchaseCost": 2100,
+  "resaleRate": 0.75,
+  "mass": 3,
+  "passivePowerDraw": 0,
+  "compatibilityTags": [],
+  "roleTags": [
+    "sustain"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 950,
+      "description": "Core stabilization",
+      "modifiers": {
+        "energyCapacity": 12,
+        "energyRegen": 2
+      }
+    }
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "sizeClass": "small",
+  "energyCapacity": 78,
+  "energyRegenPerSecond": 30,
+  "maxContinuousDraw": 16,
+  "shieldEfficiency": 1.05
+}

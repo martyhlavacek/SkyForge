@@ -1,0 +1,32 @@
+{
+  "format": "skyforge-workspace",
+  "schemaVersion": 2,
+  "id": "skyforge-main-workspace",
+  "name": "Skyforge Main Workspace",
+  "version": "1.0.0",
+  "packages": {
+    "level": {
+      "type": "level",
+      "id": "skyforge-base-levels",
+      "version": "1.0.0"
+    },
+    "tuning": {
+      "type": "tuning",
+      "id": "skyforge-standard-tuning",
+      "version": "1.0.0"
+    },
+    "music": {
+      "type": "music",
+      "id": "skyforge-base-music",
+      "version": "1.0.0"
+    },
+    "asset": {
+      "type": "asset",
+      "id": "skyforge-placeholder-assets",
+      "version": "1.0.0"
+    }
+  },
+  "activeLevelId": "level_01",
+  "updatedAt": "2026-07-14T01:00:00.000Z",
+  "reviewComments": []
+}

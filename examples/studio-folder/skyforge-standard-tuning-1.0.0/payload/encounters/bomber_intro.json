@@ -1,0 +1,28 @@
+{
+  "id": "bomber_intro",
+  "estimatedDuration": 16,
+  "difficulty": 3,
+  "skillsTested": [
+    "target_priority",
+    "area_denial"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "spawnEnemy",
+      "enemy": "bomber",
+      "x": 270,
+      "y": -60
+    },
+    {
+      "at": 6,
+      "type": "spawnFormation",
+      "formation": "v_scouts",
+      "x": 270,
+      "y": -40
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

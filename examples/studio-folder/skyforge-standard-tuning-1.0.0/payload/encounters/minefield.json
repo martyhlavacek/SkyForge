@@ -1,0 +1,41 @@
+{
+  "id": "minefield",
+  "estimatedDuration": 14,
+  "difficulty": 3,
+  "skillsTested": [
+    "navigation",
+    "precision_movement"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "setScrollSpeed",
+      "multiplier": 0.7
+    },
+    {
+      "at": 0.5,
+      "type": "spawnHazard",
+      "hazard": "minefield",
+      "x": 40,
+      "y": -40,
+      "w": 460,
+      "h": 500,
+      "count": 18
+    },
+    {
+      "at": 4,
+      "type": "spawnPickup",
+      "pickup": "shield",
+      "x": 270,
+      "y": -40
+    },
+    {
+      "at": 13.5,
+      "type": "setScrollSpeed",
+      "multiplier": 1
+    }
+  ],
+  "completion": {
+    "type": "duration"
+  }
+}

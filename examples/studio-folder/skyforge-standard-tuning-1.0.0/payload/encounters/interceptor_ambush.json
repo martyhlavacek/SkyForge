@@ -1,0 +1,44 @@
+{
+  "id": "interceptor_ambush",
+  "estimatedDuration": 14,
+  "difficulty": 3,
+  "skillsTested": [
+    "reaction_time",
+    "positioning"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "spawnEnemy",
+      "enemy": "interceptor",
+      "x": -40,
+      "y": 120,
+      "movementOverride": "enter_attack_exit_left"
+    },
+    {
+      "at": 0.4,
+      "type": "spawnEnemy",
+      "enemy": "interceptor",
+      "x": 580,
+      "y": 120,
+      "movementOverride": "enter_attack_exit_right"
+    },
+    {
+      "at": 3,
+      "type": "spawnFormation",
+      "formation": "pinch_attack",
+      "x": -40,
+      "y": 100
+    },
+    {
+      "at": 7,
+      "type": "spawnFormation",
+      "formation": "v_scouts",
+      "x": 270,
+      "y": -40
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

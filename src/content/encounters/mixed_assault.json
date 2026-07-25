@@ -1,0 +1,14 @@
+{
+  "id": "mixed_assault",
+  "estimatedDuration": 22,
+  "difficulty": 4,
+  "skillsTested": ["target_priority", "area_denial", "sustained_dps"],
+  "events": [
+    { "at": 0, "type": "spawnEnemy", "enemy": "bomber", "x": 270, "y": -60 },
+    { "at": 2, "type": "spawnFormation", "formation": "escort_heavy", "x": 130, "y": -60 },
+    { "at": 6, "type": "spawnFormation", "formation": "v_scouts", "x": 400, "y": -40 },
+    { "at": 10, "type": "wait_for_clear" },
+    { "at": 10.5, "type": "spawnFormation", "formation": "bomber_escort", "x": 270, "y": -60 }
+  ],
+  "completion": { "type": "allClear" }
+}

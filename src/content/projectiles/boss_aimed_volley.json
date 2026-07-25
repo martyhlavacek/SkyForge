@@ -1,0 +1,12 @@
+{
+  "id": "boss_aimed_volley",
+  "projectileTexture": "tex_bullet_enemy",
+  "count": 3,
+  "angles": [-12, 0, 12],
+  "aimed": true,
+  "speed": 190,
+  "cooldown": 1.8,
+  "firstShotDelay": 0.5,
+  "damage": 1,
+  "lifetime": 7
+}

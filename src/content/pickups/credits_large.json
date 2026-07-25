@@ -1,0 +1,9 @@
+{
+  "id": "credits_large",
+  "texture": "tex_pickup_credit_large",
+  "effect": "credits",
+  "magnitude": 100,
+  "magnetizable": true,
+  "fallSpeed": 52,
+  "lifetime": 13
+}

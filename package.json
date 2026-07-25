@@ -1,0 +1,60 @@
+{
+  "name": "skyforge",
+  "private": true,
+  "version": "0.10.2",
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src e2e/*.ts vite.config.ts playwright.config.ts",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:all": "vitest run && playwright test",
+    "build:base:verify": "VITE_BASE=/skyforge/ npm run build && node scripts/verify-base-build.mjs",
+    "studio:unpack": "tsx scripts/studio-folder.ts unpack",
+    "studio:pack": "tsx scripts/studio-folder.ts pack",
+    "build:budget": "node scripts/check-build-budget.mjs",
+    "build:release": "npm run build && npm run build:budget",
+    "audit:release": "npm run lock:portable && npm run lint && npm run typecheck && npm run test:report && npm run terrain:verify && npm run benchmark:audit && npm run docs:evidence && npm run build:release && npm run studio:example:compile && npm audit --audit-level=high",
+    "studio:lock": "node scripts/create-studio-lock.mjs",
+    "studio:compile": "node scripts/compile-studio-release.mjs",
+    "studio:example:compile": "node scripts/compile-studio-release.mjs examples/studio-packages/skyforge-main-workspace.sfworkspace examples/studio-packages examples/studio-packages/skyforge-main-workspace.sflock .studio-release-check public",
+    "test:e2e:install": "playwright install chromium webkit",
+    "test:report": "mkdir -p .verification && vitest run --reporter=json --outputFile=.verification/vitest.json",
+    "docs:evidence": "node scripts/verify-readme-evidence.mjs",
+    "lock:portable": "node scripts/verify-portable-lock.mjs",
+    "terrain:verify": "python3 scripts/verify-canyon-textures.py && python3 scripts/verify-blob47-geometry.py",
+    "benchmark:audit": "python3 scripts/audit-canyon-benchmarks.py"
+  },
+  "dependencies": {
+    "phaser": "^4.2.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^10.7.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.5",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.63.0",
+    "vite": "^8.1.4",
+    "vitest": "^4.1.10"
+  }
+}

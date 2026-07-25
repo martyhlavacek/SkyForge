@@ -1,0 +1,156 @@
+{
+  "formatVersion": "1.0",
+  "id": "level_01",
+  "displayName": "Canyon Approach",
+  "music": "coastal_assault",
+  "durationTarget": 250,
+  "baseScrollSpeed": 100,
+  "scrollProfile": [
+    {
+      "startTime": 0,
+      "endTime": 20,
+      "speed": 70
+    },
+    {
+      "startTime": 20,
+      "endTime": 150,
+      "speed": 100
+    },
+    {
+      "startTime": 150,
+      "endTime": 175,
+      "speed": 60
+    },
+    {
+      "startTime": 175,
+      "endTime": 250,
+      "speed": 110
+    }
+  ],
+  "events": [
+    {
+      "at": 3,
+      "encounter": "opening_scouts"
+    },
+    {
+      "at": 22,
+      "encounter": "turret_introduction"
+    },
+    {
+      "at": 38,
+      "encounter": "crossfire_combination"
+    },
+    {
+      "at": 56,
+      "type": "recovery",
+      "duration": 5
+    },
+    {
+      "at": 62,
+      "encounter": "interceptor_ambush"
+    },
+    {
+      "at": 80,
+      "encounter": "heavy_escort_push"
+    },
+    {
+      "at": 100,
+      "encounter": "bomber_wall"
+    },
+    {
+      "at": 122,
+      "type": "checkpoint",
+      "name": "before_miniboss"
+    },
+    {
+      "at": 124,
+      "encounter": "miniboss_alpha"
+    },
+    {
+      "at": 152,
+      "encounter": "recovery_reward"
+    },
+    {
+      "at": 162,
+      "type": "checkpoint",
+      "name": "after_recovery"
+    },
+    {
+      "at": 164,
+      "encounter": "minefield"
+    },
+    {
+      "at": 180,
+      "encounter": "pinch_gauntlet"
+    },
+    {
+      "at": 198,
+      "encounter": "mixed_assault"
+    },
+    {
+      "at": 222,
+      "encounter": "final_escalation"
+    },
+    {
+      "at": 244,
+      "type": "checkpoint",
+      "name": "before_boss"
+    },
+    {
+      "at": 246,
+      "encounter": "boss_alpha"
+    }
+  ],
+  "groundObjects": [
+    {
+      "type": "turret",
+      "id": "turret_a1",
+      "worldY": 1600,
+      "x": 120,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_a2",
+      "worldY": 1900,
+      "x": 420,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_a3",
+      "worldY": 2400,
+      "x": 270,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_a4",
+      "worldY": 3200,
+      "x": 100,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_a5",
+      "worldY": 3600,
+      "x": 440,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_a6",
+      "worldY": 5200,
+      "x": 270,
+      "creditValue": 45
+    }
+  ],
+  "levelPackage": "level_01_canyon",
+  "metadata": {
+    "terrainPresentation": {
+      "adjacency": "blob47",
+      "riverStyle": "continuous_sheet",
+      "containsIslands": true
+    }
+  }
+}

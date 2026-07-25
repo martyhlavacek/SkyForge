@@ -1,0 +1,59 @@
+{
+  "id": "coastal_assault",
+  "displayName": "Coastal Assault — Retro FM Demo",
+  "bpm": 128,
+  "beatsPerBar": 4,
+  "loopStartSeconds": 0,
+  "loopEndSeconds": 60,
+  "fullMix": "audio/music/mission_01/mission_01_full.ogg",
+  "stems": [
+    {
+      "id": "drums",
+      "asset": "audio/music/mission_01/mission_01_drums.ogg",
+      "defaultGain": 0.9,
+      "gains": {
+        "recovery": 0.2,
+        "normal": 0.62,
+        "combat": 0.85,
+        "critical": 1,
+        "boss": 1.08
+      }
+    },
+    {
+      "id": "bass",
+      "asset": "audio/music/mission_01/mission_01_bass.ogg",
+      "defaultGain": 0.9,
+      "gains": {
+        "recovery": 0.5,
+        "normal": 0.75,
+        "combat": 0.9,
+        "critical": 1,
+        "boss": 1.08
+      }
+    },
+    {
+      "id": "harmony",
+      "asset": "audio/music/mission_01/mission_01_harmony.ogg",
+      "defaultGain": 0.78,
+      "gains": {
+        "recovery": 0.72,
+        "normal": 0.78,
+        "combat": 0.86,
+        "critical": 0.94,
+        "boss": 1
+      }
+    },
+    {
+      "id": "lead",
+      "asset": "audio/music/mission_01/mission_01_lead.ogg",
+      "defaultGain": 0.72,
+      "gains": {
+        "recovery": 0.22,
+        "normal": 0.52,
+        "combat": 0.75,
+        "critical": 0.94,
+        "boss": 1.08
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "demo-fighter-sheet-resource",
+    "uri": "assets/studio/demo_fighter_sheet.png",
+    "mediaType": "image/png",
+    "sha256": "0bdb30642d43c8dab25c800ad35726a3aabb853f67f0ce54dd130312ee994ae9",
+    "bytes": 881,
+    "filename": "demo_fighter_sheet.png",
+    "width": 192,
+    "height": 48,
+    "license": "Skyforge project demonstration asset",
+    "attribution": "Skyforge Epoch 14 procedural demo",
+    "provenance": {
+      "source": "built-in-demo",
+      "author": "Skyforge project",
+      "createdWith": "Pillow",
+      "importedAt": "2026-07-14T01:00:00.000Z",
+      "notes": "Four-frame fighter sheet for Asset Studio testing"
+    }
+  },
+  {
+    "id": "demo-fighter-shadow-resource",
+    "uri": "assets/studio/demo_fighter_shadow.png",
+    "mediaType": "image/png",
+    "sha256": "2a37b6f3e9aee052746935ba6d3fc5b6526232fe21f2d4fc82089613d10ac99c",
+    "bytes": 240,
+    "filename": "demo_fighter_shadow.png",
+    "width": 48,
+    "height": 48,
+    "license": "Skyforge project demonstration asset",
+    "attribution": "Skyforge Epoch 14 procedural demo",
+    "provenance": {
+      "source": "built-in-demo",
+      "author": "Skyforge project",
+      "createdWith": "Pillow",
+      "importedAt": "2026-07-14T01:00:00.000Z",
+      "notes": "Aircraft shadow test asset"
+    }
+  },
+  {
+    "id": "skyforge-canyon-default-resource",
+    "uri": "assets/terrain/skyforge_canyon_terrain.png",
+    "mediaType": "image/png",
+    "sha256": "9d7d2af586ac37ff642e825b06cb4605f62ead563352333aaaa4762d3fd19b43",
+    "bytes": 361412,
+    "filename": "skyforge_canyon_terrain.png",
+    "width": 512,
+    "height": 960,
+    "license": "Skyforge project demonstration asset",
+    "attribution": "Generated for Skyforge in ChatGPT and normalized by the deterministic canyon tileset pipeline",
+    "provenance": {
+      "source": "chatgpt-generated-master",
+      "author": "Skyforge project",
+      "createdWith": "External image generation and Pillow normalization",
+      "importedAt": "2026-07-14T01:00:00.000Z",
+      "notes": "480-frame terrain atlas with visibly curved inner corners, true 45-degree diagonal banks, connected exposed-edge shoreline overlays, four visual variants per Blob-47 state, and expanded environmental decoration frames"
+    }
+  },
+  {
+    "id": "skyforge-canyon-water-resource",
+    "uri": "assets/terrain/skyforge_canyon_water.png",
+    "mediaType": "image/png",
+    "sha256": "011bd83323516f6e69b2bb84cadef95265eac1ff5b167bc4609da50f55d21479",
+    "bytes": 315647,
+    "filename": "skyforge_canyon_water.png",
+    "width": 1536,
+    "height": 512,
+    "license": "Skyforge project demonstration asset",
+    "attribution": "Procedurally generated for SkyForge Epoch 18",
+    "provenance": {
+      "source": "built-in-demo",
+      "author": "Skyforge project",
+      "createdWith": "Pillow periodic texture generator",
+      "importedAt": "2026-07-14T01:00:00.000Z",
+      "notes": "Three quiet 512x512 seamless water frames used by the continuous runtime TileSprite plane"
+    }
+  },
+  {
+    "id": "skyforge-canyon-sandstone-resource",
+    "uri": "assets/terrain/skyforge_canyon_sandstone.png",
+    "mediaType": "image/png",
+    "sha256": "cd454ad3eef7e27373c7cd49f7179e8c73122472bb6b699383fb09d5b6201dec",
+    "bytes": 315109,
+    "filename": "skyforge_canyon_sandstone.png",
+    "width": 512,
+    "height": 512,
+    "license": "Skyforge project demonstration asset",
+    "attribution": "Procedurally generated for SkyForge Epoch 18",
+    "provenance": {
+      "source": "built-in-demo",
+      "author": "Skyforge project",
+      "createdWith": "Pillow periodic texture generator",
+      "importedAt": "2026-07-14T01:00:00.000Z",
+      "notes": "Continuous 512x512 sandstone source composited through Blob-47 masks at runtime"
+    }
+  },
+  {
+    "id": "skyforge-canyon-props-resource",
+    "uri": "assets/terrain/skyforge_canyon_props.png",
+    "mediaType": "image/png",
+    "sha256": "72a6dd2364d3e584cd045ee5a00c8e6a6d2f3d56ecc7386b2adb5cf5f2b8a2b8",
+    "bytes": 131877,
+    "filename": "skyforge_canyon_props.png",
+    "width": 512,
+    "height": 128,
+    "license": "Skyforge project demonstration asset",
+    "attribution": "Generated for Skyforge in ChatGPT and normalized by the deterministic canyon tileset pipeline",
+    "provenance": {
+      "source": "chatgpt-generated-master",
+      "author": "Skyforge project",
+      "createdWith": "External image generation and Pillow normalization",
+      "importedAt": "2026-07-14T01:00:00.000Z",
+      "notes": "Canyon rocks, vegetation, structures, gates, and river-channel prop frames"
+    }
+  }
+]

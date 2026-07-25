@@ -1,0 +1,2530 @@
+{
+  "format": "skyforge-tuning-pack",
+  "schemaVersion": 2,
+  "manifest": {
+    "id": "skyforge-standard-tuning",
+    "name": "Skyforge Standard Tuning",
+    "version": "1.0.0",
+    "description": "Combat, movement, encounters, equipment, and difficulty definitions.",
+    "authors": [
+      "Marty Hlavacek"
+    ],
+    "license": "Skyforge project content",
+    "engineRange": ">=0.3.0",
+    "dependencies": [],
+    "tags": [
+      "built-in",
+      "epoch-18"
+    ],
+    "createdAt": "2026-07-14T01:00:00.000Z",
+    "updatedAt": "2026-07-14T01:00:00.000Z",
+    "contentRevision": 2
+  },
+  "resources": [],
+  "reviewComments": [],
+  "payload": {
+    "profileId": "standard-balance-v1",
+    "difficulty": {
+      "id": "difficulty",
+      "levels": {
+        "easy": {
+          "enemyHealthMultiplier": 0.85,
+          "projectileSpeedMultiplier": 0.85,
+          "spawnDelayMultiplier": 1.2
+        },
+        "normal": {
+          "enemyHealthMultiplier": 1,
+          "projectileSpeedMultiplier": 1,
+          "spawnDelayMultiplier": 1
+        },
+        "hard": {
+          "enemyHealthMultiplier": 1.15,
+          "projectileSpeedMultiplier": 1.2,
+          "spawnDelayMultiplier": 0.85
+        }
+      }
+    },
+    "enemies": [
+      {
+        "id": "bomber",
+        "displayName": "Bomber",
+        "sprite": "tex_enemy_bomber",
+        "health": 120,
+        "collisionDamage": 1,
+        "scoreValue": 500,
+        "creditValue": 90,
+        "movementPattern": "stop_and_fire_bomber",
+        "weaponPattern": [
+          "ring_burst",
+          "mine_layer"
+        ],
+        "speed": 45,
+        "hitbox": {
+          "type": "circle",
+          "radius": 24
+        },
+        "drops": [
+          {
+            "pickup": "weapon_upgrade",
+            "chance": 0.4
+          },
+          {
+            "pickup": "credits_large",
+            "chance": 0.45
+          }
+        ]
+      },
+      {
+        "id": "heavy_fighter",
+        "displayName": "Heavy Fighter",
+        "sprite": "tex_enemy_heavy",
+        "health": 80,
+        "collisionDamage": 1,
+        "scoreValue": 400,
+        "creditValue": 55,
+        "movementPattern": "stop_and_fire_mid",
+        "weaponPattern": "three_way_aimed",
+        "speed": 70,
+        "hitbox": {
+          "type": "circle",
+          "radius": 20
+        },
+        "drops": [
+          {
+            "pickup": "weapon_upgrade",
+            "chance": 0.5
+          },
+          {
+            "pickup": "credits_small",
+            "chance": 0.35
+          }
+        ]
+      },
+      {
+        "id": "interceptor",
+        "displayName": "Interceptor",
+        "sprite": "tex_enemy_interceptor",
+        "health": 15,
+        "collisionDamage": 1,
+        "scoreValue": 150,
+        "creditValue": 28,
+        "movementPattern": "enter_attack_exit_left",
+        "weaponPattern": "single_aimed_shot",
+        "speed": 260,
+        "hitbox": {
+          "type": "circle",
+          "radius": 12
+        },
+        "drops": [
+          {
+            "pickup": "credits_small",
+            "chance": 0.15
+          }
+        ]
+      },
+      {
+        "id": "light_fighter",
+        "displayName": "Light Fighter",
+        "sprite": "tex_enemy_light",
+        "health": 20,
+        "collisionDamage": 1,
+        "scoreValue": 100,
+        "creditValue": 18,
+        "movementPattern": "sine_descent",
+        "weaponPattern": "single_aimed_shot",
+        "speed": 130,
+        "hitbox": {
+          "type": "circle",
+          "radius": 14
+        },
+        "drops": [
+          {
+            "pickup": "credits_small",
+            "chance": 0.15
+          }
+        ]
+      },
+      {
+        "id": "mine",
+        "displayName": "Mine",
+        "sprite": "tex_mine",
+        "health": 1,
+        "collisionDamage": 1,
+        "scoreValue": 10,
+        "creditValue": 3,
+        "movementPattern": "static_hold",
+        "weaponPattern": null,
+        "speed": 0,
+        "hitbox": {
+          "type": "circle",
+          "radius": 10
+        },
+        "drops": []
+      }
+    ],
+    "weapons": [
+      {
+        "id": "missile_system",
+        "displayName": "Missile",
+        "projectileTexture": "tex_missile",
+        "collisionCategory": "player",
+        "levels": [
+          {
+            "damage": 40,
+            "fireInterval": 1.5,
+            "projectileSpeed": 340,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                0,
+                -16
+              ]
+            ],
+            "homing": {
+              "turnRateDegPerSec": 140,
+              "acquireDelay": 0.15
+            }
+          }
+        ]
+      },
+      {
+        "id": "pulse_cannon",
+        "displayName": "Pulse",
+        "projectileTexture": "tex_bullet_player",
+        "collisionCategory": "player",
+        "levels": [
+          {
+            "damage": 10,
+            "fireInterval": 0.09,
+            "projectileSpeed": 900,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                0,
+                -18
+              ]
+            ]
+          },
+          {
+            "damage": 10,
+            "fireInterval": 0.09,
+            "projectileSpeed": 900,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                -8,
+                -14
+              ],
+              [
+                8,
+                -14
+              ]
+            ]
+          },
+          {
+            "damage": 12,
+            "fireInterval": 0.07,
+            "projectileSpeed": 900,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                -8,
+                -14
+              ],
+              [
+                8,
+                -14
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rail_lance",
+        "displayName": "Rail Lance",
+        "projectileTexture": "tex_bullet_player",
+        "collisionCategory": "player",
+        "levels": [
+          {
+            "damage": 48,
+            "fireInterval": 0.42,
+            "projectileSpeed": 1150,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                0,
+                -18
+              ]
+            ]
+          },
+          {
+            "damage": 58,
+            "fireInterval": 0.39,
+            "projectileSpeed": 1180,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                0,
+                -18
+              ]
+            ]
+          },
+          {
+            "damage": 68,
+            "fireInterval": 0.36,
+            "projectileSpeed": 1200,
+            "projectileCount": 1,
+            "spreadAngles": [
+              0
+            ],
+            "muzzles": [
+              [
+                0,
+                -18
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rocket_pod",
+        "displayName": "Rocket Pod",
+        "projectileTexture": "tex_missile",
+        "collisionCategory": "player",
+        "levels": [
+          {
+            "damage": 24,
+            "fireInterval": 0.55,
+            "projectileSpeed": 620,
+            "projectileCount": 2,
+            "spreadAngles": [
+              -4,
+              4
+            ],
+            "muzzles": [
+              [
+                -10,
+                -10
+              ],
+              [
+                10,
+                -10
+              ]
+            ]
+          },
+          {
+            "damage": 28,
+            "fireInterval": 0.5,
+            "projectileSpeed": 650,
+            "projectileCount": 2,
+            "spreadAngles": [
+              -4,
+              4
+            ],
+            "muzzles": [
+              [
+                -10,
+                -10
+              ],
+              [
+                10,
+                -10
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "spread_cannon",
+        "displayName": "Spread",
+        "projectileTexture": "tex_bullet_player",
+        "collisionCategory": "player",
+        "levels": [
+          {
+            "damage": 6,
+            "fireInterval": 0.14,
+            "projectileSpeed": 780,
+            "projectileCount": 3,
+            "spreadAngles": [
+              -12,
+              0,
+              12
+            ],
+            "muzzles": [
+              [
+                0,
+                -16
+              ]
+            ]
+          },
+          {
+            "damage": 6,
+            "fireInterval": 0.14,
+            "projectileSpeed": 780,
+            "projectileCount": 5,
+            "spreadAngles": [
+              -24,
+              -12,
+              0,
+              12,
+              24
+            ],
+            "muzzles": [
+              [
+                0,
+                -16
+              ]
+            ]
+          },
+          {
+            "damage": 7,
+            "fireInterval": 0.11,
+            "projectileSpeed": 780,
+            "projectileCount": 5,
+            "spreadAngles": [
+              -24,
+              -12,
+              0,
+              12,
+              24
+            ],
+            "muzzles": [
+              [
+                0,
+                -16
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "projectilePatterns": [
+      {
+        "id": "boss_aimed_volley",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 3,
+        "angles": [
+          -12,
+          0,
+          12
+        ],
+        "aimed": true,
+        "speed": 190,
+        "cooldown": 1.8,
+        "firstShotDelay": 0.5,
+        "damage": 1,
+        "lifetime": 7
+      },
+      {
+        "id": "five_way_spread",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 5,
+        "angles": [
+          -30,
+          -15,
+          0,
+          15,
+          30
+        ],
+        "aimed": false,
+        "speed": 180,
+        "cooldown": 1.2,
+        "firstShotDelay": 0.8,
+        "damage": 1,
+        "lifetime": 6
+      },
+      {
+        "id": "mine_layer",
+        "projectileTexture": "tex_mine",
+        "count": 1,
+        "angles": [
+          90
+        ],
+        "aimed": false,
+        "speed": 0,
+        "cooldown": 2,
+        "firstShotDelay": 1.5,
+        "damage": 1,
+        "lifetime": 8
+      },
+      {
+        "id": "ring_burst",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 12,
+        "angles": [
+          0,
+          30,
+          60,
+          90,
+          120,
+          150,
+          180,
+          210,
+          240,
+          270,
+          300,
+          330
+        ],
+        "aimed": false,
+        "speed": 120,
+        "cooldown": 2.5,
+        "firstShotDelay": 1,
+        "damage": 1,
+        "lifetime": 6
+      },
+      {
+        "id": "single_aimed_shot",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 1,
+        "angles": [
+          0
+        ],
+        "aimed": true,
+        "speed": 180,
+        "cooldown": 2,
+        "firstShotDelay": 0.8,
+        "damage": 1,
+        "lifetime": 6
+      },
+      {
+        "id": "sweep_fan",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 3,
+        "angles": [
+          -20,
+          0,
+          20
+        ],
+        "aimed": false,
+        "speed": 160,
+        "cooldown": 0.5,
+        "firstShotDelay": 0.3,
+        "damage": 1,
+        "lifetime": 6,
+        "angleSweep": {
+          "from": -40,
+          "to": 40,
+          "period": 3
+        }
+      },
+      {
+        "id": "three_way_aimed",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 3,
+        "angles": [
+          -15,
+          0,
+          15
+        ],
+        "aimed": true,
+        "speed": 200,
+        "cooldown": 1.6,
+        "firstShotDelay": 0.8,
+        "damage": 1,
+        "lifetime": 6
+      },
+      {
+        "id": "turret_part_shot",
+        "projectileTexture": "tex_bullet_enemy",
+        "count": 1,
+        "angles": [
+          0
+        ],
+        "aimed": true,
+        "speed": 220,
+        "cooldown": 1,
+        "firstShotDelay": 0.4,
+        "damage": 1,
+        "lifetime": 7
+      }
+    ],
+    "movementPatterns": [
+      {
+        "id": "bezier_s_curve",
+        "type": "bezier",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            -220,
+            320
+          ],
+          [
+            220,
+            640
+          ],
+          [
+            0,
+            1100
+          ]
+        ],
+        "duration": 7
+      },
+      {
+        "id": "boss_patrol_fast",
+        "type": "patrol",
+        "y": 150,
+        "horizontalSpeed": 150,
+        "leftX": 110,
+        "rightX": 430,
+        "entrySpeed": 120
+      },
+      {
+        "id": "boss_patrol_slow",
+        "type": "patrol",
+        "y": 160,
+        "horizontalSpeed": 70,
+        "leftX": 130,
+        "rightX": 410,
+        "entrySpeed": 90
+      },
+      {
+        "id": "dive_retreat_fast",
+        "type": "dive_retreat",
+        "diveTargetYOffset": 620,
+        "diveSpeed": 300,
+        "pauseDuration": 0.6,
+        "retreatSpeed": 240
+      },
+      {
+        "id": "drift_down",
+        "type": "straight",
+        "angleDeg": 90,
+        "speed": 60
+      },
+      {
+        "id": "enter_attack_exit_left",
+        "type": "enter_attack_exit",
+        "enter": {
+          "fromSide": "left",
+          "targetX": 180,
+          "targetY": 240,
+          "speed": 260
+        },
+        "holdDuration": 1.6,
+        "exit": {
+          "angleDeg": 20,
+          "speed": 300
+        }
+      },
+      {
+        "id": "enter_attack_exit_right",
+        "type": "enter_attack_exit",
+        "enter": {
+          "fromSide": "right",
+          "targetX": 360,
+          "targetY": 240,
+          "speed": 260
+        },
+        "holdDuration": 1.6,
+        "exit": {
+          "angleDeg": 160,
+          "speed": 300
+        }
+      },
+      {
+        "id": "patrol_mid",
+        "type": "patrol",
+        "y": 200,
+        "horizontalSpeed": 120,
+        "leftX": 80,
+        "rightX": 460,
+        "entrySpeed": 160
+      },
+      {
+        "id": "sine_descent",
+        "type": "sine",
+        "verticalSpeed": 110,
+        "horizontalAmplitude": 80,
+        "frequency": 1.4,
+        "duration": 8
+      },
+      {
+        "id": "static_hold",
+        "type": "straight",
+        "angleDeg": 90,
+        "speed": 0
+      },
+      {
+        "id": "stop_and_fire_bomber",
+        "type": "stop_and_fire",
+        "entrySpeed": 90,
+        "stopY": 180,
+        "holdDuration": 6,
+        "exitAngleDeg": -90,
+        "exitSpeed": 120,
+        "holdFireRateMultiplier": 1
+      },
+      {
+        "id": "stop_and_fire_mid",
+        "type": "stop_and_fire",
+        "entrySpeed": 120,
+        "stopY": 180,
+        "holdDuration": 6,
+        "exitAngleDeg": -90,
+        "exitSpeed": 160,
+        "holdFireRateMultiplier": 0.5
+      },
+      {
+        "id": "straight_descent",
+        "type": "straight",
+        "angleDeg": 90,
+        "speed": 130
+      },
+      {
+        "id": "sweep_left",
+        "type": "sweep",
+        "fromSide": "left",
+        "angleDeg": 20,
+        "speed": 220
+      },
+      {
+        "id": "sweep_right",
+        "type": "sweep",
+        "fromSide": "right",
+        "angleDeg": 160,
+        "speed": 220
+      }
+    ],
+    "formations": [
+      {
+        "id": "bomber_escort",
+        "movement": "stop_and_fire_bomber",
+        "members": [
+          {
+            "enemy": "bomber",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "interceptor",
+            "offsetX": -140,
+            "offsetY": 40,
+            "delay": 0.6,
+            "movementOverride": "enter_attack_exit_left",
+            "fireDelay": 0
+          },
+          {
+            "enemy": "interceptor",
+            "offsetX": 760,
+            "offsetY": 40,
+            "delay": 0.6,
+            "movementOverride": "enter_attack_exit_right",
+            "fireDelay": 0
+          }
+        ]
+      },
+      {
+        "id": "escort_heavy",
+        "movement": "stop_and_fire_mid",
+        "members": [
+          {
+            "enemy": "heavy_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": -70,
+            "offsetY": -40,
+            "delay": 0.2,
+            "movementOverride": "sine_descent",
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 70,
+            "offsetY": -40,
+            "delay": 0.2,
+            "movementOverride": "sine_descent",
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": -110,
+            "offsetY": -90,
+            "delay": 0.4,
+            "movementOverride": "sine_descent",
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 110,
+            "offsetY": -90,
+            "delay": 0.4,
+            "movementOverride": "sine_descent",
+            "fireDelay": 0
+          }
+        ]
+      },
+      {
+        "id": "horizontal_row",
+        "movement": "straight_descent",
+        "members": [
+          {
+            "enemy": "light_fighter",
+            "offsetX": -160,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": -80,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 80,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 160,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          }
+        ]
+      },
+      {
+        "id": "left_sweep",
+        "movement": "sweep_left",
+        "members": [
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0.25,
+            "fireDelay": 0.3
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0.5,
+            "fireDelay": 0.6
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0.75,
+            "fireDelay": 0.9
+          }
+        ]
+      },
+      {
+        "id": "pinch_attack",
+        "movement": "enter_attack_exit_left",
+        "members": [
+          {
+            "enemy": "interceptor",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "interceptor",
+            "offsetX": 0,
+            "offsetY": 60,
+            "delay": 0.2,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "interceptor",
+            "offsetX": 620,
+            "offsetY": 0,
+            "delay": 0,
+            "movementOverride": "enter_attack_exit_right",
+            "fireDelay": 0
+          },
+          {
+            "enemy": "interceptor",
+            "offsetX": 620,
+            "offsetY": 60,
+            "delay": 0.2,
+            "movementOverride": "enter_attack_exit_right",
+            "fireDelay": 0
+          }
+        ]
+      },
+      {
+        "id": "right_sweep",
+        "movement": "sweep_right",
+        "members": [
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0.25,
+            "fireDelay": 0.3
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0.5,
+            "fireDelay": 0.6
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0.75,
+            "fireDelay": 0.9
+          }
+        ]
+      },
+      {
+        "id": "staggered_column",
+        "movement": "straight_descent",
+        "members": [
+          {
+            "enemy": "light_fighter",
+            "offsetX": -60,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 60,
+            "offsetY": 0,
+            "delay": 0.25,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": -60,
+            "offsetY": 0,
+            "delay": 0.5,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 60,
+            "offsetY": 0,
+            "delay": 0.75,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 1,
+            "fireDelay": 0
+          }
+        ]
+      },
+      {
+        "id": "v_scouts",
+        "movement": "sine_descent",
+        "members": [
+          {
+            "enemy": "light_fighter",
+            "offsetX": 0,
+            "offsetY": 0,
+            "delay": 0,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": -40,
+            "offsetY": -30,
+            "delay": 0.15,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 40,
+            "offsetY": -30,
+            "delay": 0.15,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": -80,
+            "offsetY": -60,
+            "delay": 0.3,
+            "fireDelay": 0
+          },
+          {
+            "enemy": "light_fighter",
+            "offsetX": 80,
+            "offsetY": -60,
+            "delay": 0.3,
+            "fireDelay": 0
+          }
+        ]
+      }
+    ],
+    "encounters": [
+      {
+        "id": "bomber_intro",
+        "estimatedDuration": 16,
+        "difficulty": 3,
+        "skillsTested": [
+          "target_priority",
+          "area_denial"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnEnemy",
+            "enemy": "bomber",
+            "x": 270,
+            "y": -60
+          },
+          {
+            "at": 6,
+            "type": "spawnFormation",
+            "formation": "v_scouts",
+            "x": 270,
+            "y": -40
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "bomber_wall",
+        "estimatedDuration": 20,
+        "difficulty": 4,
+        "skillsTested": [
+          "area_denial",
+          "reaction_time"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnEnemy",
+            "enemy": "bomber",
+            "x": 160,
+            "y": -60
+          },
+          {
+            "at": 1.5,
+            "type": "spawnEnemy",
+            "enemy": "bomber",
+            "x": 380,
+            "y": -60
+          },
+          {
+            "at": 8,
+            "type": "spawnFormation",
+            "formation": "pinch_attack",
+            "x": -40,
+            "y": 100
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "boss_alpha",
+        "estimatedDuration": 120,
+        "difficulty": 5,
+        "skillsTested": [
+          "boss_pattern_reading",
+          "target_priority",
+          "endurance"
+        ],
+        "events": [
+          {
+            "at": 2,
+            "type": "startBoss",
+            "boss": "boss_alpha"
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "crossfire_combination",
+        "estimatedDuration": 16,
+        "difficulty": 3,
+        "skillsTested": [
+          "lateral_movement",
+          "crossfire_dodging"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "left_sweep",
+            "x": -40,
+            "y": 160
+          },
+          {
+            "at": 2,
+            "type": "spawnFormation",
+            "formation": "right_sweep",
+            "x": 580,
+            "y": 220
+          },
+          {
+            "at": 6,
+            "type": "wait_for_clear"
+          },
+          {
+            "at": 6.5,
+            "type": "spawnFormation",
+            "formation": "staggered_column",
+            "x": 270,
+            "y": -40
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "crossfire_intro",
+        "estimatedDuration": 14,
+        "difficulty": 2,
+        "skillsTested": [
+          "lateral_movement"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "left_sweep",
+            "x": -40,
+            "y": 160
+          },
+          {
+            "at": 1.5,
+            "type": "spawnFormation",
+            "formation": "right_sweep",
+            "x": 580,
+            "y": 240
+          },
+          {
+            "at": 5,
+            "type": "spawnFormation",
+            "formation": "pinch_attack",
+            "x": -40,
+            "y": 120
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "final_escalation",
+        "estimatedDuration": 20,
+        "difficulty": 5,
+        "skillsTested": [
+          "crossfire_dodging",
+          "target_priority",
+          "area_denial",
+          "endurance"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "pinch_attack",
+            "x": -40,
+            "y": 100
+          },
+          {
+            "at": 2,
+            "type": "spawnEnemy",
+            "enemy": "bomber",
+            "x": 270,
+            "y": -60
+          },
+          {
+            "at": 5,
+            "type": "spawnFormation",
+            "formation": "staggered_column",
+            "x": 270,
+            "y": -40
+          },
+          {
+            "at": 9,
+            "type": "spawnFormation",
+            "formation": "left_sweep",
+            "x": -40,
+            "y": 160
+          },
+          {
+            "at": 10,
+            "type": "spawnFormation",
+            "formation": "right_sweep",
+            "x": 580,
+            "y": 220
+          },
+          {
+            "at": 14,
+            "type": "spawnFormation",
+            "formation": "escort_heavy",
+            "x": 270,
+            "y": -60
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "heavy_escort_push",
+        "estimatedDuration": 18,
+        "difficulty": 3,
+        "skillsTested": [
+          "target_priority",
+          "sustained_dps"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "escort_heavy",
+            "x": 270,
+            "y": -60
+          },
+          {
+            "at": 8,
+            "type": "spawnPickup",
+            "pickup": "weapon_upgrade",
+            "x": 270,
+            "y": -40,
+            "condition": "heavy_fighter_destroyed"
+          },
+          {
+            "at": 9,
+            "type": "spawnFormation",
+            "formation": "horizontal_row",
+            "x": 270,
+            "y": -40
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "heavy_intro",
+        "estimatedDuration": 14,
+        "difficulty": 2,
+        "skillsTested": [
+          "target_priority"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnEnemy",
+            "enemy": "heavy_fighter",
+            "x": 270,
+            "y": -60
+          },
+          {
+            "at": 6,
+            "type": "spawnPickup",
+            "pickup": "weapon_upgrade",
+            "x": 270,
+            "y": -40,
+            "condition": "heavy_fighter_destroyed"
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "interceptor_ambush",
+        "estimatedDuration": 14,
+        "difficulty": 3,
+        "skillsTested": [
+          "reaction_time",
+          "positioning"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnEnemy",
+            "enemy": "interceptor",
+            "x": -40,
+            "y": 120,
+            "movementOverride": "enter_attack_exit_left"
+          },
+          {
+            "at": 0.4,
+            "type": "spawnEnemy",
+            "enemy": "interceptor",
+            "x": 580,
+            "y": 120,
+            "movementOverride": "enter_attack_exit_right"
+          },
+          {
+            "at": 3,
+            "type": "spawnFormation",
+            "formation": "pinch_attack",
+            "x": -40,
+            "y": 100
+          },
+          {
+            "at": 7,
+            "type": "spawnFormation",
+            "formation": "v_scouts",
+            "x": 270,
+            "y": -40
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "minefield",
+        "estimatedDuration": 14,
+        "difficulty": 3,
+        "skillsTested": [
+          "navigation",
+          "precision_movement"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "setScrollSpeed",
+            "multiplier": 0.7
+          },
+          {
+            "at": 0.5,
+            "type": "spawnHazard",
+            "hazard": "minefield",
+            "x": 40,
+            "y": -40,
+            "w": 460,
+            "h": 500,
+            "count": 18
+          },
+          {
+            "at": 4,
+            "type": "spawnPickup",
+            "pickup": "shield",
+            "x": 270,
+            "y": -40
+          },
+          {
+            "at": 13.5,
+            "type": "setScrollSpeed",
+            "multiplier": 1
+          }
+        ],
+        "completion": {
+          "type": "duration"
+        }
+      },
+      {
+        "id": "miniboss_alpha",
+        "estimatedDuration": 60,
+        "difficulty": 4,
+        "skillsTested": [
+          "boss_pattern_reading",
+          "sustained_dps"
+        ],
+        "events": [
+          {
+            "at": 2,
+            "type": "startMiniboss",
+            "boss": "miniboss_alpha"
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "mixed_assault",
+        "estimatedDuration": 22,
+        "difficulty": 4,
+        "skillsTested": [
+          "target_priority",
+          "area_denial",
+          "sustained_dps"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnEnemy",
+            "enemy": "bomber",
+            "x": 270,
+            "y": -60
+          },
+          {
+            "at": 2,
+            "type": "spawnFormation",
+            "formation": "escort_heavy",
+            "x": 130,
+            "y": -60
+          },
+          {
+            "at": 6,
+            "type": "spawnFormation",
+            "formation": "v_scouts",
+            "x": 400,
+            "y": -40
+          },
+          {
+            "at": 10,
+            "type": "wait_for_clear"
+          },
+          {
+            "at": 10.5,
+            "type": "spawnFormation",
+            "formation": "bomber_escort",
+            "x": 270,
+            "y": -60
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "opening_scouts",
+        "estimatedDuration": 16,
+        "difficulty": 1,
+        "skillsTested": [
+          "basic_aim"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "v_scouts",
+            "x": 270,
+            "y": -40
+          },
+          {
+            "at": 4,
+            "type": "spawnFormation",
+            "formation": "horizontal_row",
+            "x": 270,
+            "y": -40
+          },
+          {
+            "at": 8,
+            "type": "spawnFormation",
+            "formation": "v_scouts",
+            "x": 180,
+            "y": -40
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "pinch_gauntlet",
+        "estimatedDuration": 16,
+        "difficulty": 4,
+        "skillsTested": [
+          "crossfire_dodging",
+          "reaction_time",
+          "positioning"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "pinch_attack",
+            "x": -40,
+            "y": 100
+          },
+          {
+            "at": 3,
+            "type": "spawnFormation",
+            "formation": "pinch_attack",
+            "x": -40,
+            "y": 160
+          },
+          {
+            "at": 6,
+            "type": "wait_for_clear"
+          },
+          {
+            "at": 6.5,
+            "type": "spawnFormation",
+            "formation": "left_sweep",
+            "x": -40,
+            "y": 180
+          },
+          {
+            "at": 7,
+            "type": "spawnFormation",
+            "formation": "right_sweep",
+            "x": 580,
+            "y": 240
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      },
+      {
+        "id": "recovery_reward",
+        "estimatedDuration": 8,
+        "difficulty": 1,
+        "skillsTested": [],
+        "events": [
+          {
+            "at": 0,
+            "type": "setScrollSpeed",
+            "multiplier": 0.7
+          },
+          {
+            "at": 1,
+            "type": "spawnPickup",
+            "pickup": "shield",
+            "x": 180,
+            "y": -40
+          },
+          {
+            "at": 2,
+            "type": "spawnPickup",
+            "pickup": "pickup_spread",
+            "x": 360,
+            "y": -40
+          },
+          {
+            "at": 3,
+            "type": "spawnPickup",
+            "pickup": "credits_large",
+            "x": 270,
+            "y": -40
+          },
+          {
+            "at": 4,
+            "type": "spawnPickup",
+            "pickup": "weapon_upgrade",
+            "x": 270,
+            "y": -40
+          },
+          {
+            "at": 7.5,
+            "type": "setScrollSpeed",
+            "multiplier": 1
+          }
+        ],
+        "completion": {
+          "type": "duration"
+        }
+      },
+      {
+        "id": "turret_introduction",
+        "estimatedDuration": 12,
+        "difficulty": 2,
+        "skillsTested": [
+          "ground_target_priority"
+        ],
+        "events": [
+          {
+            "at": 0,
+            "type": "spawnFormation",
+            "formation": "horizontal_row",
+            "x": 270,
+            "y": -40
+          }
+        ],
+        "completion": {
+          "type": "allClear"
+        }
+      }
+    ],
+    "bosses": [
+      {
+        "id": "boss_alpha",
+        "displayName": "Dreadnought Alpha",
+        "sprite": "tex_boss_alpha",
+        "totalHealth": 1800,
+        "creditValue": 800,
+        "hitboxRadius": 48,
+        "phases": [
+          {
+            "name": "Approach",
+            "healthThreshold": 0.66,
+            "movement": "boss_patrol_slow",
+            "weaponPatterns": [
+              "boss_aimed_volley"
+            ],
+            "parts": [],
+            "telegraphDuration": 1
+          },
+          {
+            "name": "Turret Deployment",
+            "healthThreshold": 0.33,
+            "movement": "boss_patrol_slow",
+            "weaponPatterns": [
+              "sweep_fan"
+            ],
+            "parts": [
+              {
+                "id": "turret_left",
+                "offsetX": -70,
+                "offsetY": 10,
+                "health": 150,
+                "radius": 18,
+                "weaponPattern": "turret_part_shot",
+                "scoreValue": 300,
+                "creditValue": 75
+              },
+              {
+                "id": "turret_right",
+                "offsetX": 70,
+                "offsetY": 10,
+                "health": 150,
+                "radius": 18,
+                "weaponPattern": "turret_part_shot",
+                "scoreValue": 300,
+                "creditValue": 75
+              }
+            ],
+            "telegraphDuration": 1.4
+          },
+          {
+            "name": "Last Stand",
+            "healthThreshold": 0,
+            "movement": "boss_patrol_fast",
+            "weaponPatterns": [
+              "boss_aimed_volley",
+              "ring_burst"
+            ],
+            "parts": [],
+            "telegraphDuration": 1.6
+          }
+        ],
+        "enrage": {
+          "afterSeconds": 75,
+          "cooldownMultiplier": 0.65
+        },
+        "defeatDuration": 2.5
+      },
+      {
+        "id": "miniboss_alpha",
+        "displayName": "Sentinel",
+        "sprite": "tex_boss_mini",
+        "totalHealth": 600,
+        "creditValue": 250,
+        "hitboxRadius": 40,
+        "phases": [
+          {
+            "name": "Opening Salvo",
+            "healthThreshold": 0.5,
+            "movement": "boss_patrol_slow",
+            "weaponPatterns": [
+              "three_way_aimed",
+              "ring_burst"
+            ],
+            "parts": [],
+            "telegraphDuration": 1
+          },
+          {
+            "name": "Frenzy",
+            "healthThreshold": 0,
+            "movement": "boss_patrol_fast",
+            "weaponPatterns": [
+              "five_way_spread",
+              "boss_aimed_volley"
+            ],
+            "parts": [],
+            "telegraphDuration": 1.2
+          }
+        ],
+        "enrage": {
+          "afterSeconds": 45,
+          "cooldownMultiplier": 0.6
+        },
+        "defeatDuration": 2.5
+      }
+    ],
+    "pickups": [
+      {
+        "id": "armor_repair",
+        "texture": "tex_pickup_repair",
+        "effect": "armorRepair",
+        "magnitude": 24,
+        "magnetizable": false,
+        "fallSpeed": 55,
+        "lifetime": 10
+      },
+      {
+        "id": "credits_large",
+        "texture": "tex_pickup_credit_large",
+        "effect": "credits",
+        "magnitude": 100,
+        "magnetizable": true,
+        "fallSpeed": 52,
+        "lifetime": 13
+      },
+      {
+        "id": "credits_small",
+        "texture": "tex_pickup_credit",
+        "effect": "credits",
+        "magnitude": 35,
+        "magnetizable": true,
+        "fallSpeed": 58,
+        "lifetime": 11
+      },
+      {
+        "id": "pickup_spread",
+        "texture": "tex_pickup_spread",
+        "effect": "weapon_swap",
+        "magnitude": 1,
+        "weapon": "spread_cannon",
+        "magnetizable": false,
+        "fallSpeed": 60,
+        "lifetime": 12
+      },
+      {
+        "id": "shield",
+        "texture": "tex_pickup_shield",
+        "effect": "shield",
+        "magnitude": 1,
+        "magnetizable": false,
+        "fallSpeed": 55,
+        "lifetime": 10
+      },
+      {
+        "id": "weapon_upgrade",
+        "texture": "tex_pickup",
+        "effect": "weapon_upgrade",
+        "magnitude": 1,
+        "magnetizable": false,
+        "fallSpeed": 60,
+        "lifetime": 10
+      }
+    ],
+    "equipment": [
+      {
+        "id": "armor_heavy",
+        "displayName": "Ablative Heavy Armor",
+        "description": "Large armor gain at a substantial mass cost.",
+        "tier": 1,
+        "purchaseCost": 1800,
+        "resaleRate": 0.75,
+        "mass": 7,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "defense",
+          "heavy"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 800,
+            "description": "Layered composite upgrade",
+            "modifiers": {
+              "armorBonus": 12
+            }
+          }
+        ],
+        "category": "armor",
+        "sizeClass": "large",
+        "armorBonus": 70
+      },
+      {
+        "id": "armor_light",
+        "displayName": "Light Plating",
+        "description": "Low-mass supplemental armor.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 2,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "balanced"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [],
+        "category": "armor",
+        "sizeClass": "small",
+        "armorBonus": 30
+      },
+      {
+        "id": "generator_capacitor",
+        "displayName": "Titan Capacitor Bank",
+        "description": "Large reserve for burst fire with slow recovery.",
+        "tier": 1,
+        "purchaseCost": 1850,
+        "resaleRate": 0.75,
+        "mass": 5,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "burst"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 950,
+            "description": "Core stabilization",
+            "modifiers": {
+              "energyCapacity": 12,
+              "energyRegen": 2
+            }
+          }
+        ],
+        "category": "generator",
+        "sizeClass": "medium",
+        "energyCapacity": 150,
+        "energyRegenPerSecond": 12,
+        "maxContinuousDraw": 20,
+        "shieldEfficiency": 0.9
+      },
+      {
+        "id": "generator_flux",
+        "displayName": "Flux Reactor",
+        "description": "Rapid energy recovery with a smaller reserve.",
+        "tier": 1,
+        "purchaseCost": 2100,
+        "resaleRate": 0.75,
+        "mass": 3,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "sustain"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 950,
+            "description": "Core stabilization",
+            "modifiers": {
+              "energyCapacity": 12,
+              "energyRegen": 2
+            }
+          }
+        ],
+        "category": "generator",
+        "sizeClass": "small",
+        "energyCapacity": 78,
+        "energyRegenPerSecond": 30,
+        "maxContinuousDraw": 16,
+        "shieldEfficiency": 1.05
+      },
+      {
+        "id": "generator_standard",
+        "displayName": "Standard Reactor",
+        "description": "Balanced reserve, recharge, and continuous output.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 4,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "balanced"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [],
+        "category": "generator",
+        "sizeClass": "medium",
+        "energyCapacity": 100,
+        "energyRegenPerSecond": 20,
+        "maxContinuousDraw": 18,
+        "shieldEfficiency": 1
+      },
+      {
+        "id": "hull_bulwark",
+        "displayName": "Bulwark Gunship",
+        "description": "Heavy frame with deep armor and large equipment capacity.",
+        "tier": 1,
+        "purchaseCost": 3200,
+        "resaleRate": 0.75,
+        "mass": 7,
+        "passivePowerDraw": 1,
+        "compatibilityTags": [],
+        "roleTags": [
+          "defense",
+          "heavy"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 1100,
+            "description": "Reinforced internal lattice",
+            "modifiers": {
+              "armorBonus": 18
+            }
+          }
+        ],
+        "category": "hull",
+        "baseArmor": 145,
+        "nominalMass": 24,
+        "maxSupportedMass": 36,
+        "speedFactor": 0.88,
+        "thrustFactor": 0.9,
+        "shieldFactor": 1.12,
+        "utilitySlots": 2,
+        "allowedPrimaryClasses": [
+          "medium",
+          "heavy"
+        ],
+        "allowedSecondaryClasses": [
+          "missile",
+          "rocket",
+          "bomb",
+          "universal"
+        ],
+        "allowedPropulsionSizes": [
+          "medium",
+          "large"
+        ],
+        "allowedGeneratorSizes": [
+          "medium",
+          "large"
+        ],
+        "allowedShieldSizes": [
+          "medium",
+          "large"
+        ],
+        "allowedArmorSizes": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "navigationEnvelope": {
+          "collisionRadius": 6,
+          "minimumCorridorWidth": 66
+        }
+      },
+      {
+        "id": "hull_interceptor",
+        "displayName": "Kestrel Interceptor",
+        "description": "Fast lightweight frame with low armor and limited payload.",
+        "tier": 1,
+        "purchaseCost": 2600,
+        "resaleRate": 0.75,
+        "mass": 2.5,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "mobility"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 900,
+            "description": "Reinforced spars",
+            "modifiers": {
+              "armorBonus": 10
+            }
+          }
+        ],
+        "category": "hull",
+        "baseArmor": 72,
+        "nominalMass": 14,
+        "maxSupportedMass": 21,
+        "speedFactor": 1.1,
+        "thrustFactor": 1.15,
+        "shieldFactor": 0.85,
+        "utilitySlots": 1,
+        "allowedPrimaryClasses": [
+          "light",
+          "medium"
+        ],
+        "allowedSecondaryClasses": [
+          "missile",
+          "rocket"
+        ],
+        "allowedPropulsionSizes": [
+          "small",
+          "medium"
+        ],
+        "allowedGeneratorSizes": [
+          "small"
+        ],
+        "allowedShieldSizes": [
+          "small"
+        ],
+        "allowedArmorSizes": [
+          "small"
+        ],
+        "navigationEnvelope": {
+          "collisionRadius": 4.5,
+          "minimumCorridorWidth": 50
+        }
+      },
+      {
+        "id": "hull_vanguard",
+        "displayName": "Vanguard Frame",
+        "description": "Balanced combat airframe with flexible medium systems.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 4,
+        "passivePowerDraw": 0,
+        "compatibilityTags": [],
+        "roleTags": [
+          "balanced"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [],
+        "category": "hull",
+        "baseArmor": 100,
+        "nominalMass": 18,
+        "maxSupportedMass": 27,
+        "speedFactor": 1,
+        "thrustFactor": 1,
+        "shieldFactor": 1,
+        "utilitySlots": 1,
+        "allowedPrimaryClasses": [
+          "light",
+          "medium"
+        ],
+        "allowedSecondaryClasses": [
+          "missile",
+          "rocket",
+          "universal"
+        ],
+        "allowedPropulsionSizes": [
+          "small",
+          "medium"
+        ],
+        "allowedGeneratorSizes": [
+          "small",
+          "medium"
+        ],
+        "allowedShieldSizes": [
+          "small",
+          "medium"
+        ],
+        "allowedArmorSizes": [
+          "small",
+          "medium"
+        ],
+        "navigationEnvelope": {
+          "collisionRadius": 5,
+          "minimumCorridorWidth": 56
+        }
+      },
+      {
+        "id": "propulsion_anchor",
+        "displayName": "Siege Thrusters",
+        "description": "High-control heavy propulsion with lower top speed.",
+        "tier": 1,
+        "purchaseCost": 1900,
+        "resaleRate": 0.75,
+        "mass": 6,
+        "passivePowerDraw": 1.8,
+        "compatibilityTags": [],
+        "roleTags": [
+          "control",
+          "heavy"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 800,
+            "description": "Calibrated vector nozzles",
+            "modifiers": {
+              "maxSpeed": 15,
+              "thrust": 140
+            }
+          }
+        ],
+        "category": "propulsion",
+        "sizeClass": "large",
+        "maxSpeed": 285,
+        "focusRatio": 0.55,
+        "thrust": 2600,
+        "drag": 2450
+      },
+      {
+        "id": "propulsion_balanced",
+        "displayName": "Vector Drive",
+        "description": "Balanced thrust and braking response.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 4,
+        "passivePowerDraw": 1,
+        "compatibilityTags": [],
+        "roleTags": [
+          "balanced"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [],
+        "category": "propulsion",
+        "sizeClass": "medium",
+        "maxSpeed": 320,
+        "focusRatio": 0.5,
+        "thrust": 2400,
+        "drag": 2000
+      },
+      {
+        "id": "propulsion_sprinter",
+        "displayName": "Razor Drive",
+        "description": "High speed and acceleration with weaker braking.",
+        "tier": 1,
+        "purchaseCost": 1700,
+        "resaleRate": 0.75,
+        "mass": 2.5,
+        "passivePowerDraw": 1.2,
+        "compatibilityTags": [],
+        "roleTags": [
+          "mobility"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 800,
+            "description": "Calibrated vector nozzles",
+            "modifiers": {
+              "maxSpeed": 15,
+              "thrust": 140
+            }
+          }
+        ],
+        "category": "propulsion",
+        "sizeClass": "small",
+        "maxSpeed": 370,
+        "focusRatio": 0.46,
+        "thrust": 2800,
+        "drag": 1650
+      },
+      {
+        "id": "secondary_missile",
+        "displayName": "Wasp Missile Rack",
+        "description": "Reliable homing secondary system.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 2.5,
+        "passivePowerDraw": 0.5,
+        "compatibilityTags": [],
+        "roleTags": [
+          "guided"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 650,
+            "description": "Improved warhead",
+            "modifiers": {
+              "weaponDamageMultiplier": 1.15
+            }
+          }
+        ],
+        "category": "secondaryWeapon",
+        "weaponDefId": "missile_system",
+        "hardpointClass": "missile",
+        "energyPerVolley": 12,
+        "damageMultiplier": 1,
+        "fireIntervalMultiplier": 1,
+        "targetDomain": "both"
+      },
+      {
+        "id": "secondary_rockets",
+        "displayName": "Hydra Rocket Pod",
+        "description": "Rapid unguided rockets for close-range burst damage.",
+        "tier": 1,
+        "purchaseCost": 1500,
+        "resaleRate": 0.75,
+        "mass": 2,
+        "passivePowerDraw": 0.4,
+        "compatibilityTags": [],
+        "roleTags": [
+          "burst"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 700,
+            "description": "Faster rack cycling",
+            "modifiers": {
+              "weaponFireIntervalMultiplier": 0.85
+            }
+          }
+        ],
+        "category": "secondaryWeapon",
+        "weaponDefId": "rocket_pod",
+        "hardpointClass": "rocket",
+        "energyPerVolley": 8,
+        "damageMultiplier": 1,
+        "fireIntervalMultiplier": 1,
+        "targetDomain": "both"
+      },
+      {
+        "id": "shield_bastion",
+        "displayName": "Bastion Shield",
+        "description": "Large buffer with slow delayed recovery.",
+        "tier": 1,
+        "purchaseCost": 2200,
+        "resaleRate": 0.75,
+        "mass": 6,
+        "passivePowerDraw": 3.5,
+        "compatibilityTags": [],
+        "roleTags": [
+          "capacity"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 850,
+            "description": "Emitter tuning",
+            "modifiers": {
+              "shieldCapacity": 10,
+              "shieldRechargeRate": 1.5
+            }
+          }
+        ],
+        "category": "shield",
+        "sizeClass": "large",
+        "capacity": 105,
+        "rechargeDelay": 5,
+        "rechargeRate": 5,
+        "energyPerPoint": 0.7
+      },
+      {
+        "id": "shield_quick",
+        "displayName": "Quicksilver Shield",
+        "description": "Small reserve that recovers quickly and efficiently.",
+        "tier": 1,
+        "purchaseCost": 1750,
+        "resaleRate": 0.75,
+        "mass": 2,
+        "passivePowerDraw": 1.2,
+        "compatibilityTags": [],
+        "roleTags": [
+          "recharge"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 850,
+            "description": "Emitter tuning",
+            "modifiers": {
+              "shieldCapacity": 10,
+              "shieldRechargeRate": 1.5
+            }
+          }
+        ],
+        "category": "shield",
+        "sizeClass": "small",
+        "capacity": 38,
+        "rechargeDelay": 1.4,
+        "rechargeRate": 15,
+        "energyPerPoint": 0.35
+      },
+      {
+        "id": "shield_standard",
+        "displayName": "Aegis Shield",
+        "description": "Balanced capacity and recharge profile.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 3,
+        "passivePowerDraw": 2,
+        "compatibilityTags": [],
+        "roleTags": [
+          "balanced"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [],
+        "category": "shield",
+        "sizeClass": "medium",
+        "capacity": 60,
+        "rechargeDelay": 3,
+        "rechargeRate": 9,
+        "energyPerPoint": 0.55
+      },
+      {
+        "id": "utility_credit_magnet",
+        "displayName": "Credit Tractor",
+        "description": "Increases attraction range for credit pickups.",
+        "tier": 1,
+        "purchaseCost": 1250,
+        "resaleRate": 0.75,
+        "mass": 1,
+        "passivePowerDraw": 1,
+        "compatibilityTags": [],
+        "roleTags": [
+          "economy"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 600,
+            "description": "Extended tractor field",
+            "modifiers": {
+              "pickupMagnetRadius": 35
+            }
+          }
+        ],
+        "category": "utility",
+        "modifiers": {
+          "pickupMagnetRadius": 85
+        }
+      },
+      {
+        "id": "utility_shield_regulator",
+        "displayName": "Shield Regulator",
+        "description": "Shortens shield recharge delay at a modest power cost.",
+        "tier": 1,
+        "purchaseCost": 1450,
+        "resaleRate": 0.75,
+        "mass": 1.5,
+        "passivePowerDraw": 1.5,
+        "compatibilityTags": [],
+        "roleTags": [
+          "defense"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 650,
+            "description": "Predictive phase control",
+            "modifiers": {
+              "shieldRechargeDelayMultiplier": 0.88
+            }
+          }
+        ],
+        "category": "utility",
+        "modifiers": {
+          "shieldRechargeDelayMultiplier": 0.78,
+          "shieldRechargeRateMultiplier": 1.08
+        }
+      },
+      {
+        "id": "weapon_pulse",
+        "displayName": "Pulse Cannon",
+        "description": "Efficient and precise continuous-fire weapon.",
+        "tier": 0,
+        "purchaseCost": 0,
+        "resaleRate": 0.75,
+        "mass": 2,
+        "passivePowerDraw": 1,
+        "compatibilityTags": [],
+        "roleTags": [
+          "balanced"
+        ],
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 700,
+            "description": "Improved emitter focus",
+            "modifiers": {
+              "weaponDamageMultiplier": 1.12
+            }
+          },
+          {
+            "cost": 1100,
+            "description": "Rapid cycling chamber",
+            "modifiers": {
+              "weaponFireIntervalMultiplier": 0.88
+            }
+          }
+        ],
+        "category": "primaryWeapon",
+        "weaponDefId": "pulse_cannon",
+        "hardpointClass": "light",
+        "energyPerVolley": 3.2,
+        "damageMultiplier": 1,
+        "fireIntervalMultiplier": 1,
+        "targetDomain": "both"
+      },
+      {
+        "id": "weapon_rail",
+        "displayName": "Mag-Rail Lance",
+        "description": "Slow heavy penetrator with exceptional single-target damage.",
+        "tier": 1,
+        "purchaseCost": 2600,
+        "resaleRate": 0.75,
+        "mass": 5.5,
+        "passivePowerDraw": 2,
+        "compatibilityTags": [],
+        "roleTags": [
+          "precision",
+          "heavy"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 1200,
+            "description": "Overcharged accelerator",
+            "modifiers": {
+              "weaponDamageMultiplier": 1.18
+            }
+          }
+        ],
+        "category": "primaryWeapon",
+        "weaponDefId": "rail_lance",
+        "hardpointClass": "heavy",
+        "energyPerVolley": 14,
+        "damageMultiplier": 1,
+        "fireIntervalMultiplier": 1,
+        "targetDomain": "both"
+      },
+      {
+        "id": "weapon_spread",
+        "displayName": "Arc Spread Cannon",
+        "description": "Wide coverage with reduced focused damage and higher drain.",
+        "tier": 1,
+        "purchaseCost": 1800,
+        "resaleRate": 0.75,
+        "mass": 3.2,
+        "passivePowerDraw": 1.5,
+        "compatibilityTags": [],
+        "roleTags": [
+          "coverage"
+        ],
+        "unlockRequirement": {
+          "type": "campaignTier",
+          "tier": 1
+        },
+        "iconKey": "equipment_placeholder",
+        "unique": true,
+        "upgradeLevels": [
+          {
+            "cost": 850,
+            "description": "Denser outer bolts",
+            "modifiers": {
+              "weaponDamageMultiplier": 1.12
+            }
+          }
+        ],
+        "category": "primaryWeapon",
+        "weaponDefId": "spread_cannon",
+        "hardpointClass": "medium",
+        "energyPerVolley": 5.5,
+        "damageMultiplier": 1,
+        "fireIntervalMultiplier": 1,
+        "targetDomain": "both"
+      }
+    ]
+  }
+}

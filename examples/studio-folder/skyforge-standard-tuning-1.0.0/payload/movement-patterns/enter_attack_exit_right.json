@@ -1,0 +1,15 @@
+{
+  "id": "enter_attack_exit_right",
+  "type": "enter_attack_exit",
+  "enter": {
+    "fromSide": "right",
+    "targetX": 360,
+    "targetY": 240,
+    "speed": 260
+  },
+  "holdDuration": 1.6,
+  "exit": {
+    "angleDeg": 160,
+    "speed": 300
+  }
+}

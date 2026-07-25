@@ -1,0 +1,20 @@
+{
+  "id": "difficulty",
+  "levels": {
+    "easy": {
+      "enemyHealthMultiplier": 0.85,
+      "projectileSpeedMultiplier": 0.85,
+      "spawnDelayMultiplier": 1.2
+    },
+    "normal": {
+      "enemyHealthMultiplier": 1,
+      "projectileSpeedMultiplier": 1,
+      "spawnDelayMultiplier": 1
+    },
+    "hard": {
+      "enemyHealthMultiplier": 1.15,
+      "projectileSpeedMultiplier": 1.2,
+      "spawnDelayMultiplier": 0.85
+    }
+  }
+}

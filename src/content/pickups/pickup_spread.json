@@ -1,0 +1,9 @@
+{
+  "id": "pickup_spread",
+  "texture": "tex_pickup_spread",
+  "effect": "weapon_swap",
+  "weapon": "spread_cannon",
+  "magnitude": 1,
+  "fallSpeed": 60,
+  "lifetime": 12
+}

@@ -1,0 +1,8 @@
+{
+  "id": "sine_descent",
+  "type": "sine",
+  "verticalSpeed": 110,
+  "horizontalAmplitude": 80,
+  "frequency": 1.4,
+  "duration": 8
+}

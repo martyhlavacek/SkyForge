@@ -1,0 +1,230 @@
+{
+  "release": "SkyForge Epoch 18.2",
+  "rubricVersion": "2.0",
+  "scoreType": "Manual art-direction review of the final gameplay-scale preview and complete Blob-47 reference sheet, supported by automated texture, geometry, map-composition, build, and package gates.",
+  "scores": {
+    "Blob-47 topology and transitions": 8.8,
+    "Water continuity and naturalism": 8.7,
+    "Sandstone continuity and variation": 8.5,
+    "Shoreline silhouette and depth": 8.6,
+    "Macro landform composition": 8.7,
+    "Landmark and set-dressing density": 8.6,
+    "Benchmark-inspired visual hierarchy": 8.6,
+    "Tile and metatile concealment": 8.8,
+    "Gameplay readability and palette": 9.2,
+    "Altitude and player shadow": 8.5
+  },
+  "average": 8.7,
+  "requiredAverage": 8.5,
+  "passed": true,
+  "metrics": {
+    "blob47": {
+      "canonicalMasks": 47,
+      "boundaryVariantsPerMask": 4,
+      "shorelineVariantsPerMask": 4
+    },
+    "water": {
+      "explicitCells": 0,
+      "frameSize": [
+        512,
+        512
+      ],
+      "frameCount": 3,
+      "animationFps": 0.65,
+      "frames": [
+        {
+          "edgeDifference": [
+            0,
+            0
+          ],
+          "gradientRatio": 1.0485,
+          "contrast": 3.7618,
+          "shift32X": 2.3158,
+          "shift32Y": 1.9921
+        },
+        {
+          "edgeDifference": [
+            0,
+            0
+          ],
+          "gradientRatio": 1.0452,
+          "contrast": 3.7632,
+          "shift32X": 2.3121,
+          "shift32Y": 1.9896
+        },
+        {
+          "edgeDifference": [
+            0,
+            0
+          ],
+          "gradientRatio": 1.0471,
+          "contrast": 3.7654,
+          "shift32X": 2.3132,
+          "shift32Y": 1.9895
+        }
+      ]
+    },
+    "sandstone": {
+      "size": [
+        512,
+        512
+      ],
+      "edgeDifference": [
+        0,
+        0
+      ],
+      "contrast": 7.1512,
+      "shift32X": 4.1733,
+      "shift128X": 7.3443,
+      "shift128Y": 6.3915
+    },
+    "composition": {
+      "islandCount": 4,
+      "islandSizes": [
+        91,
+        95,
+        134,
+        160
+      ],
+      "centerRange": 4.5,
+      "waterWidthRange": [
+        6,
+        13
+      ],
+      "landmarkCells": 195,
+      "landmarkMaxRowGap": 80,
+      "decorationCells": {
+        "sediment": 146,
+        "rock_clusters": 197,
+        "cracks": 173,
+        "scrub": 85,
+        "landmarks": 195
+      }
+    },
+    "readability": {
+      "waterLuminance": 57.48,
+      "sandstoneLuminance": 101.88
+    },
+    "blob47Geometry": {
+      "release": "SkyForge Epoch 18.2",
+      "passed": true,
+      "diagonalBitPairsTested": 52,
+      "minimumPairChangedPixels": 64,
+      "minimumPairMeanDifference": 14.484,
+      "diagonals": {
+        "19": {
+          "slope": 1.0,
+          "rSquared": 1.0,
+          "opaquePixels": 528
+        },
+        "38": {
+          "slope": -1.0,
+          "rSquared": 1.0,
+          "opaquePixels": 528
+        },
+        "76": {
+          "slope": 1.0,
+          "rSquared": 1.0,
+          "opaquePixels": 528
+        },
+        "137": {
+          "slope": -1.0,
+          "rSquared": 1.0,
+          "opaquePixels": 528
+        }
+      },
+      "innerCurves": {
+        "127": {
+          "changedPixels": 64,
+          "radiusX": 8,
+          "radiusY": 8,
+          "lineRSquared": 0.8004
+        },
+        "191": {
+          "changedPixels": 64,
+          "radiusX": 8,
+          "radiusY": 8,
+          "lineRSquared": 0.8004
+        },
+        "223": {
+          "changedPixels": 64,
+          "radiusX": 8,
+          "radiusY": 8,
+          "lineRSquared": 0.8004
+        },
+        "239": {
+          "changedPixels": 64,
+          "radiusX": 8,
+          "radiusY": 8,
+          "lineRSquared": 0.8004
+        }
+      },
+      "map": {
+        "leftDiagonalRuns": [
+          [
+            12,
+            16,
+            1
+          ],
+          [
+            25,
+            29,
+            -1
+          ],
+          [
+            72,
+            75,
+            1
+          ],
+          [
+            85,
+            88,
+            -1
+          ]
+        ],
+        "rightDiagonalRuns": [
+          [
+            39,
+            43,
+            -1
+          ],
+          [
+            52,
+            56,
+            1
+          ],
+          [
+            97,
+            101,
+            -1
+          ],
+          [
+            111,
+            115,
+            1
+          ]
+        ],
+        "earlyMaskCounts": {
+          "19": 11,
+          "38": 14,
+          "76": 11,
+          "137": 10,
+          "127": 13,
+          "191": 11,
+          "223": 10,
+          "239": 10
+        }
+      },
+      "evidenceImage": "docs/EPOCH_18_2_BLOB47_GEOMETRY_EVIDENCE.png"
+    },
+    "playerShadow": {
+      "shadowOffsetX": 10.0,
+      "shadowOffsetY": 14.0,
+      "shadowScaleX": 0.96,
+      "shadowScaleY": 0.64,
+      "shadowOpacity": 0.34,
+      "dedicatedTexture": true,
+      "layeredSilhouette": true
+    }
+  }
+}

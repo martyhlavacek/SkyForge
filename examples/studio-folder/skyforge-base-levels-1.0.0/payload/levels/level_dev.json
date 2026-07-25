@@ -1,0 +1,68 @@
+{
+  "formatVersion": "1.0",
+  "id": "level_dev",
+  "displayName": "Dev Corridor",
+  "music": "none",
+  "durationTarget": 90,
+  "baseScrollSpeed": 100,
+  "events": [
+    {
+      "at": 2,
+      "encounter": "opening_scouts"
+    },
+    {
+      "at": 18,
+      "type": "checkpoint",
+      "name": "pre_crossfire"
+    },
+    {
+      "at": 20,
+      "encounter": "crossfire_intro"
+    },
+    {
+      "at": 36,
+      "type": "recovery",
+      "duration": 6
+    },
+    {
+      "at": 44,
+      "encounter": "heavy_intro"
+    },
+    {
+      "at": 60,
+      "encounter": "bomber_intro"
+    },
+    {
+      "at": 62,
+      "type": "checkpoint",
+      "name": "pre_minefield"
+    },
+    {
+      "at": 78,
+      "encounter": "minefield"
+    }
+  ],
+  "groundObjects": [
+    {
+      "type": "turret",
+      "id": "turret_01",
+      "worldY": 1000,
+      "x": 120,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_02",
+      "worldY": 1300,
+      "x": 420,
+      "creditValue": 45
+    },
+    {
+      "type": "turret",
+      "id": "turret_03",
+      "worldY": 1600,
+      "x": 270,
+      "creditValue": 45
+    }
+  ]
+}

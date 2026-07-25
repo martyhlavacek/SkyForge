@@ -1,0 +1,11 @@
+{
+  "id": "horizontal_row",
+  "movement": "straight_descent",
+  "members": [
+    { "enemy": "light_fighter", "offsetX": -160, "offsetY": 0 },
+    { "enemy": "light_fighter", "offsetX": -80, "offsetY": 0 },
+    { "enemy": "light_fighter", "offsetX": 0, "offsetY": 0 },
+    { "enemy": "light_fighter", "offsetX": 80, "offsetY": 0 },
+    { "enemy": "light_fighter", "offsetX": 160, "offsetY": 0 }
+  ]
+}

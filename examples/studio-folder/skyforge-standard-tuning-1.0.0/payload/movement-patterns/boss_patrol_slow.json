@@ -1,0 +1,9 @@
+{
+  "id": "boss_patrol_slow",
+  "type": "patrol",
+  "y": 160,
+  "horizontalSpeed": 70,
+  "leftX": 130,
+  "rightX": 410,
+  "entrySpeed": 90
+}

@@ -1,0 +1,25 @@
+{
+  "levels": [
+    "level_01",
+    "level_boss_test",
+    "level_dev"
+  ],
+  "level-packages": [
+    "level_01_canyon"
+  ],
+  "maps": [
+    "canyon_passage"
+  ],
+  "collisions": [
+    "canyon_passage_collision"
+  ],
+  "routes": [
+    "canyon_passage_routes"
+  ],
+  "objects": [
+    "canyon_passage_objects"
+  ],
+  "biomes": [
+    "canyon"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "pinch_gauntlet",
+  "estimatedDuration": 16,
+  "difficulty": 4,
+  "skillsTested": ["crossfire_dodging", "reaction_time", "positioning"],
+  "events": [
+    { "at": 0, "type": "spawnFormation", "formation": "pinch_attack", "x": -40, "y": 100 },
+    { "at": 3, "type": "spawnFormation", "formation": "pinch_attack", "x": -40, "y": 160 },
+    { "at": 6, "type": "wait_for_clear" },
+    { "at": 6.5, "type": "spawnFormation", "formation": "left_sweep", "x": -40, "y": 180 },
+    { "at": 7, "type": "spawnFormation", "formation": "right_sweep", "x": 580, "y": 240 }
+  ],
+  "completion": { "type": "allClear" }
+}

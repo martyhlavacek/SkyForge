@@ -1,0 +1,41 @@
+{
+  "id": "v_scouts",
+  "movement": "sine_descent",
+  "members": [
+    {
+      "enemy": "light_fighter",
+      "offsetX": 0,
+      "offsetY": 0,
+      "delay": 0,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": -40,
+      "offsetY": -30,
+      "delay": 0.15,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 40,
+      "offsetY": -30,
+      "delay": 0.15,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": -80,
+      "offsetY": -60,
+      "delay": 0.3,
+      "fireDelay": 0
+    },
+    {
+      "enemy": "light_fighter",
+      "offsetX": 80,
+      "offsetY": -60,
+      "delay": 0.3,
+      "fireDelay": 0
+    }
+  ]
+}

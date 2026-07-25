@@ -1,0 +1,3109 @@
+{
+  "formatVersion": "1.0",
+  "release": "SkyForge Epoch 18",
+  "applicationVersion": "0.10.0",
+  "generatedAt": "2026-07-14T05:20:00.000Z",
+  "summary": {
+    "fileCount": 609,
+    "totalBytes": 17781788,
+    "unitTests": 375,
+    "testFiles": 55,
+    "e2eScenarios": 14,
+    "e2eConfiguredExecutions": 16,
+    "compiledResources": 11,
+    "dependencyVulnerabilities": 0,
+    "browserCertification": "uncertified-missing-playwright-binaries",
+    "mapExplicitCells": 8183,
+    "mapLayerCells": {
+      "river_plane": 0,
+      "sandstone_surface": 5935,
+      "sediment": 102,
+      "shoreline": 1802,
+      "rock_clusters": 128,
+      "cracks": 122,
+      "scrub": 56,
+      "landmarks": 38
+    },
+    "productionJsBytes": 2352622,
+    "productionJsGzipBytes": 587982,
+    "productionCssBytes": 30285
+  },
+  "runtimeAssets": {
+    "water": {
+      "path": "public/assets/terrain/skyforge_canyon_water.png",
+      "frames": 3,
+      "frameSize": [
+        256,
+        256
+      ]
+    },
+    "sandstone": {
+      "path": "public/assets/terrain/skyforge_canyon_sandstone.png",
+      "frameSize": [
+        256,
+        256
+      ]
+    },
+    "terrainAtlas": {
+      "path": "public/assets/terrain/skyforge_canyon_terrain.png",
+      "size": [
+        512,
+        320
+      ]
+    },
+    "propsAtlas": {
+      "path": "public/assets/terrain/skyforge_canyon_props.png",
+      "size": [
+        512,
+        128
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 157,
+      "sha256": "1e34f8ab30c8f8d0e0ee65a84d55f4ca5664b576128d58ae6d82f84cb72678ab"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/content-pack.yml",
+      "bytes": 659,
+      "sha256": "8e36d8dccf0b80af08fefa48e5631bc3774d009ca8d1626f8587728c4a5072d8"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 702,
+      "sha256": "2db3f109ce03e8d67dd6cb638bafe5e22d2b73179445412ce47494b76b58981f"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 826,
+      "sha256": "5dbc73a33afb86569933707b1417c8f749a88991c9e973edeeab6d7c61573622"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "bytes": 1035,
+      "sha256": "64dd3bb47d65477202666ef1c013a172ea98dcbf4cb846a0ffb62888c9b0280d"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 138,
+      "sha256": "55da04e4b2d3f70338e4a33f15cc32e3b56ed05be8ff4f631a0bf9cf86e1b4bf"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 19,
+      "sha256": "7151cf397def0c2cb0ab65643701d27d335a72c90f775675b5f826bc7005818a"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 3,
+      "sha256": "f14b4987904bcb5814e4459a057ed4d20f58a633152288a761214dcd28780b56"
+    },
+    {
+      "path": ".prettierrc",
+      "bytes": 72,
+      "sha256": "30264afe7b1781b4992f51bbacbbe394bac618c348297c5dde0acda4679e3087"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 27432,
+      "sha256": "08dec263fbe83c3183dc116c79d0a80aa3b8667841fe5f343ddef767e461d134"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 3041,
+      "sha256": "1074520be4df6f5d200bd6220fe71ff06ed08c7fe1c4d640fe1add894a77a69e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 21955,
+      "sha256": "dea609080e47b7f62c7989112288625e66ba76b8980eee9cd4efbf84b33366a8"
+    },
+    {
+      "path": "art-source/skyforge_canyon_master.png",
+      "bytes": 3031541,
+      "sha256": "e8718a5f5590aa96f0ce78b164cf0333bedf663d5285d53d859efb67bf95ef6e"
+    },
+    {
+      "path": "docs/DEVICE_AND_PERFORMANCE_QA.md",
+      "bytes": 2611,
+      "sha256": "b81ce24df65850338bee7673654899a89572fb07b31abe7df7a43fbeccc9625c"
+    },
+    {
+      "path": "docs/DOCUMENTATION_INDEX.md",
+      "bytes": 5764,
+      "sha256": "5ba98f819666c675a791252a9a52d35b8529918578f7d5e1ba9b5144a48f3371"
+    },
+    {
+      "path": "docs/EPOCH_10_IMPLEMENTATION.md",
+      "bytes": 6399,
+      "sha256": "ea11a46560821e5613b9333187867ec22213d8ba1967d2ce3325a777b1eed601"
+    },
+    {
+      "path": "docs/EPOCH_11_IMPLEMENTATION.md",
+      "bytes": 12333,
+      "sha256": "6c38c83fc4337511597fc27bf24b009708bd0e2bf79338bbcb7e563d54a9cffc"
+    },
+    {
+      "path": "docs/EPOCH_12_IMPLEMENTATION.md",
+      "bytes": 8345,
+      "sha256": "4c4b397d08658645cff4661506eec050298834e42d66ecd566ef86e69057c843"
+    },
+    {
+      "path": "docs/EPOCH_12_PDR_REVIEW.md",
+      "bytes": 3549,
+      "sha256": "2de8c716b80e713e594ece31dc5ad7c080c5c09f50df8ef52f927ff174274316"
+    },
+    {
+      "path": "docs/EPOCH_13_IMPLEMENTATION.md",
+      "bytes": 9014,
+      "sha256": "b6edd855c6dead6fbaa1bab9fee85a924ed7526af7e16f51e1fdd7c95f2bfa5e"
+    },
+    {
+      "path": "docs/EPOCH_14_IMPLEMENTATION.md",
+      "bytes": 9426,
+      "sha256": "13ad4ff9ccc5e99f52edfcc7cc2b261da3d73a8fab7e8dac0b801f9602f8a16f"
+    },
+    {
+      "path": "docs/EPOCH_15_IMPLEMENTATION.md",
+      "bytes": 5773,
+      "sha256": "0a2658ea70ae03ed6b86b37b5b1828ee0b7960e4869fe2666aee1f10e95cc33a"
+    },
+    {
+      "path": "docs/EPOCH_15_POST_REVIEW_AND_AUDIT.md",
+      "bytes": 4146,
+      "sha256": "eccbe3c0e70fe7e7666a4b6dc746c3b28e4b5b31a1820ffb4edeedc9d99fcd64"
+    },
+    {
+      "path": "docs/EPOCH_16_IMPLEMENTATION.md",
+      "bytes": 7087,
+      "sha256": "87a04866d3b933e6c4f131d4e1fc6ba498ce80463fcb6a70ddb4d8db5bd71a4a"
+    },
+    {
+      "path": "docs/EPOCH_16_POST_REVIEW_AND_AUDIT.md",
+      "bytes": 6284,
+      "sha256": "8cc0e81b1d937790569517f96b54a045fc5a8cc9d6f7785740b794afb65a3b2b"
+    },
+    {
+      "path": "docs/EPOCH_16_VERIFICATION_REPORT.md",
+      "bytes": 2723,
+      "sha256": "f24c490e5bd81e9fa13fd4eb817b570946a970390afa5885a99f9417211793af"
+    },
+    {
+      "path": "docs/EPOCH_17_1_STUDIO_USABILITY_FIXES.md",
+      "bytes": 2049,
+      "sha256": "5b465d7b7f49cf4aa22ff16dd0328855bea52b9b45782b2b34aa107be3cb8968"
+    },
+    {
+      "path": "docs/EPOCH_17_2_IMPLEMENTATION.md",
+      "bytes": 4188,
+      "sha256": "febcd80212e31360acd3aba8e2b581ebad9c4bb3aa4babb973eecfaa97e6645e"
+    },
+    {
+      "path": "docs/EPOCH_17_2_SECURITY_REVIEW.md",
+      "bytes": 3156,
+      "sha256": "555353aad86de26f65f2c03fab38cea4d35ed557b169ca1b8aacbf55467575c5"
+    },
+    {
+      "path": "docs/EPOCH_17_2_VERIFICATION_REPORT.md",
+      "bytes": 1566,
+      "sha256": "a1f85ff78ace46e6708dbc31d2d5f1c9a18b35ce24297be41e07be87d204a4ce"
+    },
+    {
+      "path": "docs/EPOCH_17_3_ARTIFACT_MANIFEST.json",
+      "bytes": 99350,
+      "sha256": "54b1f54528216e69f15f76288e8004faab61079f96e0b92ba7f5b02864c7b9e4"
+    },
+    {
+      "path": "docs/EPOCH_17_3_LEVEL_STUDIO_UX.md",
+      "bytes": 5394,
+      "sha256": "19171fa61d45fac3dbacaf94b52aaa81df30ce01e485e2569b4dfc1ef653dac4"
+    },
+    {
+      "path": "docs/EPOCH_17_3_USABILITY_REVIEW.md",
+      "bytes": 3428,
+      "sha256": "e1036eb56d6cdd09c8d4a060c6f34531c20711ae86a8f03faa30755459269303"
+    },
+    {
+      "path": "docs/EPOCH_17_3_VERIFICATION_REPORT.md",
+      "bytes": 1634,
+      "sha256": "c96322b706266a179e5ed469c103b8af5abf87fa89383148027d58b72aa48edb"
+    },
+    {
+      "path": "docs/EPOCH_17_4_ARTIFACT_MANIFEST.json",
+      "bytes": 102255,
+      "sha256": "9179d8dc46f1d765e735693bec28953919fcd50a07511f9eba91fe946e37fc0f"
+    },
+    {
+      "path": "docs/EPOCH_17_4_DEFAULT_CANYON_TILESET.md",
+      "bytes": 6363,
+      "sha256": "7641d10efe7c6409cc0a38e4f0ad990c7b957b2abaf05b3f037036d1ace827cb"
+    },
+    {
+      "path": "docs/EPOCH_17_4_IMPLEMENTATION.md",
+      "bytes": 1852,
+      "sha256": "e8a3b33487fba48634d320d777d88f992670d50ad77460da44a4e2e5e0cd06c3"
+    },
+    {
+      "path": "docs/EPOCH_17_4_VERIFICATION_REPORT.md",
+      "bytes": 4616,
+      "sha256": "1087c0cbd4f2d5a3345d729d3cf7a9006acfcaff040c20dba9a48cb57d4673f6"
+    },
+    {
+      "path": "docs/EPOCH_17_5_ARTIFACT_MANIFEST.json",
+      "bytes": 107674,
+      "sha256": "8cad96f967b9c479b29d33290c21de6f6e0da37ac8548b85dad716f05ab409fd"
+    },
+    {
+      "path": "docs/EPOCH_17_5_DEFICIENCY_REPORT.md",
+      "bytes": 6260,
+      "sha256": "d8a909802daa405eb2aaa30006835cd0a7499343db357aa8df8739a4869efbd1"
+    },
+    {
+      "path": "docs/EPOCH_17_5_IMPLEMENTATION.md",
+      "bytes": 3957,
+      "sha256": "5c968ebd0f55658ef2922a4cf8807c157f2526e9a91a4577bcf239af24f3b701"
+    },
+    {
+      "path": "docs/EPOCH_17_5_QA_AUDIT.md",
+      "bytes": 4051,
+      "sha256": "52a1546ce6c0022f8fe7f6dc9ee1a7328c02070fd7ece4778d7cddca041cb79a"
+    },
+    {
+      "path": "docs/EPOCH_17_5_VERIFICATION_REPORT.md",
+      "bytes": 1798,
+      "sha256": "4e629f32e89cd6d4338a574813f6f6e1c104fcfa9730ffa10dae535d1f95c9c6"
+    },
+    {
+      "path": "docs/EPOCH_17_6_1_ARTIFACT_MANIFEST.json",
+      "bytes": 105308,
+      "sha256": "2e5092bd1ea63aed3ab7c46cdb3a3c32d33a23712674e68b86b121c4bedbe1ee"
+    },
+    {
+      "path": "docs/EPOCH_17_6_1_INSTALL_HOTFIX.md",
+      "bytes": 993,
+      "sha256": "a2d9a49330d529bb2622ca6f78c64604db28208c36516c330b3d9ce48d9d9a7a"
+    },
+    {
+      "path": "docs/EPOCH_17_6_1_VERIFICATION_REPORT.md",
+      "bytes": 1226,
+      "sha256": "e0e41a9111444cbd8287cd71b4e6a33f1fb6f1a3e6d7a318f93fd190db10f662"
+    },
+    {
+      "path": "docs/EPOCH_17_6_2_AI_FREE_CLEANUP.md",
+      "bytes": 1425,
+      "sha256": "479d0633c080de69b28daf0f7983fe523fb72d9f234f0fa357f869b3c427c128"
+    },
+    {
+      "path": "docs/EPOCH_17_6_2_ARTIFACT_MANIFEST.json",
+      "bytes": 106586,
+      "sha256": "c16c4dc94a91f1532a05edb9cd328c03ac5ece3d17135980df8c935556ab4fd2"
+    },
+    {
+      "path": "docs/EPOCH_17_6_2_DEFICIENCY_LOG.md",
+      "bytes": 1598,
+      "sha256": "f319b31ef6edcee32d8d456b2acd9373fecb0ec4e0093b3caa5d6de0e2190c65"
+    },
+    {
+      "path": "docs/EPOCH_17_6_2_QA_AUDIT.md",
+      "bytes": 1449,
+      "sha256": "6041ad762754c8c5bdc015e64df33c8b0f27863cdbcdd941c3952cc0c42f5d9b"
+    },
+    {
+      "path": "docs/EPOCH_17_6_ARTIFACT_MANIFEST.json",
+      "bytes": 104896,
+      "sha256": "a99926320a114ab88770a1c6e7f76e90e6876e3881169d0e097c7c896c38c47c"
+    },
+    {
+      "path": "docs/EPOCH_17_6_DEFICIENCY_LOG.md",
+      "bytes": 4454,
+      "sha256": "f6568dbc2eb9e7c7bdedab6fdf16836f4bcd33734e8e89d7d3ea50724a1a9a1b"
+    },
+    {
+      "path": "docs/EPOCH_17_6_FOCUSED_STUDIO_REFACTOR.md",
+      "bytes": 3773,
+      "sha256": "7ffd66e6619768e15706a519a529e073554be5c5dc41f1aaf822201121a48dca"
+    },
+    {
+      "path": "docs/EPOCH_17_6_QA_AUDIT.md",
+      "bytes": 3037,
+      "sha256": "dc3b5f3a65245dd26a99a4e79545321ae2d5221818868b4f7aa9a61762c77af7"
+    },
+    {
+      "path": "docs/EPOCH_17_6_VERIFICATION_REPORT.md",
+      "bytes": 1589,
+      "sha256": "0c309bed04846f4660814ad417a05bdab8b67dd05dd9fc8fe758a88df6685919"
+    },
+    {
+      "path": "docs/EPOCH_17_7_ARTIFACT_MANIFEST.json",
+      "bytes": 108341,
+      "sha256": "52cd9906bea72f5ba661de80a88cccf668dce7e2be8285bee9a67789d08f202a"
+    },
+    {
+      "path": "docs/EPOCH_17_7_CANYON_PREVIEW.png",
+      "bytes": 730596,
+      "sha256": "7f5199f0e08de7bec9886dc62365d7121a88f8d04e75a3e7c0e9b1697ad6ba09"
+    },
+    {
+      "path": "docs/EPOCH_17_7_CONNECTED_CANYON_REFACTOR.md",
+      "bytes": 3968,
+      "sha256": "137fc70bf707e2e1ede20028d7bdea8087d1b2b7b33e29644bbd17fb0a809577"
+    },
+    {
+      "path": "docs/EPOCH_17_7_DEFICIENCY_LOG.md",
+      "bytes": 3306,
+      "sha256": "2ebea0dd3899be5e2383f420785478f0141ce9e9d68130a3d504eb25be84d553"
+    },
+    {
+      "path": "docs/EPOCH_17_7_QA_AUDIT.md",
+      "bytes": 3575,
+      "sha256": "c69962cdac67c750ff9dec029c6a2b3090c852b402430a1553ac000cd77e110f"
+    },
+    {
+      "path": "docs/EPOCH_17_7_VERIFICATION_REPORT.md",
+      "bytes": 1081,
+      "sha256": "988b12eff1edd248eee0ce4bf19b22d34dab4fff87958b61c43884b7d8030122"
+    },
+    {
+      "path": "docs/EPOCH_17_9_ARTIFACT_MANIFEST.json",
+      "bytes": 109504,
+      "sha256": "27b0d80cd1e562c17e1fa3fa78ffff967b9f9479feb8d50e38b75f0a22b1baf3"
+    },
+    {
+      "path": "docs/EPOCH_17_9_CANYON_PREVIEW.png",
+      "bytes": 838075,
+      "sha256": "cd46868c19475a46940e405ce35cec8dbca9cf055b5f2d97777b5aafcc70e946"
+    },
+    {
+      "path": "docs/EPOCH_17_9_CONTINUOUS_TERRAIN_REFACTOR.md",
+      "bytes": 3767,
+      "sha256": "475ed42f7042b31eaa57bbc91f25993fa649e14fc3ed83b20d0939bc56c038c9"
+    },
+    {
+      "path": "docs/EPOCH_17_9_DEFICIENCY_LOG.md",
+      "bytes": 2677,
+      "sha256": "9aff469c8835cb5fd8565b66dd77501725138ff1b3418e88608f5ee5eb4c9c23"
+    },
+    {
+      "path": "docs/EPOCH_17_9_QA_AUDIT.md",
+      "bytes": 2636,
+      "sha256": "62255f04edfc62a4091c74fda4d13e91243d22512e249a326218d46e7bc879a4"
+    },
+    {
+      "path": "docs/EPOCH_17_9_VERIFICATION_REPORT.md",
+      "bytes": 1299,
+      "sha256": "cfa3f109365ad540c03abce301698fa060db4f79065c579d21a13bcdc6436d32"
+    },
+    {
+      "path": "docs/EPOCH_17_IMPLEMENTATION.md",
+      "bytes": 3357,
+      "sha256": "8f4b48d43ded37da8f829298d31fe2485599e8ea55f163a1d4a1071c101e64c4"
+    },
+    {
+      "path": "docs/EPOCH_17_POST_REVIEW_AND_AUDIT.md",
+      "bytes": 3820,
+      "sha256": "e0fdb8039fef341cca7d9b080dd90c08804e11ec910d609986867a9c6953a93a"
+    },
+    {
+      "path": "docs/EPOCH_17_VERIFICATION_REPORT.md",
+      "bytes": 3513,
+      "sha256": "49238fa4d77f1cfa699bc7198dcd779a1e26f99d5a22574668dc83efcae0c116"
+    },
+    {
+      "path": "docs/EPOCH_18_AUTHORED_ENVIRONMENT_REFACTOR.md",
+      "bytes": 4242,
+      "sha256": "ea44566f78f7609f3141e0e2a78f58f229674f8fa3413248d1b0afe965314402"
+    },
+    {
+      "path": "docs/EPOCH_18_BLOB47_REFERENCE.png",
+      "bytes": 32861,
+      "sha256": "64ab2f0eb72fba2bda8695c153cb02fe82b74d3541de0924744d76d8c8e3312a"
+    },
+    {
+      "path": "docs/EPOCH_18_CANYON_PREVIEW.png",
+      "bytes": 1150141,
+      "sha256": "d68bc7226e719dbd7cc504cc9e3a52209e75c76b0b973c061f73539f2ab639e3"
+    },
+    {
+      "path": "docs/EPOCH_18_DEFICIENCY_LOG.md",
+      "bytes": 2823,
+      "sha256": "d2b7ae5805749ab6923cf7ad945d228c82c3815ca4f5ac580c349ceb5e5f79a4"
+    },
+    {
+      "path": "docs/EPOCH_18_QA_AUDIT.md",
+      "bytes": 2443,
+      "sha256": "5b8a34814f5dfa62a8d2e49b44b1ede6064f6ae8ff83ab0710c136513643f511"
+    },
+    {
+      "path": "docs/EPOCH_18_VERIFICATION_REPORT.md",
+      "bytes": 852,
+      "sha256": "305bcd409da327ff295338ab0bfe7e3f6a9c90191340935cb949d1b18f8e50fb"
+    },
+    {
+      "path": "docs/EPOCH_9R_IMPLEMENTATION.md",
+      "bytes": 9909,
+      "sha256": "3047260236292adc41ab32db1a07bb18419a90e74a38ce6c00d63e4aa6346c1a"
+    },
+    {
+      "path": "docs/EPOCH_9_TECHNICAL_REVIEW.md",
+      "bytes": 32011,
+      "sha256": "855a16dc5c0a3e481de25a6305ad0c3f5e33e2b208f15d956fdad8d6e6698f38"
+    },
+    {
+      "path": "docs/GAME_DESIGN_STUDIO_ARCHITECTURE.md",
+      "bytes": 15907,
+      "sha256": "6bbac3c1693063779b4730a2b6f6339c26badf891c77bccd6e27c87d177fc45a"
+    },
+    {
+      "path": "docs/INDEPENDENT_AUDIT_EPOCH_17.md",
+      "bytes": 30801,
+      "sha256": "28f5aaa8b27386a0cadbd9d6d8c3265ee25a029ad48528e01df716d09195292d"
+    },
+    {
+      "path": "docs/MUSIC_DIRECTION_AND_ADAPTIVE_AUDIO.md",
+      "bytes": 25791,
+      "sha256": "ec482a0a6c482b7d70722fbff6f95b6f1535fa41d228142628f734a88d20f3e8"
+    },
+    {
+      "path": "docs/PACKAGE_AUTHORING_AND_COLLABORATION.md",
+      "bytes": 5925,
+      "sha256": "01228df7af6462f16e2bdd9aa27b2636f4605379b172fe4577e6b8490dc7d832"
+    },
+    {
+      "path": "docs/SHIP_CONFIGURATION_EQUIPMENT_ECONOMY_PROGRESSION.md",
+      "bytes": 38439,
+      "sha256": "c3a6e688b68ec72dd6c07da4de004c4e48cc9575f81e879253f0eb1032ce29ca"
+    },
+    {
+      "path": "docs/SOLID_TERRAIN_NAVIGATION_AND_LEVEL_COMPOSER.md",
+      "bytes": 27291,
+      "sha256": "0727b1fb12fc184c9da1563bf0806ece2483ab8df6bd7d97b946af35b74bf83e"
+    },
+    {
+      "path": "docs/TILE_ASSET_PIPELINE_AND_LEVEL_COMPOSER.md",
+      "bytes": 28759,
+      "sha256": "0a6e5bab80c50ad291387c587195dbe46d5b02a8133bd54b6af9d36cd85787ae"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "bytes": 5317,
+      "sha256": "04744545b9043419e3553d888c6ca08c2618a8be064169e628ecded9cf03a546"
+    },
+    {
+      "path": "docs/TUNING_GUIDE.md",
+      "bytes": 47884,
+      "sha256": "7bed8590258ac8e98a2327dce86e1e090970a0523a98fef053f643ad8c4bd3ad"
+    },
+    {
+      "path": "docs/USER_MANUAL.md",
+      "bytes": 37468,
+      "sha256": "3c5c6dc263362ce5f88a54598052123947b880666a086b918d681a69fa43d9bf"
+    },
+    {
+      "path": "docs/VERIFICATION_REPORT.md",
+      "bytes": 4616,
+      "sha256": "1087c0cbd4f2d5a3345d729d3cf7a9006acfcaff040c20dba9a48cb57d4673f6"
+    },
+    {
+      "path": "docs/browser_shmup_PDR.md",
+      "bytes": 58244,
+      "sha256": "52515302ac2f39eb52b226cc526afd95c526e1dc820c5b6e3fadee7cec3f36ea"
+    },
+    {
+      "path": "docs/quickstarts/ASSET_CREATOR.md",
+      "bytes": 1176,
+      "sha256": "27eb0a4eff0a51f20574dc1728f5132c49bf66d03c8cae21ee376f8a7a2afc5b"
+    },
+    {
+      "path": "docs/quickstarts/LEVEL_DESIGNER.md",
+      "bytes": 1246,
+      "sha256": "6a3225c8f9231a2e50a6b9d567ab74feacaed3fef482b5816299acf61827dd88"
+    },
+    {
+      "path": "docs/quickstarts/MASTER_INTEGRATOR.md",
+      "bytes": 1057,
+      "sha256": "38fc993fdd7c18b97a738f716dd503cd1bc61eff7e53038456a32a1c92e47957"
+    },
+    {
+      "path": "docs/quickstarts/TUNING_DESIGNER.md",
+      "bytes": 913,
+      "sha256": "adc63aad5820fea87f79a7d6a8216902aea93fd7745fb5d5431560942e18b58b"
+    },
+    {
+      "path": "docs/skyforge_roadmap.md",
+      "bytes": 88126,
+      "sha256": "2e3ae58814a78f9d414cc666a5459d1b113d63cb85a4d7ecc775dc4db8c79970"
+    },
+    {
+      "path": "e2e/device.spec.ts",
+      "bytes": 2558,
+      "sha256": "0f06f21c0af8fbbc39feec270ec63429328646f5e2a58c8a7d0309f67f626d5c"
+    },
+    {
+      "path": "e2e/global.d.ts",
+      "bytes": 985,
+      "sha256": "b1f74fca6d992a580079bb316912f14f8f57c345276ae44af36acd37b2d83053"
+    },
+    {
+      "path": "e2e/smoke.spec.ts",
+      "bytes": 12118,
+      "sha256": "17283442463aa9bbd5d96161b761c2c9cfad4ce01b1cefdf66fc72906e046b45"
+    },
+    {
+      "path": "editor.html",
+      "bytes": 443,
+      "sha256": "e38613c96ad97f65fe7381d7c726c3ef2bd30cd491c4a4a2e06e58c109a7b31d"
+    },
+    {
+      "path": "eslint.config.js",
+      "bytes": 530,
+      "sha256": "ad683e8bfa7f67a193d9351e067a2adce66d8b782cfdb66aa1a8f8ac630407e3"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1029,
+      "sha256": "2761927ddc84f878f066478a3fa06820a079c9906012023d64c90a12302f7609"
+    },
+    {
+      "path": "examples/compiled-release/content/packages/asset-skyforge-placeholder-assets-1.0.0.json",
+      "bytes": 74391,
+      "sha256": "507ea70cf92466a15b0eb6cf71c056e5113e6561bc1b46426bfe5de64a62b08c"
+    },
+    {
+      "path": "examples/compiled-release/content/packages/level-skyforge-base-levels-1.0.0.json",
+      "bytes": 1215017,
+      "sha256": "98328e5bf15335fa3c30688ffa82072f610fea4258400a2c1263a2437e669336"
+    },
+    {
+      "path": "examples/compiled-release/content/packages/music-skyforge-base-music-1.0.0.json",
+      "bytes": 4097,
+      "sha256": "ccf9aa4ffd27c0413202cd88795113776df048a67b77c2985c6cc79f72daedc9"
+    },
+    {
+      "path": "examples/compiled-release/content/packages/tuning-skyforge-standard-tuning-1.0.0.json",
+      "bytes": 61011,
+      "sha256": "3c75bdcc5d0c8ac8fb1298c94c8a8a63f5fc4c41748340b825c546bff041bb9f"
+    },
+    {
+      "path": "examples/compiled-release/content/skyforge.lock",
+      "bytes": 2381,
+      "sha256": "3636ef5299ccf704cab9ddf384b46e7090345017e08b2364a31852e86bc598e4"
+    },
+    {
+      "path": "examples/compiled-release/content/workspace.json",
+      "bytes": 707,
+      "sha256": "8e237f4aaef430e6c15a32b9a46cc353b9afa5a9cbc873a8b08a9378209a0f89"
+    },
+    {
+      "path": "examples/compiled-release/release-manifest.json",
+      "bytes": 4838,
+      "sha256": "adee3ca02817e56b0975ae3359a39a8e404c977241b5bafde0238d29686da561"
+    },
+    {
+      "path": "examples/compiled-release/resources/asset/0bdb30642d43c8da-demo_fighter_sheet.png",
+      "bytes": 881,
+      "sha256": "0bdb30642d43c8dab25c800ad35726a3aabb853f67f0ce54dd130312ee994ae9"
+    },
+    {
+      "path": "examples/compiled-release/resources/asset/2a37b6f3e9aee052-demo_fighter_shadow.png",
+      "bytes": 240,
+      "sha256": "2a37b6f3e9aee052746935ba6d3fc5b6526232fe21f2d4fc82089613d10ac99c"
+    },
+    {
+      "path": "examples/compiled-release/resources/asset/4692ebd94d497f0e-skyforge_canyon_water.png",
+      "bytes": 51210,
+      "sha256": "4692ebd94d497f0ec022ae9822b2740c069bf681e892293f084577fa121b6c88"
+    },
+    {
+      "path": "examples/compiled-release/resources/asset/72a6dd2364d3e584-skyforge_canyon_props.png",
+      "bytes": 131877,
+      "sha256": "72a6dd2364d3e584cd045ee5a00c8e6a6d2f3d56ecc7386b2adb5cf5f2b8a2b8"
+    },
+    {
+      "path": "examples/compiled-release/resources/asset/77d6ea26b748ea1e-skyforge_canyon_sandstone.png",
+      "bytes": 79509,
+      "sha256": "77d6ea26b748ea1e821ad761059864d6a8fb36ad9b159a6ed51da7ea8f15bca3"
+    },
+    {
+      "path": "examples/compiled-release/resources/asset/7a9c0caa086f424d-skyforge_canyon_terrain.png",
+      "bytes": 55439,
+      "sha256": "7a9c0caa086f424d67825d320b2475e8dd38b919ef6e4841baff6d1b86e7aa1f"
+    },
+    {
+      "path": "examples/compiled-release/resources/music/4426c19a7f3b8417-mission_01_drums.ogg",
+      "bytes": 346630,
+      "sha256": "4426c19a7f3b84176b8faeb3a692eab74b65629eb6dae19c6686020c0c3d13ea"
+    },
+    {
+      "path": "examples/compiled-release/resources/music/b354fb1387df1d6d-mission_01_lead.ogg",
+      "bytes": 349898,
+      "sha256": "b354fb1387df1d6d9f13160e1fa39f72416f5350b541f17e528d9336ebeded88"
+    },
+    {
+      "path": "examples/compiled-release/resources/music/cbd0c9aff9f11075-mission_01_full.ogg",
+      "bytes": 539359,
+      "sha256": "cbd0c9aff9f11075d555b50bf95f8b63a9aad92f71770c1657b3a31feddf88cf"
+    },
+    {
+      "path": "examples/compiled-release/resources/music/ee11f7492417b8b6-mission_01_harmony.ogg",
+      "bytes": 538328,
+      "sha256": "ee11f7492417b8b6e691b4be43bc1d77ffafdaa730d58006b30e7efed5aa8d31"
+    },
+    {
+      "path": "examples/compiled-release/resources/music/f61a1259e56eacf4-mission_01_bass.ogg",
+      "bytes": 166204,
+      "sha256": "f61a1259e56eacf47c4ada6cb656b8e085114808e3de81da89753159d2493092"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/biomes/canyon.json",
+      "bytes": 8237,
+      "sha256": "ebaab28a6155979c9500754cd47827a0af22547b731267a6c2e38a5b920032e6"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/campaign.json",
+      "bytes": 160,
+      "sha256": "e9338d715e5aafa37361345624900580b9d45d81f68cc6a81795de3c24c500f5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/collisions/canyon_passage_collision.json",
+      "bytes": 16988,
+      "sha256": "16db8385c678d8b31a225455fe9cece06fd78f7ac854724c16fb791f6991dac2"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/index.json",
+      "bytes": 346,
+      "sha256": "9d7c5ebb09aebecd9eed11c6031f046871b78649f62bd339a29d99500ff40605"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/level-packages/level_01_canyon.json",
+      "bytes": 262,
+      "sha256": "693321287c1f9361cbe52ea009ac15cf7a37156640c453dadf9f29e2100e93fc"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/levels/level_01.json",
+      "bytes": 2522,
+      "sha256": "72f27120d65c4038b738eb3fe26a299b419fae2def875920916b44ff2c92584f"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/levels/level_boss_test.json",
+      "bytes": 484,
+      "sha256": "04c5af4e642777eb8883deb13532936b111bc35ff290afa26baf5b8120608826"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/levels/level_dev.json",
+      "bytes": 1131,
+      "sha256": "5d147506ede0d14605499c22ee299874f42fd3d538039092564a78536e596116"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/maps/canyon_passage.json",
+      "bytes": 867725,
+      "sha256": "f783d16fde832499a42d4430f2a055695382044646ed6c15fe0362cd7c5ed2e5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/objects/canyon_passage_objects.json",
+      "bytes": 109,
+      "sha256": "9b382f8e39f12256c1a0f9aa0622add766fbdd68dca181e591be95a092388d90"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/payload/routes/canyon_passage_routes.json",
+      "bytes": 10301,
+      "sha256": "89cd7d63b2314986ad0e067d513c9fc9f92058c836b2a4527d55c578cd58a1ae"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/resources/index.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-levels-1.0.0/skyforge.package.json",
+      "bytes": 1036,
+      "sha256": "359bfabc3e1b271cd96ef810ec598cfbbe43f79be84a7185f74c47edefc712ef"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-music-1.0.0/payload/cues/coastal_assault.json",
+      "bytes": 1326,
+      "sha256": "939f7c1751f82aa5014440d0d82e0b78738d02128974537e31a7acf67082b7ff"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-music-1.0.0/payload/cues/none.json",
+      "bytes": 165,
+      "sha256": "9007a14f68956b1350a061b5de3d196b80d533ee110d04bbdf8fcfac111da68e"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-music-1.0.0/payload/index.json",
+      "bytes": 97,
+      "sha256": "03c2ccc536174337324699096abe98fb81eb0529b476797cf865796e5103b20e"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-music-1.0.0/resources/index.json",
+      "bytes": 802,
+      "sha256": "9392c6277d0f4cf4f8075b96749cfa32ec9c30819deaf7702da8af3479608332"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-base-music-1.0.0/skyforge.package.json",
+      "bytes": 633,
+      "sha256": "9b73a252c50a910e1bff9c7e647c446d0f2f184e8e5d4b18e932c45b32ab8220"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/demo_fighter_epoch14.json",
+      "bytes": 1931,
+      "sha256": "85ea0d55936cde9b24fc7632da3e7b5b288ef550130fc4a2a962b724509ec570"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/demo_fighter_shadow_epoch14.json",
+      "bytes": 847,
+      "sha256": "ede1879c242c3a1654ebd6f2193612e6f421068f34a16443fb09fdad08568397"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/equipment_placeholder.json",
+      "bytes": 565,
+      "sha256": "a0847f078406c57057e1d079a6a629d5347f7474c1a748449d020e68dc4ef0fd"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/player_ship.json",
+      "bytes": 640,
+      "sha256": "91fa4484d5eecca0ce75fbb6224704601f166af796900ac8b4291c712e902d96"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/skyforge_canyon_props.json",
+      "bytes": 9953,
+      "sha256": "1be4f2953d3e3bb9d1d91dee4296fd553a24acee31c55feed55a231310261e71"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/skyforge_canyon_sandstone_plane.json",
+      "bytes": 836,
+      "sha256": "58b033d5fea6b84d4eff60b0ca23655d4e7a6c44d556eb3ed59245e9cbdace41"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/skyforge_canyon_water_plane.json",
+      "bytes": 1244,
+      "sha256": "029a4ba14f2913905f0fe4cc15d9b60acd68d59a0b98973d0c52f217e4de173d"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-crack.json",
+      "bytes": 586,
+      "sha256": "bcb087d33cbac2f6e0a04771386943accd6742d6e7dfc413c808aff2996e6c16"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-dust.json",
+      "bytes": 704,
+      "sha256": "4074671369349179fe8fde67e90858b553924d9fc5bf043f3b70ab54a0a675ad"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-empty.json",
+      "bytes": 578,
+      "sha256": "34b237ab9bba116cdb2d0c500b87b973d40bdd7d9e7caf1a90549e66de726cd5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-metal_platform.json",
+      "bytes": 596,
+      "sha256": "d3d71165573bb9e9aa48b0d17cca1e8d806cc08f8af0dc22c1e3270d68e0fe41"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-river.json",
+      "bytes": 723,
+      "sha256": "ab0e2e9b6c585b10b9596c70d3dd5ef1e0d697cc46a88e62f9644a48b98d2b0a"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-rock_cluster.json",
+      "bytes": 592,
+      "sha256": "be425240196487c2e7690db00517a5fcc3f637fc4e56f7b7111a8a51f632ec26"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-ruin.json",
+      "bytes": 586,
+      "sha256": "40d52c5f67e69e5951a1e7246d8419d3b524d5e03af18f2c5131aacb27b4de7a"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-sandstone.json",
+      "bytes": 595,
+      "sha256": "90fad1e2416e9c092e5593d04b9e946bd44637e838cc5801b23182ac93984e34"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-sandstone_boundary.json",
+      "bytes": 612,
+      "sha256": "37b156a7d2737ff986c4ac6eceba87291790598d9dc447038548836963870f89"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-scrub.json",
+      "bytes": 583,
+      "sha256": "a5e2dcd592fa5e44fed14cf54c4d85c487cd6e6c07a166550a9d434d591fa368"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-sediment.json",
+      "bytes": 591,
+      "sha256": "7f423bca5fa9853165c156977ffb95d8b79797932dcfcf0d1d1eb8c7b92e1fe0"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/terrain-canyon-shoreline.json",
+      "bytes": 601,
+      "sha256": "a6dfb7ff0d787fd026a0b83e657778d91148ff16f6553bd5f29346e053f80dcb"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/tex_enemy_bomber.json",
+      "bytes": 658,
+      "sha256": "f5a7fdcbacb7579d0e17f56c8c5802fd7fed2b2fa3c87824d3f1f8843aa2586a"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/tex_enemy_heavy.json",
+      "bytes": 670,
+      "sha256": "5e571c63f67d605e949b57c921ff50b395d8129cad744579a6679043b4685df7"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/tex_enemy_interceptor.json",
+      "bytes": 678,
+      "sha256": "96e2e7fde0c00e879b9e55f21eb44cb6f4d8ebfa5f1ddea25e8d5901dd539540"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/tex_enemy_light.json",
+      "bytes": 670,
+      "sha256": "329e0af451a0404230f92ff922a27e27b5fa1f6a76c5bbc7ce3eaa740e138fae"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/assets/tex_mine.json",
+      "bytes": 628,
+      "sha256": "604f0e43b109c18cf52b595053d1ec9fed255ae421a880ab30bf3181db7b76c1"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/index.json",
+      "bytes": 825,
+      "sha256": "e37e96c0aa678c0d36e075451f4b66c2f7a219be8428b4a62699b0cb862cb4ca"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/tilesets/canyon-procedural-tileset.json",
+      "bytes": 2560,
+      "sha256": "89ebc8ec1e6cbbeb22e13134a24a8672fa1458a1d5e7695d5b44750b6c8687b9"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/payload/tilesets/skyforge-canyon-default.json",
+      "bytes": 23321,
+      "sha256": "faa7d954fc05124184ce768f7f41f96e58dd4f575b59dc0d4f31342a14c321b6"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/resources/index.json",
+      "bytes": 4481,
+      "sha256": "a8c3faaa631b85fdfb4c47fb7b2f5870f943a73e4b9eef0b485144f516eb7528"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-placeholder-assets-1.0.0/skyforge.package.json",
+      "bytes": 672,
+      "sha256": "5eb286c18e93dee0124ab811453e90fe172a9ec7803e2d4b18a4fa56e6f0bc55"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/bosses/boss_alpha.json",
+      "bytes": 1478,
+      "sha256": "4179a4955b0e39cd19c9f8d5c936535ae22f2537d854e0eeb1ddc5f0d708c5a7"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/bosses/miniboss_alpha.json",
+      "bytes": 755,
+      "sha256": "617e8d5e420aa29572ea20e1008f122ec4ce8e6d93fbf7825b84294450549932"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/difficulty.json",
+      "bytes": 436,
+      "sha256": "4a26fc966acf547aef2a15562d5e1fd5fa59f5e7686ff111747a5fab63be5dfd"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/bomber_intro.json",
+      "bytes": 437,
+      "sha256": "4832cd90c5dd944c758e39a8c2e28ba42060d15735059fb6476512fcd5be2ce7"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/bomber_wall.json",
+      "bytes": 552,
+      "sha256": "a9182610f8f14cfe2c0b70b5033fe4782342fc2434dc68052301fc03274d8f8d"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/boss_alpha.json",
+      "bytes": 310,
+      "sha256": "7884ef5644bd68cdfeb74aa0fb00710039fab11c92c29ab60c6acb3146e3a9fd"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/crossfire_combination.json",
+      "bytes": 659,
+      "sha256": "f652678dc5b3dde0bff1e55fc277eb439167e8f0e2ac9cccf52e68deb7570145"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/crossfire_intro.json",
+      "bytes": 565,
+      "sha256": "f949fc70d4cbaf566a37929ea943b5599f646dcb835de761a01bcdbf5e9a2b7d"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/final_escalation.json",
+      "bytes": 994,
+      "sha256": "7b1d4e294cf10554fa8a00eb247c9ddcb07d4ecb87c4107a0a8a38ac7db69130"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/heavy_escort_push.json",
+      "bytes": 632,
+      "sha256": "f7ecff0f09386af549f725f6437d2aa0a04a70fb522d0eb70cb8e2cfd8356dc3"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/heavy_intro.json",
+      "bytes": 470,
+      "sha256": "ff6f5d27420c7fe24a0917a750f83832dda4c26aee0d1e009188d4efc186ec18"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/interceptor_ambush.json",
+      "bytes": 796,
+      "sha256": "f03c6f4eeb61209daba8eca99636ccb6005e61546d959ef48c14c7d78afb17d5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/minefield.json",
+      "bytes": 654,
+      "sha256": "1f0b8a95c6890eeddbaa68a5c9be243babb4523603e3571628c49510e6288de6"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/miniboss_alpha.json",
+      "bytes": 302,
+      "sha256": "46ce32e777069593ba0ee4f2c8cfdd1637ad53cf4c2ac0bc5021482b98651fee"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/mixed_assault.json",
+      "bytes": 775,
+      "sha256": "049da1b280c4dd7da83119d0e0528166681c4d6f5307c630739a28c445fb12aa"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/opening_scouts.json",
+      "bytes": 552,
+      "sha256": "b8053023e28c6eaddafbeb237c8e48f9b5bad6f860a4f20059d8509d354c3183"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/pinch_gauntlet.json",
+      "bytes": 790,
+      "sha256": "9e8a9b4ea7853c950ab7f4596784bb7819a51f7c3b3e2d6144ea5fabe44d29bf"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/recovery_reward.json",
+      "bytes": 807,
+      "sha256": "4ea2ac958d4aaff3c434dd8450624f36f1ed3e17a7eab41aa5ac21fd908fdf23"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/encounters/turret_introduction.json",
+      "bytes": 326,
+      "sha256": "57b1171562c8f44af0faa1913ab9485ebe3ad848404f7a20e792b42a364d9c87"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/enemies/bomber.json",
+      "bytes": 493,
+      "sha256": "dd9d599b050414b1a172708f735d5983106e54be01990bc3a2909cf3c5994632"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/enemies/heavy_fighter.json",
+      "bytes": 479,
+      "sha256": "7f4eb78fcca4ef8bba3f2e779b5c6a20de6c293c4ba38b3473a8f3c53cd58af5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/enemies/interceptor.json",
+      "bytes": 422,
+      "sha256": "a67e053fc27431f181fc9c5b1f2d2c6bd190c27c1ec592542853aaca815f39c5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/enemies/light_fighter.json",
+      "bytes": 410,
+      "sha256": "f4ef9a5e0ea6ee416aacd97c7034ffa003613e4c3aab51f0080495b2ef77ed7f"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/enemies/mine.json",
+      "bytes": 295,
+      "sha256": "b986e014ffbdc60312a5e4d2c2ca16d00d0c9b7d7ed0c0fb66d3ccd55ebd0443"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/armor_heavy.json",
+      "bytes": 660,
+      "sha256": "933a15e79edf2debc09afc38444b99c5e44e55f9cfff9eb8ab699b5830768226"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/armor_light.json",
+      "bytes": 412,
+      "sha256": "fe4ece8bec5322ec7dfddae4ffbc60590f25156af3385469c318707b3f238e4b"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/generator_capacitor.json",
+      "bytes": 774,
+      "sha256": "21c15cb997ed4ef283e782620355571de9830367328755728f2065fee6cfe180"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/generator_flux.json",
+      "bytes": 759,
+      "sha256": "439c1adaf6d4d616d1ea60968bc0cc9d52ad012f92033736dfa2c6d0e44bb246"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/generator_standard.json",
+      "bytes": 536,
+      "sha256": "1e2bb62b8d7639f10e0eed92025c4bb804e2eb79e85a80cd76d256f9fbb3bd89"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/hull_bulwark.json",
+      "bytes": 1273,
+      "sha256": "9883de205df7e8357a44b2dfaaaaba90e7a276eacd343ed8e21a29fedfd1c5b6"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/hull_interceptor.json",
+      "bytes": 1177,
+      "sha256": "2b84f7a8c790e078ec82821c52fa0703c307b2db0b9a3ca3f6df8ea86f9ab655"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/hull_vanguard.json",
+      "bytes": 1009,
+      "sha256": "9faabcc72d569291342ae2ab935bc2d1319d843bbf6de28b03104b464091af0e"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/propulsion_anchor.json",
+      "bytes": 751,
+      "sha256": "b8c8c710572c568881befa6abab4e84f549169db54c3db7ead63c9450219503c"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/propulsion_balanced.json",
+      "bytes": 488,
+      "sha256": "54fbab0b0f32d793c3db444525f342fc68db04125279d3cb207794fcaadd4403"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/propulsion_sprinter.json",
+      "bytes": 736,
+      "sha256": "e3587f9114f862220fa6a5b1dff2a1a728fb53dbd2e8dbd4de74a83ee56bd4b8"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/secondary_missile.json",
+      "bytes": 711,
+      "sha256": "8093ce6fe3d8cb1a64c3b20b159c73b803994470be42964695079aa256d4f35c"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/secondary_rockets.json",
+      "bytes": 804,
+      "sha256": "f5ff82f32f133d5e0397b57b0ef614fba34b7114cd7da0b3da318325cedb2fae"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/shield_bastion.json",
+      "bytes": 739,
+      "sha256": "1f3d8c81895bbe8a1937333bca093e8d478e249c5fb08db104de2b937da3dda8"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/shield_quick.json",
+      "bytes": 756,
+      "sha256": "7bc6d099ae940f1ee63001a5ff4b200e00312bb3d9a43d5649dae2b7da9954c4"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/shield_standard.json",
+      "bytes": 495,
+      "sha256": "2e54570d76ddb28deefb1429e8514aec9e81ddfb98d7a1f6a5362355d2876ee8"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/utility_credit_magnet.json",
+      "bytes": 667,
+      "sha256": "6d331569034ee55334039a5a26ebeadfbef5dc60062d3b6d1bbcd0a24dc63392"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/utility_shield_regulator.json",
+      "bytes": 754,
+      "sha256": "08d6e6209f36eb33449fc626a34b2b4fdaef4dc3349cca3d62bf5d52beecf2db"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/weapon_pulse.json",
+      "bytes": 865,
+      "sha256": "4ebc7e63c5c50feb9f5a7361e56bb36ce4ae1ab1d8ec8bb1fc280242ac06c4cf"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/weapon_rail.json",
+      "bytes": 818,
+      "sha256": "3b83f5d85fee4cccec360355efe42e1c441d16ea163499f9370bb7309ac8a612"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/equipment/weapon_spread.json",
+      "bytes": 809,
+      "sha256": "527e1b4841c6bc450202c1e9d96ff68ee1ef47a9ffb3e89679baac0ecb9b945f"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/bomber_escort.json",
+      "bytes": 562,
+      "sha256": "ec721b878ed467f8724ab23090d74ea4e1d0dfad5def5517e5f2c9de5df794f2"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/escort_heavy.json",
+      "bytes": 893,
+      "sha256": "3a30556bf312c636a1c89134bbbb9da8489b09bf8d3ede8114a39568acce8987"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/horizontal_row.json",
+      "bytes": 710,
+      "sha256": "7f6e32ec07bc0cdd407379f880e3508243db723d3bddb4658186dcc68466d4ce"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/left_sweep.json",
+      "bytes": 582,
+      "sha256": "d04101e1ed45ce72b6a6fff900df213398d0e833371772d5daed8c7f3d461b3d"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/pinch_attack.json",
+      "bytes": 690,
+      "sha256": "4557d3cf524c71db1671a72ae1e85dc07da4b3041f095328bb985aab822cbfcb"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/right_sweep.json",
+      "bytes": 584,
+      "sha256": "96347d292bb40b1714cb05f3f0bf965b019e023089764bc9f8e17833babbbcfd"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/staggered_column.json",
+      "bytes": 718,
+      "sha256": "3ecef57327aae244b6eaec9d3f0fdf8b7b6bf283f544824072a14727efd34dc6"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/formations/v_scouts.json",
+      "bytes": 716,
+      "sha256": "0ebc6a7f078a8272ec38b09419706740b89bcb21622502095a9d9f13061c170c"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/index.json",
+      "bytes": 2076,
+      "sha256": "dcae179602c3929f485da2ae86d443629dcfbbe73159bdf1044d2b51912bda1a"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/bezier_s_curve.json",
+      "bytes": 216,
+      "sha256": "2bdc57e0d7bdf1af8094d5bd10bc0ce2640135a124b42e13dacae2fcabf487f5"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/boss_patrol_fast.json",
+      "bytes": 143,
+      "sha256": "429415eb6dfa5f62082e7fc42c29b5958cc559d4631865496ef2241a901c1a75"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/boss_patrol_slow.json",
+      "bytes": 141,
+      "sha256": "b0231cd1cc656f59705a9a2d4f86a40a1577eb7f715ec05bb6f76ea5e34bf116"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/dive_retreat_fast.json",
+      "bytes": 153,
+      "sha256": "14a4b96a6e2e4b51370203ea831801eb1782db4cb5e7cd80cde13e743716e0c6"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/drift_down.json",
+      "bytes": 80,
+      "sha256": "38c7693c3392a803988547f16cb890fc2711d4776dd8c69af56b7283462f44bf"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/enter_attack_exit_left.json",
+      "bytes": 244,
+      "sha256": "bf7dc55d447cb33f77a5f0dc3a21ade01edc483f5873d301d01df4f3338739ef"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/enter_attack_exit_right.json",
+      "bytes": 247,
+      "sha256": "d11ecabc0a05c8bde3e126398928dc9d4e841a5baba6663786782dbe4c143c2a"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/patrol_mid.json",
+      "bytes": 136,
+      "sha256": "bba94f7c6f3c268613b07be71a033f9421ae9d8b2f7e6282410e99102a054225"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/sine_descent.json",
+      "bytes": 135,
+      "sha256": "70ee5b2115f04ab3b5155a4e9e9ad8f605d7cc5e7c8cf19ed3606c98651fb54e"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/static_hold.json",
+      "bytes": 80,
+      "sha256": "4dead1c53cd5625c7833cd3c40c7fb72cddcc2699fc077b54a25021e95fe5dd1"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/stop_and_fire_bomber.json",
+      "bytes": 193,
+      "sha256": "f374686f4f31a2a00e4bb94284cec17a55b8fb326f90f4a9082d48dbbe871ffc"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/stop_and_fire_mid.json",
+      "bytes": 193,
+      "sha256": "b86f762d8464dbeb44b7b89a7c3810f2a643db9e8515626a29ab5dd051a50bbd"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/straight_descent.json",
+      "bytes": 87,
+      "sha256": "e61e348526a601e2f7e85ed1e10f3298fc71ed24607d37fd552d1c88a9c39f0a"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/sweep_left.json",
+      "bytes": 100,
+      "sha256": "e62cd871f8c6b0e17eb0f9678f7f3972b579093218f696e6523eccf56553ed2d"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/movement-patterns/sweep_right.json",
+      "bytes": 103,
+      "sha256": "7019ed0e7f80817e4ca97a14a23b35084b051dcb143a2754e463d64750cf240d"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/pickups/armor_repair.json",
+      "bytes": 169,
+      "sha256": "f95c48bfa3e1b387ca332ad2b29c2e23921f18a60364c333c34898ca97ff2808"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/pickups/credits_large.json",
+      "bytes": 172,
+      "sha256": "a24ac1564819c23b23c6fa2c939c3905b619f3b7d7543463fa9fe1913b5e35f2"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/pickups/credits_small.json",
+      "bytes": 165,
+      "sha256": "c49fbecaea70e6727a9eb59b0381b23d3ffa336bb2058d8897168444b0517b17"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/pickups/pickup_spread.json",
+      "bytes": 198,
+      "sha256": "ea3ace8a450ba79faad6c3be7c5fa971deb3a92f21aba6a414ce760c779f1f6e"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/pickups/shield.json",
+      "bytes": 157,
+      "sha256": "d169dbd4c7e2a802a6f6e0a2fe39cf4a3855adb2f24a39a10b4fe0a7fd693a65"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/pickups/weapon_upgrade.json",
+      "bytes": 166,
+      "sha256": "86849925c9bb032734b1dcf5ed13cc97f4b51571713a9b705687cf9a5426baec"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/profile.json",
+      "bytes": 41,
+      "sha256": "722a8d5238fc6bba1320a45121b0f76f3c42b601840a2ed714037830f0649374"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/boss_aimed_volley.json",
+      "bytes": 240,
+      "sha256": "444ff86c8bac63fcfa682cf0fa46b4d41cfbebdf0657125139b6c264db0e46da"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/five_way_spread.json",
+      "bytes": 256,
+      "sha256": "43c1cf77af378c562ee0687b2129f897ee2f476e9294be30cddf9a54dcb781de"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/mine_layer.json",
+      "bytes": 206,
+      "sha256": "443af9d67d51deb6585f9e7f8e8649e9a21caabdf5f174c574078eb921968384"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/ring_burst.json",
+      "bytes": 312,
+      "sha256": "5d6c39fde589e335f046d6b8d806d80774dbe37677e132df554e90a2f4a2333e"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/single_aimed_shot.json",
+      "bytes": 221,
+      "sha256": "8accf6ed22e984520775c7afdc3c359a86c4a74f75904449d49d416404a5fc96"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/sweep_fan.json",
+      "bytes": 303,
+      "sha256": "ef544f69549273abdd776a0cb5e54634320d400b488ec6637e4524a2ac8c03ec"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/three_way_aimed.json",
+      "bytes": 238,
+      "sha256": "a1beaf8df85955f0e1e97fb189fec46c0d088ec78dfcb63bb1b22e241c1b9a30"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/projectile-patterns/turret_part_shot.json",
+      "bytes": 220,
+      "sha256": "85e094dc55bd8b0c4fbeb3607f1e215a7d86c2076c0927e9d428096b332e8931"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/weapons/missile_system.json",
+      "bytes": 471,
+      "sha256": "565d641a9412ddc1d339b69ec13de1f83d008b3a14505f337f12b47006324c67"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/weapons/pulse_cannon.json",
+      "bytes": 954,
+      "sha256": "98c4598c32e1200d70a360ed2eafd25f8ee642e61df512c74839614de0150fbc"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/weapons/rail_lance.json",
+      "bytes": 862,
+      "sha256": "85b4823a8eec8b263a428c7e9a17e9e104914a7b6105407ee83afcd0cfe604f3"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/weapons/rocket_pod.json",
+      "bytes": 742,
+      "sha256": "d1114e5189f139ddd9e6f72097216ebea5b1e17b400e6be6af5ada552a580dc9"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/payload/weapons/spread_cannon.json",
+      "bytes": 980,
+      "sha256": "878e5a302ab15a441716c1f37d63d6e59181cf8a85e191e42b316a61377da833"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/resources/index.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "examples/studio-folder/skyforge-standard-tuning-1.0.0/skyforge.package.json",
+      "bytes": 614,
+      "sha256": "49e97c797b93fb7a165dd01a7aba22ae6384313b93baadadd2dbfead6f4cf695"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-base-levels-1.0.0.sflevelpack",
+      "bytes": 1215017,
+      "sha256": "98328e5bf15335fa3c30688ffa82072f610fea4258400a2c1263a2437e669336"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-base-music-1.0.0.sfmusic",
+      "bytes": 3512,
+      "sha256": "edcc354ae754b45fb3562e53ec9aab82a4131aaf2af4b82bde490a8a1c9b20b5"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-main-workspace.sfbuild.json",
+      "bytes": 1449,
+      "sha256": "6ccc2a10a0d6d54bf71e091327dc92cbba5fc4afdbf1c5f23b34628ddf52030f"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-main-workspace.sflock",
+      "bytes": 2381,
+      "sha256": "3636ef5299ccf704cab9ddf384b46e7090345017e08b2364a31852e86bc598e4"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-main-workspace.sfrelease.json",
+      "bytes": 4015,
+      "sha256": "8db2472cb4aace750c9937a28eedc009f3ff5f450812e4edc5e609cb0f7d8538"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-main-workspace.sfworkspace",
+      "bytes": 707,
+      "sha256": "8e237f4aaef430e6c15a32b9a46cc353b9afa5a9cbc873a8b08a9378209a0f89"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-placeholder-assets-1.0.0.sfassetpack",
+      "bytes": 74281,
+      "sha256": "1311782dadbc85606966e332cf9ee546fc5ae2ba5ed6456091cbf0aa5278ec86"
+    },
+    {
+      "path": "examples/studio-packages/skyforge-standard-tuning-1.0.0.sftuning",
+      "bytes": 61011,
+      "sha256": "3c75bdcc5d0c8ac8fb1298c94c8a8a63f5fc4c41748340b825c546bff041bb9f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 639,
+      "sha256": "194e206a8d26e0eb88c07e70f7c2ea48147526e9c86164a2ecc4401d2d9e769a"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 131767,
+      "sha256": "96e6b56ca546881da1971c7e7c2d2a1b4859c4c973e677905036a8dbb337e6c3"
+    },
+    {
+      "path": "package.json",
+      "bytes": 2526,
+      "sha256": "baa6a81045e5d147f51def0a6f8e9aad50ddee861ced5e93eb084f9ed5da6325"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 991,
+      "sha256": "549a4fc261cb7278f8e8459cad1b1a36d2fa7d36ec00c0b9fb6669cf4f340700"
+    },
+    {
+      "path": "public/assets/studio/demo_fighter_shadow.png",
+      "bytes": 240,
+      "sha256": "2a37b6f3e9aee052746935ba6d3fc5b6526232fe21f2d4fc82089613d10ac99c"
+    },
+    {
+      "path": "public/assets/studio/demo_fighter_sheet.png",
+      "bytes": 881,
+      "sha256": "0bdb30642d43c8dab25c800ad35726a3aabb853f67f0ce54dd130312ee994ae9"
+    },
+    {
+      "path": "public/assets/terrain/skyforge_canyon_props.png",
+      "bytes": 131877,
+      "sha256": "72a6dd2364d3e584cd045ee5a00c8e6a6d2f3d56ecc7386b2adb5cf5f2b8a2b8"
+    },
+    {
+      "path": "public/assets/terrain/skyforge_canyon_sandstone.png",
+      "bytes": 79509,
+      "sha256": "77d6ea26b748ea1e821ad761059864d6a8fb36ad9b159a6ed51da7ea8f15bca3"
+    },
+    {
+      "path": "public/assets/terrain/skyforge_canyon_terrain.png",
+      "bytes": 55439,
+      "sha256": "7a9c0caa086f424d67825d320b2475e8dd38b919ef6e4841baff6d1b86e7aa1f"
+    },
+    {
+      "path": "public/assets/terrain/skyforge_canyon_tileset.json",
+      "bytes": 8018,
+      "sha256": "d5c8b126e5a9847b5615a3fad896b7eb29769a745fc6b97e49058980b4ea9f61"
+    },
+    {
+      "path": "public/assets/terrain/skyforge_canyon_water.png",
+      "bytes": 51210,
+      "sha256": "4692ebd94d497f0ec022ae9822b2740c069bf681e892293f084577fa121b6c88"
+    },
+    {
+      "path": "public/audio/music/mission_01/README.md",
+      "bytes": 722,
+      "sha256": "79af8e65e6e15ba068d42b5ae743fa9bac9e93be70f181095cf2a561f6129842"
+    },
+    {
+      "path": "public/audio/music/mission_01/mission_01_bass.ogg",
+      "bytes": 166204,
+      "sha256": "f61a1259e56eacf47c4ada6cb656b8e085114808e3de81da89753159d2493092"
+    },
+    {
+      "path": "public/audio/music/mission_01/mission_01_drums.ogg",
+      "bytes": 346630,
+      "sha256": "4426c19a7f3b84176b8faeb3a692eab74b65629eb6dae19c6686020c0c3d13ea"
+    },
+    {
+      "path": "public/audio/music/mission_01/mission_01_full.ogg",
+      "bytes": 539359,
+      "sha256": "cbd0c9aff9f11075d555b50bf95f8b63a9aad92f71770c1657b3a31feddf88cf"
+    },
+    {
+      "path": "public/audio/music/mission_01/mission_01_harmony.ogg",
+      "bytes": 538328,
+      "sha256": "ee11f7492417b8b6e691b4be43bc1d77ffafdaa730d58006b30e7efed5aa8d31"
+    },
+    {
+      "path": "public/audio/music/mission_01/mission_01_lead.ogg",
+      "bytes": 349898,
+      "sha256": "b354fb1387df1d6d9f13160e1fa39f72416f5350b541f17e528d9336ebeded88"
+    },
+    {
+      "path": "scripts/build-canyon-level.py",
+      "bytes": 20439,
+      "sha256": "f8af31ece176ad116511ea16aa216dad5dd489788dfa4dd120799e4a099d437e"
+    },
+    {
+      "path": "scripts/build-canyon-tileset.py",
+      "bytes": 22918,
+      "sha256": "f1530abe24943168d7e73c5a0820fe781edfd852fd44cf08c7578a485d61bd4d"
+    },
+    {
+      "path": "scripts/check-build-budget.mjs",
+      "bytes": 2190,
+      "sha256": "9d56ae6387e0eedbb26fc37af025d5877c78d2b0648a353c7d3fa6d90784b62f"
+    },
+    {
+      "path": "scripts/compile-studio-release.mjs",
+      "bytes": 981,
+      "sha256": "ea859ccb45b9b0af7a7b8b1f6884dc83720d88a9dda35740be51944f8016dbaa"
+    },
+    {
+      "path": "scripts/create-studio-lock.mjs",
+      "bytes": 816,
+      "sha256": "4c64f6284e9fea2df9b113b0bdae00074adfd60b769ab34f8ce81abc12c53853"
+    },
+    {
+      "path": "scripts/render-canyon-preview.py",
+      "bytes": 5732,
+      "sha256": "e7b7a416b2e2cc9abaa9897faef267a2299412ed2891bddd8bf8d16ac9c2475c"
+    },
+    {
+      "path": "scripts/studio-folder.ts",
+      "bytes": 16564,
+      "sha256": "e37e6093223e7b3ecbd778a5d5765ff01d6f8b7e788d569b68fe984710033322"
+    },
+    {
+      "path": "scripts/studio-release-lib.mjs",
+      "bytes": 8905,
+      "sha256": "dab9477c4f3f2abc6d8fcf3d3502172dcde77e20dbaa6d2550b5c61cfe97fedf"
+    },
+    {
+      "path": "scripts/verify-base-build.mjs",
+      "bytes": 1877,
+      "sha256": "036c60fc818f6cbcc3ff6d91a2e6739a133a7b67c2f383d904b77e2d3f00c31c"
+    },
+    {
+      "path": "scripts/verify-canyon-textures.py",
+      "bytes": 3960,
+      "sha256": "c00b55c532ce8780fd54b90b472e61dcfcf9e8328b521134ab9b877c7e7f6c52"
+    },
+    {
+      "path": "scripts/verify-portable-lock.mjs",
+      "bytes": 749,
+      "sha256": "cf9f7ab9477046b9d8a823a7e5ffee62db97ca4aba146dfe2c4ca9fd48735966"
+    },
+    {
+      "path": "scripts/verify-readme-evidence.mjs",
+      "bytes": 1265,
+      "sha256": "160b724c51b6e487b23d471d4bfaf7795cb07c06ed7dca36e975ec5b050e6057"
+    },
+    {
+      "path": "src/app/styles/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/biomes/canyon.json",
+      "bytes": 7465,
+      "sha256": "5bd244a8940136a8222333f66b2a1fadf0ad5af20d10378df0d29f316aaee3a7"
+    },
+    {
+      "path": "src/content/bosses/boss_alpha.json",
+      "bytes": 1444,
+      "sha256": "6b0d0f7b92117987a47f8d5cf0b9908744d5a20e07cf248424c4d850e62b0855"
+    },
+    {
+      "path": "src/content/bosses/miniboss_alpha.json",
+      "bytes": 721,
+      "sha256": "8cca1f8e8c766313864d186c9084e14fba0406c23388aa611a93924d407d0ce3"
+    },
+    {
+      "path": "src/content/collision/canyon_passage_collision.json",
+      "bytes": 16988,
+      "sha256": "16db8385c678d8b31a225455fe9cece06fd78f7ac854724c16fb791f6991dac2"
+    },
+    {
+      "path": "src/content/content.test.ts",
+      "bytes": 2740,
+      "sha256": "37db97f3149fa547e382f893c9387c636913f57d45b099804b8fe8960ee9b5d8"
+    },
+    {
+      "path": "src/content/difficulty.json",
+      "bytes": 376,
+      "sha256": "6d40f092fc19db7d7c11445820b1e7f764a09690f73bf254bdcf71812b7a6160"
+    },
+    {
+      "path": "src/content/encounters/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/encounters/bomber_intro.json",
+      "bytes": 351,
+      "sha256": "017fb529a7bcb6e900608c97b3a6d8229e4f7753f98589e687d2c30b6c04df1e"
+    },
+    {
+      "path": "src/content/encounters/bomber_wall.json",
+      "bytes": 552,
+      "sha256": "a9182610f8f14cfe2c0b70b5033fe4782342fc2434dc68052301fc03274d8f8d"
+    },
+    {
+      "path": "src/content/encounters/boss_alpha.json",
+      "bytes": 266,
+      "sha256": "171a9e37f05d8ecf4b0ff5c6743a3a94965a9afc576d55ea12c2b8603d5627b7"
+    },
+    {
+      "path": "src/content/encounters/crossfire_combination.json",
+      "bytes": 523,
+      "sha256": "31e20a54e131fc24c0db8f40f565ab3400eac19114d2d9029cc16e0944c6e2b3"
+    },
+    {
+      "path": "src/content/encounters/crossfire_intro.json",
+      "bytes": 449,
+      "sha256": "21c1f413d0e0c884c07cb7bc72a680b8c49a65c8f5506f1d453f8bf3bca39cd4"
+    },
+    {
+      "path": "src/content/encounters/final_escalation.json",
+      "bytes": 764,
+      "sha256": "b35b798239e12ce31634b4de58ffcbd5b2ec4021248feafc39eda05b44970313"
+    },
+    {
+      "path": "src/content/encounters/heavy_escort_push.json",
+      "bytes": 506,
+      "sha256": "d669393adea7fe2a707c145d71008c01786d81ef0dce77444c7690c5e3632ec8"
+    },
+    {
+      "path": "src/content/encounters/heavy_intro.json",
+      "bytes": 382,
+      "sha256": "bdeb6cb019dd41dd379a07107fde80ab60273118a81e763f2b0d2cbaad8e3b41"
+    },
+    {
+      "path": "src/content/encounters/interceptor_ambush.json",
+      "bytes": 630,
+      "sha256": "5c858498715855690b94438b487801b61eacb306b2566290f35b847e051599c9"
+    },
+    {
+      "path": "src/content/encounters/minefield.json",
+      "bytes": 506,
+      "sha256": "8bf23d181b255fca44e3c25008b71ffeb811c4d505d3ebd8cf061ee93edfc2b2"
+    },
+    {
+      "path": "src/content/encounters/miniboss_alpha.json",
+      "bytes": 262,
+      "sha256": "b92b6e47fe59fecaf5744991aee68cfecce5453a2d607c78fd66682555f67df7"
+    },
+    {
+      "path": "src/content/encounters/mixed_assault.json",
+      "bytes": 601,
+      "sha256": "ce207c322bc16fe4fdbe0a5cc6feabf5dc298844f9e8b621e3d839b1863f6473"
+    },
+    {
+      "path": "src/content/encounters/opening_scouts.json",
+      "bytes": 436,
+      "sha256": "d64fdab81d5db2e6de6b4316736a862863c0a2d1a9e5edb46102fda3188f64ac"
+    },
+    {
+      "path": "src/content/encounters/pinch_gauntlet.json",
+      "bytes": 616,
+      "sha256": "8c3050e9e5dd2d49b30b9373413c8185651c32e72069b985c5ba151f4b095f86"
+    },
+    {
+      "path": "src/content/encounters/recovery_reward.json",
+      "bytes": 807,
+      "sha256": "4ea2ac958d4aaff3c434dd8450624f36f1ed3e17a7eab41aa5ac21fd908fdf23"
+    },
+    {
+      "path": "src/content/encounters/turret_introduction.json",
+      "bytes": 278,
+      "sha256": "bba636c9f708be3c6c864392e69ea7d162facc8f3627a6dda92c6c0cb17641d2"
+    },
+    {
+      "path": "src/content/enemies/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/enemies/bomber.json",
+      "bytes": 493,
+      "sha256": "ef22135237106343291524512e7cfbb92112ee85063f0c1263f914725f8ed97b"
+    },
+    {
+      "path": "src/content/enemies/heavy_fighter.json",
+      "bytes": 479,
+      "sha256": "fc38e4cf0b544fc2f991a123bd38119bd2452143b15f0ce58bc4f70191fdc612"
+    },
+    {
+      "path": "src/content/enemies/interceptor.json",
+      "bytes": 422,
+      "sha256": "ab6f12a7a3748d127bde9c8eccf6097ca975442800de729d5a2d1416af5b9899"
+    },
+    {
+      "path": "src/content/enemies/light_fighter.json",
+      "bytes": 410,
+      "sha256": "2afd15a613bde74b55b41c799736e6a574b70ed2125656e403e2a3395eaf8cb8"
+    },
+    {
+      "path": "src/content/enemies/mine.json",
+      "bytes": 295,
+      "sha256": "d45e205fccc4c825a0fa2063b46d843e6a1f2911fa16ec8e42eeea587e63929f"
+    },
+    {
+      "path": "src/content/equipment/armor_heavy.json",
+      "bytes": 660,
+      "sha256": "83918c925b69518507bed537becdc97a10247825507821925dd7b5da117636cf"
+    },
+    {
+      "path": "src/content/equipment/armor_light.json",
+      "bytes": 412,
+      "sha256": "6ccc8a1320810d70b6d03ec6e2c744543a8955415c13a4389a99c2bdacf97ab2"
+    },
+    {
+      "path": "src/content/equipment/generator_capacitor.json",
+      "bytes": 774,
+      "sha256": "ea7ed159af028e4a18d4dd20b55b8b57a6917cdcf25b5657261246245e5e0f8c"
+    },
+    {
+      "path": "src/content/equipment/generator_flux.json",
+      "bytes": 759,
+      "sha256": "1bab9eea60f93daac075d8231ab5ba5ab16114b90b8d4e8c2f599619839dc09b"
+    },
+    {
+      "path": "src/content/equipment/generator_standard.json",
+      "bytes": 536,
+      "sha256": "8f6e48072fff0628f22b5c087f390fbda7390650c2f707addb34ac6005727588"
+    },
+    {
+      "path": "src/content/equipment/hull_bulwark.json",
+      "bytes": 1273,
+      "sha256": "8051980325f05f33fd50ce538446486390a800d2411614bcf67562cef81422f7"
+    },
+    {
+      "path": "src/content/equipment/hull_interceptor.json",
+      "bytes": 1177,
+      "sha256": "56ede0c0730fb15c31db1cd06e817af88b1bed80760fca7668bfa69c14db4124"
+    },
+    {
+      "path": "src/content/equipment/hull_vanguard.json",
+      "bytes": 1009,
+      "sha256": "63d5a181cb731ed27411a9b395450235c611468bad7452b985d5a08419d1b894"
+    },
+    {
+      "path": "src/content/equipment/propulsion_anchor.json",
+      "bytes": 751,
+      "sha256": "f7d8a73c2b46266c398f332b2c269072a6a1ed937d4d46344d9486fb1fdab2a5"
+    },
+    {
+      "path": "src/content/equipment/propulsion_balanced.json",
+      "bytes": 488,
+      "sha256": "b072b07f527514e7d6ac2265323d753c9b81647b68effca80dd4d3dd85c03353"
+    },
+    {
+      "path": "src/content/equipment/propulsion_sprinter.json",
+      "bytes": 736,
+      "sha256": "bd6685f4d83c793545f850068c60d033c167577224aca7a7f895264f3c3e96ff"
+    },
+    {
+      "path": "src/content/equipment/secondary_missile.json",
+      "bytes": 711,
+      "sha256": "5ca072f08e36f5651b4205798b794acff774b550c0a5450301fd10999481874f"
+    },
+    {
+      "path": "src/content/equipment/secondary_rockets.json",
+      "bytes": 804,
+      "sha256": "8745a6a60733a2735d6ff982774cbe2533ae684a74a1bedd2c1e374c7333045d"
+    },
+    {
+      "path": "src/content/equipment/shield_bastion.json",
+      "bytes": 739,
+      "sha256": "b159492a3c2fe0e940dbf3d0102f925931f023fb7e82f20ca6a1272acca32be3"
+    },
+    {
+      "path": "src/content/equipment/shield_quick.json",
+      "bytes": 756,
+      "sha256": "02df3e883d426f29e4953ac7022e3dca8b3121c03febe74a75bd259b49804584"
+    },
+    {
+      "path": "src/content/equipment/shield_standard.json",
+      "bytes": 495,
+      "sha256": "84533dd5570319cbdd948b01af08ff1ba8458f9895bd3a534b8ea38e1e8aaf26"
+    },
+    {
+      "path": "src/content/equipment/utility_credit_magnet.json",
+      "bytes": 667,
+      "sha256": "84bb8eeec098618d9d220dda442d569bbc30bda10fec5f77b6dbdfc2f578455e"
+    },
+    {
+      "path": "src/content/equipment/utility_shield_regulator.json",
+      "bytes": 754,
+      "sha256": "2959bf860fa73fd559ae3eace216d9909cd2fe9a76a0e2a9acd7824643864f65"
+    },
+    {
+      "path": "src/content/equipment/weapon_pulse.json",
+      "bytes": 865,
+      "sha256": "0fb579ea11c6ef31daf44fd1bc011cf407757330732707f302ed675cb5593482"
+    },
+    {
+      "path": "src/content/equipment/weapon_rail.json",
+      "bytes": 818,
+      "sha256": "e148629d8648735b606dd4b7e3c96501981bcb8f21a5ecd885efbaa5ee36f614"
+    },
+    {
+      "path": "src/content/equipment/weapon_spread.json",
+      "bytes": 809,
+      "sha256": "b4fab8a230de77f60e3adda3f6785fc87b6521437a16592bb320ce8ec228a644"
+    },
+    {
+      "path": "src/content/formations/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/formations/bomber_escort.json",
+      "bytes": 400,
+      "sha256": "c50045b07cf4b06beaeffdab8826e01a5278b9aec4bdb2812a0cafad5cc94b35"
+    },
+    {
+      "path": "src/content/formations/escort_heavy.json",
+      "bytes": 619,
+      "sha256": "1a9514290303493c434385c252b065e807cb5f9499612e0f95fb8f1fe4e0cf3f"
+    },
+    {
+      "path": "src/content/formations/horizontal_row.json",
+      "bytes": 400,
+      "sha256": "8b56e006f27fdd65bf79ce41726254170f24a02867278190d11abfa3601a1f11"
+    },
+    {
+      "path": "src/content/formations/left_sweep.json",
+      "bytes": 430,
+      "sha256": "db6a99e1580d7a6be7ee95bb4cf0d734c84749a07c3427a71b7f7e3ca6290b54"
+    },
+    {
+      "path": "src/content/formations/pinch_attack.json",
+      "bytes": 478,
+      "sha256": "e3db0070f7d1fabb721dac5e1836d739ccd8939998f767ff1c49e58631be2ec8"
+    },
+    {
+      "path": "src/content/formations/right_sweep.json",
+      "bytes": 432,
+      "sha256": "986264b9e14dfbdc77f5222dff8ec223b8c76fb55a87d792b71574ec0fa140e7"
+    },
+    {
+      "path": "src/content/formations/staggered_column.json",
+      "bytes": 470,
+      "sha256": "2e10e08cdaf5281d938de8b31aa8ae6e0f068bf0dcc4a8f7acb0f2713527fc81"
+    },
+    {
+      "path": "src/content/formations/v_scouts.json",
+      "bytes": 466,
+      "sha256": "b19ac4fe256683874ce086a6ffe8f4bec9720632483b3d929691644ba896ad05"
+    },
+    {
+      "path": "src/content/levelPackages/level_01_canyon.json",
+      "bytes": 262,
+      "sha256": "693321287c1f9361cbe52ea009ac15cf7a37156640c453dadf9f29e2100e93fc"
+    },
+    {
+      "path": "src/content/levels/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/levels/level_01.json",
+      "bytes": 2677,
+      "sha256": "453f551c8c2ba63b28fef80dbe26639510eb14ab8674218cffe7a0901bd1a152"
+    },
+    {
+      "path": "src/content/levels/level_boss_test.json",
+      "bytes": 484,
+      "sha256": "04c5af4e642777eb8883deb13532936b111bc35ff290afa26baf5b8120608826"
+    },
+    {
+      "path": "src/content/levels/level_dev.json",
+      "bytes": 1131,
+      "sha256": "5d147506ede0d14605499c22ee299874f42fd3d538039092564a78536e596116"
+    },
+    {
+      "path": "src/content/maps/canyon_passage.json",
+      "bytes": 867728,
+      "sha256": "9ee154906d798404e4c9fbdf071d84770d93813e8cbda1243e91b3daed1fdac7"
+    },
+    {
+      "path": "src/content/movement/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/movement/bezier_s_curve.json",
+      "bytes": 124,
+      "sha256": "23fc6326451a22c87ef48dfb0fafbcc0c0bf1328c489c6afe625805aeb8b5f31"
+    },
+    {
+      "path": "src/content/movement/boss_patrol_fast.json",
+      "bytes": 129,
+      "sha256": "727e72fad18ceb1e64ca51a68c5b634eaf66b9116eb089604bc9c2ebb6911473"
+    },
+    {
+      "path": "src/content/movement/boss_patrol_slow.json",
+      "bytes": 127,
+      "sha256": "1961c9159b3e8435a7a4186b39426fd71dff6c4166fa0295661bffe9237c66a0"
+    },
+    {
+      "path": "src/content/movement/dive_retreat_fast.json",
+      "bytes": 153,
+      "sha256": "14a4b96a6e2e4b51370203ea831801eb1782db4cb5e7cd80cde13e743716e0c6"
+    },
+    {
+      "path": "src/content/movement/drift_down.json",
+      "bytes": 72,
+      "sha256": "e8d0d9ba1a8c999c31e4507eca2162bd519b9a811ca39686abe0e9e8f8e07d6b"
+    },
+    {
+      "path": "src/content/movement/enter_attack_exit_left.json",
+      "bytes": 216,
+      "sha256": "d4f9617ba066d44b03bc8ce03d17327a69afdc8a661cc4ed7121b684cc21802d"
+    },
+    {
+      "path": "src/content/movement/enter_attack_exit_right.json",
+      "bytes": 219,
+      "sha256": "57df79a1583614191bc0cb2158295274ca8f24771255f2b42684b9cf1ce7e588"
+    },
+    {
+      "path": "src/content/movement/patrol_mid.json",
+      "bytes": 136,
+      "sha256": "bba94f7c6f3c268613b07be71a033f9421ae9d8b2f7e6282410e99102a054225"
+    },
+    {
+      "path": "src/content/movement/sine_descent.json",
+      "bytes": 135,
+      "sha256": "70ee5b2115f04ab3b5155a4e9e9ad8f605d7cc5e7c8cf19ed3606c98651fb54e"
+    },
+    {
+      "path": "src/content/movement/static_hold.json",
+      "bytes": 72,
+      "sha256": "1f38631ee834de252eb4d873b962911e4b3b9198882b1ccec4f87e4372e62857"
+    },
+    {
+      "path": "src/content/movement/stop_and_fire_bomber.json",
+      "bytes": 195,
+      "sha256": "5818d9a54f5184c5afbc45bab925e4d2b753de3816735beaf7aa0ae2e519c955"
+    },
+    {
+      "path": "src/content/movement/stop_and_fire_mid.json",
+      "bytes": 193,
+      "sha256": "b86f762d8464dbeb44b7b89a7c3810f2a643db9e8515626a29ab5dd051a50bbd"
+    },
+    {
+      "path": "src/content/movement/straight_descent.json",
+      "bytes": 79,
+      "sha256": "14111b897bcf15fee451eea277c196e5779c913eff4208bfd3efe75017c76137"
+    },
+    {
+      "path": "src/content/movement/sweep_left.json",
+      "bytes": 90,
+      "sha256": "6b403610562abc52a8dbfabbbe73af281ac612cbeb92fc087ebe35d6ed9181bd"
+    },
+    {
+      "path": "src/content/movement/sweep_right.json",
+      "bytes": 93,
+      "sha256": "78eae6484bee1bb9a8de681476b027f769c567bd7068fa59c15b3b04570e6464"
+    },
+    {
+      "path": "src/content/music/coastal_assault.json",
+      "bytes": 1305,
+      "sha256": "629851eb282cad8ff717d3828da29ddfb01224c2e913abf25c9e2c6ad4fecc35"
+    },
+    {
+      "path": "src/content/music/none.json",
+      "bytes": 144,
+      "sha256": "dea5786d4e60999ef8966911147da2514b1503d10f9aa7d7cadabe5eb54c8b6e"
+    },
+    {
+      "path": "src/content/pickups/armor_repair.json",
+      "bytes": 144,
+      "sha256": "38bf080df63166c77df8dad40c9042cd08be16c7482f096afd39ec045ee4fa3a"
+    },
+    {
+      "path": "src/content/pickups/credits_large.json",
+      "bytes": 172,
+      "sha256": "a24ac1564819c23b23c6fa2c939c3905b619f3b7d7543463fa9fe1913b5e35f2"
+    },
+    {
+      "path": "src/content/pickups/credits_small.json",
+      "bytes": 165,
+      "sha256": "c49fbecaea70e6727a9eb59b0381b23d3ffa336bb2058d8897168444b0517b17"
+    },
+    {
+      "path": "src/content/pickups/pickup_spread.json",
+      "bytes": 173,
+      "sha256": "dd1d3d1f8ceeb9464eb1bc8f87bf0e8476175daa8390f9420ab8e6b06d4cdb1d"
+    },
+    {
+      "path": "src/content/pickups/shield.json",
+      "bytes": 132,
+      "sha256": "4b317451766592dd13574647ef0607e37efa34e1af3568ba357ba3b8d9dc7ea6"
+    },
+    {
+      "path": "src/content/pickups/weapon_upgrade.json",
+      "bytes": 141,
+      "sha256": "961c15ff20ca49a4c11a28e5eb3b6069d1051a7bf543a00b4fd07272cebb5392"
+    },
+    {
+      "path": "src/content/projectiles/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/projectiles/boss_aimed_volley.json",
+      "bytes": 224,
+      "sha256": "814922648de16ba9b70b2a5ffbef5d5abfc4628b4e27e97e8cc45fba1c1c7126"
+    },
+    {
+      "path": "src/content/projectiles/five_way_spread.json",
+      "bytes": 215,
+      "sha256": "9292146c56beec8f208873e62a73efe9766230d5707c6c233d3d8c833d16892b"
+    },
+    {
+      "path": "src/content/projectiles/mine_layer.json",
+      "bytes": 200,
+      "sha256": "ad64bfbb9784d522aa7b5e447412d52d88d38dbf79fc0de86a1764351818c906"
+    },
+    {
+      "path": "src/content/projectiles/ring_burst.json",
+      "bytes": 262,
+      "sha256": "b09ba852cf519666ee3ad05890ea3f482e0a07fef69b95f42d4be93181f71d64"
+    },
+    {
+      "path": "src/content/projectiles/single_aimed_shot.json",
+      "bytes": 198,
+      "sha256": "7f030ec5001ce1c386b9c54dae21ff021ab856f5a947ce863f99c4b449e9791a"
+    },
+    {
+      "path": "src/content/projectiles/sweep_fan.json",
+      "bytes": 273,
+      "sha256": "fd398b7b89223eed5d84f210ecf6421ee3560939494dd219a1db9e39052b6cf0"
+    },
+    {
+      "path": "src/content/projectiles/three_way_aimed.json",
+      "bytes": 205,
+      "sha256": "5fe4bde5d3089f1fdb00253049d8326f3e037121bc88489be415689b0d5f9681"
+    },
+    {
+      "path": "src/content/projectiles/turret_part_shot.json",
+      "bytes": 214,
+      "sha256": "878819e86af0d67a5b64d66f30766d6ab6fe253514561c691679717451798dc9"
+    },
+    {
+      "path": "src/content/routes/canyon_passage_routes.json",
+      "bytes": 10701,
+      "sha256": "553fd27c0325782aa064aadd19c1cb105348672d87fd90ebb20187df35df1bb3"
+    },
+    {
+      "path": "src/content/terrainObjects/canyon_passage_objects.json",
+      "bytes": 109,
+      "sha256": "9b382f8e39f12256c1a0f9aa0622add766fbdd68dca181e591be95a092388d90"
+    },
+    {
+      "path": "src/content/weapons/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/weapons/missile_system.json",
+      "bytes": 387,
+      "sha256": "e577890b107db8b70838a88d44173767c58a27c41f13aaf0d20a809934c1615f"
+    },
+    {
+      "path": "src/content/weapons/pulse_cannon.json",
+      "bytes": 692,
+      "sha256": "71972697c492e30b6436e1beea107ace15e2ae63ad0baf0c7ddd8e4e3e7037fa"
+    },
+    {
+      "path": "src/content/weapons/rail_lance.json",
+      "bytes": 556,
+      "sha256": "bf0977f8931c823edaa6de8226dd5656cf85e8139d64dfeaf8314dfdec3e7a39"
+    },
+    {
+      "path": "src/content/weapons/rocket_pod.json",
+      "bytes": 446,
+      "sha256": "f3ab3567945d69a76ec653362cb6164e16cbebaca6b79a9b2dd0325276a3d016"
+    },
+    {
+      "path": "src/content/weapons/spread_cannon.json",
+      "bytes": 714,
+      "sha256": "e7f032452627d0090aa310ec46f58349e30a3ba8f6fc4246d72f9db12c7f3401"
+    },
+    {
+      "path": "src/editor/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/editor/EditorApp.tsx",
+      "bytes": 13078,
+      "sha256": "ed3834ccc3b16691e133ffcf1e9fe2c22dd4f17f893ec61ed722e366860e0fd0"
+    },
+    {
+      "path": "src/editor/EventList.tsx",
+      "bytes": 2536,
+      "sha256": "35f2db6f4c839ad7946e409e159098d7f8c6e867f79db29c369bd5d6cfc6f8f6"
+    },
+    {
+      "path": "src/editor/Inspector.tsx",
+      "bytes": 4048,
+      "sha256": "3ddbe6d39f576a03ccab92b7a91e45a6851e5afb753b393fda8c9ed915631f19"
+    },
+    {
+      "path": "src/editor/IntensityStrip.tsx",
+      "bytes": 1690,
+      "sha256": "2e2edefea37697684ec6de796ee0713a4af3a5f125d208bdde1a36d1c04f88ad"
+    },
+    {
+      "path": "src/editor/LevelMinimap.test.ts",
+      "bytes": 655,
+      "sha256": "4b38d2741268c00b7f41777f25703810ab0af4ce56b542b3e30d5ce9798f189b"
+    },
+    {
+      "path": "src/editor/LevelMinimap.tsx",
+      "bytes": 3637,
+      "sha256": "fa94f1f6a8e00871d3cd3745cec29e6ab3d954bbfab1b9f99e58a76efb8de138"
+    },
+    {
+      "path": "src/editor/MapViewport.component.test.tsx",
+      "bytes": 3046,
+      "sha256": "b28c4211bc53059d1e8cd4e52c83bd4aa0cc7af58e91809202201ae6e3cf6e17"
+    },
+    {
+      "path": "src/editor/MapViewport.image.component.test.tsx",
+      "bytes": 2552,
+      "sha256": "55afc4e737535905bb8135573d711b70c7b3dd5425d5baf4ba585f9c7a5803a9"
+    },
+    {
+      "path": "src/editor/MapViewport.test.ts",
+      "bytes": 2193,
+      "sha256": "c1dd40bd5fa1c5a5ba56eeacb77ba38059ab9418847819f752b1a0e19224fcfa"
+    },
+    {
+      "path": "src/editor/MapViewport.tsx",
+      "bytes": 22200,
+      "sha256": "01d4ef10f46b56aef1ef700fe8ceafdfa766c667b47aada0cceb4f123429d17e"
+    },
+    {
+      "path": "src/editor/PreviewPanel.tsx",
+      "bytes": 1571,
+      "sha256": "ed97791b7ed63fc813bfeb0acd63bec71b68efd9d8a7b0b1d05f85da8bbbc894"
+    },
+    {
+      "path": "src/editor/ProjectHistory.test.ts",
+      "bytes": 381,
+      "sha256": "b7acdd7a0162ad3ce91decc1e19e6ade12999c474df8566a7401babbeda7e8b0"
+    },
+    {
+      "path": "src/editor/ProjectHistory.ts",
+      "bytes": 977,
+      "sha256": "40ed4b10565c3cdaa53021149b7afeb1730f1a528fef8bd9c7aff71a2967a6c9"
+    },
+    {
+      "path": "src/editor/SpatialComposer.component.test.tsx",
+      "bytes": 2661,
+      "sha256": "66442aac9d31dcc447ae534898c6f79132e17380da6e9f864232cbd1eb8f72df"
+    },
+    {
+      "path": "src/editor/SpatialComposer.tsx",
+      "bytes": 30006,
+      "sha256": "b716278cde516c35966714192ec65d35d3c3a54fdfc13a9c93a64ed381833219"
+    },
+    {
+      "path": "src/editor/TimelineEditor.tsx",
+      "bytes": 6140,
+      "sha256": "c024f49ac153ab1af1b77867fdc85ae8fb0611065941d636db6b44d929af76fe"
+    },
+    {
+      "path": "src/editor/ValidationPanel.tsx",
+      "bytes": 880,
+      "sha256": "f4f2c9abbe232683f5590066ad483d953601fc6d696787d39c04c972c61665fd"
+    },
+    {
+      "path": "src/editor/editor.css",
+      "bytes": 18646,
+      "sha256": "cb87fffb1e3b79da831c5f75a1fb9e183b82bba06a246f182592b71069017e7d"
+    },
+    {
+      "path": "src/editor/levelStore.ts",
+      "bytes": 5084,
+      "sha256": "50535f02fd2ea05bd1ed48e70d0b78d03aeb5b4c30abf48ac1fbace56ef10d87"
+    },
+    {
+      "path": "src/editor/main.tsx",
+      "bytes": 280,
+      "sha256": "748f0571b66504e27959e5ba4f0d3cb6b5f7bce80b5b22fdcd9996fe1c5f4c28"
+    },
+    {
+      "path": "src/editor/projectStore.test.ts",
+      "bytes": 1756,
+      "sha256": "74b68f0fa609e9ef72659b2e8082d223736cd05bfd70fd6425e3a484a3d94a07"
+    },
+    {
+      "path": "src/editor/projectStore.ts",
+      "bytes": 9108,
+      "sha256": "c69ff37951aa9f6594b944c90bb1dd064589040919bf94ae56c56fa10c68bd92"
+    },
+    {
+      "path": "src/game/config/combatTempConfig.ts",
+      "bytes": 309,
+      "sha256": "4e21898f453df902fb80c4034fa10dd7e0f40dcc3a5ac5e6235cde107cf0a33c"
+    },
+    {
+      "path": "src/game/config/constants.ts",
+      "bytes": 2152,
+      "sha256": "8e00e3cfd4291adbfb7f26feeaa8519e9d5a1526f35d58a6a574b66d420c5fd3"
+    },
+    {
+      "path": "src/game/config/gameConfig.ts",
+      "bytes": 869,
+      "sha256": "fe69869e0afed68601a26482bd658069a1604c530c38ac83c8bacd7b7a4038a7"
+    },
+    {
+      "path": "src/game/config/playerConfig.ts",
+      "bytes": 693,
+      "sha256": "cb78e0353856709ca1f6a88fc1850879ef7af9868daf0895611b1358f8d10373"
+    },
+    {
+      "path": "src/game/debug/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/game/debug/DebugOverlay.ts",
+      "bytes": 4268,
+      "sha256": "a371432e42a441e5b9e923b720b7237234292b99908c682d69513b1976bbabcc"
+    },
+    {
+      "path": "src/game/debug/GameSceneDiagnostics.test.ts",
+      "bytes": 517,
+      "sha256": "4ad6fe1ca14729123efd4c083e4953d38c5ccbb5689e0e8f92fc13fff0e7fa25"
+    },
+    {
+      "path": "src/game/debug/GameSceneDiagnostics.ts",
+      "bytes": 6266,
+      "sha256": "1f9faad43a57c2885e3a7df0ebc65efb644b5a2c7396fdda0446ee09e053fc66"
+    },
+    {
+      "path": "src/game/debug/Telemetry.test.ts",
+      "bytes": 1881,
+      "sha256": "b22757df31e2b0fcae9cd94d0146ee16c3cc1f4f11dcdbc29553d2aafdcbea31"
+    },
+    {
+      "path": "src/game/debug/Telemetry.ts",
+      "bytes": 3624,
+      "sha256": "42623ab671625d08ddf372752b05b466bb20537332a62b40aa66f276e48d3058"
+    },
+    {
+      "path": "src/game/economy/CreditLedger.ts",
+      "bytes": 633,
+      "sha256": "ff249c525cb4f84d901f46e5eaa3186acaa4c6a5efbf75d194d540fb056f5f00"
+    },
+    {
+      "path": "src/game/economy/EconomyService.test.ts",
+      "bytes": 3233,
+      "sha256": "bbcc72a68b6d11d996c28e7133a2946effabb4488b3167859c1875de0c2b7aa5"
+    },
+    {
+      "path": "src/game/economy/EconomyService.ts",
+      "bytes": 7552,
+      "sha256": "3f156062ef09172d7b676cf370b4700a7157fb8b9a32320d19e721d92b36b0f1"
+    },
+    {
+      "path": "src/game/economy/MissionEconomy.test.ts",
+      "bytes": 2194,
+      "sha256": "edcb12b2627691f8494bc47cc75196e944f4fe303904c07724b6c0788379253f"
+    },
+    {
+      "path": "src/game/economy/MissionEconomy.ts",
+      "bytes": 6612,
+      "sha256": "bcc8c436d9f1e46af3d4b37434af305069a97c0cf9bdabd91624fa2e5bbe6154"
+    },
+    {
+      "path": "src/game/entities/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/game/entities/Boss.ts",
+      "bytes": 11358,
+      "sha256": "84d21a1bee0226e85aa1540ae99ac54f0a1992b57c9e1fb8b908dccca46d70d8"
+    },
+    {
+      "path": "src/game/entities/Enemy.ts",
+      "bytes": 11027,
+      "sha256": "4be3bccf686b9b5f7d835eaca501ae3566895cb54ac30aa31fef99dbeef748b8"
+    },
+    {
+      "path": "src/game/entities/GroundTarget.ts",
+      "bytes": 6433,
+      "sha256": "df33affa7b2988c60968b89ad39a90e9c46d5a8c101a8860cec55700c756b741"
+    },
+    {
+      "path": "src/game/entities/Pickup.ts",
+      "bytes": 4953,
+      "sha256": "d10958b894547b53fa48c9e2209d409243e2d42e9564e521cde418d3f6afbfad"
+    },
+    {
+      "path": "src/game/entities/Player.ts",
+      "bytes": 6977,
+      "sha256": "f92269565b16f626d630160090f3499f0d1bfe6f341bda2ae3c894117ecd8de2"
+    },
+    {
+      "path": "src/game/entities/PlayerShadowArchitecture.test.ts",
+      "bytes": 1710,
+      "sha256": "b06ef2acaa10afb0fd5426f142ac871fbdc58d8b65a64466dce5dc11c55404fc"
+    },
+    {
+      "path": "src/game/entities/Projectile.ts",
+      "bytes": 5313,
+      "sha256": "b879289bc01040da3a5375c30338a1fa1a3353fcb0f7373b2a0e94ecb7685a6d"
+    },
+    {
+      "path": "src/game/equipment/EquipmentRegistry.ts",
+      "bytes": 772,
+      "sha256": "30d0173e01ff94c41388547c881634553b45c039acb9d4456621ab82932d30a2"
+    },
+    {
+      "path": "src/game/equipment/LoadoutValidator.test.ts",
+      "bytes": 2184,
+      "sha256": "c6e461266a3ac14956062f856ce41857f5db3df2c04c963eae3f73337e85c78c"
+    },
+    {
+      "path": "src/game/equipment/LoadoutValidator.ts",
+      "bytes": 6905,
+      "sha256": "888b3219b56c264ff26b4de9afdb0595e7db525a910889a919d10b3a3ae1bcdb"
+    },
+    {
+      "path": "src/game/equipment/RuntimeLoadoutSnapshot.ts",
+      "bytes": 1399,
+      "sha256": "551e83b0b90ccb0517d84866b567bdd9155a1599fe3960e8348dbdde8616c2b1"
+    },
+    {
+      "path": "src/game/equipment/ShipStatCalculator.test.ts",
+      "bytes": 1602,
+      "sha256": "7a01bda38c1c76bcdbf709d75d4c35611437989498dcaac7b12b670e00cb252d"
+    },
+    {
+      "path": "src/game/equipment/ShipStatCalculator.ts",
+      "bytes": 7756,
+      "sha256": "f37a00164f5d8d8e0747a1ff2b6a313dfc7dfbc4361609a0c1d2d322cbf28a23"
+    },
+    {
+      "path": "src/game/input/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/game/input/InputManager.ts",
+      "bytes": 8313,
+      "sha256": "6c7335c0fb625dcd71603e385f50820b1f4f6ef7af239fabd22226d8094628b3"
+    },
+    {
+      "path": "src/game/input/MenuGamepadNavigator.ts",
+      "bytes": 1738,
+      "sha256": "85ba0f64d9b7742807589ac5d4a42de5f9ae54bf069b8eff398a83fae454deaa"
+    },
+    {
+      "path": "src/game/player/ShipDefenseSystem.test.ts",
+      "bytes": 2049,
+      "sha256": "b0e2ecac447b9cddf9625507b5540c1a19f80688345495f8cd88bef1b7ed48d3"
+    },
+    {
+      "path": "src/game/player/ShipDefenseSystem.ts",
+      "bytes": 3533,
+      "sha256": "f3bda2cbf9b181c67d43ec73b650379418bd1a4c19c4785b2d9a24b41f2e6e38"
+    },
+    {
+      "path": "src/game/player/ShipEnergySystem.test.ts",
+      "bytes": 1099,
+      "sha256": "a9dfb461e6b97df83260c96aa5546d3a62376b146501a7cbc09ff8b5d5a96d58"
+    },
+    {
+      "path": "src/game/player/ShipEnergySystem.ts",
+      "bytes": 1437,
+      "sha256": "0e2c9c7a20a133979c7ad26c618c7ba2063e27cb3e7494b383690519e40ba3d4"
+    },
+    {
+      "path": "src/game/profile/ProgressionService.ts",
+      "bytes": 1530,
+      "sha256": "3aca6b9a339327a4d180505378dbfc20216cc243831b04b80a28f2f62f5eca6c"
+    },
+    {
+      "path": "src/game/profile/StarterProfile.ts",
+      "bytes": 1401,
+      "sha256": "d2b2f64b3a30660d4b3abd1400a1eb5c234de778be67eb028a4f24b63313cf3c"
+    },
+    {
+      "path": "src/game/scenes/BootScene.ts",
+      "bytes": 1067,
+      "sha256": "ef7ba311405af8b8891797771f23c51c5f46af964dbb2bcc960f516b31aa6ed6"
+    },
+    {
+      "path": "src/game/scenes/GameOverScene.ts",
+      "bytes": 3714,
+      "sha256": "2e4eee205a641551c4e15e3a79a8f77fa5dc03ed911a6147a80fbc9f7a0951a0"
+    },
+    {
+      "path": "src/game/scenes/GameScene.ts",
+      "bytes": 22304,
+      "sha256": "4f17c721a529b7a513754b09df35300069f3780504bd233469776201ba980aa3"
+    },
+    {
+      "path": "src/game/scenes/GameSceneArchitecture.test.ts",
+      "bytes": 932,
+      "sha256": "014cd2315fe17d9c38abf193f689bfa383c5624040fcc27b0fdf4a97228b643b"
+    },
+    {
+      "path": "src/game/scenes/HangarScene.ts",
+      "bytes": 13637,
+      "sha256": "03c0b7c7d123e126f45385f25dc6ccf67abf4f9d39f63ac65838603d11a0a657"
+    },
+    {
+      "path": "src/game/scenes/HelpScene.ts",
+      "bytes": 5363,
+      "sha256": "64e0f9185a344c7bf9f84978a120fd6e669817aacb292d50d93010671c61b562"
+    },
+    {
+      "path": "src/game/scenes/MenuScene.ts",
+      "bytes": 6245,
+      "sha256": "d36f5c98f4b00f4431818353e91f620b4ba7393f520cb697a1d07df2660576b3"
+    },
+    {
+      "path": "src/game/scenes/PauseScene.ts",
+      "bytes": 3673,
+      "sha256": "ab6d528426971d2a4008616412dbd96108222dcae3f7ff78fc0e1381c7bc0211"
+    },
+    {
+      "path": "src/game/scenes/PreloadScene.ts",
+      "bytes": 7614,
+      "sha256": "38e2499c629a6335820645dd501adc20c384960146fb91533abbd467be6e530f"
+    },
+    {
+      "path": "src/game/scenes/ResultsScene.ts",
+      "bytes": 5864,
+      "sha256": "9bead0386d2482cfe6a93aef475096ad23290f4f9a84602667017e745877139d"
+    },
+    {
+      "path": "src/game/scenes/SettingsScene.ts",
+      "bytes": 5880,
+      "sha256": "64873ebd130a894b4de1fb9c6b9fbb9ae17eeff57ef06054b9de8402eff38c64"
+    },
+    {
+      "path": "src/game/scenes/index.ts",
+      "bytes": 679,
+      "sha256": "572a7cc9ec7a82f9424dbd69d723f575b7cbb703902bffd675744cb4e5a1f6cb"
+    },
+    {
+      "path": "src/game/studio/RuntimeBridgePolicy.test.ts",
+      "bytes": 1132,
+      "sha256": "c16ee77a73baa8741a57909ead0b21e2785bfeee738bd2ed4da9668e2b7093a8"
+    },
+    {
+      "path": "src/game/studio/RuntimeBridgePolicy.ts",
+      "bytes": 683,
+      "sha256": "cf0dd7419767e04cc57347e2d4639b928e9d5d091348927095651cef706019fb"
+    },
+    {
+      "path": "src/game/systems/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/game/systems/AudioManager.test.ts",
+      "bytes": 2146,
+      "sha256": "7c9a4bf9c96469c716506794115ded78bf91ecded91a01b398e42c8b45944acb"
+    },
+    {
+      "path": "src/game/systems/AudioManager.ts",
+      "bytes": 8403,
+      "sha256": "968d4b1471ea4ebd0e82243a9da45b46f37774e1500614a40834a3233e495cd1"
+    },
+    {
+      "path": "src/game/systems/BossController.ts",
+      "bytes": 2636,
+      "sha256": "0e5ec081c7946f8398a0b05ea979fa7a67d4edd0bf91c40c38da7e8a9a82200a"
+    },
+    {
+      "path": "src/game/systems/BossControllerArchitecture.test.ts",
+      "bytes": 759,
+      "sha256": "aadf7a7938414e819f2372eca5c336ef3dea31de3e11c2f2ca90b874c493de63"
+    },
+    {
+      "path": "src/game/systems/CollisionSystem.ts",
+      "bytes": 1736,
+      "sha256": "5f5e5c550d91ab78eec5d9649e0993a0e57cc4dee9d652e348f6867813ecd88a"
+    },
+    {
+      "path": "src/game/systems/CombatDirector.ts",
+      "bytes": 7729,
+      "sha256": "1b18daaced64ede347cc617a96d4e6dae675e8f777b95ac04e7af2fa74e201cd"
+    },
+    {
+      "path": "src/game/systems/ContentRegistry.ts",
+      "bytes": 15950,
+      "sha256": "d15883d3ae2f3fce5fccc0bb108c3fa098e2720122fa4a98027cb7f2e1189953"
+    },
+    {
+      "path": "src/game/systems/DifficultyManager.test.ts",
+      "bytes": 1501,
+      "sha256": "15689695a02e9cae0181cd1692b6029e944ee2bbda5ffc25af97cc704028141e"
+    },
+    {
+      "path": "src/game/systems/DifficultyManager.ts",
+      "bytes": 1402,
+      "sha256": "afeac1e69a3c8c29baef8bcc4b799a1ace2bd3b32407b7f5595002376f2c6be4"
+    },
+    {
+      "path": "src/game/systems/EncounterRunner.ts",
+      "bytes": 6724,
+      "sha256": "d5ca7166765670fd58ad2401c9d13032b2725237ab4c2e64f0a38242937baaae"
+    },
+    {
+      "path": "src/game/systems/EnemyWeapon.test.ts",
+      "bytes": 2740,
+      "sha256": "1df35cc4af3cc22515c66e6480d8557bfa3a94fad7be6fd6e2bc3b6b02f9186d"
+    },
+    {
+      "path": "src/game/systems/EnemyWeapon.ts",
+      "bytes": 3379,
+      "sha256": "fe49e94ae5be04dc07bd9034d8f024388b1f8294fb6cb385b6b27b8e7a17a6ac"
+    },
+    {
+      "path": "src/game/systems/FormationSpawner.ts",
+      "bytes": 3513,
+      "sha256": "f97f415e39972905ec8726e356df84239832938d7e3a33e9cb4cb6acdeeb0571"
+    },
+    {
+      "path": "src/game/systems/GamePresentation.ts",
+      "bytes": 2279,
+      "sha256": "3870a3f4567a90623c9e016eef92b0d30436d37a1f24eabdc8d3e54580681b34"
+    },
+    {
+      "path": "src/game/systems/GameTime.ts",
+      "bytes": 539,
+      "sha256": "fa298072c73ddabc20317ca246afbd67ee3e8fdb9cf1e0699929193f5d138c06"
+    },
+    {
+      "path": "src/game/systems/LevelTimeline.test.ts",
+      "bytes": 4033,
+      "sha256": "a06539674c6ebc6a1ed40c1888667230ea2d302fdb7acc4cbc1d7d3577ccd075"
+    },
+    {
+      "path": "src/game/systems/LevelTimeline.ts",
+      "bytes": 4544,
+      "sha256": "7896f1ad2ab0c44cd5b22fec7794916fdbbd02e03ecf67b4e7bb8ddbb520cc5a"
+    },
+    {
+      "path": "src/game/systems/MissionFlowController.ts",
+      "bytes": 6619,
+      "sha256": "d7ca0ae6bf6239ea2752300a0586ebd8fb83dacae0e139d0c3a0ee5e479a129b"
+    },
+    {
+      "path": "src/game/systems/MovementRunner.test.ts",
+      "bytes": 5054,
+      "sha256": "b0ede331813b4aaaf5ac52993269d792dda3335eb77aa7569e395b76bfdef451"
+    },
+    {
+      "path": "src/game/systems/MovementRunner.ts",
+      "bytes": 6193,
+      "sha256": "6aaf8fe75da17ea04fe59a0b731861a46f31dc24d9dbea7ec9685002cb7af155"
+    },
+    {
+      "path": "src/game/systems/MultiplierSystem.test.ts",
+      "bytes": 2125,
+      "sha256": "dffbb429a8c6ed332ba23321a6df8a9d226cae7e599ada549c6aea86575010e6"
+    },
+    {
+      "path": "src/game/systems/MultiplierSystem.ts",
+      "bytes": 3569,
+      "sha256": "bc755fb520ed4b38e47ccef864b8b664232e9f0d74b62e4caf1c10e1303cd49b"
+    },
+    {
+      "path": "src/game/systems/MusicDirector.test.ts",
+      "bytes": 910,
+      "sha256": "7b5eb1ab258a3cdf4a88cf799b3d7fb24b80e13a01d3102b9e9e735a00a984b5"
+    },
+    {
+      "path": "src/game/systems/MusicDirector.ts",
+      "bytes": 8130,
+      "sha256": "1457430ce3d9e89e53642ed49c4ea552a2416ee6c5a9a6560e4cc46d6d9f771a"
+    },
+    {
+      "path": "src/game/systems/MusicIntensityModel.test.ts",
+      "bytes": 1372,
+      "sha256": "c0897463689a39a165f48ef767b7a0a287fb05133228b883ea2e0347468d49d9"
+    },
+    {
+      "path": "src/game/systems/MusicIntensityModel.ts",
+      "bytes": 2598,
+      "sha256": "de7a645f485a8a7693cb06a3e6566d95876a7c58dad8802bc4d011aeed28fbe6"
+    },
+    {
+      "path": "src/game/systems/PoolManager.ts",
+      "bytes": 1388,
+      "sha256": "7e622b7a59797f652ef90bb884f13b29cf5b49ffda9195e8554af0d788b84647"
+    },
+    {
+      "path": "src/game/systems/RunProgressionController.test.ts",
+      "bytes": 2115,
+      "sha256": "d1997496a42664e83c960ebfece28ad97c0631be8c06c5c39073544660ebbdc0"
+    },
+    {
+      "path": "src/game/systems/RunProgressionController.ts",
+      "bytes": 4643,
+      "sha256": "91ea8110bb2293105cf4e56e84c6851314d9bb5c782323d8bae594db9ef208f5"
+    },
+    {
+      "path": "src/game/systems/RunSession.test.ts",
+      "bytes": 4221,
+      "sha256": "65ece2ea27423a2bb6c8e5104e2fa3c7aa9c8c1a8565f4912831e70b4544f31c"
+    },
+    {
+      "path": "src/game/systems/RunSession.ts",
+      "bytes": 8968,
+      "sha256": "3fd15ad731d63040c74f4851b59f865a53ab38f4f7a1774f510db67ad99dbb00"
+    },
+    {
+      "path": "src/game/systems/RuntimeQualityProfile.test.ts",
+      "bytes": 671,
+      "sha256": "f5eff2304850d6c5d98fbf638cf3ffbaecee5686911c772916a7aa0e26ee23ca"
+    },
+    {
+      "path": "src/game/systems/RuntimeQualityProfile.ts",
+      "bytes": 421,
+      "sha256": "3fcd1055cd9fa329980c3244e24a125c8e96aa22408d070d438e1949a4d6970c"
+    },
+    {
+      "path": "src/game/systems/SaveData.test.ts",
+      "bytes": 2805,
+      "sha256": "5ec2862bb02b847d115f50261bfc1c57957d0726648a018b8a42a4e2e09ab9be"
+    },
+    {
+      "path": "src/game/systems/SaveData.ts",
+      "bytes": 6599,
+      "sha256": "bfb25e06e92327223de68be9a4e1470c0fde85fbd34c4c81bb5991fcaa6fcc18"
+    },
+    {
+      "path": "src/game/systems/ScoreSystem.ts",
+      "bytes": 829,
+      "sha256": "6e2e2b759af21e71366259817b8572087fabc424f60ba4ce0b5c2600e2bce5d1"
+    },
+    {
+      "path": "src/game/systems/ScrollController.ts",
+      "bytes": 1473,
+      "sha256": "1f044abfa75fe168be4b5af6d897abbadd423bfb0d52aff084c015d4456c60bf"
+    },
+    {
+      "path": "src/game/systems/StudioAssetOverlay.ts",
+      "bytes": 2580,
+      "sha256": "fb3c45481a819016643191691586d64cd20da8dc995dad58e261d326829b5a21"
+    },
+    {
+      "path": "src/game/systems/StudioAssetPreviewLifecycle.test.ts",
+      "bytes": 552,
+      "sha256": "c29ea8324937744be38ca628778d6d483dbd6597651516a949dfaa113048a49a"
+    },
+    {
+      "path": "src/game/systems/StudioMusicOverlay.ts",
+      "bytes": 2746,
+      "sha256": "c40b61b90a4de084f800c63f244f602334da9c53631f425a6a4485cbc19284a3"
+    },
+    {
+      "path": "src/game/systems/StudioRuntimeController.test.ts",
+      "bytes": 820,
+      "sha256": "a8ab9b963baadb501b33fe0ee2c8ffd417828ebaa5315864f17261e835e816ce"
+    },
+    {
+      "path": "src/game/systems/StudioRuntimeController.ts",
+      "bytes": 25417,
+      "sha256": "e103b523084a996372a4663a5011bc6b32de3f6e51005fa67aaeaaa5e8d41f47"
+    },
+    {
+      "path": "src/game/systems/StudioSimulationRuntime.ts",
+      "bytes": 3539,
+      "sha256": "1bd2c28d07a921516bb177da58fe30caeb49474e95947e60dcb8a13299408594"
+    },
+    {
+      "path": "src/game/systems/StudioTuningOverlay.ts",
+      "bytes": 4068,
+      "sha256": "306b7ad438a081a187fd9f5ca400d871dd08eaf1189ac113705abae3d153fdd9"
+    },
+    {
+      "path": "src/game/systems/WeaponSystem.ts",
+      "bytes": 6357,
+      "sha256": "252101de71007309ba50af6eabd54024065953625648f8fbae5764194de18be7"
+    },
+    {
+      "path": "src/game/systems/WorldScroll.test.ts",
+      "bytes": 1506,
+      "sha256": "0f29c779660c64f718038846b7dee6d366182f35d9e8fbd7bea7f45150bec7f8"
+    },
+    {
+      "path": "src/game/systems/WorldScroll.ts",
+      "bytes": 2195,
+      "sha256": "7133ddaf9ad0f5457439aa218cd330e54b77e6cedaa791929838e6f8cbe1d3ef"
+    },
+    {
+      "path": "src/game/terrain/Autotile.test.ts",
+      "bytes": 3250,
+      "sha256": "45a0492e553d3e10648a139a331f9ae9e6d79aa9eee9cf598d698e4b3fee3cb8"
+    },
+    {
+      "path": "src/game/terrain/Autotile.ts",
+      "bytes": 6103,
+      "sha256": "41296b41fb89993c95f03a7d99502d2fb20108788227d4e1a594198812b6ce72"
+    },
+    {
+      "path": "src/game/terrain/CanyonLevelVisual.test.ts",
+      "bytes": 6304,
+      "sha256": "aa7ecc051c9e0110291f9635bdf2d3c318f84b0d105c5d4928be95ab0245efea"
+    },
+    {
+      "path": "src/game/terrain/TerrainAnalysis.test.ts",
+      "bytes": 2286,
+      "sha256": "58f0ecb04cb429b71ce818146da7f4ba3e712fb4227c931bed614fb50cb98f7e"
+    },
+    {
+      "path": "src/game/terrain/TerrainAnalysis.ts",
+      "bytes": 5953,
+      "sha256": "b2e2ced92089d4c234dd079d0f3928306a92e87b9ed74a7b21f1ca5bb5d7c713"
+    },
+    {
+      "path": "src/game/terrain/TerrainAtlasAssets.test.ts",
+      "bytes": 3124,
+      "sha256": "4034d53ad43ba555b30c05700e271852291a827b3e0555d72c893aec1b1f927d"
+    },
+    {
+      "path": "src/game/terrain/TerrainCollisionModel.test.ts",
+      "bytes": 2208,
+      "sha256": "101889c442c108ce42e285719dd2cf8ed31a1624a50d82859762f540d3780a72"
+    },
+    {
+      "path": "src/game/terrain/TerrainCollisionModel.ts",
+      "bytes": 4516,
+      "sha256": "d9341d670b57d1a8b4459d64658960461c193f2bd7f499bac72f03425e29676d"
+    },
+    {
+      "path": "src/game/terrain/TerrainRuntime.ts",
+      "bytes": 15411,
+      "sha256": "3a928df4a9a7db7d928f81735fe0c22366318488bab9b8e2f6ad30e85bc9f685"
+    },
+    {
+      "path": "src/game/terrain/TerrainRuntimeArchitecture.test.ts",
+      "bytes": 1362,
+      "sha256": "5bb859b4b502b349df4417941ecb7fd48c94c8205699ee83f6885a8f5d34eb10"
+    },
+    {
+      "path": "src/game/terrain/TerrainTileset.test.ts",
+      "bytes": 2108,
+      "sha256": "1829b3ff4c42c90067ef5b3bd1c1770d3bc16dac1cccc6f009ca83727add3bb8"
+    },
+    {
+      "path": "src/game/terrain/TerrainTileset.ts",
+      "bytes": 3637,
+      "sha256": "051dae68893f032f9cf03ab5a88e780bc20b35e8ac28add5cb4f2a0e2baafef8"
+    },
+    {
+      "path": "src/game/ui/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/game/ui/Hud.ts",
+      "bytes": 8268,
+      "sha256": "391df870d313456bd2c14ef44e40e45b2ffb211720696f1399eb5a5b46b4f342"
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 9138,
+      "sha256": "02989cb0ec0a3903c8a81052c67a09726d481308b012ce5bc4e7cf85098b3325"
+    },
+    {
+      "path": "src/schemas/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/schemas/bossSchema.ts",
+      "bytes": 1623,
+      "sha256": "57119d6c2b3677b940249fdaf2b257876705c3d7ea6d46555e877e2b9f12932b"
+    },
+    {
+      "path": "src/schemas/difficultySchema.ts",
+      "bytes": 618,
+      "sha256": "4e7a123c888efcfa595415df0fd01a9f278aba4b60754606908903305add550a"
+    },
+    {
+      "path": "src/schemas/encounterSchema.ts",
+      "bytes": 2627,
+      "sha256": "adb61f3976d0132076a074e1db19f2b1fe26fd01d5708117df5a64a0910278cb"
+    },
+    {
+      "path": "src/schemas/enemySchema.test.ts",
+      "bytes": 1096,
+      "sha256": "51f68756e946ebe669b3487154519ff3321955863e69b0f5f2abc367dbec7eb4"
+    },
+    {
+      "path": "src/schemas/enemySchema.ts",
+      "bytes": 892,
+      "sha256": "781822936bb9e76acd867778347d9f6e2ad0794e1aacf601ea9c6bb551e86693"
+    },
+    {
+      "path": "src/schemas/equipmentSchema.ts",
+      "bytes": 5661,
+      "sha256": "b4a10e87fad440a871e62aa84faa4f4dd9d32474f0fb5442c2b8dce2c0dc8896"
+    },
+    {
+      "path": "src/schemas/formationSchema.ts",
+      "bytes": 725,
+      "sha256": "fbed724114ea119758b3f8e85bc2d7e93984cb825008e2f216e3a1960b491a16"
+    },
+    {
+      "path": "src/schemas/levelSchema.test.ts",
+      "bytes": 1523,
+      "sha256": "355518e8af62d0d7fd7a1b56ea6df1bd498af3b018c5aa6b7825e6c85944b8bf"
+    },
+    {
+      "path": "src/schemas/levelSchema.ts",
+      "bytes": 3664,
+      "sha256": "18f50bd0b2b20cf009a4929133c50dcdd36e953ba4644f19f6c4983f19b7442a"
+    },
+    {
+      "path": "src/schemas/movementSchema.ts",
+      "bytes": 2505,
+      "sha256": "26cc29b67289ce8923ac442832988afa72be216ea84fa9db1f134b515ee1fbcf"
+    },
+    {
+      "path": "src/schemas/musicSchema.ts",
+      "bytes": 1942,
+      "sha256": "8c8f795442d0ac225a14bf8504c210ca6e8dd8cd75c5795fc9c9823fb79257a0"
+    },
+    {
+      "path": "src/schemas/pickupSchema.ts",
+      "bytes": 523,
+      "sha256": "a47df5642fb7a345cb7901900cd181f8a5aa809f671bafb4e02947e5e26107e4"
+    },
+    {
+      "path": "src/schemas/profileSchema.ts",
+      "bytes": 2370,
+      "sha256": "a3994c61dd8483c36167501cd9f144373f8119b12e820f0b756c19cb2b4fe148"
+    },
+    {
+      "path": "src/schemas/projectilePatternSchema.ts",
+      "bytes": 1208,
+      "sha256": "656134947862eb57c7597d7d04ec653c90c3a8f2e3e7316ab21598eeee5fdbfe"
+    },
+    {
+      "path": "src/schemas/safeId.test.ts",
+      "bytes": 635,
+      "sha256": "b10aecee48a248ef97de5699d4ad242fbc6edfed32f9048aec702fa8700db8fb"
+    },
+    {
+      "path": "src/schemas/safeId.ts",
+      "bytes": 458,
+      "sha256": "18d7e769177214eb5dbbc152cb088a0eb98a929b8ba0c830d3e011a2971e2104"
+    },
+    {
+      "path": "src/schemas/studioPackageSchema.ts",
+      "bytes": 16990,
+      "sha256": "7785974c979d599997b3c12c45928da11ca05565dc8e0908c22c79895070da21"
+    },
+    {
+      "path": "src/schemas/studioSimulationSchema.ts",
+      "bytes": 6752,
+      "sha256": "5a4c3cd077fcff7cd83ef9a5f310384d151b3826bd227d0138d5b9753928279e"
+    },
+    {
+      "path": "src/schemas/terrainSchema.ts",
+      "bytes": 15778,
+      "sha256": "430ada4d0e0767b9f86dc9eab846e5656e80853bdc03455206b525471ef34e17"
+    },
+    {
+      "path": "src/schemas/terrainTilesetSchema.test.ts",
+      "bytes": 2307,
+      "sha256": "d6afb9b4d66ce725340aa85968f4717d0c151febaa5ed473557bbb5e7e93627d"
+    },
+    {
+      "path": "src/schemas/validation.ts",
+      "bytes": 151,
+      "sha256": "ba71ed597e8de200c1c04afe7b788d798a3c59a315ef747a9ae348f811a93637"
+    },
+    {
+      "path": "src/schemas/weaponSchema.ts",
+      "bytes": 1239,
+      "sha256": "d9489b7b1329de1aaef4ce9dad57739f3bcf09171a4a36ab551522aa9aaf6dbd"
+    },
+    {
+      "path": "src/shared/ImportGraphArchitecture.test.ts",
+      "bytes": 2510,
+      "sha256": "df39641e356763ecf4ed9df9be87dfb67c080eda7b34125b557c450a0538e6af"
+    },
+    {
+      "path": "src/shared/mathUtils.test.ts",
+      "bytes": 2902,
+      "sha256": "01b018d42fee030a644d143566dc2175fe3dace549d8331b09d14ccf87ddd68d"
+    },
+    {
+      "path": "src/shared/mathUtils.ts",
+      "bytes": 1802,
+      "sha256": "5e862de91797cb1b3b88dd51175a8089ced514670755a83e8feb7d3722af49d4"
+    },
+    {
+      "path": "src/shared/rng.test.ts",
+      "bytes": 1213,
+      "sha256": "1b3c9236737b3f18da5c7d3bcbce07b8c51bbaa777a482d0b10fd8a2a482edb3"
+    },
+    {
+      "path": "src/shared/rng.ts",
+      "bytes": 876,
+      "sha256": "5ad3d21f62d9ef4202f74908c127c6f80f4ec3e8088bef69b92e04500e26e9cb"
+    },
+    {
+      "path": "src/studio/BuiltInPackages.ts",
+      "bytes": 26082,
+      "sha256": "12bd3e63177d6ccb78675746c677f8ee265accc9102231916104ae4e7252175f"
+    },
+    {
+      "path": "src/studio/ContentCompiler.ts",
+      "bytes": 6785,
+      "sha256": "9c9dc8845f103eb946ec4941b9ba430b145266a0c46df7d85d6dae39dbf5151e"
+    },
+    {
+      "path": "src/studio/DependencyLock.ts",
+      "bytes": 4994,
+      "sha256": "901dd8222a2bb4758c4bab43e9b5d8f14520f4471e7f072cd83e6785b83dad81"
+    },
+    {
+      "path": "src/studio/DependencyResolver.ts",
+      "bytes": 5227,
+      "sha256": "40422d8c13bdd79f77e3a4dbb51a73aca4385b376d532c8750dbe20d180e28a1"
+    },
+    {
+      "path": "src/studio/Epoch16Production.test.ts",
+      "bytes": 6085,
+      "sha256": "8e7246c02b406a84eb5d2a93c8a39fb8e11dbdbe1adbad511179865daa32f0d5"
+    },
+    {
+      "path": "src/studio/FocusedStudioWorkspaces.tsx",
+      "bytes": 22869,
+      "sha256": "c39c615cbfb319f736116af62f0be5c9d32557fd72e2d7772b3482d19cf3856c"
+    },
+    {
+      "path": "src/studio/FolderProject.ts",
+      "bytes": 12238,
+      "sha256": "8f1f3615c5efe72a03c1b5c57166051326dcc5fca5735969b303816d0ad30917"
+    },
+    {
+      "path": "src/studio/FolderSecurity.test.ts",
+      "bytes": 5559,
+      "sha256": "7e87de3375be9d97a831900cb69d3f25336a74a2b716c2105353ce1ff667e58b"
+    },
+    {
+      "path": "src/studio/PackageCodec.ts",
+      "bytes": 2321,
+      "sha256": "eb72e08b7ed868d13f885c484662008517379e01a5ba132b643a55c26b817f82"
+    },
+    {
+      "path": "src/studio/PackageMigrations.ts",
+      "bytes": 3185,
+      "sha256": "6212ba8baacfad4b7c59c07fba723224f27f914f23ff993f36dd70c9b4abc202"
+    },
+    {
+      "path": "src/studio/PackageReview.ts",
+      "bytes": 5350,
+      "sha256": "a2b10501e84dde7f45f41f769a6cc220a56aa6cfd1a942ec751d3de197858368"
+    },
+    {
+      "path": "src/studio/PackageTypes.ts",
+      "bytes": 408,
+      "sha256": "82f1181d769f02f4493b406437690e6aa7ce99ed63c280596cd8fb0e7dc045c3"
+    },
+    {
+      "path": "src/studio/PackageValidation.ts",
+      "bytes": 14320,
+      "sha256": "ceb482b50ad03c9f1fdd25260eb00cbcebee4d20d9bb1dd1a1b07874b0780f63"
+    },
+    {
+      "path": "src/studio/ProductionCompiler.ts",
+      "bytes": 8885,
+      "sha256": "f10c181654e92345c76e2ecf2af3c81748b2026efac994f01e645dce62317164"
+    },
+    {
+      "path": "src/studio/StableId.ts",
+      "bytes": 380,
+      "sha256": "54ee5ca7b0d0dae10d8518e30df40855e5b739cfb8698399d7d71dbae601e401"
+    },
+    {
+      "path": "src/studio/StudioApp.tsx",
+      "bytes": 29978,
+      "sha256": "4dfcd804c559a3969ffd9a41c2dc7c794ea4133b25d40aba444d9bd6e6cde059"
+    },
+    {
+      "path": "src/studio/StudioPackages.test.ts",
+      "bytes": 5431,
+      "sha256": "1f8b5a21e4099bd9c8fb9e66504db9a4a8d5fbfd0b9cdcd74fb35f9e6d4ccb64"
+    },
+    {
+      "path": "src/studio/WorkspaceStore.ts",
+      "bytes": 2235,
+      "sha256": "3f6f3dcd5b2467466c7665b7511a501f6565123a64341d07d3f39c9b49aafd25"
+    },
+    {
+      "path": "src/studio/assets/AssetAtlasPacker.ts",
+      "bytes": 3118,
+      "sha256": "f0b8769c164d7ddd92020f277a33cd0085d190b1ead5720ab11e1883ddbdd129"
+    },
+    {
+      "path": "src/studio/assets/AssetPackageStorage.ts",
+      "bytes": 1937,
+      "sha256": "045a0b280c66d946c2a64cc83065aae18c69be9598ee505d5c0ac93918cb4bdb"
+    },
+    {
+      "path": "src/studio/assets/AssetPreviewCanvas.tsx",
+      "bytes": 8272,
+      "sha256": "3ed25b5736f23324fecf3cca054b7a63cb6327df72863fef946603a033bd8505"
+    },
+    {
+      "path": "src/studio/assets/AssetReplacementReport.ts",
+      "bytes": 1921,
+      "sha256": "cfa72764fee341c0124889262c09eb59890bd3bebf59a5f8efc787d1cbfd77cc"
+    },
+    {
+      "path": "src/studio/assets/AssetResourceTools.ts",
+      "bytes": 6579,
+      "sha256": "b27fc338e874ec02ff833581360a8372195ec9a42149133abbb14b0efdb04e53"
+    },
+    {
+      "path": "src/studio/assets/AssetStudioTools.test.ts",
+      "bytes": 5067,
+      "sha256": "3a9fe06f38ca6cdbe6720120f9e01c5b575a5b719ca100701d1074c4cc3d6212"
+    },
+    {
+      "path": "src/studio/assets/AssetStudioWorkspace.tsx",
+      "bytes": 42854,
+      "sha256": "a2023d741bf79cf55f2da1467935a318fdcaa020d7b4819fea33b5a9f824e12f"
+    },
+    {
+      "path": "src/studio/main.tsx",
+      "bytes": 280,
+      "sha256": "405ee77869fa98c734e0da5430681ab3d9d9c53810d18b7cc2283805f89e0a7c"
+    },
+    {
+      "path": "src/studio/music/MusicPackageStorage.ts",
+      "bytes": 1879,
+      "sha256": "7273ecd73e2ed2efc47554d48674c7f1ebc962946e854d1b22117610911c64c3"
+    },
+    {
+      "path": "src/studio/music/MusicResourceTools.test.ts",
+      "bytes": 1551,
+      "sha256": "01f14f5930bbd8d8b5ae10cd6ba3a935a06dc5be35eb3e64314d4fd0be998139"
+    },
+    {
+      "path": "src/studio/music/MusicResourceTools.ts",
+      "bytes": 2512,
+      "sha256": "48e6138d766b5075c5f54034e94fa0a6f021c171a288cfdefee03ff5fd3c00a8"
+    },
+    {
+      "path": "src/studio/simulation/AttentionAnalyzer.ts",
+      "bytes": 6067,
+      "sha256": "9893fa1630e2e47449c4ab4b26521a00b06906e05f53ad3b63071783914c2ddc"
+    },
+    {
+      "path": "src/studio/simulation/SimulationTools.test.ts",
+      "bytes": 7695,
+      "sha256": "8c8f3ec577a80adbf519ea6966290f38bfd3e9c0e13578cd4ae67345b9697e74"
+    },
+    {
+      "path": "src/studio/simulation/SimulationTypes.ts",
+      "bytes": 54,
+      "sha256": "d71295c32ae69b53534e1d9fa39dd18f95675ccb86bf073fd253c307db912078"
+    },
+    {
+      "path": "src/studio/simulation/SnapshotTransport.ts",
+      "bytes": 1937,
+      "sha256": "c43c00d8f1c2949e2fd9504fef74a60ae323fd001b4042a17a6b43d50f2b4a85"
+    },
+    {
+      "path": "src/studio/simulation/TelemetryComparison.ts",
+      "bytes": 2639,
+      "sha256": "1a045e22fd789aeed8e47a14b3b694a46c380c446ce7d01623aed0e4983da330"
+    },
+    {
+      "path": "src/studio/simulation/TunableParameters.ts",
+      "bytes": 10164,
+      "sha256": "658a5a35dffab5eaa40a216a63fb771b0d8e04b443f61ea2de9bec9578b62c6f"
+    },
+    {
+      "path": "src/studio/simulation/TuningDiff.ts",
+      "bytes": 3173,
+      "sha256": "5f265b879bd5d680e5244ac8057b31d1df34475a73084590c4f1f99afb131bf4"
+    },
+    {
+      "path": "src/studio/studio.css",
+      "bytes": 18696,
+      "sha256": "68fd177d216948d41aafc1151eb152af5e840d55ec9ca1bc3ff099e53c04413f"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "studio.html",
+      "bytes": 449,
+      "sha256": "9960441bee38e573893159af5817b2fe6db62927255a6093354a0db3ffc76e31"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 536,
+      "sha256": "0bb2c69abd9569d7dde78df7aeb328f1ddec8390a0ae62ae0302ee07cb8b2438"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 1271,
+      "sha256": "2ba5a6653a617d0bdfa6cb3bf08b5f61119b2bea5765a056263c3bdd16474ed6"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 162,
+      "sha256": "ab838c6f66db47a0721f85f23c56620de9b68d99ff34da423dfeebf2b4b50614"
+    }
+  ]
+}

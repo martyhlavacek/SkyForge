@@ -1,0 +1,42 @@
+{
+  "id": "terrain-canyon-dust",
+  "displayName": "Canyon / River — Authored Environment: Dust",
+  "kind": "terrainTile",
+  "status": "candidate",
+  "roles": [
+    "terrain-material",
+    "none"
+  ],
+  "tags": [],
+  "sourceKey": "canyon:5",
+  "width": 32,
+  "height": 32,
+  "scale": 1,
+  "pivot": {
+    "x": 0,
+    "y": 0
+  },
+  "frames": [],
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 0,
+    "shadowOffsetX": 0,
+    "shadowOffsetY": 0,
+    "shadowScaleX": 1,
+    "shadowScaleY": 0.65,
+    "shadowOpacity": 0.35
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 8,
+      "loop": true
+    }
+  },
+  "atlasFrameIds": []
+}

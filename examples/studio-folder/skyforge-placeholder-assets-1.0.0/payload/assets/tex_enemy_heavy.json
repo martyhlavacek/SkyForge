@@ -1,0 +1,37 @@
+{
+  "id": "tex_enemy_heavy",
+  "displayName": "Heavy Fighter Placeholder",
+  "kind": "enemyAircraft",
+  "status": "candidate",
+  "roles": [
+    "enemy-visual",
+    "heavy_fighter"
+  ],
+  "tags": [],
+  "sourceKey": "tex_enemy_heavy",
+  "width": 50,
+  "height": 50,
+  "scale": 1,
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "frames": [],
+  "collision": {
+    "type": "circle",
+    "radius": 20,
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 32,
+    "shadowOffsetX": 10,
+    "shadowOffsetY": 14,
+    "shadowScaleX": 1,
+    "shadowScaleY": 0.65,
+    "shadowOpacity": 0.35
+  },
+  "animations": {},
+  "atlasFrameIds": []
+}

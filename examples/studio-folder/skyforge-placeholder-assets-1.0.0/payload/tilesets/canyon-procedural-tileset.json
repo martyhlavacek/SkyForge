@@ -1,0 +1,138 @@
+{
+  "id": "canyon-procedural-tileset",
+  "displayName": "Canyon / River — Authored Environment Procedural Tiles",
+  "tileSize": 32,
+  "columns": 17,
+  "rows": 1,
+  "margin": 0,
+  "spacing": 0,
+  "materialIds": [
+    "empty",
+    "river",
+    "sandstone",
+    "shoreline",
+    "dust",
+    "metal_platform",
+    "sandstone_boundary",
+    "rock_cluster",
+    "crack",
+    "scrub",
+    "sediment",
+    "ruin"
+  ],
+  "autotileRule": "cardinal",
+  "autotileMappings": {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "11": 11,
+    "12": 12,
+    "13": 13,
+    "14": 14,
+    "15": 15
+  },
+  "tiles": [
+    {
+      "index": 0,
+      "materialId": "empty",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 1,
+      "materialId": "river",
+      "collisionRole": "none",
+      "animationFrames": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "animationFps": 8
+    },
+    {
+      "index": 2,
+      "materialId": "sandstone",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 3,
+      "materialId": "shoreline",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 4,
+      "materialId": "dust",
+      "collisionRole": "none",
+      "animationFrames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "animationFps": 8
+    },
+    {
+      "index": 5,
+      "materialId": "metal_platform",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 6,
+      "materialId": "sandstone_boundary",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 7,
+      "materialId": "rock_cluster",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 8,
+      "materialId": "crack",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 9,
+      "materialId": "scrub",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 10,
+      "materialId": "sediment",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    },
+    {
+      "index": 11,
+      "materialId": "ruin",
+      "collisionRole": "none",
+      "animationFrames": [],
+      "animationFps": 8
+    }
+  ]
+}

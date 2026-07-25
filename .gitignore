@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+*.local
+.DS_Store
+test-results/
+playwright-report/
+/opt/pw-browsers
+
+.studio-release-check/
+
+.verification/

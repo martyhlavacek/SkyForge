@@ -1,0 +1,36 @@
+{
+  "id": "shield_bastion",
+  "displayName": "Bastion Shield",
+  "description": "Large buffer with slow delayed recovery.",
+  "category": "shield",
+  "tier": 1,
+  "purchaseCost": 2200,
+  "resaleRate": 0.75,
+  "mass": 6,
+  "passivePowerDraw": 3.5,
+  "compatibilityTags": [],
+  "roleTags": [
+    "capacity"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 850,
+      "description": "Emitter tuning",
+      "modifiers": {
+        "shieldCapacity": 10,
+        "shieldRechargeRate": 1.5
+      }
+    }
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "sizeClass": "large",
+  "capacity": 105,
+  "rechargeDelay": 5,
+  "rechargeRate": 5,
+  "energyPerPoint": 0.7
+}

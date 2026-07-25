@@ -1,0 +1,8 @@
+{
+  "id": "armor_repair",
+  "texture": "tex_pickup_repair",
+  "effect": "armorRepair",
+  "magnitude": 24,
+  "fallSpeed": 55,
+  "lifetime": 10
+}

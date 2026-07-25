@@ -1,0 +1,14 @@
+{
+  "id": "mine_layer",
+  "projectileTexture": "tex_mine",
+  "count": 1,
+  "angles": [
+    90
+  ],
+  "aimed": false,
+  "speed": 0,
+  "cooldown": 2,
+  "firstShotDelay": 1.5,
+  "damage": 1,
+  "lifetime": 8
+}

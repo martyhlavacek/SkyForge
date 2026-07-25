@@ -1,0 +1,10 @@
+{
+  "id": "miniboss_alpha",
+  "estimatedDuration": 60,
+  "difficulty": 4,
+  "skillsTested": ["boss_pattern_reading", "sustained_dps"],
+  "events": [
+    { "at": 2, "type": "startMiniboss", "boss": "miniboss_alpha" }
+  ],
+  "completion": { "type": "allClear" }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "missile_system",
+  "displayName": "Missile",
+  "projectileTexture": "tex_missile",
+  "collisionCategory": "player",
+  "levels": [
+    {
+      "damage": 40,
+      "fireInterval": 1.5,
+      "projectileSpeed": 340,
+      "projectileCount": 1,
+      "spreadAngles": [0],
+      "muzzles": [[0, -16]],
+      "homing": { "turnRateDegPerSec": 140, "acquireDelay": 0.15 }
+    }
+  ]
+}

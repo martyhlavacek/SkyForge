@@ -1,0 +1,6 @@
+{
+  "id": "drift_down",
+  "type": "straight",
+  "angleDeg": 90,
+  "speed": 60
+}

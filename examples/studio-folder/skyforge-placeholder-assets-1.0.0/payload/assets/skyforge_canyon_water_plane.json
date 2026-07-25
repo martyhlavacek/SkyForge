@@ -1,0 +1,71 @@
+{
+  "id": "skyforge_canyon_water_plane",
+  "displayName": "Skyforge Canyon Continuous Water Plane",
+  "kind": "terrainTile",
+  "status": "approved",
+  "roles": [
+    "terrain-material",
+    "water-plane"
+  ],
+  "tags": [
+    "canyon",
+    "water",
+    "seamless",
+    "animated"
+  ],
+  "resourceId": "skyforge-canyon-water-resource",
+  "width": 512,
+  "height": 512,
+  "scale": 1,
+  "pivot": {
+    "x": 0,
+    "y": 0
+  },
+  "frames": [
+    {
+      "id": "skyforge-canyon-water-frame-0",
+      "x": 0,
+      "y": 0,
+      "width": 512,
+      "height": 512,
+      "durationMs": 1538
+    },
+    {
+      "id": "skyforge-canyon-water-frame-1",
+      "x": 512,
+      "y": 0,
+      "width": 512,
+      "height": 512,
+      "durationMs": 1538
+    },
+    {
+      "id": "skyforge-canyon-water-frame-2",
+      "x": 1024,
+      "y": 0,
+      "width": 512,
+      "height": 512,
+      "durationMs": 1538
+    }
+  ],
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 0,
+    "shadowOffsetX": 0,
+    "shadowOffsetY": 0,
+    "shadowScaleX": 1,
+    "shadowScaleY": 1,
+    "shadowOpacity": 0
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "fps": 0.65,
+      "loop": true
+    }
+  },
+  "atlasFrameIds": []
+}

@@ -1,0 +1,29 @@
+{
+  "formatVersion": "1.0",
+  "id": "level_boss_test",
+  "displayName": "Boss Test Arena",
+  "music": "none",
+  "durationTarget": 130,
+  "baseScrollSpeed": 60,
+  "events": [
+    {
+      "at": 1,
+      "type": "checkpoint",
+      "name": "miniboss"
+    },
+    {
+      "at": 2,
+      "encounter": "miniboss_alpha"
+    },
+    {
+      "at": 4,
+      "type": "checkpoint",
+      "name": "boss"
+    },
+    {
+      "at": 6,
+      "encounter": "boss_alpha"
+    }
+  ],
+  "groundObjects": []
+}

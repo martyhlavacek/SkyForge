@@ -1,0 +1,34 @@
+{
+  "id": "crossfire_intro",
+  "estimatedDuration": 14,
+  "difficulty": 2,
+  "skillsTested": [
+    "lateral_movement"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "spawnFormation",
+      "formation": "left_sweep",
+      "x": -40,
+      "y": 160
+    },
+    {
+      "at": 1.5,
+      "type": "spawnFormation",
+      "formation": "right_sweep",
+      "x": 580,
+      "y": 240
+    },
+    {
+      "at": 5,
+      "type": "spawnFormation",
+      "formation": "pinch_attack",
+      "x": -40,
+      "y": 120
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

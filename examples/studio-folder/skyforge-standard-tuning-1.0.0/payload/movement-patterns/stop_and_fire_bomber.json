@@ -1,0 +1,10 @@
+{
+  "id": "stop_and_fire_bomber",
+  "type": "stop_and_fire",
+  "entrySpeed": 90,
+  "stopY": 180,
+  "holdDuration": 6,
+  "exitAngleDeg": -90,
+  "exitSpeed": 120,
+  "holdFireRateMultiplier": 1
+}

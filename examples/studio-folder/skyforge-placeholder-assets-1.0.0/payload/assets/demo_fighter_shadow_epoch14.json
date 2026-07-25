@@ -1,0 +1,50 @@
+{
+  "id": "demo_fighter_shadow_epoch14",
+  "displayName": "Epoch 14 Demo Fighter Shadow",
+  "kind": "shadow",
+  "status": "approved",
+  "roles": [
+    "aircraft-shadow"
+  ],
+  "tags": [
+    "demo",
+    "shadow"
+  ],
+  "resourceId": "demo-fighter-shadow-resource",
+  "width": 48,
+  "height": 48,
+  "scale": 1,
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "frames": [
+    {
+      "id": "demo_fighter_shadow_epoch14-frame-0",
+      "x": 0,
+      "y": 0,
+      "width": 48,
+      "height": 48,
+      "durationMs": 100
+    }
+  ],
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 0,
+    "shadowOffsetX": 0,
+    "shadowOffsetY": 0,
+    "shadowScaleX": 1,
+    "shadowScaleY": 1,
+    "shadowOpacity": 1
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        0
+      ],
+      "fps": 1,
+      "loop": true
+    }
+  },
+  "atlasFrameIds": []
+}

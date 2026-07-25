@@ -1,0 +1,37 @@
+{
+  "id": "propulsion_anchor",
+  "displayName": "Siege Thrusters",
+  "description": "High-control heavy propulsion with lower top speed.",
+  "tier": 1,
+  "purchaseCost": 1900,
+  "resaleRate": 0.75,
+  "mass": 6,
+  "passivePowerDraw": 1.8,
+  "compatibilityTags": [],
+  "roleTags": [
+    "control",
+    "heavy"
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 800,
+      "description": "Calibrated vector nozzles",
+      "modifiers": {
+        "maxSpeed": 15,
+        "thrust": 140
+      }
+    }
+  ],
+  "category": "propulsion",
+  "sizeClass": "large",
+  "maxSpeed": 285,
+  "focusRatio": 0.55,
+  "thrust": 2600,
+  "drag": 2450
+}

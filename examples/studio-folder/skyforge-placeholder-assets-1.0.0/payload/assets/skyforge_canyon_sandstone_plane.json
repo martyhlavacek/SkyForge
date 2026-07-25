@@ -1,0 +1,45 @@
+{
+  "id": "skyforge_canyon_sandstone_plane",
+  "displayName": "Skyforge Canyon Continuous Sandstone",
+  "kind": "terrainTile",
+  "status": "approved",
+  "roles": [
+    "terrain-material",
+    "sandstone-plane"
+  ],
+  "tags": [
+    "canyon",
+    "sandstone",
+    "seamless",
+    "composited"
+  ],
+  "resourceId": "skyforge-canyon-sandstone-resource",
+  "width": 512,
+  "height": 512,
+  "scale": 1,
+  "pivot": {
+    "x": 0,
+    "y": 0
+  },
+  "frames": [
+    {
+      "id": "skyforge-canyon-sandstone-frame-0",
+      "x": 0,
+      "y": 0,
+      "width": 512,
+      "height": 512,
+      "durationMs": 100
+    }
+  ],
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 0,
+    "shadowOffsetX": 0,
+    "shadowOffsetY": 0,
+    "shadowScaleX": 1,
+    "shadowScaleY": 1,
+    "shadowOpacity": 0
+  },
+  "animations": {},
+  "atlasFrameIds": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": "stop_and_fire_mid",
+  "type": "stop_and_fire",
+  "entrySpeed": 120,
+  "stopY": 180,
+  "holdDuration": 6,
+  "exitAngleDeg": -90,
+  "exitSpeed": 160,
+  "holdFireRateMultiplier": 0.5
+}

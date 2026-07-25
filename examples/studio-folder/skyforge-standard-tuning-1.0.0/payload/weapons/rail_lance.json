@@ -1,0 +1,53 @@
+{
+  "id": "rail_lance",
+  "displayName": "Rail Lance",
+  "projectileTexture": "tex_bullet_player",
+  "collisionCategory": "player",
+  "levels": [
+    {
+      "damage": 48,
+      "fireInterval": 0.42,
+      "projectileSpeed": 1150,
+      "projectileCount": 1,
+      "spreadAngles": [
+        0
+      ],
+      "muzzles": [
+        [
+          0,
+          -18
+        ]
+      ]
+    },
+    {
+      "damage": 58,
+      "fireInterval": 0.39,
+      "projectileSpeed": 1180,
+      "projectileCount": 1,
+      "spreadAngles": [
+        0
+      ],
+      "muzzles": [
+        [
+          0,
+          -18
+        ]
+      ]
+    },
+    {
+      "damage": 68,
+      "fireInterval": 0.36,
+      "projectileSpeed": 1200,
+      "projectileCount": 1,
+      "spreadAngles": [
+        0
+      ],
+      "muzzles": [
+        [
+          0,
+          -18
+        ]
+      ]
+    }
+  ]
+}

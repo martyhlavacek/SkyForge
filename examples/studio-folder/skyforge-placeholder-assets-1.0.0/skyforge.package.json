@@ -1,0 +1,24 @@
+{
+  "format": "skyforge-asset-pack",
+  "schemaVersion": 2,
+  "manifest": {
+    "id": "skyforge-placeholder-assets",
+    "name": "Skyforge Placeholder Assets",
+    "version": "1.0.0",
+    "description": "Production Asset Studio package with semantic placeholders, import, animation, shadow, atlas, and tileset demonstrations.",
+    "authors": [
+      "Marty Hlavacek"
+    ],
+    "license": "Skyforge project content",
+    "engineRange": ">=0.3.0",
+    "dependencies": [],
+    "tags": [
+      "built-in",
+      "epoch-18"
+    ],
+    "createdAt": "2026-07-14T01:00:00.000Z",
+    "updatedAt": "2026-07-14T01:00:00.000Z",
+    "contentRevision": 2
+  },
+  "reviewComments": []
+}

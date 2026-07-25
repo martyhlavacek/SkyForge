@@ -1,0 +1,37 @@
+{
+  "id": "tex_enemy_bomber",
+  "displayName": "Bomber Placeholder",
+  "kind": "enemyAircraft",
+  "status": "candidate",
+  "roles": [
+    "enemy-visual",
+    "bomber"
+  ],
+  "tags": [],
+  "sourceKey": "tex_enemy_bomber",
+  "width": 60,
+  "height": 60,
+  "scale": 1,
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "frames": [],
+  "collision": {
+    "type": "circle",
+    "radius": 24,
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "hardpoints": [],
+  "presentation": {
+    "altitude": 32,
+    "shadowOffsetX": 10,
+    "shadowOffsetY": 14,
+    "shadowScaleX": 1,
+    "shadowScaleY": 0.65,
+    "shadowOpacity": 0.35
+  },
+  "animations": {},
+  "atlasFrameIds": []
+}

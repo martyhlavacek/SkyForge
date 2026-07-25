@@ -1,0 +1,35 @@
+{
+  "id": "bomber_wall",
+  "estimatedDuration": 20,
+  "difficulty": 4,
+  "skillsTested": [
+    "area_denial",
+    "reaction_time"
+  ],
+  "events": [
+    {
+      "at": 0,
+      "type": "spawnEnemy",
+      "enemy": "bomber",
+      "x": 160,
+      "y": -60
+    },
+    {
+      "at": 1.5,
+      "type": "spawnEnemy",
+      "enemy": "bomber",
+      "x": 380,
+      "y": -60
+    },
+    {
+      "at": 8,
+      "type": "spawnFormation",
+      "formation": "pinch_attack",
+      "x": -40,
+      "y": 100
+    }
+  ],
+  "completion": {
+    "type": "allClear"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "hull_interceptor",
+  "displayName": "Kestrel Interceptor",
+  "description": "Fast lightweight frame with low armor and limited payload.",
+  "tier": 1,
+  "purchaseCost": 2600,
+  "resaleRate": 0.75,
+  "mass": 2.5,
+  "passivePowerDraw": 0,
+  "compatibilityTags": [],
+  "roleTags": [
+    "mobility"
+  ],
+  "unlockRequirement": {
+    "type": "campaignTier",
+    "tier": 1
+  },
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [
+    {
+      "cost": 900,
+      "description": "Reinforced spars",
+      "modifiers": {
+        "armorBonus": 10
+      }
+    }
+  ],
+  "category": "hull",
+  "baseArmor": 72,
+  "nominalMass": 14,
+  "maxSupportedMass": 21,
+  "speedFactor": 1.1,
+  "thrustFactor": 1.15,
+  "shieldFactor": 0.85,
+  "utilitySlots": 1,
+  "allowedPrimaryClasses": [
+    "light",
+    "medium"
+  ],
+  "allowedSecondaryClasses": [
+    "missile",
+    "rocket"
+  ],
+  "allowedPropulsionSizes": [
+    "small",
+    "medium"
+  ],
+  "allowedGeneratorSizes": [
+    "small"
+  ],
+  "allowedShieldSizes": [
+    "small"
+  ],
+  "allowedArmorSizes": [
+    "small"
+  ],
+  "navigationEnvelope": {
+    "collisionRadius": 4.5,
+    "minimumCorridorWidth": 50
+  }
+}

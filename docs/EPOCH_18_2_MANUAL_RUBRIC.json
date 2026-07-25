@@ -1,0 +1,23 @@
+{
+  "rubricVersion": "2.0",
+  "method": "Manual art-direction review of the final gameplay-scale preview and complete Blob-47 reference sheet, supported by automated texture, geometry, map-composition, build, and package gates.",
+  "scores": {
+    "Blob-47 topology and transitions": 8.8,
+    "Water continuity and naturalism": 8.7,
+    "Sandstone continuity and variation": 8.5,
+    "Shoreline silhouette and depth": 8.6,
+    "Macro landform composition": 8.7,
+    "Landmark and set-dressing density": 8.6,
+    "Benchmark-inspired visual hierarchy": 8.6,
+    "Tile and metatile concealment": 8.8,
+    "Gameplay readability and palette": 9.2,
+    "Altitude and player shadow": 8.5
+  },
+  "average": 8.7,
+  "requiredAverage": 8.5,
+  "notes": [
+    "The prior Epoch 18.1 score is superseded because it did not perceptually verify inner curves or diagonal banks.",
+    "Epoch 18.2 is accepted only after the geometry gate verifies all diagonal-bit differences, true 45-degree masks, readable concave-corner radii, and sustained diagonals in the playable opening.",
+    "This remains an internal art-direction score, not an independent external review."
+  ]
+}

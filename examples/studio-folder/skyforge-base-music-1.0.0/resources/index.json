@@ -1,0 +1,32 @@
+[
+  {
+    "id": "audio-1",
+    "uri": "audio/music/mission_01/mission_01_full.ogg",
+    "mediaType": "audio/ogg",
+    "license": "Skyforge project content"
+  },
+  {
+    "id": "audio-2",
+    "uri": "audio/music/mission_01/mission_01_drums.ogg",
+    "mediaType": "audio/ogg",
+    "license": "Skyforge project content"
+  },
+  {
+    "id": "audio-3",
+    "uri": "audio/music/mission_01/mission_01_bass.ogg",
+    "mediaType": "audio/ogg",
+    "license": "Skyforge project content"
+  },
+  {
+    "id": "audio-4",
+    "uri": "audio/music/mission_01/mission_01_harmony.ogg",
+    "mediaType": "audio/ogg",
+    "license": "Skyforge project content"
+  },
+  {
+    "id": "audio-5",
+    "uri": "audio/music/mission_01/mission_01_lead.ogg",
+    "mediaType": "audio/ogg",
+    "license": "Skyforge project content"
+  }
+]

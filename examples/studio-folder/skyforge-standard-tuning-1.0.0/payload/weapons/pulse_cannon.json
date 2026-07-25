@@ -1,0 +1,61 @@
+{
+  "id": "pulse_cannon",
+  "displayName": "Pulse",
+  "projectileTexture": "tex_bullet_player",
+  "collisionCategory": "player",
+  "levels": [
+    {
+      "damage": 10,
+      "fireInterval": 0.09,
+      "projectileSpeed": 900,
+      "projectileCount": 1,
+      "spreadAngles": [
+        0
+      ],
+      "muzzles": [
+        [
+          0,
+          -18
+        ]
+      ]
+    },
+    {
+      "damage": 10,
+      "fireInterval": 0.09,
+      "projectileSpeed": 900,
+      "projectileCount": 1,
+      "spreadAngles": [
+        0
+      ],
+      "muzzles": [
+        [
+          -8,
+          -14
+        ],
+        [
+          8,
+          -14
+        ]
+      ]
+    },
+    {
+      "damage": 12,
+      "fireInterval": 0.07,
+      "projectileSpeed": 900,
+      "projectileCount": 1,
+      "spreadAngles": [
+        0
+      ],
+      "muzzles": [
+        [
+          -8,
+          -14
+        ],
+        [
+          8,
+          -14
+        ]
+      ]
+    }
+  ]
+}

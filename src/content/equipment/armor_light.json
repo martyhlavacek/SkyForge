@@ -1,0 +1,20 @@
+{
+  "id": "armor_light",
+  "displayName": "Light Plating",
+  "description": "Low-mass supplemental armor.",
+  "category": "armor",
+  "tier": 0,
+  "purchaseCost": 0,
+  "resaleRate": 0.75,
+  "mass": 2,
+  "passivePowerDraw": 0,
+  "compatibilityTags": [],
+  "roleTags": [
+    "balanced"
+  ],
+  "iconKey": "equipment_placeholder",
+  "unique": true,
+  "upgradeLevels": [],
+  "sizeClass": "small",
+  "armorBonus": 30
+}

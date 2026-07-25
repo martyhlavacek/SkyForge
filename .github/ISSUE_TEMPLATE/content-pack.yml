@@ -1,0 +1,27 @@
+name: Content package issue
+about: Report a Level, Tuning, Music or Asset Pack problem
+title: "[Package] "
+labels: [content]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package type
+      options: [Level Pack, Tuning Pack, Music Pack, Asset Pack, Workspace/Lock]
+    validations:
+      required: true
+  - type: input
+    id: identity
+    attributes:
+      label: Package identity
+      description: type:id@version#revision
+  - type: textarea
+    id: issue
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation output or reproduction

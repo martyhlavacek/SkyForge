@@ -1,0 +1,13 @@
+{
+  "id": "sweep_fan",
+  "projectileTexture": "tex_bullet_enemy",
+  "count": 3,
+  "angles": [-20, 0, 20],
+  "aimed": false,
+  "speed": 160,
+  "cooldown": 0.5,
+  "firstShotDelay": 0.3,
+  "damage": 1,
+  "lifetime": 6,
+  "angleSweep": { "from": -40, "to": 40, "period": 3 }
+}

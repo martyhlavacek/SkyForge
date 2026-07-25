@@ -1,0 +1,8 @@
+{
+  "id": "weapon_upgrade",
+  "texture": "tex_pickup",
+  "effect": "weapon_upgrade",
+  "magnitude": 1,
+  "fallSpeed": 60,
+  "lifetime": 10
+}

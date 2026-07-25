@@ -1,0 +1,106 @@
+{
+  "enemies": [
+    "bomber",
+    "heavy_fighter",
+    "interceptor",
+    "light_fighter",
+    "mine"
+  ],
+  "weapons": [
+    "missile_system",
+    "pulse_cannon",
+    "rail_lance",
+    "rocket_pod",
+    "spread_cannon"
+  ],
+  "projectile-patterns": [
+    "boss_aimed_volley",
+    "five_way_spread",
+    "mine_layer",
+    "ring_burst",
+    "single_aimed_shot",
+    "sweep_fan",
+    "three_way_aimed",
+    "turret_part_shot"
+  ],
+  "movement-patterns": [
+    "bezier_s_curve",
+    "boss_patrol_fast",
+    "boss_patrol_slow",
+    "dive_retreat_fast",
+    "drift_down",
+    "enter_attack_exit_left",
+    "enter_attack_exit_right",
+    "patrol_mid",
+    "sine_descent",
+    "static_hold",
+    "stop_and_fire_bomber",
+    "stop_and_fire_mid",
+    "straight_descent",
+    "sweep_left",
+    "sweep_right"
+  ],
+  "formations": [
+    "bomber_escort",
+    "escort_heavy",
+    "horizontal_row",
+    "left_sweep",
+    "pinch_attack",
+    "right_sweep",
+    "staggered_column",
+    "v_scouts"
+  ],
+  "encounters": [
+    "bomber_intro",
+    "bomber_wall",
+    "boss_alpha",
+    "crossfire_combination",
+    "crossfire_intro",
+    "final_escalation",
+    "heavy_escort_push",
+    "heavy_intro",
+    "interceptor_ambush",
+    "minefield",
+    "miniboss_alpha",
+    "mixed_assault",
+    "opening_scouts",
+    "pinch_gauntlet",
+    "recovery_reward",
+    "turret_introduction"
+  ],
+  "bosses": [
+    "boss_alpha",
+    "miniboss_alpha"
+  ],
+  "pickups": [
+    "armor_repair",
+    "credits_large",
+    "credits_small",
+    "pickup_spread",
+    "shield",
+    "weapon_upgrade"
+  ],
+  "equipment": [
+    "armor_heavy",
+    "armor_light",
+    "generator_capacitor",
+    "generator_flux",
+    "generator_standard",
+    "hull_bulwark",
+    "hull_interceptor",
+    "hull_vanguard",
+    "propulsion_anchor",
+    "propulsion_balanced",
+    "propulsion_sprinter",
+    "secondary_missile",
+    "secondary_rockets",
+    "shield_bastion",
+    "shield_quick",
+    "shield_standard",
+    "utility_credit_magnet",
+    "utility_shield_regulator",
+    "weapon_pulse",
+    "weapon_rail",
+    "weapon_spread"
+  ]
+}

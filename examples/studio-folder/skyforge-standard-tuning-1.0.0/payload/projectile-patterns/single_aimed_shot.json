@@ -1,0 +1,14 @@
+{
+  "id": "single_aimed_shot",
+  "projectileTexture": "tex_bullet_enemy",
+  "count": 1,
+  "angles": [
+    0
+  ],
+  "aimed": true,
+  "speed": 180,
+  "cooldown": 2,
+  "firstShotDelay": 0.8,
+  "damage": 1,
+  "lifetime": 6
+}

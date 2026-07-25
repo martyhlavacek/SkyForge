@@ -1,0 +1,118 @@
+{
+  "format": "skyforge-production-build",
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-14T14:52:08.767Z",
+  "workspaceId": "skyforge-main-workspace",
+  "workspaceVersion": "1.0.0",
+  "lockFingerprint": "fnv1a-2fd29462",
+  "packages": [
+    "level:skyforge-base-levels@1.0.0",
+    "tuning:skyforge-standard-tuning@1.0.0",
+    "music:skyforge-base-music@1.0.0",
+    "asset:skyforge-placeholder-assets@1.0.0"
+  ],
+  "activeLevelId": "level_01",
+  "resources": [
+    {
+      "packageKey": "asset:skyforge-placeholder-assets",
+      "resourceId": "skyforge-canyon-water-resource",
+      "sourceUri": "assets/terrain/skyforge_canyon_water.png",
+      "targetPath": "resources/asset/011bd83323516f6e-skyforge_canyon_water.png",
+      "mediaType": "image/png",
+      "bytes": 315647,
+      "sha256": "011bd83323516f6e69b2bb84cadef95265eac1ff5b167bc4609da50f55d21479"
+    },
+    {
+      "packageKey": "asset:skyforge-placeholder-assets",
+      "resourceId": "demo-fighter-sheet-resource",
+      "sourceUri": "assets/studio/demo_fighter_sheet.png",
+      "targetPath": "resources/asset/0bdb30642d43c8da-demo_fighter_sheet.png",
+      "mediaType": "image/png",
+      "bytes": 881,
+      "sha256": "0bdb30642d43c8dab25c800ad35726a3aabb853f67f0ce54dd130312ee994ae9"
+    },
+    {
+      "packageKey": "asset:skyforge-placeholder-assets",
+      "resourceId": "demo-fighter-shadow-resource",
+      "sourceUri": "assets/studio/demo_fighter_shadow.png",
+      "targetPath": "resources/asset/2a37b6f3e9aee052-demo_fighter_shadow.png",
+      "mediaType": "image/png",
+      "bytes": 240,
+      "sha256": "2a37b6f3e9aee052746935ba6d3fc5b6526232fe21f2d4fc82089613d10ac99c"
+    },
+    {
+      "packageKey": "asset:skyforge-placeholder-assets",
+      "resourceId": "skyforge-canyon-props-resource",
+      "sourceUri": "assets/terrain/skyforge_canyon_props.png",
+      "targetPath": "resources/asset/72a6dd2364d3e584-skyforge_canyon_props.png",
+      "mediaType": "image/png",
+      "bytes": 131877,
+      "sha256": "72a6dd2364d3e584cd045ee5a00c8e6a6d2f3d56ecc7386b2adb5cf5f2b8a2b8"
+    },
+    {
+      "packageKey": "asset:skyforge-placeholder-assets",
+      "resourceId": "skyforge-canyon-default-resource",
+      "sourceUri": "assets/terrain/skyforge_canyon_terrain.png",
+      "targetPath": "resources/asset/9d7d2af586ac37ff-skyforge_canyon_terrain.png",
+      "mediaType": "image/png",
+      "bytes": 361412,
+      "sha256": "9d7d2af586ac37ff642e825b06cb4605f62ead563352333aaaa4762d3fd19b43"
+    },
+    {
+      "packageKey": "asset:skyforge-placeholder-assets",
+      "resourceId": "skyforge-canyon-sandstone-resource",
+      "sourceUri": "assets/terrain/skyforge_canyon_sandstone.png",
+      "targetPath": "resources/asset/cd454ad3eef7e273-skyforge_canyon_sandstone.png",
+      "mediaType": "image/png",
+      "bytes": 315109,
+      "sha256": "cd454ad3eef7e27373c7cd49f7179e8c73122472bb6b699383fb09d5b6201dec"
+    },
+    {
+      "packageKey": "music:skyforge-base-music",
+      "resourceId": "audio-2",
+      "sourceUri": "audio/music/mission_01/mission_01_drums.ogg",
+      "targetPath": "resources/music/4426c19a7f3b8417-mission_01_drums.ogg",
+      "mediaType": "audio/ogg",
+      "bytes": 346630,
+      "sha256": "4426c19a7f3b84176b8faeb3a692eab74b65629eb6dae19c6686020c0c3d13ea"
+    },
+    {
+      "packageKey": "music:skyforge-base-music",
+      "resourceId": "audio-5",
+      "sourceUri": "audio/music/mission_01/mission_01_lead.ogg",
+      "targetPath": "resources/music/b354fb1387df1d6d-mission_01_lead.ogg",
+      "mediaType": "audio/ogg",
+      "bytes": 349898,
+      "sha256": "b354fb1387df1d6d9f13160e1fa39f72416f5350b541f17e528d9336ebeded88"
+    },
+    {
+      "packageKey": "music:skyforge-base-music",
+      "resourceId": "audio-1",
+      "sourceUri": "audio/music/mission_01/mission_01_full.ogg",
+      "targetPath": "resources/music/cbd0c9aff9f11075-mission_01_full.ogg",
+      "mediaType": "audio/ogg",
+      "bytes": 539359,
+      "sha256": "cbd0c9aff9f11075d555b50bf95f8b63a9aad92f71770c1657b3a31feddf88cf"
+    },
+    {
+      "packageKey": "music:skyforge-base-music",
+      "resourceId": "audio-4",
+      "sourceUri": "audio/music/mission_01/mission_01_harmony.ogg",
+      "targetPath": "resources/music/ee11f7492417b8b6-mission_01_harmony.ogg",
+      "mediaType": "audio/ogg",
+      "bytes": 538328,
+      "sha256": "ee11f7492417b8b6e691b4be43bc1d77ffafdaa730d58006b30e7efed5aa8d31"
+    },
+    {
+      "packageKey": "music:skyforge-base-music",
+      "resourceId": "audio-3",
+      "sourceUri": "audio/music/mission_01/mission_01_bass.ogg",
+      "targetPath": "resources/music/f61a1259e56eacf4-mission_01_bass.ogg",
+      "mediaType": "audio/ogg",
+      "bytes": 166204,
+      "sha256": "f61a1259e56eacf47c4ada6cb656b8e085114808e3de81da89753159d2493092"
+    }
+  ],
+  "removedResources": [],
+  "contentFingerprint": "fnv1a-689cb8c5"
+}

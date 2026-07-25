@@ -1,0 +1,26 @@
+{
+  "id": "heavy_fighter",
+  "displayName": "Heavy Fighter",
+  "sprite": "tex_enemy_heavy",
+  "health": 80,
+  "collisionDamage": 1,
+  "scoreValue": 400,
+  "creditValue": 55,
+  "movementPattern": "stop_and_fire_mid",
+  "weaponPattern": "three_way_aimed",
+  "speed": 70,
+  "hitbox": {
+    "type": "circle",
+    "radius": 20
+  },
+  "drops": [
+    {
+      "pickup": "weapon_upgrade",
+      "chance": 0.5
+    },
+    {
+      "pickup": "credits_small",
+      "chance": 0.35
+    }
+  ]
+}
