@@ -1,3 +1,20 @@
+# Epoch 18.3 — Per-Level MP3 Music Library — 2026-07-25
+
+### Added
+
+- Added project-local MP3 import to the retained Music Pack boundary.
+- Added content-addressed track IDs, SHA-256 and byte-count integrity metadata, duplicate detection, and safe logical paths under `assets/audio/music/`.
+- Added per-level track selection, explicit “No music”, volume, loop, start offset, fade, preview, removal protection, and missing-track feedback.
+- Routed assigned tracks through the existing AudioManager and MusicDirector runtime lifecycle.
+- Added production reachability so assigned tracks are exported and unused tracks are excluded.
+- Added fail-closed command-line import and verification tools.
+
+### Verification
+
+- Rebased from the accepted Epoch 18.2 archive with SHA-256 `21a0e79e12e72bd23ff9a696cf21930edb2e3c80ac8895c4106aae76770f1ab7`.
+- Passed strict TypeScript, ESLint, 382 tests across 56 files, production build, and the level-music integrity verifier.
+- Manual browser audio, macOS packaging, and device testing remain release-candidate gates.
+
 # Epoch 18.2 — Verified Blob-47 Geometry — 2026-07-14
 
 ### Corrected

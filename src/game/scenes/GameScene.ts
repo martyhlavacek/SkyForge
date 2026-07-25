@@ -332,7 +332,16 @@ export class GameScene extends Phaser.Scene {
     }
     if (!this.previewMode)
       this.presentation.showLevelIntro(this.timeline.def.displayName);
-    void music.playCue(this.timeline.def.music, 'normal');
+    const levelMusic = this.timeline.def.levelMusic;
+    if (levelMusic?.trackId) {
+      void music.playCue(levelMusic.trackId, 'normal', levelMusic.startOffsetSeconds, {
+        loop: levelMusic.loop,
+        volume: levelMusic.volume,
+        fadeSeconds: levelMusic.fadeSeconds,
+      });
+    } else {
+      void music.playCue(this.timeline.def.music, 'normal');
+    }
     this.studioRuntime.onRuntimeReady();
 
     if (!this.previewMode) {

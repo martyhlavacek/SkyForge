@@ -23,6 +23,12 @@ interface ActiveStem {
   gain: GainNode;
 }
 
+export interface MusicPlaybackOptions {
+  loop?: boolean;
+  volume?: number;
+  fadeSeconds?: number;
+}
+
 export interface MusicDebugState {
   cueId: string | null;
   state: MusicIntensityState;
@@ -51,10 +57,21 @@ class MusicDirector {
   private paused = false;
   private requestToken = 0;
   private pendingOffset = 0;
+  private playback: Required<MusicPlaybackOptions> = {
+    loop: true,
+    volume: 1,
+    fadeSeconds: 0,
+  };
 
   constructor() {
     audio.onUnlocked(() => {
-      if (this.pendingCueId) void this.playCue(this.pendingCueId, this.state, this.pendingOffset);
+      if (this.pendingCueId)
+        void this.playCue(
+          this.pendingCueId,
+          this.state,
+          this.pendingOffset,
+          this.playback,
+        );
     });
   }
 
@@ -62,6 +79,7 @@ class MusicDirector {
     cueId: string,
     initialState: MusicIntensityState = 'normal',
     initialOffsetSeconds = 0,
+    playback: MusicPlaybackOptions = {},
   ): Promise<void> {
     const cue = contentRegistry.music.get(cueId);
     if (!cue) {
@@ -70,6 +88,11 @@ class MusicDirector {
     }
     this.pendingCueId = cueId;
     this.pendingOffset = Math.max(0, initialOffsetSeconds);
+    this.playback = {
+      loop: playback.loop ?? true,
+      volume: Math.min(1, Math.max(0, playback.volume ?? 1)),
+      fadeSeconds: Math.min(10, Math.max(0, playback.fadeSeconds ?? 0)),
+    };
     this.state = initialState;
     this.model.reset(initialState);
 
@@ -197,10 +220,19 @@ class MusicDirector {
       const source = ctx.createBufferSource();
       const gain = ctx.createGain();
       source.buffer = buffer;
-      source.loop = true;
-      source.loopStart = cue.loopStartSeconds;
-      source.loopEnd = Math.min(cue.loopEndSeconds, buffer.duration);
-      gain.gain.setValueAtTime(stemDef.defaultGain * stemDef.gains[this.state], when);
+      source.loop = this.playback.loop;
+      if (source.loop) {
+        source.loopStart = cue.loopStartSeconds;
+        source.loopEnd = Math.min(cue.loopEndSeconds, buffer.duration);
+      }
+      const targetGain =
+        stemDef.defaultGain * stemDef.gains[this.state] * this.playback.volume;
+      gain.gain.setValueAtTime(this.playback.fadeSeconds > 0 ? 0 : targetGain, when);
+      if (this.playback.fadeSeconds > 0)
+        gain.gain.linearRampToValueAtTime(
+          targetGain,
+          when + this.playback.fadeSeconds,
+        );
       source.connect(gain);
       gain.connect(destination);
       source.start(
@@ -222,7 +254,8 @@ class MusicDirector {
     for (const stemDef of cue.stems) {
       const stem = this.active.get(stemDef.id);
       if (!stem) continue;
-      const target = stemDef.defaultGain * stemDef.gains[state];
+      const target =
+        stemDef.defaultGain * stemDef.gains[state] * this.playback.volume;
       stem.gain.gain.cancelScheduledValues(now);
       stem.gain.gain.setValueAtTime(stem.gain.gain.value, now);
       stem.gain.gain.linearRampToValueAtTime(target, now + Math.max(0.02, rampSeconds));

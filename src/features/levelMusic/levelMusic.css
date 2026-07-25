@@ -1,0 +1,70 @@
+.level-music-panel {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid var(--studio-border, #435064);
+  border-radius: 0.5rem;
+  background: var(--studio-panel, #161d28);
+}
+
+.level-music-panel h3,
+.level-music-panel p {
+  margin: 0;
+}
+
+.level-music-panel label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.level-music-panel__heading-row,
+.level-music-panel__actions,
+.level-music-panel__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.level-music-panel__grid > label {
+  flex: 1 1 11rem;
+}
+
+.level-music-panel__checkbox {
+  align-content: center;
+  grid-template-columns: auto 1fr;
+}
+
+.level-music-panel__warning {
+  padding: 0.65rem;
+  border: 1px solid currentColor;
+  border-radius: 0.35rem;
+  color: var(--studio-warning, #ffd37a);
+}
+
+.level-music-panel__danger {
+  margin-left: auto;
+}
+
+.level-music-panel__metadata {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.level-music-panel__metadata > div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.level-music-panel__metadata dt {
+  opacity: 0.7;
+}
+
+.level-music-panel__metadata dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}

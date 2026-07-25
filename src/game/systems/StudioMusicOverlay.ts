@@ -39,6 +39,30 @@ class StudioMusicOverlay {
     pkg.payload.cues.forEach((cue) =>
       contentRegistry.music.set(cue.id, resolvedCue(cue, pkg.resources)),
     );
+    const resourcesById = new Map(pkg.resources.map((resource) => [resource.id, resource]));
+    pkg.payload.tracks.forEach((track) => {
+      const resource = resourcesById.get(track.resourceId);
+      if (!resource) return;
+      const asset = resourceUrl(resource);
+      contentRegistry.music.set(track.id, {
+        id: track.id,
+        displayName: track.displayName,
+        bpm: 120,
+        beatsPerBar: 4,
+        loopStartSeconds: 0,
+        loopEndSeconds: track.durationSeconds ?? 86_400,
+        fullMix: asset,
+        stems: [
+          {
+            id: 'full-mix',
+            asset,
+            defaultGain: 1,
+            gains: { recovery: 1, normal: 1, combat: 1, critical: 1, boss: 1 },
+          },
+        ],
+        transitions: {},
+      });
+    });
     this.activePackage = structuredClone(pkg);
     music.clearBufferCache();
     return structuredClone(pkg);

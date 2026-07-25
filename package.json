@@ -1,7 +1,7 @@
 {
   "name": "skyforge",
   "private": true,
-  "version": "0.10.2",
+  "version": "0.10.3",
   "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
@@ -31,7 +31,9 @@
     "docs:evidence": "node scripts/verify-readme-evidence.mjs",
     "lock:portable": "node scripts/verify-portable-lock.mjs",
     "terrain:verify": "python3 scripts/verify-canyon-textures.py && python3 scripts/verify-blob47-geometry.py",
-    "benchmark:audit": "python3 scripts/audit-canyon-benchmarks.py"
+    "benchmark:audit": "python3 scripts/audit-canyon-benchmarks.py",
+    "level-music:import": "node scripts/import-level-music.mjs",
+    "level-music:verify": "node scripts/verify-level-music-assets.mjs"
   },
   "dependencies": {
     "phaser": "^4.2.1",

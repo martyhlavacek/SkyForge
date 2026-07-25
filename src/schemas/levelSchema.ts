@@ -3,6 +3,14 @@ import { SafeIdSchema } from './safeId';
 
 const LEVEL_WIDTH = 540;
 
+export const LevelMusicAssignmentSchema = z.object({
+  trackId: SafeIdSchema.nullable().default(null),
+  loop: z.boolean().default(true),
+  volume: z.number().min(0).max(1).default(0.8),
+  startOffsetSeconds: z.number().min(0).max(86_400).default(0),
+  fadeSeconds: z.number().min(0).max(10).default(1),
+});
+
 const encounterEvent = z.object({
   at: z.number().nonnegative(),
   encounter: z.string().min(1),
@@ -40,6 +48,7 @@ export const LevelSchema = z
     id: SafeIdSchema,
     displayName: z.string().min(1),
     music: z.string().min(1),
+    levelMusic: LevelMusicAssignmentSchema.optional(),
     levelPackage: z.string().min(1).optional(),
     durationTarget: z.number().positive(),
     baseScrollSpeed: z.number().positive().default(100),

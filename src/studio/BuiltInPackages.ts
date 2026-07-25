@@ -183,7 +183,7 @@ export function createBuiltInMusicPack(now = DEFAULT_TIMESTAMP): MusicStudioPack
     ),
     resources,
     reviewComments: [],
-    payload: { cues, instruments, compositions },
+    payload: { cues, instruments, compositions, tracks: [] },
   };
 }
 

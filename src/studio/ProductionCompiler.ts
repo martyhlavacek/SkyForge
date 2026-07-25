@@ -79,7 +79,10 @@ function referencedAssetResources(pkg: AssetStudioPackage): Set<string> {
   return ids;
 }
 
-function referencedMusicResources(pkg: MusicStudioPackage): Set<string> {
+function referencedMusicResources(
+  pkg: MusicStudioPackage,
+  assignedTrackIds: Set<string>,
+): Set<string> {
   const ids = new Set<string>();
   const byUri = new Map(pkg.resources.map((resource) => [resource.uri, resource.id]));
   pkg.payload.cues.forEach((cue) => {
@@ -93,12 +96,19 @@ function referencedMusicResources(pkg: MusicStudioPackage): Set<string> {
   pkg.payload.instruments.forEach((instrument) => {
     if (instrument.kind === 'sample') ids.add(instrument.resourceId);
   });
+  pkg.payload.tracks.forEach((track) => {
+    if (assignedTrackIds.has(track.id)) ids.add(track.resourceId);
+  });
   return ids;
 }
 
-function referencedResourceIds(pkg: StudioPackage): Set<string> {
+function referencedResourceIds(
+  pkg: StudioPackage,
+  assignedTrackIds: Set<string>,
+): Set<string> {
   if (pkg.format === 'skyforge-asset-pack') return referencedAssetResources(pkg);
-  if (pkg.format === 'skyforge-music-pack') return referencedMusicResources(pkg);
+  if (pkg.format === 'skyforge-music-pack')
+    return referencedMusicResources(pkg, assignedTrackIds);
   return new Set(pkg.resources.map((resource) => resource.id));
 }
 
@@ -163,9 +173,20 @@ export async function compileProductionWorkspace(
 
   const artifacts: ProductionResourceArtifact[] = [];
   const removedResources: ProductionBuildManifest['removedResources'] = [];
+  const assignedTrackIds = new Set(
+    packages
+      .filter((pkg) => pkg.format === 'skyforge-level-pack')
+      .flatMap((pkg) =>
+        pkg.format === 'skyforge-level-pack'
+          ? pkg.payload.levels
+              .map((level) => level.levelMusic?.trackId)
+              .filter((id): id is string => Boolean(id))
+          : [],
+      ),
+  );
   for (const pkg of packages) {
     const key = `${packageTypeOf(pkg)}:${pkg.manifest.id}`;
-    const referenced = referencedResourceIds(pkg);
+    const referenced = referencedResourceIds(pkg, assignedTrackIds);
     for (const resource of pkg.resources) {
       if (!referenced.has(resource.id)) {
         removedResources.push({

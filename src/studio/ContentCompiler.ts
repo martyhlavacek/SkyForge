@@ -107,6 +107,7 @@ export function compileStudioWorkspace(
   });
 
   const cueIds = new Set(music.payload.cues.map((cue) => cue.id));
+  const trackIds = new Set(music.payload.tracks.map((track) => track.id));
   level.payload.levels.forEach((definition) => {
     if (!cueIds.has(definition.music)) {
       issues.push({
@@ -114,6 +115,14 @@ export function compileStudioWorkspace(
         code: 'missing-package',
         file: `levels/${definition.id}`,
         message: `music cue "${definition.music}" is not supplied by the music pack`,
+      });
+    }
+    if (definition.levelMusic?.trackId && !trackIds.has(definition.levelMusic.trackId)) {
+      issues.push({
+        severity: 'error',
+        code: 'missing-package',
+        file: `levels/${definition.id}`,
+        message: `music track "${definition.levelMusic.trackId}" is not supplied by the music pack`,
       });
     }
   });

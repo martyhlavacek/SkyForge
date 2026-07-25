@@ -25,7 +25,7 @@ Run the complete automated release audit with:
 npm run audit:release
 ```
 
-Current automated evidence: **376 passing tests across 55 files** and **14 scenarios** retained for Playwright browser certification.
+Current automated evidence: **382 passing tests across 56 files** and **14 scenarios** retained for Playwright browser certification.
 
 ### External asset and music workflow
 

@@ -1,11 +1,20 @@
 import { useEffect, useMemo, useState } from 'react';
 import type {
   LevelStudioPackage,
+  MusicStudioPackage,
   StudioDependencyLock,
   StudioPackage,
   StudioWorkspace,
   TuningStudioPackage,
 } from '../schemas/studioPackageSchema';
+import { LevelMusicPanel } from '../features/levelMusic/LevelMusicPanel';
+import {
+  createTrackId,
+  normalizeLevelMusicAssignment,
+  slugifyTrackName,
+  type MusicAssetRecord,
+} from '../features/levelMusic/levelMusicCore';
+import { importAudioFile } from './music/MusicResourceTools';
 import type {
   SimulationArenaConfig,
   StudioRuntimeState,
@@ -26,17 +35,49 @@ import { compareTelemetry, summarizeTelemetry } from './simulation/TelemetryComp
 export function LevelWorkspace({
   editorRef,
   levelPack,
+  musicPack,
+  activeLevelId,
+  onPackagesChange,
   onCapture,
   onLoad,
   onExport,
 }: {
   editorRef: React.RefObject<HTMLIFrameElement | null>;
   levelPack: LevelStudioPackage;
+  musicPack: MusicStudioPackage;
+  activeLevelId?: string;
+  onPackagesChange: (level: LevelStudioPackage, music: MusicStudioPackage) => void;
   onCapture: () => void;
   onLoad: () => void;
   onExport: () => void;
 }) {
   const base = import.meta.env.BASE_URL || '/';
+  const level =
+    levelPack.payload.levels.find((item) => item.id === activeLevelId) ??
+    levelPack.payload.levels[0];
+  const [preview, setPreview] = useState<HTMLAudioElement | null>(null);
+  const tracks = musicPack.payload.tracks as MusicAssetRecord[];
+
+  const updateAssignment = (assignment: ReturnType<typeof normalizeLevelMusicAssignment>) => {
+    if (!level) return;
+    const nextLevel = structuredClone(levelPack);
+    const target = nextLevel.payload.levels.find((item) => item.id === level.id);
+    if (!target) return;
+    target.levelMusic = assignment;
+    target.music = target.music || 'none';
+    nextLevel.manifest.updatedAt = new Date().toISOString();
+    nextLevel.manifest.contentRevision += 1;
+    onPackagesChange(nextLevel, musicPack);
+  };
+
+  const stopPreview = () => {
+    preview?.pause();
+    if (preview?.src.startsWith('blob:')) URL.revokeObjectURL(preview.src);
+    setPreview(null);
+  };
+
+  useEffect(() => () => stopPreview(), [preview]);
+
   return (
     <div className="workspace-column">
       <div className="workspace-header">
@@ -60,6 +101,100 @@ export function LevelWorkspace({
         src={`${base}editor.html?embedded=1`}
         title="Skyforge Level Studio"
       />
+      {level ? (
+        <LevelMusicPanel
+          tracks={tracks}
+          value={level.levelMusic}
+          onChange={updateAssignment}
+          onImportMp3={async (file) => {
+            if (file.type && file.type !== 'audio/mpeg' && file.type !== 'audio/mp3')
+              throw new Error('Level music must be an MP3 file.');
+            const resource = await importAudioFile(
+              new File([await file.arrayBuffer()], file.name, { type: 'audio/mpeg' }),
+            );
+            if (!resource.sha256 || !resource.bytes || !resource.embeddedData)
+              throw new Error('Imported MP3 did not produce complete integrity metadata.');
+            const id = createTrackId(file.name, resource.sha256);
+            const existing = musicPack.payload.tracks.find(
+              (track) => track.sha256 === resource.sha256,
+            );
+            const track =
+              existing ??
+              ({
+                id,
+                displayName: slugifyTrackName(file.name)
+                  .split('-')
+                  .map((word) => word[0]?.toUpperCase() + word.slice(1))
+                  .join(' '),
+                fileName: file.name,
+                relativePath: `assets/audio/music/${resource.sha256}.mp3`,
+                resourceId: id,
+                mimeType: 'audio/mpeg',
+                byteLength: resource.bytes,
+                sha256: resource.sha256,
+                source: 'suno',
+                importedAt: new Date().toISOString(),
+              } as const);
+            const nextMusic = structuredClone(musicPack);
+            if (!existing) {
+              nextMusic.payload.tracks.push(track);
+              nextMusic.resources.push({
+                ...resource,
+                id,
+                uri: track.relativePath,
+                mediaType: 'audio/mpeg',
+              });
+              nextMusic.manifest.updatedAt = new Date().toISOString();
+              nextMusic.manifest.contentRevision += 1;
+            }
+            const nextLevel = structuredClone(levelPack);
+            const target = nextLevel.payload.levels.find((item) => item.id === level.id);
+            if (!target) return;
+            target.levelMusic = {
+              ...normalizeLevelMusicAssignment(target.levelMusic),
+              trackId: track.id,
+            };
+            nextLevel.manifest.updatedAt = new Date().toISOString();
+            nextLevel.manifest.contentRevision += 1;
+            onPackagesChange(nextLevel, nextMusic);
+          }}
+          onPreview={(track, assignment) => {
+            stopPreview();
+            const resource = musicPack.resources.find(
+              (candidate) => candidate.id === track.id,
+            );
+            if (!resource?.embeddedData) throw new Error('Track bytes are missing.');
+            const binary = atob(resource.embeddedData);
+            const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+            const audio = new Audio(
+              URL.createObjectURL(new Blob([bytes], { type: 'audio/mpeg' })),
+            );
+            audio.loop = assignment.loop;
+            audio.volume = assignment.volume;
+            audio.currentTime = assignment.startOffsetSeconds;
+            setPreview(audio);
+            return audio.play();
+          }}
+          onStopPreview={stopPreview}
+          onRemoveTrack={(track) => {
+            const references = levelPack.payload.levels.filter(
+              (candidate) => candidate.levelMusic?.trackId === track.id,
+            );
+            if (references.length > 0)
+              throw new Error(
+                `Track is assigned to ${references.map((item) => item.displayName).join(', ')}.`,
+              );
+            const nextMusic = structuredClone(musicPack);
+            nextMusic.payload.tracks = nextMusic.payload.tracks.filter(
+              (candidate) => candidate.id !== track.id,
+            );
+            nextMusic.resources = nextMusic.resources.filter(
+              (candidate) => candidate.id !== track.id,
+            );
+            onPackagesChange(levelPack, nextMusic);
+          }}
+        />
+      ) : null}
     </div>
   );
 }

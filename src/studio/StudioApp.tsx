@@ -506,6 +506,12 @@ export function StudioApp() {
             <LevelWorkspace
               editorRef={levelEditorRef}
               levelPack={levelPack}
+              musicPack={musicPack}
+              activeLevelId={workspace.activeLevelId}
+              onPackagesChange={(nextLevel, nextMusic) => {
+                updatePackage(nextLevel);
+                updatePackage(nextMusic);
+              }}
               onCapture={requestLevelPackage}
               onLoad={loadLevelPackIntoEditor}
               onExport={() => exportPackage('level')}

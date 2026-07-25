@@ -256,6 +256,22 @@ export const MusicCompositionSchema = z.object({
   patterns: z.array(MusicPatternSchema),
 });
 
+export const ImportedMusicTrackSchema = z.object({
+  id: SafeIdSchema,
+  displayName: z.string().min(1),
+  fileName: z.string().min(1),
+  relativePath: z
+    .string()
+    .regex(/^assets\/audio\/music\/[a-z0-9][a-z0-9._-]*\.mp3$/),
+  resourceId: SafeIdSchema,
+  mimeType: z.literal('audio/mpeg'),
+  byteLength: z.number().int().positive(),
+  sha256: z.string().regex(/^[a-f0-9]{64}$/),
+  durationSeconds: z.number().positive().optional(),
+  source: z.enum(['suno', 'external']),
+  importedAt: z.string().datetime(),
+});
+
 export const MusicStudioPackageSchema = z.object({
   format: z.literal('skyforge-music-pack'),
   ...packageBase,
@@ -263,6 +279,7 @@ export const MusicStudioPackageSchema = z.object({
     cues: z.array(MusicCueSchema),
     instruments: z.array(MusicInstrumentSchema),
     compositions: z.array(MusicCompositionSchema),
+    tracks: z.array(ImportedMusicTrackSchema).default([]),
   }),
 });
 
