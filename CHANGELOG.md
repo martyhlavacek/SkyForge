@@ -20,7 +20,7 @@
 - Audible device output, macOS/Electron packaging, and physical iOS Safari remain
   release-candidate gates.
 
-### RC2 adversarial-review remediation
+### RC2/RC3 adversarial-review remediation
 
 - Unified the schema, UI, helpers, CLI importer, and verifier on the dedicated
   `levelMusic` assignment field while preserving the legacy `music` cue string.
@@ -43,6 +43,8 @@
   same real MP3 reaches the canonical MusicDirector in Chromium and WebKit.
 - Added production-compiler proof that one assigned MP3 ships while an unused
   imported MP3 is excluded.
+- Made the cross-engine audio-volume browser assertion tolerant of WebKit's
+  single-precision representation while retaining exact lifecycle assertions.
 
 # Epoch 18.2 — Verified Blob-47 Geometry — 2026-07-14
 

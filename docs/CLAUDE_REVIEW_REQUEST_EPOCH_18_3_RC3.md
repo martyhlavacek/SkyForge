@@ -1,6 +1,6 @@
-# Claude Adversarial Review Request — SkyForge Epoch 18.3 RC2
+# Claude Adversarial Review Request — SkyForge Epoch 18.3 RC3
 
-Review the complete application at annotated tag `epoch-18.3-rc2`. Compare it
+Review the complete application at annotated tag `epoch-18.3-rc3`. Compare it
 against `epoch-18.3-candidate` and the findings in SKYFORGE-CR-0062.
 
 ## Required rechecks
@@ -32,6 +32,8 @@ against `epoch-18.3-candidate` and the findings in SKYFORGE-CR-0062.
     the real MP3 reaches MusicDirector after a genuine iframe user gesture.
 14. Confirm production compilation includes the assigned MP3 resource and
     excludes an otherwise identical unused-library case.
+15. Confirm WebKit audio-volume assertions use numeric tolerance while playback,
+    pause, and rejection state remain exact.
 
 Do not grant release acceptance unless the reviewed tag and its fresh-clone
 artifact are reproducible and the remaining manual gates are explicitly named.

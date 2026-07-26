@@ -62,17 +62,17 @@ test('imports, persists, previews, offsets, and stops a real MP3', async ({ page
     null,
     { timeout: 15000 },
   );
-  expect(
-    await page.evaluate(() => {
-      const probe = (window as unknown as { __musicProbe: MusicProbe }).__musicProbe;
-      return {
-        plays: probe.plays,
-        paused: probe.element?.paused,
-        volume: probe.element?.volume,
-        rejection: probe.rejection,
-      };
-    }),
-  ).toEqual({ plays: 1, paused: false, volume: 0.4, rejection: null });
+  const playback = await page.evaluate(() => {
+    const probe = (window as unknown as { __musicProbe: MusicProbe }).__musicProbe;
+    return {
+      plays: probe.plays,
+      paused: probe.element?.paused,
+      volume: probe.element?.volume,
+      rejection: probe.rejection,
+    };
+  });
+  expect(playback).toMatchObject({ plays: 1, paused: false, rejection: null });
+  expect(playback.volume).toBeCloseTo(0.4, 6);
 
   await panel.getByRole('button', { name: 'Stop', exact: true }).click();
   await expect
