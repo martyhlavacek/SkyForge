@@ -1,7 +1,9 @@
 import {
   MAX_LEVEL_MUSIC_FILE_BYTES,
+  appearsToBeMp3,
   createTrackId,
   isSafeMusicRelativePath,
+  musicRelativePath,
   type MusicAssetRecord,
   type MusicAssetSource,
 } from './levelMusicCore';
@@ -17,15 +19,6 @@ export interface MusicImportOptions {
   maxBytes?: number;
   now?: () => Date;
   readDurationSeconds?: (file: File) => Promise<number | undefined>;
-}
-
-const MPEG_FRAME_SYNC = (bytes: Uint8Array): boolean =>
-  bytes.length >= 2 && bytes[0] === 0xff && (bytes[1] & 0xe0) === 0xe0;
-
-export function appearsToBeMp3(bytes: Uint8Array): boolean {
-  const hasId3 =
-    bytes.length >= 3 && bytes[0] === 0x49 && bytes[1] === 0x44 && bytes[2] === 0x33;
-  return hasId3 || MPEG_FRAME_SYNC(bytes);
 }
 
 export async function sha256Hex(bytes: Uint8Array): Promise<string> {
@@ -87,7 +80,7 @@ export async function importMp3File(
 
   const sha256 = await sha256Hex(bytes);
   const id = createTrackId(file.name, sha256);
-  const relativePath = `assets/audio/music/${id}.mp3`;
+  const relativePath = musicRelativePath(id);
   if (!isSafeMusicRelativePath(relativePath)) {
     throw new Error('Generated music path failed the safe-path policy.');
   }

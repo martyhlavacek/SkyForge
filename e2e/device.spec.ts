@@ -26,7 +26,9 @@ test('mobile game viewport fits, accepts touch entry, and maintains frame progre
   expect(viewport).not.toBeNull();
   expect(box!.width).toBeLessThanOrEqual(viewport!.width + 1);
   expect(box!.height).toBeLessThanOrEqual(viewport!.height + 1);
-  await canvas.tap({ position: { x: box!.width / 2, y: box!.height / 2 } });
+  await canvas.tap({
+    position: { x: box!.width * 0.5, y: box!.height * 0.54 },
+  });
   await page.waitForFunction(() =>
     window.__skyforge?.activeScenes().includes('HangarScene'),
   );

@@ -103,7 +103,10 @@ export function validateStudioPackageSemantics(
       issues.push(
         ...duplicateIssues(
           'payload.cues',
-          pkg.payload.cues.map((item) => item.id),
+          [
+            ...pkg.payload.cues.map((item) => item.id),
+            ...pkg.payload.tracks.map((item) => item.id),
+          ],
         ),
       );
       issues.push(
@@ -126,6 +129,7 @@ export function validateStudioPackageSemantics(
       );
       const cueIds = new Set(pkg.payload.cues.map((item) => item.id));
       const resourceIds = new Set(pkg.resources.map((item) => item.id));
+      const resourcesById = new Map(pkg.resources.map((item) => [item.id, item]));
       const resourceUris = new Set(pkg.resources.map((item) => item.uri));
       const instrumentIds = new Set(pkg.payload.instruments.map((item) => item.id));
       pkg.payload.compositions.forEach((composition, index) => {
@@ -216,6 +220,48 @@ export function validateStudioPackageSemantics(
           issues.push({
             path: `payload.instruments[${index}].resourceId`,
             message: `resource "${instrument.resourceId}" is not declared`,
+          });
+        }
+      });
+      pkg.payload.tracks.forEach((track, index) => {
+        const expectedId = `music-${track.sha256.slice(0, 24)}`;
+        if (track.id !== expectedId) {
+          issues.push({
+            path: `payload.tracks[${index}].id`,
+            message: `track ID must use SHA-256 content identity "${expectedId}"`,
+          });
+        }
+        const expectedPath = `assets/audio/music/${track.id}.mp3`;
+        if (track.relativePath !== expectedPath) {
+          issues.push({
+            path: `payload.tracks[${index}].relativePath`,
+            message: `track path must be the canonical path "${expectedPath}"`,
+          });
+        }
+        const resource = resourcesById.get(track.resourceId);
+        if (!resource) {
+          issues.push({
+            path: `payload.tracks[${index}].resourceId`,
+            message: `resource "${track.resourceId}" is not declared`,
+          });
+          return;
+        }
+        if (resource.mediaType !== 'audio/mpeg') {
+          issues.push({
+            path: `payload.tracks[${index}].resourceId`,
+            message: `resource "${track.resourceId}" is not an audio/mpeg resource`,
+          });
+        }
+        if (resource.sha256 && resource.sha256 !== track.sha256) {
+          issues.push({
+            path: `payload.tracks[${index}].sha256`,
+            message: `track SHA-256 differs from resource "${track.resourceId}"`,
+          });
+        }
+        if (resource.bytes !== undefined && resource.bytes !== track.byteLength) {
+          issues.push({
+            path: `payload.tracks[${index}].byteLength`,
+            message: `track byte length differs from resource "${track.resourceId}"`,
           });
         }
       });

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   shouldEnableEmbeddedStudioBridge,
   shouldExposeGlobalRuntimeApi,
+  shouldStartRuntimePreview,
 } from './RuntimeBridgePolicy';
 
 describe('runtime bridge production policy', () => {
@@ -33,5 +34,32 @@ describe('runtime bridge production policy', () => {
         session: null,
       }),
     ).toBe(false);
+  });
+
+  it('starts preview only in an explicitly permitted environment', () => {
+    expect(
+      shouldStartRuntimePreview({
+        previewRequested: false,
+        dev: true,
+        e2e: false,
+        studioBridgeEnabled: false,
+      }),
+    ).toBe(false);
+    expect(
+      shouldStartRuntimePreview({
+        previewRequested: true,
+        dev: false,
+        e2e: false,
+        studioBridgeEnabled: false,
+      }),
+    ).toBe(false);
+    expect(
+      shouldStartRuntimePreview({
+        previewRequested: true,
+        dev: false,
+        e2e: false,
+        studioBridgeEnabled: true,
+      }),
+    ).toBe(true);
   });
 });

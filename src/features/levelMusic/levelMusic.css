@@ -1,10 +1,28 @@
 .level-music-panel {
   display: grid;
   gap: 0.9rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 1rem;
+  overflow: hidden;
   border: 1px solid var(--studio-border, #435064);
   border-radius: 0.5rem;
   background: var(--studio-panel, #161d28);
+}
+
+.level-music-panel *,
+.level-music-panel__heading-row > *,
+.level-music-panel__actions > *,
+.level-music-panel__grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.level-music-panel button,
+.level-music-panel input,
+.level-music-panel select {
+  max-width: 100%;
 }
 
 .level-music-panel h3,
@@ -45,6 +63,23 @@
 
 .level-music-panel__danger {
   margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .level-music-panel__heading-row,
+  .level-music-panel__actions,
+  .level-music-panel__grid {
+    align-items: stretch;
+  }
+
+  .level-music-panel__actions > *,
+  .level-music-panel__grid > label {
+    flex: 1 1 100%;
+  }
+
+  .level-music-panel__danger {
+    margin-left: 0;
+  }
 }
 
 .level-music-panel__metadata {

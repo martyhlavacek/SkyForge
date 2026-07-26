@@ -144,7 +144,7 @@ class ContentRegistry {
       }
     }
 
-    this.checkReferences();
+    this.validateReferences();
   }
 
   private parseInto<T extends { id: string }>(
@@ -179,7 +179,7 @@ class ContentRegistry {
   }
 
   /** Cross-file reference checking (PDR §33; extended per-folder in S4.1). */
-  private checkReferences(): void {
+  validateReferences(): void {
     for (const [id, enemy] of this.enemies) {
       if (!this.movement.has(enemy.movementPattern)) {
         this.errors.push({
@@ -328,6 +328,12 @@ class ContentRegistry {
         this.errors.push({
           file: `levels/${id}.json`,
           message: `music cue "${level.music}" not found`,
+        });
+      }
+      if (level.levelMusic?.trackId && !this.music.has(level.levelMusic.trackId)) {
+        this.errors.push({
+          file: `levels/${id}.json`,
+          message: `levelMusic track "${level.levelMusic.trackId}" not found`,
         });
       }
       level.events.forEach((ev, i) => {

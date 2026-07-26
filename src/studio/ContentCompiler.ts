@@ -91,7 +91,13 @@ export function compileStudioWorkspace(
     ['weapons', tuning.payload.weapons.map((item) => item.id)],
     ['encounters', tuning.payload.encounters.map((item) => item.id)],
     ['equipment', tuning.payload.equipment.map((item) => item.id)],
-    ['music cues', music.payload.cues.map((item) => item.id)],
+    [
+      'music cues and imported tracks',
+      [
+        ...music.payload.cues.map((item) => item.id),
+        ...music.payload.tracks.map((item) => item.id),
+      ],
+    ],
     ['assets', asset.payload.assets.map((item) => item.id)],
     ['tilesets', asset.payload.tilesets.map((item) => item.id)],
   ];
@@ -204,7 +210,10 @@ export function compileStudioWorkspace(
       content: {
         levelIds: level.payload.levels.map((item) => item.id),
         tuningProfileId: tuning.payload.profileId,
-        musicCueIds: music.payload.cues.map((item) => item.id),
+        musicCueIds: [
+          ...music.payload.cues.map((item) => item.id),
+          ...music.payload.tracks.map((item) => item.id),
+        ].sort(),
         assetIds: asset.payload.assets.map((item) => item.id),
         tilesetIds: asset.payload.tilesets.map((item) => item.id),
         atlasIds: asset.payload.atlases.map((item) => item.id),

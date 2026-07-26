@@ -210,6 +210,19 @@ export class StudioRuntimeController {
 
   applyMusic(input: unknown): string {
     const pkg = studioMusicOverlay.apply(input);
+    const level = this.host.timeline()?.def;
+    if (level?.levelMusic?.trackId) {
+      void music.playCue(
+        level.levelMusic.trackId,
+        'normal',
+        level.levelMusic.startOffsetSeconds,
+        {
+          loop: level.levelMusic.loop,
+          volume: level.levelMusic.volume,
+          fadeSeconds: level.levelMusic.fadeSeconds,
+        },
+      );
+    }
     return `${pkg.manifest.id}@${pkg.manifest.version}`;
   }
 

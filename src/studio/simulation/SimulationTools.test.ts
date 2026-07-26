@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { createBuiltInLevelPack, createBuiltInTuningPack } from '../BuiltInPackages';
 import { SnapshotTransport } from './SnapshotTransport';
-import { StudioSimulationRuntime } from '../../game/systems/StudioSimulationRuntime';
+import {
+  StudioSimulationRuntime,
+  studioSnapshotId,
+} from '../../game/systems/StudioSimulationRuntime';
 import { analyzeAttention } from './AttentionAnalyzer';
 import { buildTunableParameterCatalog, setTunableValue } from './TunableParameters';
 import { diffTuningPackages, tuningReviewMarkdown } from './TuningDiff';
@@ -191,6 +194,14 @@ describe('Epoch 13 simulation tools', () => {
     expect(runtime.shouldCapture(11.9)).toBe(false);
     expect(runtime.shouldCapture(12)).toBe(true);
     expect(() => runtime.setSnapshotInterval(0)).toThrow();
+  });
+
+  it('creates schema-safe snapshot identifiers at fractional times', () => {
+    const id = studioSnapshotId(3, 12.3456);
+    expect(id).toBe('snapshot-3-12346');
+    expect(() =>
+      StudioRuntimeSnapshotSchema.shape.id.parse(id),
+    ).not.toThrow();
   });
 
   it('supplies empty entity collections for legacy Studio snapshots', () => {

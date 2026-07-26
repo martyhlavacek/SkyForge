@@ -420,6 +420,19 @@ export function StudioApp() {
     sendRuntime('applyTuning', tuningPack);
     sendRuntime('applyAssets', assetPack);
     sendRuntime('applyMusic', musicPack);
+    const activeLevel =
+      levelPack.payload.levels.find(
+        (level) => level.id === workspace.activeLevelId,
+      ) ?? levelPack.payload.levels[0];
+    if (activeLevel?.levelMusic?.trackId)
+      sendRuntime('previewMusic', {
+        cueId: activeLevel.levelMusic.trackId,
+        state: 'normal',
+        offsetSeconds: activeLevel.levelMusic.startOffsetSeconds,
+        loop: activeLevel.levelMusic.loop,
+        volume: activeLevel.levelMusic.volume,
+        fadeSeconds: activeLevel.levelMusic.fadeSeconds,
+      });
     sendRuntime('configureArena', arena);
     sendRuntime('setTimeScale', timeScale);
     sendRuntime('setSnapshotInterval', snapshotInterval);

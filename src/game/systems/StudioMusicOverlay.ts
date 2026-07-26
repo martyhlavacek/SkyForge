@@ -4,6 +4,7 @@ import {
   type StudioResource,
 } from '../../schemas/studioPackageSchema';
 import type { MusicCueDef, MusicIntensityState } from '../../schemas/musicSchema';
+import { importedTrackCue } from '../../features/levelMusic/ImportedTrackCue';
 import { contentRegistry } from './ContentRegistry';
 import { music } from './MusicDirector';
 
@@ -44,24 +45,7 @@ class StudioMusicOverlay {
       const resource = resourcesById.get(track.resourceId);
       if (!resource) return;
       const asset = resourceUrl(resource);
-      contentRegistry.music.set(track.id, {
-        id: track.id,
-        displayName: track.displayName,
-        bpm: 120,
-        beatsPerBar: 4,
-        loopStartSeconds: 0,
-        loopEndSeconds: track.durationSeconds ?? 86_400,
-        fullMix: asset,
-        stems: [
-          {
-            id: 'full-mix',
-            asset,
-            defaultGain: 1,
-            gains: { recovery: 1, normal: 1, combat: 1, critical: 1, boss: 1 },
-          },
-        ],
-        transitions: {},
-      });
+      contentRegistry.music.set(track.id, importedTrackCue(track, asset));
     });
     this.activePackage = structuredClone(pkg);
     music.clearBufferCache();
@@ -73,6 +57,9 @@ class StudioMusicOverlay {
       cueId?: unknown;
       state?: unknown;
       offsetSeconds?: unknown;
+      loop?: unknown;
+      volume?: unknown;
+      fadeSeconds?: unknown;
     };
     if (typeof value.cueId !== 'string') throw new Error('music preview requires cueId');
     const states: MusicIntensityState[] = ['recovery', 'normal', 'combat', 'critical', 'boss'];
@@ -82,7 +69,17 @@ class StudioMusicOverlay {
     const offset = Number.isFinite(Number(value.offsetSeconds))
       ? Math.max(0, Number(value.offsetSeconds))
       : 0;
-    await music.playCue(value.cueId, state, offset);
+    const volume = Number.isFinite(Number(value.volume))
+      ? Math.min(1, Math.max(0, Number(value.volume)))
+      : 1;
+    const fadeSeconds = Number.isFinite(Number(value.fadeSeconds))
+      ? Math.min(10, Math.max(0, Number(value.fadeSeconds)))
+      : 0;
+    await music.playCue(value.cueId, state, offset, {
+      loop: typeof value.loop === 'boolean' ? value.loop : true,
+      volume,
+      fadeSeconds,
+    });
   }
 
   restore(): void {

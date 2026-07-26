@@ -12,8 +12,60 @@
 ### Verification
 
 - Rebased from the accepted Epoch 18.2 archive with SHA-256 `21a0e79e12e72bd23ff9a696cf21930edb2e3c80ac8895c4106aae76770f1ab7`.
-- Passed strict TypeScript, ESLint, 382 tests across 56 files, production build, and the level-music integrity verifier.
-- Manual browser audio, macOS packaging, and device testing remain release-candidate gates.
+- Passed strict TypeScript, ESLint, 400 tests across 60 files, production build, and the level-music integrity verifier.
+- Updated the audited transitive dependencies and confirmed zero known
+  vulnerabilities at the high-severity release threshold.
+- Passed all 20 configured Playwright executions, including real-MP3 import,
+  persistence, non-zero offset, preview, and stop in Chromium and WebKit.
+- Audible device output, macOS/Electron packaging, and physical iOS Safari remain
+  release-candidate gates.
+
+### RC2/RC3 adversarial-review remediation
+
+- Unified the schema, UI, helpers, CLI importer, and verifier on the dedicated
+  `levelMusic` assignment field while preserving the legacy `music` cue string.
+- Routed browser import through the canonical size, MIME, header, SHA-256,
+  content-ID, and safe-path checks.
+- Replaced duplicate JavaScript CLI logic with TypeScript entry points that
+  consume the canonical modules.
+- Added realpath and symlink containment, fail-closed level discovery, schema
+  parsing, and raw-value validation.
+- Removed the unused defective HTML-audio runtime and corrected Studio preview
+  cleanup.
+- Added CLI round-trip, renamed-file deduplication, invalid-level, symlink,
+  schema-contract, and MusicDirector lifecycle regression tests.
+- Fixed the embedded Studio preview startup race, schema-safe snapshot identity,
+  responsive runtime/asset layouts, and touch-entry browser coverage exposed by
+  the expanded Chromium/WebKit gate.
+- Hardened overlay-driven scene transitions against a shutdown-frame physics
+  race and made the pause/settings browser synchronization deterministic.
+- Synchronized the active Studio level assignment after its Music Pack so the
+  same real MP3 reaches the canonical MusicDirector in Chromium and WebKit.
+- Added production-compiler proof that one assigned MP3 ships while an unused
+  imported MP3 is excluded.
+- Made the cross-engine audio-volume browser assertion tolerant of WebKit's
+  single-precision representation while retaining exact lifecycle assertions.
+
+### RC4 CR-0063 remediation
+
+- Corrected the production compiler so assigned imported tracks remain live,
+  receive content-addressed output paths, and become canonical one-stem
+  MusicDirector cues; unused imported tracks and resources are removed.
+- Added boot-time loading and validation of compiled Studio packages before
+  gameplay, including per-level `levelMusic.trackId` reference validation.
+- Added a non-Studio Chromium/WebKit release test that compiles, installs,
+  decodes, unlocks, and plays a real assigned MP3.
+- Restored the original 20-frame mobile performance threshold and removed the
+  undisclosed global and scenario timeout increases.
+- Added `scripts/**/*.ts` to strict typecheck and lint, and added the
+  fail-closed level-music verifier to both release audit and CI.
+- Added direct verifier cases for invalid assignment, missing track, missing
+  file, corrupt bytes, and invalid MP3 headers.
+- Fixed rejected-preview identity cleanup so an older play failure cannot stop
+  or clear a newer preview, with a focused regression test.
+- Defaulted browser imports to external provenance instead of claiming Suno
+  unless the source is explicitly declared.
+- Removed the unrelated shutdown-frame player guard introduced during RC2.
 
 # Epoch 18.2 — Verified Blob-47 Geometry — 2026-07-14
 

@@ -8,6 +8,12 @@ import { SnapshotTransport } from '../../studio/simulation/SnapshotTransport';
 
 const MAX_TELEMETRY_POINTS = 1200;
 
+export function studioSnapshotId(sequence: number, levelTime: number): string {
+  const safeSequence = Math.max(0, Math.floor(sequence));
+  const milliseconds = Math.max(0, Math.round(levelTime * 1000));
+  return `snapshot-${safeSequence}-${milliseconds}`;
+}
+
 /** Runtime-only recorder for Studio transport, snapshots, and heatmap data. */
 export class StudioSimulationRuntime {
   private transport: SnapshotTransport<StudioRuntimeSnapshot>;
@@ -75,7 +81,7 @@ export class StudioSimulationRuntime {
   ): StudioRuntimeSnapshot {
     const snapshot: StudioRuntimeSnapshot = {
       ...data,
-      id: `snapshot-${this.snapshotSequence++}-${levelTime.toFixed(3)}`,
+      id: studioSnapshotId(this.snapshotSequence++, levelTime),
       levelId,
       levelTime,
       capturedAt: Date.now(),

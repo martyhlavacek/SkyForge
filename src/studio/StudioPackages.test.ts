@@ -104,6 +104,38 @@ describe('Studio package foundation', () => {
     expect(() => parseStudioPackage(JSON.stringify(broken))).toThrow();
   });
 
+  it('rejects imported music whose ID is not derived from its SHA-256', () => {
+    const pkg = createBuiltInStudioPackages().find(
+      (item) => item.format === 'skyforge-music-pack',
+    );
+    if (!pkg || pkg.format !== 'skyforge-music-pack')
+      throw new Error('missing music package');
+    const broken = structuredClone(pkg);
+    broken.resources.push({
+      id: 'bad-track-resource',
+      uri: 'assets/audio/music/bad-track.mp3',
+      mediaType: 'audio/mpeg',
+      sha256: 'a'.repeat(64),
+      bytes: 3,
+      embeddedData: 'SUQz',
+    });
+    broken.payload.tracks.push({
+      id: 'bad-track',
+      displayName: 'Bad Track',
+      fileName: 'bad-track.mp3',
+      relativePath: 'assets/audio/music/bad-track.mp3',
+      resourceId: 'bad-track-resource',
+      mimeType: 'audio/mpeg',
+      byteLength: 3,
+      sha256: 'a'.repeat(64),
+      source: 'external',
+      importedAt: '2026-07-25T00:00:00.000Z',
+    });
+    expect(() => parseStudioPackage(JSON.stringify(broken))).toThrow(
+      /SHA-256 content identity/,
+    );
+  });
+
   it('supports exact, minimum, and compatible-major version ranges', () => {
     expect(satisfiesVersion('1.2.3', '1.2.3')).toBe(true);
     expect(satisfiesVersion('1.2.3', '>=1.0.0')).toBe(true);

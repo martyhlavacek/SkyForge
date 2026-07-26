@@ -4,7 +4,8 @@ The feature modules are intentionally isolated under `src/features/levelMusic`. 
 
 ## 1. Level schema
 
-Extend the existing `music` object rather than replacing it. Add optional/defaulted fields:
+Preserve the existing `music` cue string. Add a separate optional `levelMusic`
+object with these defaulted fields:
 
 ```ts
 trackId: safeIdSchema.nullable().default(null),
@@ -38,7 +39,7 @@ Required callbacks:
 
 - `onImportMp3`: call `importMp3File`, persist bytes, upsert registry, assign returned ID.
 - `onChange`: update the active level immutably through the existing package mutation/history path.
-- `onPreview`: use the Studio runtime overlay or `Mp3MusicRuntime` with an object URL.
+- `onPreview`: use a Studio-only audio element with deterministic object-URL cleanup.
 - `onStopPreview`: stop and revoke preview resources.
 - `onRevealFolder`: Electron/folder-mode only; no-op or omit in browser-only mode.
 - `onRemoveTrack`: reject or confirm when references remain.
@@ -51,7 +52,7 @@ The Level workspace is iframe-coupled in the accepted architecture. Extend the t
 
 ## 6. Runtime
 
-Prefer adapting the existing `MusicDirector` so a single-track cue is still owned by the canonical audio lifecycle. `Mp3MusicRuntime` is supplied as a focused fallback/reference implementation.
+Single-track runtime cues are owned exclusively by the existing `MusicDirector` and shared `AudioManager` bus.
 
 At level load:
 

@@ -93,18 +93,23 @@ pre {
 .studio-main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 430px;
+  min-width: 0;
   min-height: 0;
+  overflow: hidden;
 }
 .studio-workspace {
   min-width: 0;
   min-height: 0;
+  overflow: hidden;
   background: #0d111a;
 }
 .workspace-column {
   display: grid;
   grid-template-rows: auto 1fr;
+  min-width: 0;
   height: 100%;
   min-height: 0;
+  overflow: auto;
 }
 .workspace-scroll {
   height: 100%;
@@ -143,9 +148,16 @@ pre {
 .runtime-dock {
   display: grid;
   grid-template-rows: auto auto auto minmax(260px, 1fr) auto auto;
+  min-width: 0;
+  max-width: 100%;
   min-height: 0;
+  overflow: hidden;
   border-left: 1px solid var(--studio-line);
   background: var(--studio-panel);
+}
+.runtime-dock > * {
+  min-width: 0;
+  max-width: 100%;
 }
 .panel-heading {
   display: flex;
@@ -390,8 +402,23 @@ pre {
 }
 
 @media (max-width: 1050px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .studio-shell {
+    min-width: 0;
+    width: 100%;
+  }
   .studio-toolbar {
     grid-template-columns: 1fr;
+    min-width: 0;
+  }
+  .studio-toolbar > *,
+  .studio-tabs,
+  .studio-actions {
+    min-width: 0;
+    max-width: 100%;
   }
   .studio-actions {
     justify-content: flex-start;
@@ -843,8 +870,13 @@ pre {
 }
 
 @media (max-width: 1500px) {
-  .asset-production-grid {
-    grid-template-columns: 240px minmax(360px, 1fr) 300px;
+  .studio-shell:not(.runtime-hidden) .asset-production-grid {
+    grid-template-columns: 1fr;
+  }
+  .studio-shell:not(.runtime-hidden) .asset-library-panel,
+  .studio-shell:not(.runtime-hidden) .asset-inspector-panel {
+    position: static;
+    max-height: none;
   }
 }
 @media (max-width: 1180px) {

@@ -24,6 +24,30 @@ describe('LevelSchema semantics', () => {
     expect(LevelSchema.safeParse(valid).success).toBe(true);
   });
 
+  it('keeps the legacy cue string separate from per-level MP3 settings', () => {
+    const result = LevelSchema.parse({
+      ...valid,
+      levelMusic: {
+        trackId: 'music-abc',
+        loop: false,
+        volume: 0.5,
+        startOffsetSeconds: 2,
+        fadeSeconds: 0.5,
+      },
+    });
+    expect(result.music).toBe('none');
+    expect(result.levelMusic?.trackId).toBe('music-abc');
+  });
+
+  it('rejects replacing the legacy cue string with an assignment object', () => {
+    expect(
+      LevelSchema.safeParse({
+        ...valid,
+        music: { trackId: 'music-abc' },
+      }).success,
+    ).toBe(false);
+  });
+
   it('rejects out-of-order events', () => {
     const bad = {
       ...valid,

@@ -175,13 +175,9 @@ const studioMode = shouldEnableEmbeddedStudioBridge({
   session: studioSession,
 });
 
-if (
-  params.get('preview') === '1' &&
-  (import.meta.env.DEV || e2eMode || studioMode)
-) {
+if (params.get('preview') === '1' && (import.meta.env.DEV || e2eMode || studioMode)) {
   game.registry.set('debugMode', true);
   game.registry.set('audioUnlocked', false);
-  game.scene.start('GameScene');
 }
 
 if (studioMode) {

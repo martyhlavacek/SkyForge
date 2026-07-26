@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type {
   LevelStudioPackage,
   MusicStudioPackage,
@@ -9,12 +9,12 @@ import type {
 } from '../schemas/studioPackageSchema';
 import { LevelMusicPanel } from '../features/levelMusic/LevelMusicPanel';
 import {
-  createTrackId,
   normalizeLevelMusicAssignment,
-  slugifyTrackName,
   type MusicAssetRecord,
 } from '../features/levelMusic/levelMusicCore';
-import { importAudioFile } from './music/MusicResourceTools';
+import { importMp3File } from '../features/levelMusic/LevelMusicAssetStore';
+import { disposeMusicPreview } from '../features/levelMusic/PreviewLifecycle';
+import { bytesToBase64 } from './assets/AssetResourceTools';
 import type {
   SimulationArenaConfig,
   StudioRuntimeState,
@@ -31,6 +31,8 @@ import { createStableId } from './StableId';
 import { buildTunableParameterCatalog, setTunableValue } from './simulation/TunableParameters';
 import { diffTuningPackages } from './simulation/TuningDiff';
 import { compareTelemetry, summarizeTelemetry } from './simulation/TelemetryComparison';
+
+type StudioMusicTrack = MusicAssetRecord & { resourceId: string };
 
 export function LevelWorkspace({
   editorRef,
@@ -55,8 +57,8 @@ export function LevelWorkspace({
   const level =
     levelPack.payload.levels.find((item) => item.id === activeLevelId) ??
     levelPack.payload.levels[0];
-  const [preview, setPreview] = useState<HTMLAudioElement | null>(null);
-  const tracks = musicPack.payload.tracks as MusicAssetRecord[];
+  const previewRef = useRef<HTMLAudioElement | null>(null);
+  const tracks = musicPack.payload.tracks as StudioMusicTrack[];
 
   const updateAssignment = (assignment: ReturnType<typeof normalizeLevelMusicAssignment>) => {
     if (!level) return;
@@ -70,13 +72,14 @@ export function LevelWorkspace({
     onPackagesChange(nextLevel, musicPack);
   };
 
-  const stopPreview = () => {
-    preview?.pause();
-    if (preview?.src.startsWith('blob:')) URL.revokeObjectURL(preview.src);
-    setPreview(null);
-  };
+  const stopPreview = useCallback((expected?: HTMLAudioElement) => {
+    previewRef.current = disposeMusicPreview(
+      previewRef.current,
+      expected ?? previewRef.current,
+    );
+  }, []);
 
-  useEffect(() => () => stopPreview(), [preview]);
+  useEffect(() => () => stopPreview(), [stopPreview]);
 
   return (
     <div className="workspace-column">
@@ -107,42 +110,34 @@ export function LevelWorkspace({
           value={level.levelMusic}
           onChange={updateAssignment}
           onImportMp3={async (file) => {
-            if (file.type && file.type !== 'audio/mpeg' && file.type !== 'audio/mp3')
-              throw new Error('Level music must be an MP3 file.');
-            const resource = await importAudioFile(
-              new File([await file.arrayBuffer()], file.name, { type: 'audio/mpeg' }),
-            );
-            if (!resource.sha256 || !resource.bytes || !resource.embeddedData)
-              throw new Error('Imported MP3 did not produce complete integrity metadata.');
-            const id = createTrackId(file.name, resource.sha256);
+            const imported = await importMp3File(file, { source: 'external' });
+            const { record: candidate, bytes } = imported;
             const existing = musicPack.payload.tracks.find(
-              (track) => track.sha256 === resource.sha256,
+              (track) => track.sha256 === candidate.sha256,
             );
-            const track =
-              existing ??
-              ({
-                id,
-                displayName: slugifyTrackName(file.name)
-                  .split('-')
-                  .map((word) => word[0]?.toUpperCase() + word.slice(1))
-                  .join(' '),
-                fileName: file.name,
-                relativePath: `assets/audio/music/${resource.sha256}.mp3`,
-                resourceId: id,
-                mimeType: 'audio/mpeg',
-                byteLength: resource.bytes,
-                sha256: resource.sha256,
-                source: 'suno',
-                importedAt: new Date().toISOString(),
-              } as const);
+            const track: StudioMusicTrack = existing ?? {
+              ...candidate,
+              resourceId: candidate.id,
+            };
             const nextMusic = structuredClone(musicPack);
             if (!existing) {
               nextMusic.payload.tracks.push(track);
               nextMusic.resources.push({
-                ...resource,
-                id,
+                id: candidate.id,
                 uri: track.relativePath,
+                filename: candidate.fileName,
                 mediaType: 'audio/mpeg',
+                sha256: candidate.sha256,
+                bytes: candidate.byteLength,
+                embeddedData: bytesToBase64(bytes),
+                license: 'Unspecified — review before distribution',
+                provenance: {
+                  source: candidate.source,
+                  author: '',
+                  createdWith: candidate.source === 'suno' ? 'Suno' : 'unknown',
+                  importedAt: candidate.importedAt,
+                  notes: 'Imported as verified per-level MP3 music',
+                },
               });
               nextMusic.manifest.updatedAt = new Date().toISOString();
               nextMusic.manifest.contentRevision += 1;
@@ -161,7 +156,7 @@ export function LevelWorkspace({
           onPreview={(track, assignment) => {
             stopPreview();
             const resource = musicPack.resources.find(
-              (candidate) => candidate.id === track.id,
+              (candidate) => candidate.id === (track as StudioMusicTrack).resourceId,
             );
             if (!resource?.embeddedData) throw new Error('Track bytes are missing.');
             const binary = atob(resource.embeddedData);
@@ -172,8 +167,12 @@ export function LevelWorkspace({
             audio.loop = assignment.loop;
             audio.volume = assignment.volume;
             audio.currentTime = assignment.startOffsetSeconds;
-            setPreview(audio);
-            return audio.play();
+            previewRef.current = audio;
+            return audio.play().catch((error) => {
+              stopPreview(audio);
+              if (error instanceof DOMException && error.name === 'AbortError') return;
+              throw error;
+            });
           }}
           onStopPreview={stopPreview}
           onRemoveTrack={(track) => {
@@ -189,7 +188,8 @@ export function LevelWorkspace({
               (candidate) => candidate.id !== track.id,
             );
             nextMusic.resources = nextMusic.resources.filter(
-              (candidate) => candidate.id !== track.id,
+              (candidate) =>
+                candidate.id !== (track as StudioMusicTrack).resourceId,
             );
             onPackagesChange(levelPack, nextMusic);
           }}

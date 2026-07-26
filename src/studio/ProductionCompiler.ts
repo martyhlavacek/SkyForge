@@ -34,6 +34,7 @@ export interface ProductionBuildManifest {
   generatedAt: string;
   packages: string[];
   activeLevelId?: string;
+  runtimeMusicCueIds: string[];
   resources: Omit<ProductionResourceArtifact, 'data'>[];
   removedResources: { packageKey: string; resourceId: string; reason: string }[];
   atlases: {
@@ -258,6 +259,18 @@ export async function compileProductionWorkspace(
         }))
       : [],
   );
+  const runtimeMusicCueIds = packages
+    .flatMap((pkg) =>
+      pkg.format === 'skyforge-music-pack'
+        ? [
+            ...pkg.payload.cues.map((cue) => cue.id),
+            ...pkg.payload.tracks
+              .filter((track) => assignedTrackIds.has(track.id))
+              .map((track) => track.id),
+          ]
+        : [],
+    )
+    .sort();
   const manifestBase = {
     workspaceId: workspace.id,
     workspaceVersion: workspace.version,
@@ -265,6 +278,7 @@ export async function compileProductionWorkspace(
     lockFingerprint: lock?.fingerprint,
     packages: base.build.packageOrder,
     activeLevelId: base.build.activeLevelId,
+    runtimeMusicCueIds,
     resources: artifacts
       .map(({ data: _data, ...artifact }) => artifact)
       .sort((a, b) => a.targetPath.localeCompare(b.targetPath)),

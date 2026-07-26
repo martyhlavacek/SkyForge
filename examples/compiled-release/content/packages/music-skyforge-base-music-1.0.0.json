@@ -75,7 +75,7 @@
         "stems": [
           {
             "id": "drums",
-            "asset": "audio/music/mission_01/mission_01_drums.ogg",
+            "asset": "resources/music/4426c19a7f3b8417-mission_01_drums.ogg",
             "defaultGain": 0.9,
             "gains": {
               "recovery": 0.2,
@@ -87,7 +87,7 @@
           },
           {
             "id": "bass",
-            "asset": "audio/music/mission_01/mission_01_bass.ogg",
+            "asset": "resources/music/f61a1259e56eacf4-mission_01_bass.ogg",
             "defaultGain": 0.9,
             "gains": {
               "recovery": 0.5,
@@ -99,7 +99,7 @@
           },
           {
             "id": "harmony",
-            "asset": "audio/music/mission_01/mission_01_harmony.ogg",
+            "asset": "resources/music/ee11f7492417b8b6-mission_01_harmony.ogg",
             "defaultGain": 0.78,
             "gains": {
               "recovery": 0.72,
@@ -111,7 +111,7 @@
           },
           {
             "id": "lead",
-            "asset": "audio/music/mission_01/mission_01_lead.ogg",
+            "asset": "resources/music/b354fb1387df1d6d-mission_01_lead.ogg",
             "defaultGain": 0.72,
             "gains": {
               "recovery": 0.22,
@@ -122,7 +122,7 @@
             }
           }
         ],
-        "fullMix": "audio/music/mission_01/mission_01_full.ogg",
+        "fullMix": "resources/music/cbd0c9aff9f11075-mission_01_full.ogg",
         "transitions": {}
       },
       {
@@ -137,6 +137,7 @@
       }
     ],
     "instruments": [],
-    "compositions": []
+    "compositions": [],
+    "tracks": []
   }
 }

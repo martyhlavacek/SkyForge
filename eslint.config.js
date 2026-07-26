@@ -7,7 +7,13 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['src/**/*.ts', 'src/**/*.tsx', 'e2e/**/*.ts', '*.config.ts'],
+    files: [
+      'src/**/*.ts',
+      'src/**/*.tsx',
+      'scripts/**/*.ts',
+      'e2e/**/*.ts',
+      '*.config.ts',
+    ],
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'error',

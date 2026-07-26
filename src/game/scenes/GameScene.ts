@@ -54,6 +54,7 @@ import {
 import { TerrainRuntime } from '../terrain/TerrainRuntime';
 import { Hud, HUD_EVENTS } from '../ui/Hud';
 import type { RunSessionSnapshot } from '../systems/RunSession';
+import { productionContent } from '../systems/ProductionContent';
 
 const DEFAULT_LEVEL = 'level_01';
 
@@ -196,7 +197,11 @@ export class GameScene extends Phaser.Scene {
 
     const params =
       typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-    const levelId = this.startData.level ?? params?.get('level') ?? DEFAULT_LEVEL;
+    const levelId =
+      this.startData.level ??
+      params?.get('level') ??
+      productionContent.activeLevelId ??
+      DEFAULT_LEVEL;
     const urlStartAt = params?.get('t') ? Number.parseFloat(params.get('t')!) : undefined;
     this.previewMode = params?.get('preview') === '1';
     this.studioRuntime.initialize(
@@ -333,14 +338,21 @@ export class GameScene extends Phaser.Scene {
     if (!this.previewMode)
       this.presentation.showLevelIntro(this.timeline.def.displayName);
     const levelMusic = this.timeline.def.levelMusic;
-    if (levelMusic?.trackId) {
-      void music.playCue(levelMusic.trackId, 'normal', levelMusic.startOffsetSeconds, {
-        loop: levelMusic.loop,
-        volume: levelMusic.volume,
-        fadeSeconds: levelMusic.fadeSeconds,
-      });
-    } else {
-      void music.playCue(this.timeline.def.music, 'normal');
+    if (!this.studioRuntime.isEnabled) {
+      if (levelMusic?.trackId) {
+        void music.playCue(
+          levelMusic.trackId,
+          'normal',
+          levelMusic.startOffsetSeconds,
+          {
+            loop: levelMusic.loop,
+            volume: levelMusic.volume,
+            fadeSeconds: levelMusic.fadeSeconds,
+          },
+        );
+      } else {
+        void music.playCue(this.timeline.def.music, 'normal');
+      }
     }
     this.studioRuntime.onRuntimeReady();
 

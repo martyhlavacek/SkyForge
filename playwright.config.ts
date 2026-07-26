@@ -29,9 +29,14 @@ export default defineConfig({
       testMatch: /device\.spec\.ts/,
       use: { ...devices['iPhone 14'] },
     },
+    {
+      name: 'music-webkit',
+      testMatch: /music\.spec\.ts/,
+      use: { ...devices['Desktop Safari'] },
+    },
   ],
   webServer: {
-    command: 'VITE_E2E=1 npm run dev -- --host 127.0.0.1 --port 4173',
+    command: `VITE_E2E=1 "${process.execPath}" node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4173`,
     port: 4173,
     reuseExistingServer: !process.env.CI,
     timeout: 60000,

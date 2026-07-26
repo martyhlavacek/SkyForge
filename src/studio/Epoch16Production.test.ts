@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
 import { createBuiltInStudioPackages, createBuiltInWorkspace } from './BuiltInPackages';
@@ -123,6 +124,86 @@ describe('Epoch 16 collaboration and production compiler', () => {
     expect(
       result.manifest?.resources.every((resource) => resource.sha256.length === 64),
     ).toBe(true);
+  });
+
+  it('ships assigned level music and excludes an unused imported MP3', async () => {
+    const packages = createBuiltInStudioPackages();
+    const workspace = createBuiltInWorkspace();
+    const level = packages.find((pkg) => pkg.format === 'skyforge-level-pack');
+    const music = packages.find((pkg) => pkg.format === 'skyforge-music-pack');
+    if (
+      !level ||
+      level.format !== 'skyforge-level-pack' ||
+      !music ||
+      music.format !== 'skyforge-music-pack'
+    )
+      throw new Error('level or music package missing');
+
+    const addTrack = (resourceId: string, bytes: Uint8Array): string => {
+      const sha256 = createHash('sha256').update(bytes).digest('hex');
+      const id = `music-${sha256.slice(0, 24)}`;
+      music.resources.push({
+        id: resourceId,
+        uri: `assets/audio/music/${id}.mp3`,
+        filename: `${id}.mp3`,
+        mediaType: 'audio/mpeg',
+        embeddedData: Buffer.from(bytes).toString('base64'),
+        bytes: bytes.byteLength,
+        sha256,
+      });
+      music.payload.tracks.push({
+        id,
+        displayName: id,
+        fileName: `${id}.mp3`,
+        relativePath: `assets/audio/music/${id}.mp3`,
+        resourceId,
+        mimeType: 'audio/mpeg',
+        byteLength: bytes.byteLength,
+        sha256,
+        source: 'external',
+        importedAt: '2026-07-25T00:00:00.000Z',
+      });
+      return id;
+    };
+    const assignedId = addTrack(
+      'assigned-music-resource',
+      new Uint8Array([0x49, 0x44, 0x33]),
+    );
+    const unusedId = addTrack(
+      'unused-music-resource',
+      new Uint8Array([0xff, 0xfb, 0x90]),
+    );
+    level.payload.levels[0]!.levelMusic = {
+      trackId: assignedId,
+      loop: true,
+      volume: 0.8,
+      startOffsetSeconds: 0,
+      fadeSeconds: 1,
+    };
+
+    const lock = createDependencyLock(
+      workspace,
+      packages,
+      '2026-07-25T00:00:00.000Z',
+    );
+    const result = await compileProductionWorkspace(workspace, packages, lock, {
+      generatedAt: '2026-07-25T00:00:00.000Z',
+      requireLock: true,
+      fetchResource: async (uri) =>
+        new Uint8Array(await readFile(`public/${uri.replace(/^\//, '')}`)),
+    });
+
+    expect(result.issues.filter((issue) => issue.severity === 'error')).toEqual([]);
+    expect(
+      result.manifest?.resources.map((resource) => resource.resourceId),
+    ).toContain('assigned-music-resource');
+    expect(result.manifest?.runtimeMusicCueIds).toContain(assignedId);
+    expect(result.manifest?.runtimeMusicCueIds).not.toContain(unusedId);
+    expect(result.manifest?.removedResources).toContainEqual({
+      packageKey: 'music:skyforge-base-music',
+      resourceId: 'unused-music-resource',
+      reason: 'unreferenced by compiled package content',
+    });
   });
 
   it('blocks production compilation when a blocking review comment remains open', async () => {

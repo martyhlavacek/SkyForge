@@ -523,6 +523,7 @@ export type StudioTilesetDefinition = z.infer<typeof StudioTilesetDefinitionSche
 export type StudioAtlasDefinition = z.infer<typeof StudioAtlasDefinitionSchema>;
 
 export type MusicInstrument = z.infer<typeof MusicInstrumentSchema>;
+export type ImportedMusicTrack = z.infer<typeof ImportedMusicTrackSchema>;
 export type FmMusicInstrument = Extract<MusicInstrument, { kind: 'fm' }>;
 export type SampleMusicInstrument = Extract<MusicInstrument, { kind: 'sample' }>;
 export type MusicComposition = z.infer<typeof MusicCompositionSchema>;
