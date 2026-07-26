@@ -73,6 +73,9 @@ class StudioMusicOverlay {
       cueId?: unknown;
       state?: unknown;
       offsetSeconds?: unknown;
+      loop?: unknown;
+      volume?: unknown;
+      fadeSeconds?: unknown;
     };
     if (typeof value.cueId !== 'string') throw new Error('music preview requires cueId');
     const states: MusicIntensityState[] = ['recovery', 'normal', 'combat', 'critical', 'boss'];
@@ -82,7 +85,17 @@ class StudioMusicOverlay {
     const offset = Number.isFinite(Number(value.offsetSeconds))
       ? Math.max(0, Number(value.offsetSeconds))
       : 0;
-    await music.playCue(value.cueId, state, offset);
+    const volume = Number.isFinite(Number(value.volume))
+      ? Math.min(1, Math.max(0, Number(value.volume)))
+      : 1;
+    const fadeSeconds = Number.isFinite(Number(value.fadeSeconds))
+      ? Math.min(10, Math.max(0, Number(value.fadeSeconds)))
+      : 0;
+    await music.playCue(value.cueId, state, offset, {
+      loop: typeof value.loop === 'boolean' ? value.loop : true,
+      volume,
+      fadeSeconds,
+    });
   }
 
   restore(): void {

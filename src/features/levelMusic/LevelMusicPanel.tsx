@@ -43,6 +43,19 @@ export function LevelMusicPanel({
     onChange(normalizeLevelMusicAssignment({ ...assignment, ...next }));
   };
 
+  const runAction = async (
+    action: () => Promise<void> | void,
+    successMessage?: string,
+  ): Promise<void> => {
+    setMessage(null);
+    try {
+      await action();
+      if (successMessage) setMessage(successMessage);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Music action failed.');
+    }
+  };
+
   const handleFile = async (event: ChangeEvent<HTMLInputElement>): Promise<void> => {
     const file = event.target.files?.[0];
     event.target.value = '';
@@ -82,7 +95,11 @@ export function LevelMusicPanel({
             {busy ? 'Importing…' : 'Import MP3'}
           </button>
           {onRevealFolder ? (
-            <button type="button" disabled={disabled} onClick={() => void onRevealFolder()}>
+            <button
+              type="button"
+              disabled={disabled}
+              onClick={() => void runAction(onRevealFolder)}
+            >
               Reveal folder
             </button>
           ) : null}
@@ -165,11 +182,18 @@ export function LevelMusicPanel({
         <button
           type="button"
           disabled={disabled || !selectedTrack}
-          onClick={() => selectedTrack && void onPreview(selectedTrack, assignment)}
+          onClick={() =>
+            selectedTrack &&
+            void runAction(() => onPreview(selectedTrack, assignment))
+          }
         >
           Preview
         </button>
-        <button type="button" disabled={disabled} onClick={() => void onStopPreview()}>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => void runAction(onStopPreview)}
+        >
           Stop
         </button>
         {selectedTrack && onRemoveTrack ? (
@@ -177,7 +201,12 @@ export function LevelMusicPanel({
             type="button"
             className="level-music-panel__danger"
             disabled={disabled}
-            onClick={() => void onRemoveTrack(selectedTrack)}
+            onClick={() =>
+              void runAction(
+                () => onRemoveTrack(selectedTrack),
+                `Removed ${selectedTrack.displayName}.`,
+              )
+            }
           >
             Remove from library
           </button>

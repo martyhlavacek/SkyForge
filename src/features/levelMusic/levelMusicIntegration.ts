@@ -8,7 +8,8 @@ import {
 
 export interface LevelLike {
   id: string;
-  music?: Record<string, unknown> | null;
+  music: string;
+  levelMusic?: Record<string, unknown> | null;
 }
 
 export interface LevelMusicHostValue {
@@ -21,7 +22,7 @@ export interface LevelMusicHostValue {
  * New single-track fields live alongside mainCue/bossCue/stingers during migration.
  */
 export function readLevelMusic(level: LevelLike): LevelMusicHostValue {
-  const raw = level.music ?? {};
+  const raw = level.levelMusic ?? {};
   return {
     level,
     assignment: normalizeLevelMusicAssignment({
@@ -39,14 +40,14 @@ export function writeLevelMusic(
   level: LevelLike,
   assignment: Partial<LevelMusicAssignment> | null,
 ): LevelLike {
-  const current = level.music ?? {};
+  const current = level.levelMusic ?? {};
   const normalized = assignment
     ? normalizeLevelMusicAssignment(assignment)
     : defaultLevelMusicAssignment();
 
   return {
     ...level,
-    music: {
+    levelMusic: {
       ...current,
       ...normalized,
     },

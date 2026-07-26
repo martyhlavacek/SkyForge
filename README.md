@@ -25,7 +25,7 @@ Run the complete automated release audit with:
 npm run audit:release
 ```
 
-Current automated evidence: **382 passing tests across 56 files** and **14 scenarios** retained for Playwright browser certification.
+Current automated evidence: **395 passing tests across 58 files** and **15 scenarios** retained for Playwright browser certification.
 
 ### External asset and music workflow
 
@@ -284,9 +284,9 @@ Seeking (`,`/`.`, checkpoint retry) hard-clears live play and restarts any encou
 
 ## Acceptance evidence (current)
 
-- `npm run typecheck`, `npm run lint`, `npm run build`, `npm run build:base:verify`, and `npm run build:budget` pass; Vitest reports **375 passing tests across 55 files**.
+- `npm run typecheck`, `npm run lint`, `npm run build`, `npm run build:base:verify`, and `npm run build:budget` pass; Vitest reports **395 passing tests across 58 files**.
 - Negative security coverage verifies unsafe IDs, filesystem containment, malicious resource filenames, non-empty unpack targets, package drift, and production Studio-bridge authorization.
-- React component tests cover map painting, stroke transaction coalescing, minimap navigation math, object hit-testing, and focused Studio package workflows. Playwright contains **14 scenarios** (16 configured browser-project executions) and CI installs Chromium and WebKit before executing them.
+- React component tests cover map painting, stroke transaction coalescing, minimap navigation math, object hit-testing, and focused Studio package workflows. Playwright contains **15 scenarios** (18 configured browser-project executions) and CI installs Chromium and WebKit before executing them.
 - The production runtime does not expose mutable debug controls through `?studio=1`; embedded Studio control requires a same-origin session nonce.
 - `npm audit --audit-level=high` reports **0 vulnerabilities**.
 - Manual target-device verification remains required for physical iPhone/controllers, cross-browser rendering, FPS stability, resize/letterbox behaviour, and final terrain feel.

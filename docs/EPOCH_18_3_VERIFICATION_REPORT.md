@@ -23,23 +23,29 @@ Date: 2026-07-25
 
 - TypeScript: pass
 - ESLint: pass
-- Vitest: 382 passing tests across 56 files
+- Vitest: 395 passing tests across 58 files
 - Root production build: pass
 - `/skyforge/` base-path build and resource verification: pass
 - Bundle budgets: pass
 - Portable lockfile: pass
+- Dependency audit: pass, zero vulnerabilities
 - Canyon texture verification: pass
 - Blob-47 geometry verification: pass
 - Benchmark audit: pass at 8.70/10
 - README evidence verification: pass
 - Example production compilation: pass, 11 resources
 - Level music integrity verification: pass, three level files checked
+- Playwright: all 18 configured executions pass
+- Real-MP3 browser fixture: import, persistence, 0.5-second offset, preview,
+  stop, reload, genuine-gesture unlock, and canonical MusicDirector playback
+  pass in Chromium and WebKit
+- Mobile browser layout and touch entry: pass in Chromium and WebKit
+- Pause/settings transition stress check: 10 consecutive repetitions pass
 
 ## Uncertified gates
 
-The Playwright suite could start its local server, but the required Chromium and
-WebKit browser executables were not installed in the environment. All 16
-configured browser cases therefore remain unexecuted rather than failed on
-application behavior. Real MP3 decoding, audible playback, macOS packaging, and
-mobile WebKit remain manual release-candidate gates.
-
+The automated browser gate verifies real MP3 decoding and playback API behavior
+in headless Chromium and WebKit, but it cannot certify audible device output.
+Physical iOS Safari offset/unlock behavior, rapid-transition listening checks,
+macOS/Electron import and reveal-folder behavior, and production-export
+inspection remain manual release-candidate gates.

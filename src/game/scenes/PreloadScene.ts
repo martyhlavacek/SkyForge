@@ -7,6 +7,10 @@ import {
   terrainPlaneTextureKey,
   terrainTextureKey,
 } from '../terrain/TerrainTileset';
+import {
+  shouldEnableEmbeddedStudioBridge,
+  shouldStartRuntimePreview,
+} from '../studio/RuntimeBridgePolicy';
 
 /**
  * PreloadScene (Sprint 0.3).
@@ -44,7 +48,21 @@ export class PreloadScene extends Phaser.Scene {
 
   create(): void {
     this.generatePlaceholderTextures();
-    this.showFakeProgressBar(() => this.scene.start(SCENES.MENU));
+    const params = new URLSearchParams(window.location.search);
+    const studioBridgeEnabled = shouldEnableEmbeddedStudioBridge({
+      studioRequested: params.get('studio') === '1',
+      embedded: window.parent !== window,
+      session: params.get('session'),
+    });
+    const preview = shouldStartRuntimePreview({
+      previewRequested: params.get('preview') === '1',
+      dev: import.meta.env.DEV,
+      e2e: import.meta.env.VITE_E2E === '1',
+      studioBridgeEnabled,
+    });
+    this.showFakeProgressBar(() =>
+      this.scene.start(preview ? SCENES.GAME : SCENES.MENU),
+    );
   }
 
   private generatePlaceholderTextures(): void {

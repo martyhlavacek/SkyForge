@@ -100,6 +100,19 @@ export function createTrackId(_fileName: string, sha256: string): string {
   return `music-${sha256.slice(0, 24)}`;
 }
 
+export function musicRelativePath(trackId: string): string {
+  if (!isSafeTrackId(trackId)) throw new Error(`Unsafe music track ID: ${trackId}`);
+  return `assets/audio/music/${trackId}.mp3`;
+}
+
+export function appearsToBeMp3(bytes: Uint8Array): boolean {
+  const hasId3 =
+    bytes.length >= 3 && bytes[0] === 0x49 && bytes[1] === 0x44 && bytes[2] === 0x33;
+  const hasFrameSync =
+    bytes.length >= 2 && bytes[0] === 0xff && (bytes[1] & 0xe0) === 0xe0;
+  return hasId3 || hasFrameSync;
+}
+
 export function isSafeTrackId(value: string): boolean {
   return SAFE_ID.test(value);
 }
@@ -147,7 +160,10 @@ export function selectLiveMusicAssets(
 
 export function validateLevelMusicModel(
   registry: MusicAssetRegistry,
-  levels: ReadonlyArray<{ id: string; music?: Partial<LevelMusicAssignment> | null }>,
+  levels: ReadonlyArray<{
+    id: string;
+    levelMusic?: Record<string, unknown> | null;
+  }>,
 ): LevelMusicIssue[] {
   const issues: LevelMusicIssue[] = [];
   const ids = new Set<string>();
@@ -199,7 +215,42 @@ export function validateLevelMusicModel(
   }
 
   for (const level of levels) {
-    const assignment = normalizeLevelMusicAssignment(level.music);
+    const raw = level.levelMusic;
+    const trackId =
+      typeof raw?.trackId === 'string' && raw.trackId.trim()
+        ? raw.trackId.trim()
+        : null;
+    const invalid =
+      (raw?.trackId !== undefined &&
+        raw.trackId !== null &&
+        typeof raw.trackId !== 'string') ||
+      (raw?.loop !== undefined && typeof raw.loop !== 'boolean') ||
+      (raw?.volume !== undefined &&
+        (typeof raw.volume !== 'number' ||
+          !Number.isFinite(raw.volume) ||
+          raw.volume < 0 ||
+          raw.volume > 1)) ||
+      (raw?.startOffsetSeconds !== undefined &&
+        (typeof raw.startOffsetSeconds !== 'number' ||
+          !Number.isFinite(raw.startOffsetSeconds) ||
+          raw.startOffsetSeconds < 0 ||
+          raw.startOffsetSeconds > 86_400)) ||
+      (raw?.fadeSeconds !== undefined &&
+        (typeof raw.fadeSeconds !== 'number' ||
+          !Number.isFinite(raw.fadeSeconds) ||
+          raw.fadeSeconds < 0 ||
+          raw.fadeSeconds > 10));
+    const assignment = normalizeLevelMusicAssignment({
+      trackId: typeof raw?.trackId === 'string' ? raw.trackId : null,
+      loop: typeof raw?.loop === 'boolean' ? raw.loop : undefined,
+      volume: typeof raw?.volume === 'number' ? raw.volume : undefined,
+      startOffsetSeconds:
+        typeof raw?.startOffsetSeconds === 'number'
+          ? raw.startOffsetSeconds
+          : undefined,
+      fadeSeconds:
+        typeof raw?.fadeSeconds === 'number' ? raw.fadeSeconds : undefined,
+    });
     if (assignment.trackId && !ids.has(assignment.trackId)) {
       issues.push({
         severity: 'error',
@@ -209,18 +260,12 @@ export function validateLevelMusicModel(
         message: `Level ${level.id} references missing music track ${assignment.trackId}.`,
       });
     }
-    if (
-      assignment.volume < 0 ||
-      assignment.volume > 1 ||
-      assignment.startOffsetSeconds < 0 ||
-      assignment.fadeSeconds < 0 ||
-      assignment.fadeSeconds > 10
-    ) {
+    if (invalid) {
       issues.push({
         severity: 'error',
         code: 'INVALID_ASSIGNMENT',
         levelId: level.id,
-        trackId: assignment.trackId ?? undefined,
+        trackId: trackId ?? undefined,
         message: `Level ${level.id} contains invalid music playback settings.`,
       });
     }

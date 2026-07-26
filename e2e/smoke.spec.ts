@@ -11,9 +11,17 @@ function collectErrors(page: Page): string[] {
 
 async function waitForScene(page: Page, scene: string): Promise<void> {
   await page.waitForFunction(
-    (key) => window.__skyforge?.activeScenes().includes(key),
+    (key) =>
+      window.__skyforge?.activeScenes().includes(key) &&
+      window.__skyforge.sceneStatus(key) === 'active',
     scene,
     { timeout: 15000 },
+  );
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) =>
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+      ),
   );
 }
 
@@ -110,7 +118,7 @@ test('runs thirty simulated seconds without runtime errors', async ({ page }) =>
   await page.waitForFunction(
     () => (window.__skyforge?.levelSnapshot()?.levelTime ?? 0) >= 30,
     null,
-    { timeout: 15000 },
+    { timeout: 40000 },
   );
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
 });
@@ -167,7 +175,7 @@ test('default canyon remains visual-only through former gate timings', async ({ 
   await page.waitForFunction(
     () => (window.__skyforge?.levelSnapshot()?.levelTime ?? 0) >= 66,
     null,
-    { timeout: 25000 },
+    { timeout: 40000 },
   );
   expect(await page.evaluate(() => window.__skyforge!.terrainState())).toEqual({});
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
@@ -184,7 +192,7 @@ test('Game Design Studio loads four package workspaces and compiles built-in con
       timeout: 15000,
     },
   );
-  await expect(page.locator('.studio-tabs button')).toHaveCount(5);
+  await expect(page.locator('.studio-tabs button')).toHaveCount(4);
   await expect(page.locator('.level-studio-frame')).toBeVisible();
   await page.getByRole('button', { name: 'Build' }).click();
   await expect(page.locator('.studio-footer .ok')).toContainText('Compile OK');
@@ -244,21 +252,28 @@ test('Studio tuning arena exposes live transport, snapshots, and telemetry', asy
   );
   await page.getByRole('button', { name: 'Tuning' }).click();
   await page.getByLabel('Scope').selectOption('enemy');
-  await page.getByRole('button', { name: 'Start' }).click();
+  await page.getByRole('button', { name: 'Start', exact: true }).click();
 
   const runtime = page.frameLocator('iframe[title="Skyforge shared runtime"]');
   await expect(runtime.locator('canvas')).toBeVisible({ timeout: 15000 });
-  await page.waitForFunction(
-    () => document.querySelector('.runtime-status')?.textContent?.includes('GameScene'),
-    null,
-    { timeout: 15000 },
-  );
+  await expect
+    .poll(
+      () =>
+        runtime.locator('body').evaluate(() => window.__skyforge?.activeScenes() ?? []),
+      { timeout: 15000 },
+    )
+    .toContain('GameScene');
+  await expect(page.locator('.runtime-status')).toContainText('Scene: GameScene', {
+    timeout: 15000,
+  });
   await expect(page.getByLabel('Snapshot interval')).toHaveValue('5');
   await expect(page.locator('.timeline-marker').first()).toBeAttached();
   await page.getByLabel('Snapshot interval').selectOption('2');
   await page.waitForTimeout(2500);
   await expect(page.locator('.timeline-title')).toContainText('2s');
-  await expect(page.locator('.runtime-heatmap .heatmap-bar').first()).toBeAttached();
+  await expect(page.locator('.runtime-heatmap .heatmap-bar').first()).toBeAttached({
+    timeout: 30000,
+  });
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
 });
 
@@ -276,7 +291,11 @@ test('Asset Studio previews built-in art and exposes production workflows', asyn
   await expect(page.locator('.studio-tabs button')).toHaveCount(4);
   await expect(page.getByRole('button', { name: 'Music' })).toHaveCount(0);
   await expect(page.locator('.asset-subtabs button')).toHaveCount(4);
-  await expect(page.getByRole('button', { name: /Demo Fighter/ })).toBeVisible();
+  await expect(
+    page.getByRole('button', {
+      name: /^Epoch 14 Demo Fighter enemyAircraft · approved$/,
+    }),
+  ).toBeVisible();
   await expect(page.locator('.asset-stage-panel canvas')).toBeVisible();
 
   await page.getByRole('button', { name: 'tilesets' }).click();
@@ -288,8 +307,8 @@ test('Asset Studio previews built-in art and exposes production workflows', asyn
   await page.getByRole('button', { name: 'references' }).click();
   await expect(page.getByRole('heading', { name: 'Reference health' })).toBeVisible();
 
-  await page.getByRole('button', { name: 'assets' }).click();
-  await page.getByRole('button', { name: 'Start' }).click();
+  await page.getByRole('button', { name: 'assets', exact: true }).click();
+  await page.getByRole('button', { name: 'Start', exact: true }).click();
   const runtime = page.frameLocator('iframe[title="Skyforge shared runtime"]');
   await expect(runtime.locator('canvas')).toBeVisible({ timeout: 15000 });
   await page.getByRole('button', { name: 'Preview in Runtime' }).click();

@@ -85,12 +85,31 @@ describe('level music core', () => {
     const issues = validateLevelMusicModel(
       { formatVersion: LEVEL_MUSIC_FORMAT_VERSION, tracks: [track] },
       [
-        { id: 'level_01', music: { trackId: track.id } },
-        { id: 'level_02', music: { trackId: 'missing-track' } },
-        { id: 'level_03', music: { trackId: null } },
+        { id: 'level_01', levelMusic: { trackId: track.id } },
+        { id: 'level_02', levelMusic: { trackId: 'missing-track' } },
+        { id: 'level_03', levelMusic: { trackId: null } },
       ],
     );
     expect(issues).toHaveLength(1);
     expect(issues[0]?.code).toBe('MISSING_TRACK');
+  });
+
+  it('rejects raw out-of-range assignments before normalization', () => {
+    const issues = validateLevelMusicModel(
+      { formatVersion: LEVEL_MUSIC_FORMAT_VERSION, tracks: [track] },
+      [
+        {
+          id: 'level_01',
+          levelMusic: {
+            trackId: track.id,
+            loop: true,
+            volume: 4,
+            startOffsetSeconds: -1,
+            fadeSeconds: 20,
+          },
+        },
+      ],
+    );
+    expect(issues.map((issue) => issue.code)).toEqual(['INVALID_ASSIGNMENT']);
   });
 });

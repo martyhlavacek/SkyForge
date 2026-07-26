@@ -9,6 +9,11 @@ export interface EmbeddedStudioContext {
   session: string | null;
 }
 
+export interface RuntimePreviewContext extends RuntimeExposureContext {
+  previewRequested: boolean;
+  studioBridgeEnabled: boolean;
+}
+
 /** Mutable runtime controls are global only in explicit development/E2E builds. */
 export function shouldExposeGlobalRuntimeApi(context: RuntimeExposureContext): boolean {
   return context.dev || context.e2e;
@@ -19,4 +24,12 @@ export function shouldEnableEmbeddedStudioBridge(
   context: EmbeddedStudioContext,
 ): boolean {
   return context.studioRequested && context.embedded && Boolean(context.session);
+}
+
+/** Preview mode is allowed in development/E2E, or through the secured Studio bridge. */
+export function shouldStartRuntimePreview(context: RuntimePreviewContext): boolean {
+  return (
+    context.previewRequested &&
+    (context.dev || context.e2e || context.studioBridgeEnabled)
+  );
 }

@@ -45,7 +45,7 @@ export interface MusicDebugState {
  * the same scheduled time, preserving phase alignment across intensity
  * changes. Cue loading is deferred until the browser audio gate unlocks.
  */
-class MusicDirector {
+export class MusicDirector {
   private readonly buffers = new Map<string, AudioBuffer>();
   private active = new Map<string, ActiveStem>();
   private currentCue: MusicCueDef | null = null;

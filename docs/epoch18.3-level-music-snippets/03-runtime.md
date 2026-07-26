@@ -3,7 +3,7 @@
 Preferred: add a single-track branch to the canonical `MusicDirector` so all audio remains on the existing music bus and lifecycle.
 
 ```ts
-const assignment = normalizeLevelMusicAssignment(level.music);
+const assignment = normalizeLevelMusicAssignment(level.levelMusic);
 const track = findAssignedTrack(compiledMusicRegistry, assignment);
 
 if (!track) {

@@ -333,14 +333,21 @@ export class GameScene extends Phaser.Scene {
     if (!this.previewMode)
       this.presentation.showLevelIntro(this.timeline.def.displayName);
     const levelMusic = this.timeline.def.levelMusic;
-    if (levelMusic?.trackId) {
-      void music.playCue(levelMusic.trackId, 'normal', levelMusic.startOffsetSeconds, {
-        loop: levelMusic.loop,
-        volume: levelMusic.volume,
-        fadeSeconds: levelMusic.fadeSeconds,
-      });
-    } else {
-      void music.playCue(this.timeline.def.music, 'normal');
+    if (!this.studioRuntime.isEnabled) {
+      if (levelMusic?.trackId) {
+        void music.playCue(
+          levelMusic.trackId,
+          'normal',
+          levelMusic.startOffsetSeconds,
+          {
+            loop: levelMusic.loop,
+            volume: levelMusic.volume,
+            fadeSeconds: levelMusic.fadeSeconds,
+          },
+        );
+      } else {
+        void music.playCue(this.timeline.def.music, 'normal');
+      }
     }
     this.studioRuntime.onRuntimeReady();
 
@@ -354,6 +361,10 @@ export class GameScene extends Phaser.Scene {
 
   update(_time: number, delta: number): void {
     if (contentRegistry.errors.length > 0) return;
+    // A scene stop/start requested from an overlay can be applied while Phaser
+    // is still unwinding the current step. Do not advance a player whose
+    // physics body has already been released by scene shutdown.
+    if (!this.player?.active || !this.player.body) return;
     const dt = scaledDt(delta);
     const input = this.inputMgr.getState();
     const touchDelta = this.touchPrimary ? this.inputMgr.consumeTouchDelta() : undefined;
