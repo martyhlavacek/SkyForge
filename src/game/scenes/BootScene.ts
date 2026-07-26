@@ -3,6 +3,8 @@ import { REGISTRY, SCENES } from '../config/constants';
 import { saveData } from '../systems/SaveData';
 import { audio } from '../systems/AudioManager';
 import { difficulty } from '../systems/DifficultyManager';
+import { contentRegistry } from '../systems/ContentRegistry';
+import { productionContent } from '../systems/ProductionContent';
 
 /**
  * BootScene (Sprint 0.3).
@@ -28,6 +30,17 @@ export class BootScene extends Phaser.Scene {
     difficulty.set(blob.settings.difficulty);
     this.registry.set(REGISTRY.DIFFICULTY, blob.settings.difficulty);
 
-    this.scene.start(SCENES.PRELOAD);
+    void productionContent
+      .load()
+      .catch((error: unknown) => {
+        contentRegistry.errors.push({
+          file: 'release-manifest.json',
+          message:
+            error instanceof Error
+              ? error.message
+              : `Production content failed to load: ${String(error)}`,
+        });
+      })
+      .finally(() => this.scene.start(SCENES.PRELOAD));
   }
 }

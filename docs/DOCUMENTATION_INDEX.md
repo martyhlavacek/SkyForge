@@ -29,6 +29,11 @@
 
 ## Current release
 
+- [Epoch 18.3 Verification Report](EPOCH_18_3_VERIFICATION_REPORT.md) — MP3 import, production registration, integrity, browser, build, and remaining manual evidence.
+- [Epoch 18.3 Host Integration Guide](EPOCH_18_3_HOST_INTEGRATION.md) — canonical `levelMusic` and Music Pack integration boundaries.
+- [CR-0062 Candidate Verdict](SKYFORGE-CR-0062_Epoch_18_3_Candidate_Verdict.md) — original Claude candidate review.
+- [CR-0063 RC3 Review Summary](SKYFORGE-CR-0063_RC3_REVIEW_SUMMARY.md) — maintainer summary and source-chat link for the RC3 rejection.
+- [Epoch 18.3 RC4 Claude Review Request](CLAUDE_REVIEW_REQUEST_EPOCH_18_3_RC4.md) — adversarial recheck scope for the corrected tag.
 - [Epoch 18.2 Blob-47 Geometry Correction](EPOCH_18_2_BLOB47_GEOMETRY_CORRECTION.md) — corrected inner curves, true diagonals, exposed-contour shoreline rendering, and acceptance gates.
 - [Epoch 18.2 Benchmark Audit](EPOCH_18_2_BENCHMARK_AUDIT.md) — revised 8.70/10 internal audit, superseding Epoch 18.1.
 - [Epoch 18.2 QA Audit](EPOCH_18_2_QA_AUDIT.md) — geometry, texture, static, test, build, and package evidence.

@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 import { createHash } from 'node:crypto';
-import { lstat, readFile, readdir, realpath, stat } from 'node:fs/promises';
+import { lstat, readFile, readdir, realpath } from 'node:fs/promises';
 import path from 'node:path';
 import { LevelSchema } from '../src/schemas/levelSchema';
 import {

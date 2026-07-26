@@ -5,6 +5,7 @@ import {
   readFile,
   stat,
   symlink,
+  unlink,
   writeFile,
 } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -22,6 +23,22 @@ function runScript(script: string, args: string[]) {
   return execFileAsync(process.execPath, ['--import', 'tsx', script, ...args], {
     cwd: repositoryRoot,
   });
+}
+
+async function expectVerifierIssue(root: string, code: string): Promise<void> {
+  try {
+    await runScript(verifier, ['--project', root]);
+    throw new Error('Verifier unexpectedly passed.');
+  } catch (error) {
+    const output = (error as { stdout?: string }).stdout;
+    expect(output, `verifier did not emit a JSON report for ${code}`).toBeTruthy();
+    const report = JSON.parse(output!) as {
+      status: string;
+      issues: { code: string }[];
+    };
+    expect(report.status).toBe('FAIL');
+    expect(report.issues.map((issue) => issue.code)).toContain(code);
+  }
 }
 
 const validLevel = {
@@ -172,4 +189,84 @@ describe('level music CLI and verifier', () => {
       runScript(verifier, ['--project', fixture.root]),
     ).rejects.toMatchObject({ code: 1 });
   });
+
+  it(
+    'rejects invalid assignments, missing tracks, missing files, and corrupt bytes',
+    async () => {
+      const invalidAssignment = await fixtureProject();
+      await writeFile(
+        invalidAssignment.level,
+        `${JSON.stringify(
+          {
+            ...validLevel,
+            levelMusic: {
+              trackId: null,
+              loop: true,
+              volume: 2,
+              startOffsetSeconds: 0,
+              fadeSeconds: 1,
+            },
+          },
+          null,
+          2,
+        )}\n`,
+      );
+      await expectVerifierIssue(invalidAssignment.root, 'INVALID_LEVEL_SCHEMA');
+
+      const missingTrack = await fixtureProject();
+      await writeFile(
+        missingTrack.level,
+        `${JSON.stringify(
+          {
+            ...validLevel,
+            levelMusic: {
+              trackId: 'music-aaaaaaaaaaaaaaaaaaaaaaaa',
+              loop: true,
+              volume: 0.8,
+              startOffsetSeconds: 0,
+              fadeSeconds: 1,
+            },
+          },
+          null,
+          2,
+        )}\n`,
+      );
+      await expectVerifierIssue(missingTrack.root, 'MISSING_TRACK');
+
+      const missingFile = await fixtureProject();
+      const { stdout: missingImportOutput } = await runScript(importer, [
+        '--project',
+        missingFile.root,
+        '--level',
+        missingFile.level,
+        '--file',
+        missingFile.mp3,
+      ]);
+      const missingRecord = JSON.parse(missingImportOutput) as {
+        track: { relativePath: string };
+      };
+      await unlink(path.join(missingFile.root, missingRecord.track.relativePath));
+      await expectVerifierIssue(missingFile.root, 'MISSING_FILE');
+
+      const corruptFile = await fixtureProject();
+      const { stdout: corruptImportOutput } = await runScript(importer, [
+        '--project',
+        corruptFile.root,
+        '--level',
+        corruptFile.level,
+        '--file',
+        corruptFile.mp3,
+      ]);
+      const corruptRecord = JSON.parse(corruptImportOutput) as {
+        track: { relativePath: string };
+      };
+      await writeFile(
+        path.join(corruptFile.root, corruptRecord.track.relativePath),
+        new Uint8Array([0x00, 0x01, 0x02, 0x03]),
+      );
+      await expectVerifierIssue(corruptFile.root, 'HASH_MISMATCH');
+      await expectVerifierIssue(corruptFile.root, 'INVALID_MP3_HEADER');
+    },
+    30_000,
+  );
 });

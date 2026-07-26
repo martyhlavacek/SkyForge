@@ -46,7 +46,7 @@ test('mobile game viewport fits, accepts touch entry, and maintains frame progre
     });
     return count;
   });
-  expect(frames).toBeGreaterThan(5);
+  expect(frames).toBeGreaterThan(20);
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
 });
 

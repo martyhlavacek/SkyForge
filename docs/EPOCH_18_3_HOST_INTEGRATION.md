@@ -4,7 +4,8 @@ The feature modules are intentionally isolated under `src/features/levelMusic`. 
 
 ## 1. Level schema
 
-Extend the existing `music` object rather than replacing it. Add optional/defaulted fields:
+Preserve the existing `music` cue string. Add a separate optional `levelMusic`
+object with these defaulted fields:
 
 ```ts
 trackId: safeIdSchema.nullable().default(null),

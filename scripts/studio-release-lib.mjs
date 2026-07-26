@@ -121,7 +121,19 @@ export function validateLock(lock, workspace, packages) {
   }
 }
 
-function liveResourceIds(pkg) {
+function assignedTrackIds(packages) {
+  return new Set(
+    packages
+      .filter((pkg) => pkg.format === 'skyforge-level-pack')
+      .flatMap((pkg) =>
+        pkg.payload.levels
+          .map((level) => level.levelMusic?.trackId)
+          .filter((id) => typeof id === 'string' && id.length > 0),
+      ),
+  );
+}
+
+function liveResourceIds(pkg, liveTrackIds) {
   if (pkg.format === 'skyforge-asset-pack') {
     const ids = new Set();
     pkg.payload.assets.forEach((item) => item.resourceId && ids.add(item.resourceId));
@@ -140,9 +152,90 @@ function liveResourceIds(pkg) {
     pkg.payload.instruments.forEach(
       (item) => item.kind === 'sample' && ids.add(item.resourceId),
     );
+    (pkg.payload.tracks ?? []).forEach(
+      (track) => liveTrackIds.has(track.id) && ids.add(track.resourceId),
+    );
     return ids;
   }
   return new Set(pkg.resources.map((resource) => resource.id));
+}
+
+function compileMusicPackage(pkg, compiledResources, liveTrackIds) {
+  const byResourceId = new Map(
+    compiledResources.map((resource) => [resource.id, resource]),
+  );
+  const uriTargets = new Map(
+    compiledResources.map((resource) => [
+      pkg.resources.find((source) => source.id === resource.id)?.uri,
+      resource.uri,
+    ]),
+  );
+  const resolveUri = (uri) => uriTargets.get(uri) ?? uri;
+  const authoredCues = pkg.payload.cues.map((cue) => ({
+    ...cue,
+    ...(cue.fullMix ? { fullMix: resolveUri(cue.fullMix) } : {}),
+    stems: cue.stems.map((stem) => ({
+      ...stem,
+      asset: resolveUri(stem.asset),
+    })),
+  }));
+  const authoredCueIds = new Set(authoredCues.map((cue) => cue.id));
+  const tracks = (pkg.payload.tracks ?? []).filter((track) =>
+    liveTrackIds.has(track.id),
+  );
+  tracks.forEach((track) => {
+    if (authoredCueIds.has(track.id))
+      throw new Error(`Imported track ${track.id} collides with an authored music cue`);
+    const resource = byResourceId.get(track.resourceId);
+    if (!resource)
+      throw new Error(
+        `Imported track ${track.id} is missing compiled resource ${track.resourceId}`,
+      );
+  });
+  return {
+    ...pkg,
+    resources: compiledResources,
+    payload: {
+      ...pkg.payload,
+      tracks,
+      cues: authoredCues,
+    },
+  };
+}
+
+function validateImportedTracks(pkg) {
+  if (!pkg) return;
+  const resources = new Map(pkg.resources.map((resource) => [resource.id, resource]));
+  const cueIds = new Set(pkg.payload.cues.map((cue) => cue.id));
+  const trackIds = new Set();
+  for (const track of pkg.payload.tracks ?? []) {
+    if (trackIds.has(track.id))
+      throw new Error(`Imported track ID is duplicated: ${track.id}`);
+    trackIds.add(track.id);
+    const expectedId = `music-${track.sha256.slice(0, 24)}`;
+    if (track.id !== expectedId)
+      throw new Error(
+        `Imported track ${track.id} must use SHA-256 content identity ${expectedId}`,
+      );
+    const expectedPath = `assets/audio/music/${track.id}.mp3`;
+    if (track.relativePath !== expectedPath)
+      throw new Error(
+        `Imported track ${track.id} must use canonical path ${expectedPath}`,
+      );
+    if (cueIds.has(track.id))
+      throw new Error(`Imported track ${track.id} collides with an authored music cue`);
+    const resource = resources.get(track.resourceId);
+    if (!resource)
+      throw new Error(
+        `Imported track ${track.id} is missing resource ${track.resourceId}`,
+      );
+    if (resource.mediaType !== 'audio/mpeg')
+      throw new Error(`Imported track ${track.id} resource is not audio/mpeg`);
+    if (resource.sha256 && resource.sha256 !== track.sha256)
+      throw new Error(`Imported track ${track.id} SHA-256 differs from its resource`);
+    if (resource.bytes !== undefined && resource.bytes !== track.byteLength)
+      throw new Error(`Imported track ${track.id} byte count differs from its resource`);
+  }
 }
 
 function safeName(resource) {
@@ -156,6 +249,16 @@ function safeName(resource) {
 export async function compileRelease({ workspace, packages, lock, output, publicDir }) {
   validateLock(lock, workspace, packages);
   const selected = selectedPackages(workspace, packages);
+  const liveTrackIds = assignedTrackIds(selected);
+  const musicPackage = selected.find((pkg) => pkg.format === 'skyforge-music-pack');
+  validateImportedTracks(musicPackage);
+  const availableTrackIds = new Set(
+    musicPackage?.payload.tracks?.map((track) => track.id) ?? [],
+  );
+  for (const trackId of liveTrackIds) {
+    if (!availableTrackIds.has(trackId))
+      throw new Error(`Level assignment references missing imported track ${trackId}`);
+  }
   for (const pkg of selected) {
     const blocking = (pkg.reviewComments ?? []).filter(
       (comment) => comment.status === 'open' && comment.severity === 'blocking',
@@ -170,8 +273,9 @@ export async function compileRelease({ workspace, packages, lock, output, public
   await mkdir(join(output, 'content', 'packages'), { recursive: true });
   const artifacts = [];
   const removed = [];
+  const runtimeMusicCueIds = [];
   for (const pkg of selected) {
-    const live = liveResourceIds(pkg);
+    const live = liveResourceIds(pkg, liveTrackIds);
     const compiledResources = [];
     for (const resource of pkg.resources ?? []) {
       if (!live.has(resource.id)) {
@@ -210,7 +314,15 @@ export async function compileRelease({ workspace, packages, lock, output, public
         bytes: bytes.length,
       });
     }
-    const compiledPackage = { ...pkg, resources: compiledResources };
+    const compiledPackage =
+      pkg.format === 'skyforge-music-pack'
+        ? compileMusicPackage(pkg, compiledResources, liveTrackIds)
+        : { ...pkg, resources: compiledResources };
+    if (compiledPackage.format === 'skyforge-music-pack')
+      runtimeMusicCueIds.push(
+        ...compiledPackage.payload.cues.map((cue) => cue.id),
+        ...compiledPackage.payload.tracks.map((track) => track.id),
+      );
     const filename = `${typeOf(pkg)}-${pkg.manifest.id}-${pkg.manifest.version}.json`;
     await writeFile(join(output, 'content', 'packages', filename), json(compiledPackage));
   }
@@ -224,6 +336,7 @@ export async function compileRelease({ workspace, packages, lock, output, public
       (pkg) => `${typeOf(pkg)}:${pkg.manifest.id}@${pkg.manifest.version}`,
     ),
     activeLevelId: workspace.activeLevelId,
+    runtimeMusicCueIds: runtimeMusicCueIds.sort(),
     resources: artifacts.sort((a, b) => a.targetPath.localeCompare(b.targetPath)),
     removedResources: removed.sort((a, b) => a.resourceId.localeCompare(b.resourceId)),
   };

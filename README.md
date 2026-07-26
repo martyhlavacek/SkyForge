@@ -4,7 +4,11 @@ Browser-based vertical scrolling shoot-'em-up with a focused level-design and ga
 
 ## Current milestone
 
-**Epoch 18.2 — Verified Blob-47 Geometry** corrects the inner-curve and diagonal deficiencies identified after Epoch 18.1. Level 01 now uses broad supersampled concave corners, true full-tile 45-degree banks, exposed-contour-only shoreline effects, and playable opening sections that exercise both diagonal directions on both banks. The final internal art-direction audit is **8.70/10**, supported by deficiency-specific geometry tests rather than mask-count checks alone. Terrain remains presentation-only while collision is reconsidered.
+**Epoch 18.3 RC4 — Per-Level MP3 Music Library** adds content-addressed
+project-local MP3 import, per-level assignment, preview, integrity checks, and
+production playback through the existing Web Audio music director. It retains
+the accepted Epoch 18.2 Blob-47 geometry and its **8.70/10** art-direction
+baseline.
 
 The canyon contains 8,831 explicit topology and set-dressing cells, while water remains a zero-cell world plane. See `docs/EPOCH_18_2_BLOB47_GEOMETRY_CORRECTION.md`, `docs/EPOCH_18_2_QA_AUDIT.md`, and `docs/EPOCH_18_2_BLOB47_GEOMETRY_EVIDENCE.png`.
 
@@ -25,7 +29,7 @@ Run the complete automated release audit with:
 npm run audit:release
 ```
 
-Current automated evidence: **395 passing tests across 58 files** and **15 scenarios** retained for Playwright browser certification.
+Current automated evidence: **400 passing tests across 60 files** and **16 scenarios** retained for Playwright browser certification.
 
 ### External asset and music workflow
 
@@ -284,9 +288,9 @@ Seeking (`,`/`.`, checkpoint retry) hard-clears live play and restarts any encou
 
 ## Acceptance evidence (current)
 
-- `npm run typecheck`, `npm run lint`, `npm run build`, `npm run build:base:verify`, and `npm run build:budget` pass; Vitest reports **395 passing tests across 58 files**.
+- `npm run typecheck`, `npm run lint`, `npm run build`, `npm run build:base:verify`, and `npm run build:budget` pass; Vitest reports **400 passing tests across 60 files**.
 - Negative security coverage verifies unsafe IDs, filesystem containment, malicious resource filenames, non-empty unpack targets, package drift, and production Studio-bridge authorization.
-- React component tests cover map painting, stroke transaction coalescing, minimap navigation math, object hit-testing, and focused Studio package workflows. Playwright contains **15 scenarios** (18 configured browser-project executions) and CI installs Chromium and WebKit before executing them.
+- React component tests cover map painting, stroke transaction coalescing, minimap navigation math, object hit-testing, and focused Studio package workflows. Playwright contains **16 scenarios** (20 configured browser-project executions) and CI installs Chromium and WebKit before executing them.
 - The production runtime does not expose mutable debug controls through `?studio=1`; embedded Studio control requires a same-origin session nonce.
 - `npm audit --audit-level=high` reports **0 vulnerabilities**.
 - Manual target-device verification remains required for physical iPhone/controllers, cross-browser rendering, FPS stability, resize/letterbox behaviour, and final terrain feel.

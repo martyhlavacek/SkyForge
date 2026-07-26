@@ -18,6 +18,7 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - run: npm run level-music:verify
       - run: npm run build:base:verify
       - run: npm run build:budget
       - run: npm run studio:example:compile

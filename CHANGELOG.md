@@ -12,10 +12,10 @@
 ### Verification
 
 - Rebased from the accepted Epoch 18.2 archive with SHA-256 `21a0e79e12e72bd23ff9a696cf21930edb2e3c80ac8895c4106aae76770f1ab7`.
-- Passed strict TypeScript, ESLint, 395 tests across 58 files, production build, and the level-music integrity verifier.
+- Passed strict TypeScript, ESLint, 400 tests across 60 files, production build, and the level-music integrity verifier.
 - Updated the audited transitive dependencies and confirmed zero known
   vulnerabilities at the high-severity release threshold.
-- Passed all 18 configured Playwright executions, including real-MP3 import,
+- Passed all 20 configured Playwright executions, including real-MP3 import,
   persistence, non-zero offset, preview, and stop in Chromium and WebKit.
 - Audible device output, macOS/Electron packaging, and physical iOS Safari remain
   release-candidate gates.
@@ -45,6 +45,27 @@
   imported MP3 is excluded.
 - Made the cross-engine audio-volume browser assertion tolerant of WebKit's
   single-precision representation while retaining exact lifecycle assertions.
+
+### RC4 CR-0063 remediation
+
+- Corrected the production compiler so assigned imported tracks remain live,
+  receive content-addressed output paths, and become canonical one-stem
+  MusicDirector cues; unused imported tracks and resources are removed.
+- Added boot-time loading and validation of compiled Studio packages before
+  gameplay, including per-level `levelMusic.trackId` reference validation.
+- Added a non-Studio Chromium/WebKit release test that compiles, installs,
+  decodes, unlocks, and plays a real assigned MP3.
+- Restored the original 20-frame mobile performance threshold and removed the
+  undisclosed global and scenario timeout increases.
+- Added `scripts/**/*.ts` to strict typecheck and lint, and added the
+  fail-closed level-music verifier to both release audit and CI.
+- Added direct verifier cases for invalid assignment, missing track, missing
+  file, corrupt bytes, and invalid MP3 headers.
+- Fixed rejected-preview identity cleanup so an older play failure cannot stop
+  or clear a newer preview, with a focused regression test.
+- Defaulted browser imports to external provenance instead of claiming Suno
+  unless the source is explicitly declared.
+- Removed the unrelated shutdown-frame player guard introduced during RC2.
 
 # Epoch 18.2 — Verified Blob-47 Geometry — 2026-07-14
 

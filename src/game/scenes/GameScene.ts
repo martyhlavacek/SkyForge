@@ -54,6 +54,7 @@ import {
 import { TerrainRuntime } from '../terrain/TerrainRuntime';
 import { Hud, HUD_EVENTS } from '../ui/Hud';
 import type { RunSessionSnapshot } from '../systems/RunSession';
+import { productionContent } from '../systems/ProductionContent';
 
 const DEFAULT_LEVEL = 'level_01';
 
@@ -196,7 +197,11 @@ export class GameScene extends Phaser.Scene {
 
     const params =
       typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-    const levelId = this.startData.level ?? params?.get('level') ?? DEFAULT_LEVEL;
+    const levelId =
+      this.startData.level ??
+      params?.get('level') ??
+      productionContent.activeLevelId ??
+      DEFAULT_LEVEL;
     const urlStartAt = params?.get('t') ? Number.parseFloat(params.get('t')!) : undefined;
     this.previewMode = params?.get('preview') === '1';
     this.studioRuntime.initialize(
@@ -361,10 +366,6 @@ export class GameScene extends Phaser.Scene {
 
   update(_time: number, delta: number): void {
     if (contentRegistry.errors.length > 0) return;
-    // A scene stop/start requested from an overlay can be applied while Phaser
-    // is still unwinding the current step. Do not advance a player whose
-    // physics body has already been released by scene shutdown.
-    if (!this.player?.active || !this.player.body) return;
     const dt = scaledDt(delta);
     const input = this.inputMgr.getState();
     const touchDelta = this.touchPrimary ? this.inputMgr.consumeTouchDelta() : undefined;

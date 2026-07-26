@@ -1,7 +1,7 @@
 {
   "format": "skyforge-production-build",
   "schemaVersion": 1,
-  "generatedAt": "2026-07-14T14:52:08.767Z",
+  "generatedAt": "2026-07-26T15:15:41.839Z",
   "workspaceId": "skyforge-main-workspace",
   "workspaceVersion": "1.0.0",
   "lockFingerprint": "fnv1a-2fd29462",
@@ -12,6 +12,10 @@
     "asset:skyforge-placeholder-assets@1.0.0"
   ],
   "activeLevelId": "level_01",
+  "runtimeMusicCueIds": [
+    "coastal_assault",
+    "none"
+  ],
   "resources": [
     {
       "packageKey": "asset:skyforge-placeholder-assets",
@@ -114,5 +118,5 @@
     }
   ],
   "removedResources": [],
-  "contentFingerprint": "fnv1a-689cb8c5"
+  "contentFingerprint": "fnv1a-fc9c390c"
 }

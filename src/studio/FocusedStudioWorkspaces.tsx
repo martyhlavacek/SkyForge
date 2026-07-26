@@ -13,6 +13,7 @@ import {
   type MusicAssetRecord,
 } from '../features/levelMusic/levelMusicCore';
 import { importMp3File } from '../features/levelMusic/LevelMusicAssetStore';
+import { disposeMusicPreview } from '../features/levelMusic/PreviewLifecycle';
 import { bytesToBase64 } from './assets/AssetResourceTools';
 import type {
   SimulationArenaConfig,
@@ -71,14 +72,11 @@ export function LevelWorkspace({
     onPackagesChange(nextLevel, musicPack);
   };
 
-  const stopPreview = useCallback(() => {
-    const preview = previewRef.current;
-    if (!preview) return;
-    preview.pause();
-    if (preview.src.startsWith('blob:')) URL.revokeObjectURL(preview.src);
-    preview.removeAttribute('src');
-    preview.load();
-    previewRef.current = null;
+  const stopPreview = useCallback((expected?: HTMLAudioElement) => {
+    previewRef.current = disposeMusicPreview(
+      previewRef.current,
+      expected ?? previewRef.current,
+    );
   }, []);
 
   useEffect(() => () => stopPreview(), [stopPreview]);
@@ -112,7 +110,7 @@ export function LevelWorkspace({
           value={level.levelMusic}
           onChange={updateAssignment}
           onImportMp3={async (file) => {
-            const imported = await importMp3File(file, { source: 'suno' });
+            const imported = await importMp3File(file, { source: 'external' });
             const { record: candidate, bytes } = imported;
             const existing = musicPack.payload.tracks.find(
               (track) => track.sha256 === candidate.sha256,
@@ -171,7 +169,7 @@ export function LevelWorkspace({
             audio.currentTime = assignment.startOffsetSeconds;
             previewRef.current = audio;
             return audio.play().catch((error) => {
-              stopPreview();
+              stopPreview(audio);
               if (error instanceof DOMException && error.name === 'AbortError') return;
               throw error;
             });

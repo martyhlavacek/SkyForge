@@ -118,7 +118,7 @@ test('runs thirty simulated seconds without runtime errors', async ({ page }) =>
   await page.waitForFunction(
     () => (window.__skyforge?.levelSnapshot()?.levelTime ?? 0) >= 30,
     null,
-    { timeout: 40000 },
+    { timeout: 15000 },
   );
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
 });
@@ -175,7 +175,7 @@ test('default canyon remains visual-only through former gate timings', async ({ 
   await page.waitForFunction(
     () => (window.__skyforge?.levelSnapshot()?.levelTime ?? 0) >= 66,
     null,
-    { timeout: 40000 },
+    { timeout: 25000 },
   );
   expect(await page.evaluate(() => window.__skyforge!.terrainState())).toEqual({});
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
@@ -271,9 +271,7 @@ test('Studio tuning arena exposes live transport, snapshots, and telemetry', asy
   await page.getByLabel('Snapshot interval').selectOption('2');
   await page.waitForTimeout(2500);
   await expect(page.locator('.timeline-title')).toContainText('2s');
-  await expect(page.locator('.runtime-heatmap .heatmap-bar').first()).toBeAttached({
-    timeout: 30000,
-  });
+  await expect(page.locator('.runtime-heatmap .heatmap-bar').first()).toBeAttached();
   expect(errors, `console errors:\n${errors.join('\n')}`).toEqual([]);
 });
 
